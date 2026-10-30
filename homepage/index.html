@@ -1,0 +1,648 @@
+<title>AURA Institute Homepage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: full-bleed video hero with centered Book Now → About Us split (copy left, image right) → dark Our Services row of five series → floating Book Now. */
+:root{
+  --bg:#F7F3EE; --surface:#EFE7DE; --line:#DFD2C5; --fg:#221B17; --muted:#76665B;
+  --accent:#3F3029; --on-accent:#F7F3EE; --card:#FCFAF7;
+  --ink:#171313; --ink-2:#221C1A; --ink-fg:#EDE5DC; --ink-dim:rgba(237,229,220,.7);
+  --hero-fg:#FBF7F3; --hero-dim:rgba(251,247,243,.78);
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",serif;
+  --r:999px; --rs:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141110; --surface:#1E1916; --line:#382E28; --fg:#EFE6DD; --muted:#A99789;
+  --accent:#E3CDB9; --on-accent:#1C1512; --card:#1C1714; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141110; --surface:#1E1916; --line:#382E28; --fg:#EFE6DD; --muted:#A99789;
+  --accent:#E3CDB9; --on-accent:#1C1512; --card:#1C1714; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#5B4A3F}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+em.s{font-family:var(--serif);font-style:italic}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r);padding:14px 30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid{background:var(--accent);color:var(--on-accent)}
+
+/* header: utility strip + brand row + sticky dark nav with mega menus (Genesys-style) */
+.util{background:var(--surface);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.util .wrap,.brandrow .wrap,.navbar .wrap{max-width:none}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:34px;flex-wrap:wrap}
+.util a{text-decoration:none}
+.brandrow{background:var(--bg)}
+.brandrow .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:14px}
+.logo{font-size:34px;font-weight:500;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:var(--fg)}
+.logo span{font-size:.4em;letter-spacing:.3em;text-transform:uppercase;vertical-align:.5em;margin-left:5px}
+.hr{display:grid;gap:8px;justify-items:end;min-width:0}
+.r1{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted)}
+.r1 .phone{white-space:nowrap}
+.hsearch{display:flex;align-items:center;background:var(--surface);border:1px solid var(--line)}
+.hsearch input{border:0;background:transparent;padding:7px 10px;font:inherit;font-size:13px;color:var(--fg);width:170px;outline:none}
+.hsearch button{border:0;background:transparent;padding:6px 10px;color:var(--fg);display:grid;place-items:center}
+.tagline{margin:0;text-align:right;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.acts{display:flex;align-items:center;gap:22px;font-size:13.5px}
+.acts a{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap}
+.acts .cnt{font-style:normal;font-size:11.5px;min-width:22px;height:22px;border-radius:50%;background:#EAD6CC;color:var(--fg);display:grid;place-items:center}
+.acts .btn{padding:10px 22px;font-size:12px;background:var(--accent);color:var(--on-accent)}
+@media(max-width:1100px){.tagline,.r1 .phone{display:none}}
+@media(max-width:760px){.acts a span{display:none}.hsearch input{width:110px}.acts{gap:14px}}
+@media(max-width:560px){.hsearch{display:none}.logo{font-size:26px}.acts .btn{display:none}.brandrow .wrap{gap:12px}}
+.navbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#5B4A3F;color:#F7F1EA}
+.navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(16px,2.6vw,40px);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.navbar{position:sticky}
+.navbar ul.top>li{position:static}
+.navbar ul.top>li>a{display:block;padding:18px 0;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;position:relative}
+.navbar ul.top>li:hover>a,.navbar ul.top>li.open>a{border-bottom-color:#E6CFB4}
+.navbar ul.top>li{position:relative}
+.tag{position:absolute;top:-2px;left:50%;transform:translateX(-50%);font-size:9.5px;letter-spacing:.06em;padding:1px 6px;color:#fff;white-space:nowrap;z-index:2}
+.tag.sale{background:#A0533A}.tag.new{background:#7C8C6E}
+.navbar .wrap{position:static}
+.mega{position:fixed;left:0;right:0;background:var(--bg);color:var(--fg);border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:30px max(24px,env(safe-area-inset-right,0px)) 34px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:60}
+.navbar li:hover>.mega,.navbar li.open>.mega{display:block}
+.mega .cols{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px 40px}
+.mega .grp{display:grid;gap:4px;align-content:start}
+.mega h5{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--fg)}
+.mega a{display:flex;align-items:center;gap:8px;text-decoration:none;padding:4px 0;color:var(--muted)}
+.mega a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+.mega .s{font-size:10px;color:#fff;background:#A0533A;padding:1px 6px;letter-spacing:.04em}
+.mega .promo{background:var(--surface);padding:18px;display:grid;gap:6px;align-content:start}
+.mega .promo b{font-size:16px}.mega .promo span{color:var(--muted);font-size:13.5px}
+.mega .promo a{color:var(--fg);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+.mega.small{left:auto;right:auto;width:270px;padding:8px 22px;border:1px solid var(--line);box-shadow:0 14px 30px rgba(20,14,11,.14)}
+.navbar li:hover>.mega.small,.navbar li.open>.mega.small{display:block}
+.mega.small a{padding:13px 0;border-bottom:1px solid var(--line);color:var(--fg);font-size:14.5px}
+.mega.small a:last-child{border-bottom:0}
+@media(max-width:1000px){.navbar ul.top{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-inline:max(16px,env(safe-area-inset-left,0px))}.navbar .wrap{padding:0}}
+
+/* hero */
+.hero{position:relative;height:calc(100svh - 172px);min-height:520px;max-height:960px;overflow:hidden;color:var(--hero-fg);background:#2a201b}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(18,12,10,.45),rgba(18,12,10,.15) 70%),linear-gradient(180deg,rgba(18,12,10,.35),rgba(18,12,10,0) 25%);pointer-events:none}
+.hero .center{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hero .eyebrow{color:var(--hero-dim)}
+.hero h1{font-size:clamp(44px,7vw,104px);letter-spacing:-.02em;line-height:1}
+.hero p{margin:0;color:var(--hero-dim);font-size:clamp(15px,1.4vw,19px);max-width:46ch}
+.hero .btn{margin-top:10px;background:rgba(251,247,243,.92);color:#221B17;padding:17px 44px;font-size:13.5px}
+.hero .btn:hover{background:#FBF7F3}
+.scrollcue{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--hero-dim)}
+
+/* shop by result: six cards fit one desktop screen */
+.results .stage{padding-top:clamp(84px,9vw,110px);padding-bottom:clamp(48px,6vw,80px)}
+.results .head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px;margin-bottom:24px}
+.results .head .t{display:grid;gap:10px}
+.results h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1.02}
+.results .head p{margin:0;color:var(--muted);font-size:15px;max-width:44ch}
+.fxgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:1000px){.fxgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.fxgrid{grid-template-columns:1fr}}
+.fx{position:relative;border:0;padding:0;border-radius:var(--rs);overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--surface);color:#FBF7F3;text-align:center;isolation:isolate}
+.fx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s ease}
+.fx::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,14,11,0) 45%,rgba(20,14,11,.6) 100%);transition:background .45s ease}
+.fx .ttl{position:absolute;left:16px;right:16px;bottom:22px;font-size:clamp(22px,2.1vw,30px);font-weight:500;letter-spacing:-.01em;line-height:1.1;transition:opacity .35s ease,transform .45s ease}
+.fx .list{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.1vw,14px);padding:20px;list-style:none;margin:0;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .45s ease}
+.fx .list li{font-size:clamp(12px,.95vw,14px);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+@media (hover:hover){
+  .fx:hover img,.fx:focus-visible img{transform:scale(1.05)}
+  .fx:hover::after,.fx:focus-visible::after{background:rgba(20,14,11,.55)}
+  .fx:hover .ttl,.fx:focus-visible .ttl{opacity:0;transform:translateY(8px)}
+  .fx:hover .list,.fx:focus-visible .list{opacity:1;transform:none}
+}
+@media (min-width:1001px) and (min-height:620px){
+  .results .stage{height:100svh;max-height:1100px;display:flex;flex-direction:column;padding-top:96px;padding-bottom:28px}
+  .results .fxgrid{flex:1;min-height:0;grid-template-rows:repeat(2,minmax(0,1fr))}
+  .results .fx{aspect-ratio:auto;height:100%}
+}
+
+/* about: quiet editorial split, copy left, paired images flush right */
+.about{padding-block:clamp(56px,7vw,96px)}
+.about-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(32px,6vw,100px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1600px;margin:0 auto}
+@media(min-width:861px){.about-in{padding-left:max(clamp(48px,8vw,140px),env(safe-area-inset-left,0px));padding-right:max(clamp(24px,4vw,70px),env(safe-area-inset-right,0px))}}
+.about .copy{display:grid;gap:0;min-width:0;max-width:600px}
+.about h2{font-family:var(--serif);font-size:clamp(26px,2.1vw,32px);line-height:1.1;letter-spacing:-.01em}
+.about h3{font-family:var(--serif);font-size:clamp(24px,1.9vw,29px);font-weight:400;color:var(--fg);opacity:.85;margin-top:clamp(28px,3.4vw,46px)}
+.about em{font-family:var(--serif);font-style:italic}
+.about p{margin:22px 0 0;font-size:14.5px;line-height:1.75;max-width:62ch}
+.about .more{margin-top:28px;font-size:13px;font-weight:600;text-decoration:none;justify-self:start;border-bottom:1px solid transparent;transition:border-color .2s}
+.about .more:hover{border-color:currentColor}
+.pair{min-width:0}
+.pair img{aspect-ratio:821/584;height:auto!important;object-position:50% 50%!important}
+.pair img{display:block;width:100%;height:clamp(360px,36vw,560px);object-fit:cover;max-width:100%}
+.pair img:first-child{object-position:55% 60%}
+.pair img:last-child{object-position:0% 50%}
+@media(max-width:860px){.about-in{grid-template-columns:1fr}.pair img{height:clamp(260px,70vw,420px)}}
+
+/* services: full-screen row of four, labels below (editorial) */
+.services{background:var(--bg);color:var(--fg);min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:96px;padding-bottom:28px}
+.services .in{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px;flex:1;min-height:0}
+@media(min-width:760px){.services .in{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.services .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.services h2{font-family:var(--serif);font-size:clamp(28px,2.6vw,40px);white-space:nowrap}
+@media(max-width:560px){.services .head{flex-direction:column;gap:4px}}
+.services .note{margin:0;padding:0;background:none;font-size:12px;color:var(--muted)}
+.row-scroll{flex:1;min-height:0;display:flex}
+.row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-width:0}
+@media(max-width:900px){.row-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}.row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:clamp(240px,44vw,340px);height:auto}}
+@media(max-width:560px){.row{grid-auto-columns:78%}}
+.svc{display:flex;flex-direction:column;gap:16px;border:0;padding:0;background:none;text-align:center;color:var(--fg);scroll-snap-align:start;min-height:0}
+.svc .ph{position:relative;flex:1;min-height:320px;overflow:hidden;background:var(--surface)}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.svc:hover img,.svc:focus-visible img{transform:scale(1.04)}
+.svc .ttl{font-family:var(--serif);font-size:clamp(19px,1.5vw,24px);letter-spacing:.06em;line-height:1.2;padding-bottom:4px}
+.svc .tg{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:-10px}
+.svc:hover .ttl{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+@media(max-width:900px){.svc .ph{flex:none;aspect-ratio:3/4;min-height:0}}
+
+/* footer */
+.foot{background:var(--ink);color:var(--ink-fg);padding-block:clamp(56px,7vw,96px) 32px}
+.foot .in{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1320px;margin:0 auto}
+@media(min-width:760px){.foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.foot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,64px)}
+@media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot .top{grid-template-columns:1fr}}
+.foot .brand{display:grid;gap:18px;align-content:start}
+.foot .logo{font-size:34px;color:var(--ink-fg)}
+.foot .brand p{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink-dim)}
+.foot .brand .btn{justify-self:start;background:var(--ink-fg);color:#221B17;padding:13px 26px;font-size:12px}
+.foot h4{margin:0 0 14px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--ink-dim)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14.5px;line-height:1.5}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot .hours li{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
+.foot .hours span:first-child{color:var(--ink-dim)}
+.foot .bottom{margin-top:clamp(40px,6vw,72px);padding-top:20px;border-top:1px solid rgba(237,229,220,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:var(--ink-dim)}
+.foot .bottom nav{display:flex;flex-wrap:wrap;gap:20px}
+.foot .ph{opacity:.55}
+
+/* featured: EMFACE hero, then two asymmetric editorial rows */
+.feat{padding-block:clamp(56px,7vw,96px)}
+.feat .in{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:clamp(48px,6vw,96px)}
+@media(min-width:760px){.feat .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.feat h2{font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);margin-bottom:-24px}
+.ph{position:relative;overflow:hidden;background:var(--surface)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.ph:hover img{transform:scale(1.03)}
+.ftx{display:grid;gap:14px;align-content:center;min-width:0}
+.ftx h3{font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.ftx .sub{margin:0;font-size:15px;line-height:1.6;color:var(--muted);max-width:42ch}
+.ftx .more{justify-self:start;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.ftx .more:hover{border-bottom-color:transparent}
+.ftx .btn{justify-self:start;border-radius:0;padding:13px 36px}
+.deal{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.deal .off{font-weight:700;font-size:15px;letter-spacing:.08em;color:#A0533A}
+.deal s{color:var(--muted)}
+.deal b{font-size:22px;font-weight:600}
+/* hero row: one full-width block, colour field + photo */
+.frow-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);min-height:clamp(380px,38vw,540px);background:#D9B48F;color:#241A14;overflow:hidden}
+.frow-hero .ph{order:2;background:none}
+.frow-hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#D9B48F 0%,rgba(217,180,143,0) 30%)}
+.frow-hero .ph img{object-position:40% 30%}
+.frow-hero .ftx{order:1;justify-items:center;text-align:center;padding:clamp(28px,5vw,64px)}
+.frow-hero h3{font-size:clamp(34px,4vw,56px);letter-spacing:.06em}
+.frow-hero .rule{width:44px;height:2px;background:currentColor;opacity:.8}
+.frow-hero .sub{color:#3a2c22;font-size:clamp(15px,1.3vw,18px)}
+.frow-hero .deal{justify-content:center}
+.frow-hero .deal .off{color:#241A14;font-size:clamp(26px,2.6vw,38px)}
+.frow-hero .deal s{color:#5a4636}
+.frow-hero .btn{justify-self:center;background:#241A14;color:#F7F3EE}
+@media(max-width:860px){.frow-hero .ph{order:0;aspect-ratio:4/3}.frow-hero .ph::before{background:linear-gradient(0deg,#D9B48F 0%,rgba(217,180,143,0) 30%)}}
+/* row A: big square left, text right */
+.frow-a{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,90px);align-items:center;padding-right:clamp(0px,6vw,100px)}
+.frow-a .ph{aspect-ratio:1/1}
+/* row B: small card (image + text) left, big image right — mirrors the reference */
+.frow-b{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(24px,5vw,90px);align-items:center;padding-left:clamp(0px,6vw,100px)}
+.frow-b .big{aspect-ratio:1/1}
+.frow-b .small{display:grid;gap:18px;text-align:center;justify-items:center}
+.frow-b .small .ph{width:min(100%,300px);aspect-ratio:1/1}
+.frow-b .ftx{justify-items:center;text-align:center}
+.frow-b .ftx .more{justify-self:center}
+@media(max-width:860px){.frow-hero,.frow-a,.frow-b{grid-template-columns:1fr}.frow-a,.frow-b{padding:0}.frow-b .big{order:-1}}
+
+/* floating book now */
+.fab.away{opacity:0;pointer-events:none;transform:translateY(12px)}
+.fab{transition:opacity .3s,transform .3s;position:fixed;z-index:45;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));box-shadow:0 14px 40px rgba(20,14,11,.28);padding:16px 30px}
+@media(max-width:560px){.fab{right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px))}}
+
+/* drawer */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:71;top:0;right:0;bottom:0;width:min(540px,100vw);background:var(--bg);transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.on{transform:none}
+.dh{padding:20px 24px 16px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.dh .top{display:flex;justify-content:space-between;align-items:center}
+.dh h2{font-family:var(--serif);font-size:32px}
+.dh .close{background:none;border:0;font-size:28px;line-height:1;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.steps span{height:3px;border-radius:3px;background:var(--line)}
+.steps span.on{background:var(--fg)}
+.stepname{font-size:13px;color:var(--muted)}
+.db{flex:1;overflow-y:auto;padding:20px 24px;display:grid;gap:18px;align-content:start}
+.df{padding:14px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.df .sel{font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.df .btn{padding:11px 22px;font-size:12px}
+.btn-line{border-color:var(--line);background:transparent}
+.opt{border:1px solid var(--line);border-radius:var(--rs);padding:14px 16px;background:var(--card);text-align:left;display:grid;gap:2px;width:100%}
+.opt[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+.opt b{font-weight:500}
+.opt small{color:var(--muted);font-size:12.5px}
+.group h5{margin:0 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.items{display:grid;gap:8px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;text-align:left;width:100%}
+.item b{font-weight:500;font-size:14.5px}
+.item small{grid-column:1;color:var(--muted);font-size:12.5px}
+.item .pr{grid-column:2;grid-row:1/3;font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.item[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+.chip{border:1px solid var(--line);background:transparent;border-radius:var(--r);padding:8px 14px;font-size:13.5px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.search{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:var(--r);padding:11px 16px;font:inherit;font-size:14px;width:100%}
+.offer{background:var(--surface);border-radius:12px;padding:14px 16px;display:grid;gap:8px;font-size:13.5px}
+.offer p{margin:0}
+.offer ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.offer small{color:var(--muted);font-size:12px}
+.filterbar{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--surface);border-radius:12px;padding:10px 14px;font-size:13px}
+.dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.date{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 4px;text-align:center;font-size:12px;display:grid;gap:2px}
+.date b{font-size:18px;font-weight:500;font-variant-numeric:tabular-nums}
+.date[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.times .chip{padding:9px 0;text-align:center;font-variant-numeric:tabular-nums}
+.field{display:grid;gap:6px;font-size:13px}
+.field input,.field textarea{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;width:100%}
+.err{color:#B4513A;font-size:12px}
+.check{display:flex;gap:10px;font-size:13px;color:var(--muted);align-items:flex-start}
+.summary{border:1px solid var(--line);border-radius:var(--rs);background:var(--card);padding:6px 18px}
+.summary div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.summary div:last-child{border:0}
+.summary span{color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);background:var(--surface);border-radius:12px;padding:12px 14px;margin:0}
+.done{text-align:center;display:grid;gap:14px;padding-top:30px;justify-items:center}
+.done h3{font-family:var(--serif);font-size:36px}
+.done p{margin:0;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<header id="nav">
+  <div class="brandrow"><div class="wrap">
+    <a class="logo" href="#top" aria-label="AURA Institute home">aura<span>Institute</span></a>
+    <div class="hr">
+      <div class="r1"><span class="phone">Rockefeller Center: (212) [XXX-XXXX] · Text us anytime</span>
+        <form class="hsearch" role="search" onsubmit="event.preventDefault()"><input id="q" type="search" placeholder="Search treatments" aria-label="Search treatments"><button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button></form></div>
+      <p class="tagline">Natural results, designed for you — medical aesthetics at Rockefeller Center.</p>
+      <div class="acts"><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Shopping Cart</span><i class="cnt">0</i></a><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg><span>My Wish List</span><i class="cnt">0</i></a><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Sign In or Create an Account</span></a><button class="btn" type="button" data-book>Book Now</button></div>
+    </div>
+  </div></div>
+</header>
+<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag sale">Sale</span><a href="#">Special Offers</a><div class="mega"><div class="cols"><div class="grp"><h5>New Client Offers</h5><a href="#">Gold Skin Analysis · Free</a><a href="#">EMFACE® · $399 <span class="s">60% off</span></a><a href="#">Glow Booster · $299</a><a href="#">Collagen Lift · $199</a><a href="#">Gold RF Microneedling · $799</a><a href="#">EXOMIND™ · $399</a></div><div class="grp"><h5>Monthly Specials</h5><a href="#">This month’s offer</a></div><div class="grp"><h5>Treatment Packages</h5><a href="#">Facial packages</a><a href="#">Glow Booster × 3</a><a href="#">EMFACE® × 4</a><a href="#">NAD+ × 6</a></div><div class="grp"><h5>Gift Cards</h5><a href="#">Buy a gift card</a></div><div class="promo"><b>First visit, 60% off EMFACE®</b><span>Needle-free lift in 20 minutes. $1,000 → $399.</span><a href="#" data-book>Book Now</a></div></div></div></li><li><a href="#">Face &amp; Contour</a><div class="mega"><div class="cols"><div class="grp"><h5>Smooth Lines</h5><a href="#">Botox® &amp; Xeomin®</a><a href="#">Jaw Slimming</a><a href="#">Trap Tox · Shoulder Line</a></div><div class="grp"><h5>Restore Volume</h5><a href="#">Lip &amp; Face Filler</a><a href="#">RADIESSE®</a><a href="#">Sculptra®</a><a href="#">HArmonyCa™</a></div><div class="grp"><h5>Lift &amp; Tighten</h5><a href="#">EMFACE® <span class="s">Sale</span></a><a href="#">Thermage® FLX</a><a href="#">Collagen Lift <span class="s">Sale</span></a></div><div class="grp"><h5>V-Line Contour</h5><a href="#">V-Line Injection</a><a href="#">Jaw Slimming</a><a href="#">RADIESSE® Jawline</a></div><div class="grp"><h5>Face Design</h5><a href="#">Face Design Consultation · Free</a><a href="#">Signature Face Plan</a></div></div></div></li><li><a href="#">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Hydrate &amp; Glow</h5><a href="#">Glow Booster <span class="s">Sale</span></a><a href="#">Collagen Booster</a><a href="#">Regen Booster</a></div><div class="grp"><h5>Spots &amp; Redness</h5><a href="#">M22™ Photofacial</a><a href="#">Glow Booster</a></div><div class="grp"><h5>Pores, Acne &amp; Scars</h5><a href="#">Gold RF Microneedling <span class="s">Sale</span></a><a href="#">M22™ Photofacial</a></div><div class="grp"><h5>Facials</h5><a href="#">HydraFacial® Deluxe</a><a href="#">HydraFacial® Platinum</a><a href="#">Signature Facial</a><a href="#">Barrier Recovery Facial</a></div><div class="grp"><h5>Sensitive Skin</h5><a href="#">Barrier Recovery Facial</a><a href="#">Gold Skin Analysis · Free</a></div></div></div></li><li><a href="#">Body Shape</a><div class="mega small"><a href="#">Body Sculpt</a><a href="#">Stretch Mark Repair</a><a href="#">Trap Tox · Shoulder Line</a><a href="#">Neck &amp; Jawline Sculpt</a></div></li><li><span class="tag new">New</span><a href="#">Wellness</a><div class="mega small"><a href="#">NAD+ IV Drip</a><a href="#">EXOMIND™ <span class="s">Sale</span></a></div></li><li><a href="#">Membership</a><div class="mega small"><a href="#">Glow Girl Membership · $299/mo</a><a href="#">Aura VIP Gold</a><a href="#">Aura VIP Black</a></div></li><li><a href="#">About</a><div class="mega small"><a href="#">Our Story</a><a href="#">Our Approach</a><a href="#">Our Providers</a><a href="#">The Clinic</a><a href="#">Reviews</a></div></li><li><a href="#">Journal &amp; FAQ</a><div class="mega small"><a href="#">Skin Education</a><a href="#">Treatment Guides</a><a href="#">Myths &amp; Facts</a><a href="#">FAQ</a><a href="#">Contact &amp; Visit</a></div></li></ul></div></nav>
+
+<main id="top">
+  <!-- SECTION 1 · HERO -->
+  <section class="hero" aria-label="AURA Institute at Rockefeller Center">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <script>(function(){var v=document.getElementById('heroVideo');v.poster='poster-aura3.jpg';v.src='hero-aura3.mp4';v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();</script>
+    <div class="center">
+      <p class="eyebrow">Rockefeller Center · New York</p>
+      <h1>Glow from <em class="s">every angle.</em></h1>
+      <p>Medical aesthetics, body sculpting and wellness at Rockefeller Center.</p>
+      <button class="btn" type="button" data-book>Book Now</button>
+    </div>
+    <div class="scrollcue">Scroll</div>
+  </section>
+
+  <!-- SECTION 2 · SHOP BY RESULT -->
+  <section class="results" id="results">
+    <div class="wrap stage">
+      <div class="head">
+        <div class="t"><p class="eyebrow">Shop by Result</p><h2>Start with your <em class="s">goal.</em></h2></div>
+      </div>
+      <div class="fxgrid" id="fxGrid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED: 1 large + 2 small -->
+  <section class="feat" id="featured" aria-label="Featured treatments">
+    <div class="in">
+      <h2>Featured <em class="s">this season</em></h2>
+      <article class="frow-hero">
+        <div class="ph"><img src="svc-lift.jpg" alt="Woman with a lifted, defined jawline"></div>
+        <div class="ftx"><h3>EMFACE®</h3><span class="rule"></span>
+          <p class="sub">Needle-free lifting for brows, cheeks and jawline in just 20 minutes.</p>
+          <div class="deal"><span class="off">60% OFF</span><s>$1,000</s><b>$399</b></div>
+          <button class="btn" type="button" data-feat="EMFACE® · 1 Area|tighten">Book Now</button></div>
+      </article>
+      <article class="frow-a">
+        <div class="ph"><img src="r-lift.jpg" alt="Close-up of a firm, defined jawline" style="object-position:50% 45%"></div>
+        <div class="ftx"><h3>Thermage® FLX</h3>
+          <p class="sub">Radiofrequency skin tightening for face and eyes, with no downtime.</p>
+          <a class="more" href="#" data-learn="tighten">Learn More</a></div>
+      </article>
+      <article class="frow-b">
+        <div class="small">
+          <div class="ph"><img src="svc-laser.jpg" alt="Soft portrait with a peach rose" style="object-position:50% 30%"></div>
+          <div class="ftx"><h3>Glow Boosters</h3>
+            <p class="sub">Collagen and hydration delivered deep into the skin for a lasting glow.</p>
+            <a class="more" href="#" data-learn="glow">Learn More</a></div>
+        </div>
+        <div class="ph big"><img src="about.jpg" alt="Woman with dewy, glowing skin" style="object-position:50% 25%"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3 · ABOUT US -->
+  <section class="about" id="about">
+    <div class="about-in">
+      <div class="copy">
+        <h2>Who we <em>are</em></h2>
+        <h3>The <em>science</em> of glowing skin</h3>
+        <p>AURA Institute brings medical aesthetics and wellness together at Rockefeller Center. We pair FDA-cleared technology from Lumenis, Solta Medical, Candela and BTL with provider-led care, so every plan is tailored to your skin, your tone and your goals. Our promise is simple: natural-looking results and an experience that is personal, precise and calm.</p>
+        <a class="more" href="#services">Discover More</a>
+      </div>
+      <div class="pair"><img src="about-reception.jpg" alt="AURA Institute reception with pendant lights and a curved front desk"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 · OUR SERVICES -->
+  <section class="services" id="services">
+    <div class="in">
+      <div class="head"><h2>Memberships <em class="s">&amp; Offers</em></h2><p class="note">Prices subject to change. Results vary.</p></div>
+      <div class="row-scroll"><div class="row" id="svcRow"></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="in">
+    <div class="top">
+      <div class="brand">
+        <a class="logo" href="#top" aria-label="AURA Institute home">aura<span>Institute</span></a>
+        <p>Glow from every angle.</p>
+        <button class="btn" type="button" data-book>Book Now</button>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>AURA Institute</li>
+          <li>[Street Address], Suite [###]</li>
+          <li>Rockefeller Center</li>
+          <li>New York, NY 10020</li>
+          <li><a href="https://maps.google.com/?q=Rockefeller+Center+New+York" target="_blank" rel="noopener">Get Directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>(212) [XXX-XXXX]</li>
+          <li>hello@[aurainstitute].com</li>
+          <li>Text us anytime</li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul class="hours">
+          <li><span>Mon – Fri</span><span>9am – 8pm</span></li>
+          <li><span>Saturday</span><span>10am – 6pm</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 AURA Institute. All rights reserved. Results vary by individual.</span>
+      <nav><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav>
+    </div>
+  </div>
+</footer>
+
+<button class="btn btn-solid fab" type="button" data-book>Book Now</button>
+
+<div class="scrim" id="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <div class="dh">
+    <div class="top"><h2 id="dTitle">Book your visit</h2><button class="close" type="button" id="dClose" aria-label="Close booking">×</button></div>
+    <div class="steps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="stepname" id="stepName"></div>
+  </div>
+  <div class="db" id="dBody"></div>
+  <div class="df"><button class="btn btn-line" type="button" id="dBack">Back</button><span class="sel" id="dSel"></span><button class="btn btn-solid" type="button" id="dNext">Continue</button></div>
+</div>
+
+<script>
+/* ---------- treatment menu (from the AURA Institute brochure) ---------- */
+const C = "Consult";
+const SERIES = [
+ {id:"first", n:"01", name:"First Visit Offers", tag:"New to AURA", img:"s-skin2.jpg", pos:"55% 40%",
+  intro:"Start with a complimentary Gold Skin Analysis, then try a signature treatment at a first-visit price.",
+  items:[
+   ["Gold Skin Analysis","In-depth skin assessment with a provider","Complimentary"],
+   ["Collagen Lift · Cheeks","First visit (reg. $300)","$199"],
+   ["Glow Booster","First visit (reg. $450)","$299"],
+   ["EMFACE® · 1 Area","First visit (reg. $1,000)","$399"],
+   ["EXOMIND™","First visit (reg. $550)","$399"],
+   ["Gold RF Microneedling","First visit (reg. $999)","$799"]]},
+ {id:"packages", n:"02", name:"Treatment Packages", tag:"Save with a series", img:"s-laser.jpg", pos:"25% 50%",
+  intro:"Results build over a series. Packages lock in your plan at a lower price per session.",
+  items:[
+   ["HydraFacial® Deluxe · 4 Sessions","Monthly deep cleanse & hydration","$980"],
+   ["Gold RF Microneedling · 3 Sessions","Pores, texture & tone","$2,699"],
+   ["EMFACE® 1 Area · 4 Sessions","Lift & tone, 20 min each","$3,200"],
+   ["Collagen Lift · Any 3 Areas · 4 Sessions","Cheeks, eyes, neck or forehead","$2,699"],
+   ["NAD+ 250mg · 6 Sessions","Energy & recovery","$1,999"],
+   ["EXOMIND™ · 6 Sessions","Mood & mental wellness","$3,000"]]},
+ {id:"glowgirl", n:"03", name:"Glow Girl Membership", tag:"$299 / month", img:"s-inject.jpg", pos:"45% 40%",
+  intro:"A steady, never-overdone rhythm for your skin. Make glowing a monthly habit.",
+  perks:["1 facial every month: HydraFacial®, Barrier Recovery Facial or Signature Facial","Every 3 months: 1 IPL Photofacial or Glow Booster","50 Wellness Credits each month · 500 credits = 1 NAD+ treatment"],
+  rules:"3-month minimum. Quarterly perk unlocks after 3 consecutive months. Monthly facial must be used that month. Credits roll over. Cancel with 30 days’ notice.",
+  items:[["Join Glow Girl Membership","3-month minimum · billed monthly","$299 / mo"]]},
+ {id:"vip", n:"04", name:"Aura VIP", tag:"Gold & Black", img:"s-body.jpg", pos:"45% 50%",
+  intro:"Prepaid membership with bonus credit and year-round perks.",
+  perks:["Aura Gold · $5,000: +$800 Aura Credit, 1 facial each quarter, unlimited Gold Skin Analysis, $100 birthday credit, share credit with 1 friend, priority event access","Aura Black · $10,000: +$1,500 Aura Credit, 2 facials each quarter, unlimited Gold Skin Analysis, quarterly anti-aging plan consultation, $300 birthday credit, share credit with 2 friends, first invitations to private events"],
+  items:[["Aura Gold","Includes $800 bonus credit","$5,000"],["Aura Black","Includes $1,500 bonus credit","$10,000"]]}
+];
+const RESULTS=[
+ {id:"wrinkle",show:["Botox® &amp; Xeomin®","Jaw Slimming","Trap Tox"],name:"Wrinkle Relaxers",img:"r-texture.jpg",pos:"50% 40%",items:[
+   ["Botox®","Forehead lines, frown lines & crow’s feet","$12 / unit"],
+   ["Xeomin®","Smooths expression lines","$10 / unit"]]},
+ {id:"fillers",show:["Lip & Face Filler","RADIESSE®","HArmonyCa™","Sculptra®"],name:"Fillers",img:"r-smooth.jpg",pos:"50% 35%",items:[
+   ["Lip & Face Filler","Lips, cheeks, chin & under-eyes · half syringe $500","$850"],
+   ["RADIESSE®","Collagen-stimulating filler for contour","$1,200"],
+   ["HArmonyCa™","Hybrid filler for lift and collagen","$1,200"],
+   ["Sculptra® Aesthetic","Gradual collagen restoration","$900"]]},
+ {id:"glow",show:["Glow Booster","Regen Booster","Collagen Booster","M22™ Photofacial","Gold RF Microneedling"],name:"Glow Treatments",img:"r-tone.jpg",pos:"50% 40%",items:[
+   ["Glow Booster","Deep hydration & glow · first visit $299","$450"],
+   ["Regen Booster","Renewal & radiance · first visit $699","$900"],
+   ["Collagen Booster","Firmness & bounce · first visit $999","$1,200"],
+   ["M22™ Photofacial","Sun spots, redness & dull tone","Consult"],
+   ["Gold RF Microneedling","Pores, texture & tone · first visit $799 · 3 for $2,699","$999"]]},
+ {id:"tighten",show:["Thermage® FLX","EMFACE®","Collagen Lift","V-Line Injection"],name:"Skin Tightening",img:"r-lift.jpg",pos:"50% 45%",items:[
+   ["Thermage® FLX · Eyes","450 pulses · no downtime","$1,999"],
+   ["Thermage® FLX · Full Face","900 pulses · no downtime","$2,199"],
+   ["EMFACE® · 1 Area","20 min · first visit $399 · 4 for $3,200","$1,000"],
+   ["EMFACE® · 2 Areas","First visit $599 · 4 for $4,000","$1,250"],
+   ["EMFACE® · 3 Areas","First visit $799 · 4 for $4,800","$1,500"],
+   ["EMFACE® · 4 Areas","First visit $999 · 4 for $5,600","$1,750"],
+   ["Collagen Lift · Cheeks","First visit $199 · 4 for $999","$300"],
+   ["Collagen Lift · Eyes","4 for $999","$300"],
+   ["Collagen Lift · Neck","4 for $699","$200"],
+   ["Collagen Lift · Forehead","4 for $699","$200"],
+   ["Collagen Lift · Any 3 Areas","4 for $2,699","$800"],
+   ["V-Line Injection · One Side","Slims and defines one area","$350"],
+   ["V-Line Injection · Both Sides","Slimmer, more defined lower face","$700"],
+   ["V-Line Injection + Lift","Both sides, plus lifting","$900"]]},
+ {id:"facials",show:["HydraFacial® Deluxe","HydraFacial® Platinum","Signature Facial","Barrier Recovery Facial"],name:"Facials",img:"r-care2.jpg",pos:"50% 55%",items:[
+   ["HydraFacial® Deluxe","Cleanse, extract & hydrate · 4 for $980","$285"],
+   ["HydraFacial® Platinum","Adds lymphatic drainage · 4 for $1,199","$329"],
+   ["Signature Facial","Relaxing, restorative facial · 4 for $819","$229"],
+   ["Barrier Recovery Facial","Barrier repair for sensitive skin · 4 for $819","$229"]]},
+ {id:"body",show:["Body Sculpt","NAD+ IV Drip","EXOMIND™"],name:"Body & Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
+   ["Body Sculpt · Abdomen","Fat-reduction device · 4 for $999","$300"],
+   ["NAD+ 250mg","Energy & recovery · 6 for $1,999","$400"],
+   ["NAD+ 500mg","Energy & recovery · 6 for $3,750","$750"],
+   ["EXOMIND™","Mood & mental wellness · first visit $399 · 6 for $3,000","$550"]]}
+];
+document.getElementById('fxGrid').innerHTML=RESULTS.map(r=>`
+  <button type="button" class="fx" data-result="${r.id}" aria-label="${r.name}: see treatments and book">
+    <img src="${r.img}" alt="" style="object-position:${r.pos}">
+    <span class="ttl">${r.name}</span>
+    <ul class="list" aria-hidden="true">${r.show.map(t=>`<li>${t}</li>`).join('')}</ul>
+  </button>`).join('');
+document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.closest('.fx'); if(b) openBook(null,null,b.dataset.result);});
+
+/* hide the floating button while the result grid fills the screen, so it never covers a card */
+(function(){const fab=document.querySelector('.fab'), g=document.getElementById('fxGrid');
+ if(!('IntersectionObserver' in window)) return;
+ new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('away',e.intersectionRatio>0.5)),{threshold:[0,.5,1]}).observe(g);})();
+(function(){const fab=document.querySelector('.fab'),r=document.getElementById('svcRow');if(!('IntersectionObserver' in window))return;new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('away',e.intersectionRatio>0.5)),{threshold:[0,.5,1]}).observe(r);})();
+
+/* ---------- services cards ---------- */
+document.getElementById('svcRow').innerHTML = SERIES.map(s=>`
+  <button type="button" class="svc" data-series="${s.id}" aria-label="${s.name}: see details">
+    <span class="ph"><img src="${s.img}" alt="" style="object-position:${s.pos}" loading="lazy"></span>
+    <span class="ttl">${s.name}</span><span class="tg">${s.tag}</span>
+  </button>`).join('');
+document.getElementById('svcRow').addEventListener('click',e=>{const b=e.target.closest('.svc'); if(b) openBook(null,b.dataset.series);});
+
+/* ---------- nav ---------- */
+const nav=document.getElementById('nav');
+const onScroll=()=>{};
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* ---------- booking drawer ---------- */
+const drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim'), body=document.getElementById('dBody');
+const nextB=document.getElementById('dNext'), backB=document.getElementById('dBack'), selL=document.getElementById('dSel'), stepName=document.getElementById('stepName');
+const STEPS=["Step 1 of 4 · Choose a treatment","Step 2 of 4 · Pick a time","Step 3 of 4 · Your details","Step 4 of 4 · Review"];
+const CONSULT="Complimentary Consultation";
+const st={step:0,tx:null,date:null,time:null,name:'',email:'',phone:'',notes:'',ok:false,sent:false,q:'',series:null,result:null};
+let lastFocus=null;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function openBook(pre,series,result){
+  lastFocus=document.activeElement;
+  Object.assign(st,{step:0,date:null,time:null,sent:false,q:'',series:series||null,result:result||null,tx:pre||null});
+  drawer.classList.add('on'); scrim.classList.add('on'); drawer.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden'; render();
+  setTimeout(()=>document.getElementById('dClose').focus(),50);
+}
+function closeBook(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus();}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-book]'); if(b){e.preventDefault();openBook(null,null);}});
+scrim.addEventListener('click',closeBook); document.getElementById('dClose').addEventListener('click',closeBook);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('on'))closeBook();});
+
+const days=[...Array(10)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i+1);return d;}).filter(d=>d.getDay()!==0).slice(0,5);
+const times=["9:00","10:30","12:00","12:30","1:00","2:30","4:00","5:30","6:30","7:00","7:30"];
+const taken=(d,t)=>((d.getDate()*7+t.length*3+parseInt(t))%5)===0;
+const fmtDay=d=>d.toLocaleDateString('en-US',{weekday:'short'}), fmtFull=d=>d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+
+function render(){
+  document.querySelectorAll('.steps span').forEach((s,i)=>s.classList.toggle('on',i<=st.step));
+  stepName.textContent=st.sent?"Request sent":STEPS[st.step];
+  backB.style.visibility=(st.step===0||st.sent)?'hidden':'visible';
+  nextB.hidden=st.sent; nextB.textContent=st.step===3?'Request Appointment':'Continue';
+  selL.textContent=st.sent?'':[st.tx,st.date&&fmtDay(st.date),st.time].filter(Boolean).join(' · ');
+  if(st.sent){
+    body.innerHTML=`<div class="done"><p class="eyebrow">Thank you</p><h3>See you soon, ${esc(st.name.split(' ')[0]||'')}.</h3>
+      <p>Your request for <b>${esc(st.tx)}</b> on ${fmtFull(st.date)} at ${st.time} is in. We’ll text you to confirm.</p>
+      <p class="note">Prototype: nothing was booked. On the live site this connects to your scheduling system and sends a confirmation text and email.</p>
+      <button class="btn btn-line" type="button" id="dDone">Back to site</button></div>`;
+    document.getElementById('dDone').onclick=closeBook; return;
+  }
+  if(st.step===0){
+    const q=st.q.toLowerCase();
+    const res=st.result&&!q?RESULTS.find(r=>r.id===st.result):null;
+    const ALLT=RESULTS.map(r=>({name:r.name,items:r.items}));
+    const off=st.series&&!q?SERIES.find(s=>s.id===st.series):null;
+    const list=res?[{name:res.name,items:res.items}]:(off?[off]:(q?[...ALLT,...SERIES]:ALLT));
+    const groups=list.map(s=>{const it=s.items.filter(t=>!q||t[0].toLowerCase().includes(q)||t[1].toLowerCase().includes(q)); if(!it.length) return '';
+      return `<div class="group"><h5>${s.name}</h5><div class="items">${it.map(t=>`<button type="button" class="item" data-tx="${esc(t[0])}" aria-pressed="${st.tx===t[0]}"><b>${esc(t[0])}</b><small>${esc(t[1])}</small><span class="pr">${t[2]}</span></button>`).join('')}</div></div>`;}).join('');
+    const cur=res||off;
+    const info=off?`<div class="offer"><p>${off.intro}</p>${off.perks?`<ul>${off.perks.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${off.rules?`<small>${off.rules}</small>`:''}</div>`:'';
+    body.innerHTML=`<button type="button" class="opt" data-tx="${CONSULT}" aria-pressed="${st.tx===CONSULT}"><b>Not sure yet? Book a complimentary consultation</b><small>30 minutes with a provider to build a plan around your goals</small></button>
+      ${info}
+      <input class="search" id="txSearch" type="search" placeholder="Search treatments" value="${esc(st.q)}" aria-label="Search treatments">
+      ${cur&&!q?`<div class="filterbar"><span>Showing <b>${cur.name}</b></span><button type="button" class="chip" id="showAll">View all treatments</button></div>`:''}
+      ${groups||'<p class="note">No treatments match that search.</p>'}`;
+    const s=document.getElementById('txSearch'); s.oninput=()=>{st.q=s.value;const pos=s.selectionStart;render();const n=document.getElementById('txSearch');n.focus();n.setSelectionRange(pos,pos);};
+    body.querySelectorAll('[data-tx]').forEach(b=>b.onclick=()=>{st.tx=b.dataset.tx;render();});
+    const sa=document.getElementById('showAll'); if(sa) sa.onclick=()=>{st.series=null;st.result=null;render();};
+  }
+  if(st.step===1){
+    body.innerHTML=`<div class="group"><h5>Day</h5><div class="dates">${days.map((d,i)=>`<button type="button" class="date" data-d="${i}" aria-pressed="${st.date&&+st.date===+d}"><span>${fmtDay(d)}</span><b>${d.getDate()}</b></button>`).join('')}</div></div>
+      <div class="group"><h5>Time${st.date?' · '+fmtFull(st.date):''}</h5>${st.date?`<div class="times">${times.map(t=>`<button type="button" class="chip" data-t="${t}" aria-pressed="${st.time===t}" ${taken(st.date,t)?'disabled':''}>${t}</button>`).join('')}</div>`:'<p class="note">Choose a day to see open times.</p>'}</div>
+      <p class="note">Location: AURA Institute, Rockefeller Center. Lunch-hour appointments available.</p>`;
+    body.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{st.date=days[+b.dataset.d];st.time=null;render();});
+    body.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{st.time=b.dataset.t;render();});
+  }
+  if(st.step===2){
+    body.innerHTML=`<div class="field"><label for="fName">Full name</label><input id="fName" autocomplete="name" value="${esc(st.name)}"><span class="err" id="eName"></span></div>
+      <div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" autocomplete="email" value="${esc(st.email)}"><span class="err" id="eEmail"></span></div>
+      <div class="field"><label for="fPhone">Mobile number (for confirmation texts)</label><input id="fPhone" type="tel" autocomplete="tel" value="${esc(st.phone)}"><span class="err" id="ePhone"></span></div>
+      <div class="field"><label for="fNotes">Anything we should know? (optional)</label><textarea id="fNotes" rows="3">${esc(st.notes)}</textarea></div>
+      <label class="check"><input type="checkbox" id="fOk" ${st.ok?'checked':''}> I agree to the cancellation policy and to receive appointment texts.</label><span class="err" id="eOk"></span>`;
+    ['Name','Email','Phone','Notes'].forEach(k=>{document.getElementById('f'+k).oninput=e=>{st[k.toLowerCase()]=e.target.value;};});
+    document.getElementById('fOk').onchange=e=>{st.ok=e.target.checked;};
+  }
+  if(st.step===3){
+    body.innerHTML=`<div class="summary"><div><span>Treatment</span><b>${esc(st.tx)}</b></div><div><span>When</span><b>${fmtFull(st.date)} · ${st.time}</b></div><div><span>Where</span><b>Rockefeller Center</b></div><div><span>Name</span><b>${esc(st.name)}</b></div><div><span>Mobile</span><b>${esc(st.phone)}</b></div></div>
+      <p class="note">Your first visit includes a brief medical intake with your provider. A card on file holds your appointment; you won’t be charged today.</p>`;
+  }
+}
+function validate(){
+  if(st.step===0) return !!st.tx;
+  if(st.step===1) return !!(st.date&&st.time);
+  if(st.step===2){let ok=true;const set=(id,m)=>{document.getElementById(id).textContent=m;if(m)ok=false;};
+    set('eName',st.name.trim().length<2?'Enter your full name.':'');
+    set('eEmail',/^\S+@\S+\.\S+$/.test(st.email)?'':'Enter an email like name@example.com.');
+    set('ePhone',st.phone.replace(/\D/g,'').length>=10?'':'Enter a 10-digit mobile number.');
+    set('eOk',st.ok?'':'Please accept to continue.');
+    return ok;}
+  return true;
+}
+nextB.onclick=()=>{ if(!validate()){ if(st.step<2) selL.textContent=st.step===0?'Choose a treatment to continue':'Choose a day and time'; return; }
+  if(st.step===3) st.sent=true; else st.step++; render(); body.scrollTop=0; };
+backB.onclick=()=>{ if(st.step>0){st.step--;render();} };
+
+/* ---------- featured ---------- */
+document.querySelectorAll('[data-learn]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openBook(null,null,a.dataset.learn);}));
+document.querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',()=>{const [tx,where]=b.dataset.feat.split('|');
+  if(where.startsWith('@')) openBook(tx,where.slice(1)); else openBook(tx,null,where);}));
+
+/* ---------- mega menu: position under bar, tap to open on touch ---------- */
+(function(){const bar=document.querySelector('.navbar');const lis=[...bar.querySelectorAll('ul.top>li')];
+ const place=()=>{const r=bar.getBoundingClientRect();bar.querySelectorAll('.mega').forEach(m=>{m.style.top=r.bottom+'px';if(m.classList.contains('small')){const lr=m.parentElement.getBoundingClientRect();m.style.left=Math.max(8,Math.min(lr.left-22,innerWidth-278))+'px';}});};
+ addEventListener('scroll',place,{passive:true});addEventListener('resize',place);place();
+ lis.forEach(li=>{li.addEventListener('mouseenter',place);li.firstElementChild.nextElementSibling;const a=li.querySelector(':scope>a');
+  a.addEventListener('click',e=>{e.preventDefault();place();const o=li.classList.contains('open');lis.forEach(x=>x.classList.remove('open'));if(!o)li.classList.add('open');});});
+ document.addEventListener('click',e=>{if(!bar.contains(e.target))lis.forEach(x=>x.classList.remove('open'));});
+ addEventListener('keydown',e=>{if(e.key==='Escape')lis.forEach(x=>x.classList.remove('open'));});})();
+</script>
