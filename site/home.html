@@ -154,7 +154,7 @@ em.s{font-family:var(--serif);font-style:italic}
 @media(max-width:560px){.services .head{flex-direction:column;gap:4px}}
 .services .note{margin:0;padding:0;background:none;font-size:12px;color:var(--muted)}
 .row-scroll{flex:1;min-height:0;display:flex}
-.row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-width:0}
+.row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;flex:1;min-width:0}
 @media(max-width:900px){.row-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}.row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:clamp(240px,44vw,340px);height:auto}}
 @media(max-width:560px){.row{grid-auto-columns:78%}}
 .svc{display:flex;flex-direction:column;gap:16px;border:0;padding:0;background:none;text-align:center;color:var(--fg);scroll-snap-align:start;min-height:0}
@@ -385,6 +385,14 @@ em.s{font-family:var(--serif);font-style:italic}
   </section>
 
   <!-- SECTION 4 · OUR SERVICES -->
+  <section class="services" id="services" aria-label="Our Services">
+    <div class="in">
+      <div class="head"><h2>Our <em class="s">Services</em></h2><p class="note">Every plan starts with a complimentary consultation.</p></div>
+      <div class="row-scroll"><div class="row" id="svcRow"></div></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 · AURA EXPERIENCE -->
   <section class="exp" id="experience" aria-label="The AURA Experience">
     <div class="in">
       <div class="head"><p class="eyebrow">Your first visit</p><h2>The AURA <em class="s">Experience</em></h2><p class="note">From your first conversation to your follow-up, every step is about you.</p></div>
@@ -466,7 +474,8 @@ const SERIES = [
   items:[["NAD+ IV Drip","Energy & recovery",P],["EXOMIND™","Sleep, mood & focus",P]]},
  {id:"bodysvc", n:"04", name:"Body", tag:"Contour · Shoulder line", img:"s-body.jpg", pos:"45% 50%",
   intro:"Contour, smooth and refine, planned around proportion.",
-  items:[["Body Sculpt · Abdomen","Non-invasive fat reduction",P],["Trap Tox · Shoulder Line","A longer, softer neckline",P],["Stretch Mark Repair","Microneedling + collagen",P]]}
+  items:[["Body Sculpt · Abdomen","Non-invasive fat reduction",P],["Trap Tox · Shoulder Line","A longer, softer neckline",P],["Stretch Mark Repair","Microneedling + collagen",P]]},
+ {id:"prime", n:"05", name:"AURA Prime", tag:"Monthly membership", img:"about.jpg", pos:"50% 30%", link:"aura-prime.html"}
 ];
 const RESULTS=[
  {id:"lift",cat:"Face Design",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Lift &amp; Anti-Aging",img:"r-lift.jpg",pos:"50% 45%",items:[
@@ -528,12 +537,16 @@ document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.
 
 /* ---------- services cards ---------- */
 if(document.getElementById('svcRow')){
-document.getElementById('svcRow').innerHTML = SERIES.map(s=>`
+document.getElementById('svcRow').innerHTML = SERIES.map(s=>s.link?`
+  <a class="svc" href="${s.link}" aria-label="${s.name}: learn more">
+    <span class="ph"><img src="${s.img}" alt="" style="object-position:${s.pos}" loading="lazy"></span>
+    <span class="ttl">${s.name}</span><span class="tg">${s.tag}</span>
+  </a>`:`
   <button type="button" class="svc" data-series="${s.id}" aria-label="${s.name}: see details">
     <span class="ph"><img src="${s.img}" alt="" style="object-position:${s.pos}" loading="lazy"></span>
     <span class="ttl">${s.name}</span><span class="tg">${s.tag}</span>
   </button>`).join('');
-document.getElementById('svcRow').addEventListener('click',e=>{const b=e.target.closest('.svc'); if(b) openBook(null,b.dataset.series);});
+document.getElementById('svcRow').addEventListener('click',e=>{const b=e.target.closest('button.svc'); if(b) openBook(null,b.dataset.series);});
 }
 
 /* ---------- nav ---------- */
