@@ -3,7 +3,7 @@ OUT = '/home/claude/pages/out'; os.makedirs(OUT, exist_ok=True)
 for f in ['svc-lift.jpg','about.jpg','r-lift.jpg','svc-laser.jpg','r-tone.jpg','r-texture.jpg','r-smooth.jpg','r-care2.jpg','r-body2.jpg','s-skin2.jpg','s-laser.jpg','s-inject.jpg','s-body.jpg','about-reception.jpg','r-care.jpg','r-body.jpg','svc-skin.jpg']:
     shutil.copy('/home/claude/site/'+f, OUT+'/'+f)
 
-NAV = [('special-offers.html','Special Offers'),('face-contour.html','Face &amp; Contour'),('skin-glow.html','Skin &amp; Glow'),('body-shape.html','Body Shape'),('wellness.html','Wellness'),('membership.html','Membership'),('about.html','About'),('journal-faq.html','Journal &amp; FAQ')]
+NAV = [('face-design.html','Face Design'),('skin-glow.html','Skin &amp; Glow'),('wellness.html','Wellness &amp; Longevity'),('body-shape.html','Body'),('aura-prime.html','Membership'),('about.html','About')]
 
 CSS = r'''
 :root{--bg:#F7F3EE;--surface:#EFE7DE;--line:#DFD2C5;--fg:#221B17;--muted:#76665B;--accent:#3F3029;--on-accent:#F7F3EE;--card:#FCFAF7;--tan:#D9B48F;--rust:#A0533A;--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif}
@@ -116,7 +116,7 @@ HEAD = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 def nav(active):
     lis = ''.join(f'<li><a href="{h}"{" class=\"on\"" if h==active else ""}>{n}</a></li>' for h,n in NAV)
     return f'''<div class="proto">Page prototype · copy is a final draft, photos are placeholders · <a href="index.html">All pages</a></div>
-<header class="nav"><div class="wrap"><a class="logo" href="index.html">aura<span>Institute</span></a><ul>{lis}</ul><a class="btn" href="#book">Book Now</a></div></header>'''
+<header class="nav"><div class="wrap"><a class="logo" href="index.html">aura<span>Institute</span></a><ul>{lis}</ul><a class="btn" href="#book">Book a Consultation</a></div></header>'''
 
 def hero(eyebrow, h1, p, img, pos='50% 40%', btns=None):
     btns = btns or '<a class="btn" href="#book">Book a Consultation</a>'
@@ -132,7 +132,7 @@ def cta(h, p, b='Book Now'):
     return f'<section class="cta" id="book"><div class="wrap"><p class="eyebrow" style="color:inherit;opacity:.7">Rockefeller Center, New York</p><h2>{h}</h2><p>{p}</p><a class="btn" href="#book">{b}</a></div></section>'
 
 def page(fn, title, active, crumbs, body):
-    html = HEAD.format(title=title) + nav(active) + f'<main><div class="wrap crumbs"><a href="index.html">Home</a> / {crumbs}</div>' + body + '</main><footer>AURA Institute · Rockefeller Center, New York · Results vary by individual.</footer></body></html>'
+    html = HEAD.format(title=title) + nav(active) + f'<main><div class="wrap crumbs"><a href="index.html">Home</a> / {crumbs}</div>' + body + '</main><footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer></body></html>'
     open(f'{OUT}/{fn}','w').write(html)
 
 def faq(items):
@@ -161,9 +161,7 @@ page('special-offers.html','Special Offers · AURA Institute','special-offers.ht
  ('34% off','Glow Booster','Deep hydration and glow, delivered into the skin.','<s>$450</s><b>$299</b>'),
  ('60% off','EMFACE® · 1 Area','Needle-free lift in 20 minutes.','<s>$1,000</s><b>$399</b>'),
  ('27% off','EXOMIND™','A calm, non-invasive treatment for mood and focus.','<s>$550</s><b>$399</b>'),
- ('20% off','Gold RF Microneedling','Pores, texture and tone in one treatment.','<s>$999</s><b>$799</b>'),
- ('22% off','Regen Booster','Renewal and radiance for tired skin.','<s>$900</s><b>$699</b>'),
- ('17% off','Collagen Booster','Firmness and bounce, layer by layer.','<s>$1,200</s><b>$999</b>')])+'''</div><p class="note">First-visit prices apply once per client per treatment.</p></div></section>
+ ('20% off','Gold RF Microneedling','Pores, texture and tone in one treatment.','<s>$999</s><b>$799</b>')])+'''</div><p class="note">First-visit prices apply once per client per treatment.</p></div></section>
 <section class="alt"><div class="wrap split"><div class="head"><p class="eyebrow">Monthly Specials</p><h2>This month at <em>AURA</em></h2><p>A rotating offer on one treatment each month. Sign up to hear first.</p></div>
 <div class="card"><div class="bd"><span class="badge">Coming soon</span><h3>Monthly special to be announced</h3><p>The team will set one featured offer each month. This block shows the treatment, the offer, the dates and a Book button.</p></div></div></div></section>
 <section id="packages"><div class="wrap"><div class="head"><p class="eyebrow">Treatment Packages</p><h2>Save with a <em>series</em></h2><p>Results build over several sessions. Packages lock in your plan at a lower price per visit.</p></div>
@@ -185,8 +183,7 @@ page('face-contour.html','Face & Contour · AURA Institute','face-contour.html',
  cat('volume','Restore Volume','Bring back lost volume in the lips, cheeks, temples and under-eyes.',[
    P('Lip &amp; Face Filler','Hyaluronic acid filler for lips, cheeks, chin and under-eyes. Half syringe available.','30–45 min · 1–3 days swelling','<b>$850</b> · half $500','r-smooth.jpg','50% 35%'),
    P('RADIESSE®','Collagen-stimulating filler for structure and contour.','30–45 min','<b>$1,200</b>','r-lift.jpg','50% 45%'),
-   P('Sculptra®','Gradual collagen restoration for a fuller, firmer look.','30–45 min · series of 2–3','<b>$900</b>','r-tone.jpg','50% 35%'),
-   P('HArmonyCa™','Hybrid filler: instant lift plus collagen support.','30–45 min','<b>$1,200</b>','svc-lift.jpg','40% 30%')]) +
+   P('Sculptra®','Gradual collagen restoration for a fuller, firmer look.','30–45 min · series of 2–3','<b>$900</b>','r-tone.jpg','50% 35%')]) +
  cat('lift','Lift &amp; Tighten','Firmer skin and a lifted look, without surgery or downtime.',[
    P('EMFACE®','Needle-free lift for brows, cheeks and jawline.','20 min · no downtime · 1–4 areas','<s>$1,000</s><b>$399</b>','svc-lift.jpg','40% 30%','60% off','emface.html'),
    P('Thermage® FLX','Radiofrequency tightening for face and eyes.','Eyes 450 / Face 900 pulses','From <b>$1,999</b>','r-lift.jpg','50% 45%'),
@@ -205,9 +202,7 @@ page('skin-glow.html','Skin & Glow · AURA Institute','skin-glow.html','Skin &am
  subnav([('glow','Hydrate &amp; Glow'),('tone','Spots &amp; Redness'),('pores','Pores, Acne &amp; Scars'),('facials','Facials'),('sensitive','Sensitive Skin')]) +
  '<section style="padding-top:0"><div class="wrap">' +
  cat('glow','Hydrate &amp; Glow','Skin boosters that hydrate deeply and bring back a dewy glow.',[
-   P('Glow Booster','Hydration plus brightening, delivered into the skin.','30 min · series of 3 · 3 for $1,200','<s>$450</s><b>$299</b>','about.jpg','50% 25%','34% off','glow-booster.html'),
-   P('Collagen Booster','Firmness and bounce, layer by layer.','30 min','<s>$1,200</s><b>$999</b>','svc-laser.jpg','50% 30%','17% off'),
-   P('Regen Booster','Renewal and radiance for tired, thinning skin.','30 min','<s>$900</s><b>$699</b>','r-tone.jpg','50% 35%','22% off')]) +
+   P('Glow Booster','Hydration plus brightening, delivered into the skin.','30 min · series of 3 · 3 for $1,200','<s>$450</s><b>$299</b>','about.jpg','50% 25%','34% off','glow-booster.html')]) +
  cat('tone','Spots &amp; Redness','Even out sun spots, redness and dull tone.',[
    P('M22™ Photofacial','Intense pulsed light for spots, redness and uneven tone.','30 min · monthly series','<b>Consult</b>','r-care2.jpg','50% 55%')]) +
  cat('pores','Pores, Acne &amp; Scars','Refine pores and smooth acne scars and texture.',[

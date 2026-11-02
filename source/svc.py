@@ -8,7 +8,7 @@ open(OUT + '/svc.css', 'w').write(CSS)
 HEAD = gen.HEAD.replace('<link rel="stylesheet" href="site.css">', '<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="svc.css">')
 
 def page(fn, title, active, crumbs, body):
-    html = HEAD.format(title=title) + gen.nav(active) + f'<main><div class="wrap crumbs"><a href="index.html">Home</a> / {crumbs}</div>' + body + '</main><footer>AURA Institute · Rockefeller Center, New York · Results vary by individual.</footer></body></html>'
+    html = HEAD.format(title=title) + gen.nav(active) + f'<main><div class="wrap crumbs"><a href="index.html">Home</a> / {crumbs}</div>' + body + '</main><footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer></body></html>'
     open(f'{OUT}/{fn}', 'w').write(html)
 
 def sec(sid, eyebrow, h2, p, inner, alt=False):
@@ -219,16 +219,16 @@ service('glow-booster.html', 'skin-glow.html', '<a href="skin-glow.html">Skin &a
   [('Dullness', 'Brings back light reflection and radiance.', 'Brightening'), ('Dryness', 'Deep, lasting hydration from within.', 'Hyaluronic acid'), ('Fine lines', 'Plumps fine, dry lines around the eyes and cheeks.', 'Smoothing'), ('Uneven tone', 'Helps even out tone over a series.', 'Over 3 sessions')],
   ['Dull, tired-looking skin', 'Dry or dehydrated skin, especially in winter', 'Before a wedding or big event', 'Fine lines that come from dryness', 'Anyone who wants glow without volume']),
  ('Layered for <em>your</em> skin', 'Your Gold Skin Analysis tells us where your skin is dry, dull or sensitive.',
-  [('Analyze', 'We check hydration, tone and sensitivity first.'), ('Choose', 'Glow, Collagen or Regen Booster, depending on your goal.'), ('Map', 'Even droplets across the face, neck or hands.'), ('Repeat', 'A series of 3 builds results that last.')]),
- ('family', 'The Booster family', 'Three boosters, <em>three goals</em>', 'Not sure which one? Start with Glow. Your provider may recommend another.',
-  table(['', 'Glow Booster', 'Collagen Booster', 'Regen Booster'], [['Main goal', 'Hydration &amp; brightness', 'Firmness &amp; bounce', 'Renewal for tired, thinning skin'], ['Best for', 'Dull, dry skin', 'Early laxity, fine lines', 'Mature or stressed skin'], ['First visit', '$299', '$999', '$699'], ['Regular', '$450', '$1,200', '$900']])),
+  [('Analyze', 'We check hydration, tone and sensitivity first.'), ('Plan', 'We choose the areas and depth based on your analysis.'), ('Map', 'Even droplets across the face, neck or hands.'), ('Repeat', 'A series of 3 builds results that last.')]),
+ ('compare', 'Booster vs filler', 'Glow or <em>volume</em>?', 'Two different jobs. Your provider will recommend the right one, or both.',
+  table(['', 'Glow Booster', 'Filler'], [['Main goal', 'Hydration, glow and smoother texture', 'Volume, shape and contour'], ['Changes face shape', 'No', 'Yes'], ['How it works', 'Tiny droplets spread across the skin', 'Gel placed in specific areas'], ['Results', 'Build over a series of 3', 'Instant'], ['Best for', 'Dull, dry, tired-looking skin', 'Hollows, lips, cheeks, jawline']])),
  ('Your <em>timeline</em>', '', [('Day 0', 'Numbing cream, then 30 minutes of treatment. Small bumps are normal.'), ('Days 1–2', 'Bumps settle. Makeup the next day.'), ('Weeks 1–2', 'Skin looks plumper and more radiant.'), ('Session 2–3', 'Results build and last longer with each session.')]),
  ('Clear <em>pricing</em>', '', ['Option', 'Sessions', 'Price', 'Per session'], [['First visit', '1', '$299', '$299'], ['Single session', '1', '$450', '$450'], ['Series', '3', '$1,200', '$400']], 2),
  ['Radiance and hydration, after a series of 3', 'Fine lines under the eyes, after a series of 3', 'Dull tone, 2 weeks after one session'],
  [('HydraFacial® Platinum', 'Adds lymphatic drainage and boosters.', '75 min', '<b>$329</b>', 'about.jpg', '50% 25%'),
   ('M22™ Photofacial', 'Intense pulsed light for spots and redness.', '30 min', '<b>Consult</b>', 'r-care2.jpg', '50% 55%'),
   ('Botox® &amp; Xeomin®', 'Softens expression lines.', '10–20 min', 'From <b>$10</b>/unit', 'r-texture.jpg', '50% 40%', '', 'botox-xeomin.html')],
- [('Does it hurt?', 'We apply numbing cream first. Most clients feel light pressure.'), ('Will it change my face shape?', 'No. Boosters add hydration and glow, not volume.'), ('How long does it last?', 'After a series of 3, most clients maintain with one session every 2–3 months.'), ('Can I wear makeup?', 'Wait until the next day.'), ('Is it included in membership?', 'Glow Girl members receive a Glow Booster or IPL Photofacial every 3 months.')],
+ [('Does it hurt?', 'We apply numbing cream first. Most clients feel light pressure.'), ('Will it change my face shape?', 'No. Boosters add hydration and glow, not volume.'), ('How long does it last?', 'After a series of 3, most clients maintain with one session every 2–3 months.'), ('Can I wear makeup?', 'Wait until the next day.'), ('Is it included in membership?', 'AURA Prime members receive a BBL™ or Rejuran® session every 3 months.')],
  ('Your glow, <em>booked</em>', 'Start with a free skin analysis. Your provider will recommend the right booster for you.', 'Book Now'))
 
 # ---------------- 4 BODY SCULPT (Body Shape) ----------------
@@ -274,9 +274,9 @@ service('nad-iv.html', 'wellness.html', '<a href="wellness.html">Wellness</a> / 
  ('Clear <em>pricing</em>', '', ['Dose', 'Single', '6 drips', 'Per drip'], [['250 mg', '$400', '$1,999', '$333'], ['500 mg', '$750', '$3,750', '$625']], 2),
  ['Client stories (text only, no medical claims)', 'Lounge experience', 'Member routine'],
  [('EXOMIND™', 'A calm, non-invasive session for mood.', '30 min', '<s>$550</s><b>$399</b>', 'svc-laser.jpg', '50% 30%', '27% off'),
-  ('Glow Girl Membership', '50 Wellness Credits every month.', 'Monthly', '<b>$299</b>/mo', 's-inject.jpg', '45% 40%', '', 'glow-girl.html'),
+  ('AURA Prime', '50 Wellness Credits every month.', 'Monthly', '', 's-inject.jpg', '45% 40%', '', 'aura-prime.html'),
   ('Glow Booster', 'Hydration plus brightening.', '30 min', '<s>$450</s><b>$299</b>', 'about.jpg', '50% 25%', '34% off', 'glow-booster.html')],
- [('Who administers the drip?', 'A licensed nurse, under provider supervision.'), ('Does it feel uncomfortable?', 'Some clients feel warmth or pressure. We slow the drip so you stay comfortable.'), ('Is it covered by insurance?', 'No. NAD+ IV is a wellness service.'), ('Can I use Wellness Credits?', 'Yes. 500 Glow Girl credits = 1 NAD+ drip.')],
+ [('Who administers the drip?', 'A licensed nurse, under provider supervision.'), ('Does it feel uncomfortable?', 'Some clients feel warmth or pressure. We slow the drip so you stay comfortable.'), ('Is it covered by insurance?', 'No. NAD+ IV is a wellness service.'), ('Can I use Wellness Credits?', 'Yes. 500 AURA Prime Wellness Credits = 1 NAD+ drip.')],
  ('Book your <em>reset</em>', 'Your first visit includes a health screening.', 'Book Now'))
 
 # ---------------- 6 GLOW GIRL MEMBERSHIP (Membership) ----------------
@@ -337,7 +337,7 @@ page('journal-botox-vs-xeomin.html', 'Botox vs Xeomin · AURA Journal', 'journal
 s = open(OUT + '/index.html').read()
 add = ''.join(f'<a class="card" href="{h}"><div class="bd"><span class="lv">Level 2 · service page</span><h3>{t}</h3><ul><li>{n}</li></ul></div></a>' for h, t, n in [
  ('gold-skin-analysis.html', 'Gold Skin Analysis', 'Special Offers'), ('botox-xeomin.html', 'Botox® &amp; Xeomin®', 'Face &amp; Contour'), ('glow-booster.html', 'Glow Booster', 'Skin &amp; Glow'), ('body-sculpt.html', 'Body Sculpt', 'Body Shape'),
- ('nad-iv.html', 'NAD+ IV Drip', 'Wellness'), ('glow-girl.html', 'Glow Girl Membership', 'Membership'), ('our-story.html', 'Our Story', 'About'), ('journal-botox-vs-xeomin.html', 'Journal article', 'Journal &amp; FAQ')])
+ ('nad-iv.html', 'NAD+ IV Drip', 'Wellness'), ('aura-prime.html', 'AURA Prime', 'Membership'), ('our-story.html', 'Our Story', 'About'), ('journal-botox-vs-xeomin.html', 'Journal article', 'Journal &amp; FAQ')])
 if 'gold-skin-analysis.html' not in s:
     s = s.replace('</div>\n</div></section>\n</main>', add + '</div>\n</div></section>\n</main>')
     open(OUT + '/index.html', 'w').write(s)

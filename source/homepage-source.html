@@ -1,5 +1,3 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AURA Institute Homepage</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,6 +112,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .fx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s ease}
 .fx::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,14,11,0) 45%,rgba(20,14,11,.6) 100%);transition:background .45s ease}
 .fx .ttl{position:absolute;left:16px;right:16px;bottom:22px;font-size:clamp(22px,2.1vw,30px);font-weight:500;letter-spacing:-.01em;line-height:1.1;transition:opacity .35s ease,transform .45s ease}
+.fx .ttl .fcat{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.85;margin-bottom:6px}
 .fx .list{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.1vw,14px);padding:20px;list-style:none;margin:0;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .45s ease}
 .fx .list li{font-size:clamp(12px,.95vw,14px);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 @media (hover:hover){
@@ -294,20 +293,30 @@ em.s{font-family:var(--serif);font-style:italic}
 .done h3{font-family:var(--serif);font-size:36px}
 .done p{margin:0;color:var(--muted)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.exp{background:var(--bg);color:var(--fg);padding:110px 0 100px}
+.exp .in{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.exp .in{padding-left:48px;padding-right:48px}}
+.exp .head{text-align:center;max-width:640px;margin:0 auto 48px}.exp .head .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.exp h2{font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);font-weight:400;margin:0 0 12px}.exp .note{margin:0;padding:0;background:none;border-radius:0;color:var(--muted);font-size:16px}
+.steps5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+@media(max-width:980px){.steps5{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.steps5{grid-template-columns:1fr}}
+.steps5 li{border-top:1px solid var(--fg);padding-top:18px}.steps5 i{font-style:normal;font-family:var(--serif);font-size:34px;line-height:1;color:var(--muted)}
+.steps5 h3{font-size:17px;font-weight:500;letter-spacing:.04em;margin:14px 0 8px}.steps5 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.expcta{text-align:center;margin-top:52px}
 </style>
-</head><body>
+
 <header id="nav">
   <div class="brandrow"><div class="wrap">
     <a class="logo" href="#top" aria-label="AURA Institute home">aura<span>Institute</span></a>
     <div class="hr">
       <div class="r1"><span class="phone">Rockefeller Center: (212) [XXX-XXXX] · Text us anytime</span>
         <form class="hsearch" role="search" onsubmit="event.preventDefault()"><input id="q" type="search" placeholder="Search treatments" aria-label="Search treatments"><button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button></form></div>
-      <p class="tagline">Natural results, designed for you — medical aesthetics at Rockefeller Center.</p>
+      <p class="tagline">Look better. Feel more confident. Medical aesthetics and wellness at Rockefeller Center.</p>
       <div class="acts"><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Shopping Cart</span><i class="cnt">0</i></a><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg><span>My Wish List</span><i class="cnt">0</i></a><a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Sign In or Create an Account</span></a><button class="btn" type="button" data-book>Book Now</button></div>
     </div>
   </div></div>
 </header>
-<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag sale">Sale</span><a href="#">Special Offers</a><div class="mega"><div class="cols"><div class="grp"><h5>New Client Offers</h5><a href="#">Gold Skin Analysis · Free</a><a href="#">EMFACE® · $399 <span class="s">60% off</span></a><a href="#">Glow Booster · $299</a><a href="#">Collagen Lift · $199</a><a href="#">Gold RF Microneedling · $799</a><a href="#">EXOMIND™ · $399</a></div><div class="grp"><h5>Monthly Specials</h5><a href="#">This month’s offer</a></div><div class="grp"><h5>Treatment Packages</h5><a href="#">Facial packages</a><a href="#">Glow Booster × 3</a><a href="#">EMFACE® × 4</a><a href="#">NAD+ × 6</a></div><div class="grp"><h5>Gift Cards</h5><a href="#">Buy a gift card</a></div><div class="promo"><b>First visit, 60% off EMFACE®</b><span>Needle-free lift in 20 minutes. $1,000 → $399.</span><a href="#" data-book>Book Now</a></div></div></div></li><li><a href="#">Face &amp; Contour</a><div class="mega"><div class="cols"><div class="grp"><h5>Smooth Lines</h5><a href="#">Botox® &amp; Xeomin®</a><a href="#">Jaw Slimming</a><a href="#">Trap Tox · Shoulder Line</a></div><div class="grp"><h5>Restore Volume</h5><a href="#">Lip &amp; Face Filler</a><a href="#">RADIESSE®</a><a href="#">Sculptra®</a><a href="#">HArmonyCa™</a></div><div class="grp"><h5>Lift &amp; Tighten</h5><a href="#">EMFACE® <span class="s">Sale</span></a><a href="#">Thermage® FLX</a><a href="#">Collagen Lift <span class="s">Sale</span></a></div><div class="grp"><h5>V-Line Contour</h5><a href="#">V-Line Injection</a><a href="#">Jaw Slimming</a><a href="#">RADIESSE® Jawline</a></div><div class="grp"><h5>Face Design</h5><a href="#">Face Design Consultation · Free</a><a href="#">Signature Face Plan</a></div></div></div></li><li><a href="#">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Hydrate &amp; Glow</h5><a href="#">Glow Booster <span class="s">Sale</span></a><a href="#">Collagen Booster</a><a href="#">Regen Booster</a></div><div class="grp"><h5>Spots &amp; Redness</h5><a href="#">M22™ Photofacial</a><a href="#">Glow Booster</a></div><div class="grp"><h5>Pores, Acne &amp; Scars</h5><a href="#">Gold RF Microneedling <span class="s">Sale</span></a><a href="#">M22™ Photofacial</a></div><div class="grp"><h5>Facials</h5><a href="#">HydraFacial® Deluxe</a><a href="#">HydraFacial® Platinum</a><a href="#">Signature Facial</a><a href="#">Barrier Recovery Facial</a></div><div class="grp"><h5>Sensitive Skin</h5><a href="#">Barrier Recovery Facial</a><a href="#">Gold Skin Analysis · Free</a></div></div></div></li><li><a href="#">Body Shape</a><div class="mega small"><a href="#">Body Sculpt</a><a href="#">Stretch Mark Repair</a><a href="#">Trap Tox · Shoulder Line</a><a href="#">Neck &amp; Jawline Sculpt</a></div></li><li><span class="tag new">New</span><a href="#">Wellness</a><div class="mega small"><a href="#">NAD+ IV Drip</a><a href="#">EXOMIND™ <span class="s">Sale</span></a></div></li><li><a href="#">Membership</a><div class="mega small"><a href="#">Glow Girl Membership · $299/mo</a><a href="#">Aura VIP Gold</a><a href="#">Aura VIP Black</a></div></li><li><a href="#">About</a><div class="mega small"><a href="#">Our Story</a><a href="#">Our Approach</a><a href="#">Our Providers</a><a href="#">The Clinic</a><a href="#">Reviews</a></div></li><li><a href="#">Journal &amp; FAQ</a><div class="mega small"><a href="#">Skin Education</a><a href="#">Treatment Guides</a><a href="#">Myths &amp; Facts</a><a href="#">FAQ</a><a href="#">Contact &amp; Visit</a></div></li></ul></div></nav>
+<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag new">Signature</span><a href="#">Face Design</a><div class="mega"><div class="cols"><div class="grp"><h5>Lift &amp; Tighten</h5><a href="#">Thermage® FLX</a><a href="#">EMFACE®</a><a href="#">Exion™ Collagen Lift</a></div><div class="grp"><h5>Restore &amp; Fill</h5><a href="#">Chin &amp; Lower Face Balance</a><a href="#">Defined Jawline</a><a href="#">Under-Eye Hollows</a><a href="#">Temples</a><a href="#">Lip Volume &amp; Shape</a><a href="#">Nose Profile</a><a href="#">Sculptra®</a><a href="#">RADIESSE®</a></div><div class="grp"><h5>Smooth &amp; Relax</h5><a href="#">Botox® &amp; Xeomin®</a><a href="#">Brow Lift</a></div><div class="grp"><h5>V-Line &amp; Contour</h5><a href="#">Masseter · Jaw Slimming</a><a href="#">Double Chin · KYBELLA®</a><a href="#">Facial Harmonization</a><a href="#">Lower Face Tightening + Lift</a></div><div class="promo"><b>Not a new face. A better version of you.</b><span>Natural beauty, refined around your own features.</span><a href="#" data-book>Book a Consultation</a></div></div></div></li><li><a href="#">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Start Here</h5><a href="#">Gold Skin Analysis</a></div><div class="grp"><h5>Deep Cleanse</h5><a href="#">HydraFacial®</a><a href="#">Signature Facial</a><a href="#">Barrier Recovery Facial</a></div><div class="grp"><h5>Brighten &amp; Texture</h5><a href="#">BBL™ Photofacial</a><a href="#">Gold RF Microneedling</a></div><div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="#">Face Hydration · Rejuran®</a><a href="#">Long-Lasting Glow · SKINVIVE™</a><a href="#">Under-Eye Brightening · PRP / PRF</a></div><div class="grp"><h5>Neck &amp; Scalp</h5><a href="#">Neck Hydration</a><a href="#">Tech Neck · Levels 1–4</a><a href="#">Scalp &amp; Hair Restoration</a></div></div></div></li><li><span class="tag new">New</span><a href="#">Wellness &amp; Longevity</a><div class="mega small"><a href="#">NAD+ IV Drip</a><a href="#">EXOMIND™ · Sleep, mood &amp; focus</a><a href="#">More coming soon</a></div></li><li><a href="#">Body</a><div class="mega small"><a href="#">Body Sculpt · Abdomen</a><a href="#">Fat Dissolving · Body</a><a href="#">Trap Tox · Shoulder Line</a><a href="#">Stretch Mark Repair</a></div></li><li><a href="#">Membership</a><div class="mega small"><a href="#">AURA Prime</a></div></li><li><a href="#">About</a><div class="mega small"><a href="#">The AURA Aesthetic</a><a href="#">Our Team</a><a href="#">The Clinic</a><a href="#">Journal &amp; FAQ</a></div></li></ul></div></nav>
 
 <main id="top">
   <!-- SECTION 1 · HERO -->
@@ -316,9 +325,9 @@ em.s{font-family:var(--serif);font-style:italic}
     <script>(function(){var v=document.getElementById('heroVideo');v.poster='poster-aura3.jpg';v.src='hero-aura3.mp4';v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();</script>
     <div class="center">
       <p class="eyebrow">Rockefeller Center · New York</p>
-      <h1>Glow from <em class="s">every angle.</em></h1>
-      <p>Medical aesthetics, body sculpting and wellness at Rockefeller Center.</p>
-      <button class="btn" type="button" data-book>Book Now</button>
+      <h1>Feel beautiful. <em class="s">See your light.</em></h1>
+      <p>Medical aesthetics and wellness at Rockefeller Center. Designed for your whole face, and for how you feel.</p>
+      <button class="btn" type="button" data-book>Book a Consultation</button>
     </div>
     <div class="scrollcue">Scroll</div>
   </section>
@@ -334,28 +343,28 @@ em.s{font-family:var(--serif);font-style:italic}
   </section>
 
   <!-- FEATURED: 1 large + 2 small -->
-  <section class="feat" id="featured" aria-label="Featured treatments">
+  <section class="feat" id="featured" aria-label="Natural beauty, refined">
     <div class="in">
-      <h2>Featured <em class="s">this season</em></h2>
+      <h2>Natural beauty, <em class="s">refined</em></h2>
       <article class="frow-hero">
-        <div class="ph"><img src="svc-lift.jpg" alt="Woman with a lifted, defined jawline"></div>
-        <div class="ftx"><h3>EMFACE®</h3><span class="rule"></span>
-          <p class="sub">Needle-free lifting for brows, cheeks and jawline in just 20 minutes.</p>
-          <div class="deal"><span class="off">60% OFF</span><s>$1,000</s><b>$399</b></div>
-          <button class="btn" type="button" data-feat="EMFACE® · 1 Area|tighten">Book Now</button></div>
+        <div class="ph"><img src="s-inject.jpg" alt="Portrait showing balanced facial proportions" style="object-position:45% 40%"></div>
+        <div class="ftx"><h3>Face Design</h3><span class="rule"></span>
+          <p class="sub"><b>We don’t change your face.</b> We keep your natural beauty and bring out a better version of you, with results that still look like yourself.</p>
+          <p class="sub" style="opacity:.7">[An Eastern-trained eye for balance, with lead injector Star. Case studies to come.]</p>
+          <button class="btn" type="button" data-feat="Complimentary Consultation|balance">Book a Consultation</button></div>
       </article>
       <article class="frow-a">
-        <div class="ph"><img src="r-lift.jpg" alt="Close-up of a firm, defined jawline" style="object-position:50% 45%"></div>
-        <div class="ftx"><h3>Thermage® FLX</h3>
-          <p class="sub">Radiofrequency skin tightening for face and eyes, with no downtime.</p>
-          <a class="more" href="#" data-learn="tighten">Learn More</a></div>
+        <div class="ph"><img src="svc-skin.jpg" alt="Calm, private treatment lounge" style="object-position:50% 40%"></div>
+        <div class="ftx"><h3>Wellness &amp; Longevity</h3>
+          <p class="sub">Beauty that starts from within. Feel rested, clear and more like yourself, with NAD+ for energy and EXOMIND™ for sleep and focus.</p>
+          <a class="more" href="#" data-learn="bodywell">Learn More</a></div>
       </article>
       <article class="frow-b">
         <div class="small">
-          <div class="ph"><img src="svc-laser.jpg" alt="Soft portrait with a peach rose" style="object-position:50% 30%"></div>
-          <div class="ftx"><h3>Glow Boosters</h3>
-            <p class="sub">Collagen and hydration delivered deep into the skin for a lasting glow.</p>
-            <a class="more" href="#" data-learn="glow">Learn More</a></div>
+          <div class="ph"><img src="svc-lift.jpg" alt="Woman with a lifted, defined jawline" style="object-position:40% 30%"></div>
+          <div class="ftx"><h3>EMFACE®</h3>
+            <p class="sub">A natural, needle-free lift for brows, cheeks and jawline. Still you, just more lifted.</p>
+            <a class="more" href="#" data-learn="lift">Learn More</a></div>
         </div>
         <div class="ph big"><img src="about.jpg" alt="Woman with dewy, glowing skin" style="object-position:50% 25%"></div>
       </article>
@@ -367,8 +376,8 @@ em.s{font-family:var(--serif);font-style:italic}
     <div class="about-in">
       <div class="copy">
         <h2>Who we <em>are</em></h2>
-        <h3>The <em>science</em> of glowing skin</h3>
-        <p>AURA Institute brings medical aesthetics and wellness together at Rockefeller Center. We pair FDA-cleared technology from Lumenis, Solta Medical, Candela and BTL with provider-led care, so every plan is tailored to your skin, your tone and your goals. Our promise is simple: natural-looking results and an experience that is personal, precise and calm.</p>
+        <h3>Become the best version of <em>yourself.</em></h3>
+        <p>We don’t design you to look like someone else. AURA is about looking like yourself on your best day, and the confidence you carry when you walk out the door. We bring medical aesthetics and wellness together at Rockefeller Center, with a refined eye for proportion and a plan designed around your whole face, your skin and how you want to feel. Every treatment is performed by a licensed professional, with authentic products from authorized suppliers.</p>
         <a class="more" href="#services">Discover More</a>
       </div>
       <div class="pair"><img src="about-reception.jpg" alt="AURA Institute reception with pendant lights and a curved front desk"></div>
@@ -376,10 +385,11 @@ em.s{font-family:var(--serif);font-style:italic}
   </section>
 
   <!-- SECTION 4 · OUR SERVICES -->
-  <section class="services" id="services">
+  <section class="exp" id="experience" aria-label="The AURA Experience">
     <div class="in">
-      <div class="head"><h2>Memberships <em class="s">&amp; Offers</em></h2><p class="note">Prices subject to change. Results vary.</p></div>
-      <div class="row-scroll"><div class="row" id="svcRow"></div></div>
+      <div class="head"><p class="eyebrow">Your first visit</p><h2>The AURA <em class="s">Experience</em></h2><p class="note">From your first conversation to your follow-up, every step is about you.</p></div>
+      <ol class="steps5"><li><i>01</i><h3>Consultation</h3><p>Tell us what you’d like to change, and what you want to keep. Complimentary, with no pressure to book.</p></li><li><i>02</i><h3>Face Mapping</h3><p>A full-face assessment and Gold Skin Analysis, looking at proportion, skin and how your face moves.</p></li><li><i>03</i><h3>Your Plan</h3><p>A written plan with options and timing, designed around your features and your schedule.</p></li><li><i>04</i><h3>Treatment</h3><p>Performed by a licensed professional in a private suite, with care to keep your results natural.</p></li><li><i>05</i><h3>Follow-Up</h3><p>A check-in after your treatment to make sure you love your results, and a plan for what comes next.</p></li></ol>
+      <div class="expcta"><button class="btn btn-solid" type="button" data-book>Book a Consultation</button></div>
     </div>
   </section>
 </main>
@@ -389,17 +399,17 @@ em.s{font-family:var(--serif);font-style:italic}
     <div class="top">
       <div class="brand">
         <a class="logo" href="#top" aria-label="AURA Institute home">aura<span>Institute</span></a>
-        <p>Glow from every angle.</p>
+        <p>Feel beautiful. See your light.</p>
         <button class="btn" type="button" data-book>Book Now</button>
       </div>
       <div>
         <h4>Visit</h4>
         <ul>
           <li>AURA Institute</li>
-          <li>[Street Address], Suite [###]</li>
+          <li>630 Fifth Avenue, Suite 1812</li>
           <li>Rockefeller Center</li>
-          <li>New York, NY 10020</li>
-          <li><a href="https://maps.google.com/?q=Rockefeller+Center+New+York" target="_blank" rel="noopener">Get Directions</a></li>
+          <li>New York, NY 10111</li>
+          <li><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">Get Directions</a></li>
         </ul>
       </div>
       <div>
@@ -443,80 +453,68 @@ em.s{font-family:var(--serif);font-style:italic}
 <script>
 /* ---------- treatment menu (from the AURA Institute brochure) ---------- */
 const C = "Consult";
+const P="Planned at consult";
 const SERIES = [
- {id:"first", n:"01", name:"First Visit Offers", tag:"New to AURA", img:"s-skin2.jpg", pos:"55% 40%",
-  intro:"Start with a complimentary Gold Skin Analysis, then try a signature treatment at a first-visit price.",
-  items:[
-   ["Gold Skin Analysis","In-depth skin assessment with a provider","Complimentary"],
-   ["Collagen Lift · Cheeks","First visit (reg. $300)","$199"],
-   ["Glow Booster","First visit (reg. $450)","$299"],
-   ["EMFACE® · 1 Area","First visit (reg. $1,000)","$399"],
-   ["EXOMIND™","First visit (reg. $550)","$399"],
-   ["Gold RF Microneedling","First visit (reg. $999)","$799"]]},
- {id:"packages", n:"02", name:"Treatment Packages", tag:"Save with a series", img:"s-laser.jpg", pos:"25% 50%",
-  intro:"Results build over a series. Packages lock in your plan at a lower price per session.",
-  items:[
-   ["HydraFacial® Deluxe · 4 Sessions","Monthly deep cleanse & hydration","$980"],
-   ["Gold RF Microneedling · 3 Sessions","Pores, texture & tone","$2,699"],
-   ["EMFACE® 1 Area · 4 Sessions","Lift & tone, 20 min each","$3,200"],
-   ["Collagen Lift · Any 3 Areas · 4 Sessions","Cheeks, eyes, neck or forehead","$2,699"],
-   ["NAD+ 250mg · 6 Sessions","Energy & recovery","$1,999"],
-   ["EXOMIND™ · 6 Sessions","Mood & mental wellness","$3,000"]]},
- {id:"glowgirl", n:"03", name:"Glow Girl Membership", tag:"$299 / month", img:"s-inject.jpg", pos:"45% 40%",
-  intro:"A steady, never-overdone rhythm for your skin. Make glowing a monthly habit.",
-  perks:["1 facial every month: HydraFacial®, Barrier Recovery Facial or Signature Facial","Every 3 months: 1 IPL Photofacial or Glow Booster","50 Wellness Credits each month · 500 credits = 1 NAD+ treatment"],
-  rules:"3-month minimum. Quarterly perk unlocks after 3 consecutive months. Monthly facial must be used that month. Credits roll over. Cancel with 30 days’ notice.",
-  items:[["Join Glow Girl Membership","3-month minimum · billed monthly","$299 / mo"]]},
- {id:"vip", n:"04", name:"Aura VIP", tag:"Gold & Black", img:"s-body.jpg", pos:"45% 50%",
-  intro:"Prepaid membership with bonus credit and year-round perks.",
-  perks:["Aura Gold · $5,000: +$800 Aura Credit, 1 facial each quarter, unlimited Gold Skin Analysis, $100 birthday credit, share credit with 1 friend, priority event access","Aura Black · $10,000: +$1,500 Aura Credit, 2 facials each quarter, unlimited Gold Skin Analysis, quarterly anti-aging plan consultation, $300 birthday credit, share credit with 2 friends, first invitations to private events"],
-  items:[["Aura Gold","Includes $800 bonus credit","$5,000"],["Aura Black","Includes $1,500 bonus credit","$10,000"]]}
+ {id:"face", n:"01", name:"Face Design", tag:"Lift · Restore · Refine", img:"s-inject.jpg", pos:"45% 40%",
+  intro:"Natural facial balancing, planned around your own features. We keep what makes you, you.",
+  items:[["Thermage® FLX","Radiofrequency tightening",P],["EMFACE®","Needle-free lift",P],["Exion™ Collagen Lift","Collagen boost by area",P],["Facial Balancing","Chin, jawline, under-eyes, temples, lips, nose",P],["Botox® & Xeomin®","Smooth expression lines",P],["V-Line & Contour","Jaw slimming & double chin",P]]},
+ {id:"skinsvc", n:"02", name:"Skin &amp; Glow", tag:"Cleanse · Brighten · Hydrate", img:"s-skin2.jpg", pos:"55% 40%",
+  intro:"Clear, bright, hydrated skin, from face to neck to scalp.",
+  items:[["Gold Skin Analysis","Know your skin first","Complimentary"],["HydraFacial®","Deep cleanse & hydration",P],["BBL™ Photofacial","Sun spots & redness",P],["Gold RF Microneedling","Pores & texture",P],["Face Hydration · Rejuran®","Hydration & glow",P],["Tech Neck · Levels 1–4","Neck lines",P]]},
+ {id:"wellsvc", n:"03", name:"Wellness &amp; Longevity", tag:"Energy · Sleep · Focus", img:"s-laser.jpg", pos:"25% 50%",
+  intro:"Beauty that starts from within.",
+  items:[["NAD+ IV Drip","Energy & recovery",P],["EXOMIND™","Sleep, mood & focus",P]]},
+ {id:"bodysvc", n:"04", name:"Body", tag:"Contour · Shoulder line", img:"s-body.jpg", pos:"45% 50%",
+  intro:"Contour, smooth and refine, planned around proportion.",
+  items:[["Body Sculpt · Abdomen","Non-invasive fat reduction",P],["Trap Tox · Shoulder Line","A longer, softer neckline",P],["Stretch Mark Repair","Microneedling + collagen",P]]}
 ];
 const RESULTS=[
- {id:"wrinkle",show:["Botox® &amp; Xeomin®","Jaw Slimming","Trap Tox"],name:"Wrinkle Relaxers",img:"r-texture.jpg",pos:"50% 40%",items:[
-   ["Botox®","Forehead lines, frown lines & crow’s feet","$12 / unit"],
-   ["Xeomin®","Smooths expression lines","$10 / unit"]]},
- {id:"fillers",show:["Lip & Face Filler","RADIESSE®","HArmonyCa™","Sculptra®"],name:"Fillers",img:"r-smooth.jpg",pos:"50% 35%",items:[
-   ["Lip & Face Filler","Lips, cheeks, chin & under-eyes · half syringe $500","$850"],
-   ["RADIESSE®","Collagen-stimulating filler for contour","$1,200"],
-   ["HArmonyCa™","Hybrid filler for lift and collagen","$1,200"],
-   ["Sculptra® Aesthetic","Gradual collagen restoration","$900"]]},
- {id:"glow",show:["Glow Booster","Regen Booster","Collagen Booster","M22™ Photofacial","Gold RF Microneedling"],name:"Glow Treatments",img:"r-tone.jpg",pos:"50% 40%",items:[
-   ["Glow Booster","Deep hydration & glow · first visit $299","$450"],
-   ["Regen Booster","Renewal & radiance · first visit $699","$900"],
-   ["Collagen Booster","Firmness & bounce · first visit $999","$1,200"],
-   ["M22™ Photofacial","Sun spots, redness & dull tone","Consult"],
-   ["Gold RF Microneedling","Pores, texture & tone · first visit $799 · 3 for $2,699","$999"]]},
- {id:"tighten",show:["Thermage® FLX","EMFACE®","Collagen Lift","V-Line Injection"],name:"Skin Tightening",img:"r-lift.jpg",pos:"50% 45%",items:[
-   ["Thermage® FLX · Eyes","450 pulses · no downtime","$1,999"],
-   ["Thermage® FLX · Full Face","900 pulses · no downtime","$2,199"],
-   ["EMFACE® · 1 Area","20 min · first visit $399 · 4 for $3,200","$1,000"],
-   ["EMFACE® · 2 Areas","First visit $599 · 4 for $4,000","$1,250"],
-   ["EMFACE® · 3 Areas","First visit $799 · 4 for $4,800","$1,500"],
-   ["EMFACE® · 4 Areas","First visit $999 · 4 for $5,600","$1,750"],
-   ["Collagen Lift · Cheeks","First visit $199 · 4 for $999","$300"],
-   ["Collagen Lift · Eyes","4 for $999","$300"],
-   ["Collagen Lift · Neck","4 for $699","$200"],
-   ["Collagen Lift · Forehead","4 for $699","$200"],
-   ["Collagen Lift · Any 3 Areas","4 for $2,699","$800"],
-   ["V-Line Injection · One Side","Slims and defines one area","$350"],
-   ["V-Line Injection · Both Sides","Slimmer, more defined lower face","$700"],
-   ["V-Line Injection + Lift","Both sides, plus lifting","$900"]]},
- {id:"facials",show:["HydraFacial® Deluxe","HydraFacial® Platinum","Signature Facial","Barrier Recovery Facial"],name:"Facials",img:"r-care2.jpg",pos:"50% 55%",items:[
-   ["HydraFacial® Deluxe","Cleanse, extract & hydrate · 4 for $980","$285"],
-   ["HydraFacial® Platinum","Adds lymphatic drainage · 4 for $1,199","$329"],
-   ["Signature Facial","Relaxing, restorative facial · 4 for $819","$229"],
-   ["Barrier Recovery Facial","Barrier repair for sensitive skin · 4 for $819","$229"]]},
- {id:"body",show:["Body Sculpt","NAD+ IV Drip","EXOMIND™"],name:"Body & Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
-   ["Body Sculpt · Abdomen","Fat-reduction device · 4 for $999","$300"],
-   ["NAD+ 250mg","Energy & recovery · 6 for $1,999","$400"],
-   ["NAD+ 500mg","Energy & recovery · 6 for $3,750","$750"],
-   ["EXOMIND™","Mood & mental wellness · first visit $399 · 6 for $3,000","$550"]]}
+ {id:"lift",cat:"Face Design",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Lift &amp; Anti-Aging",img:"r-lift.jpg",pos:"50% 45%",items:[
+   ["Thermage® FLX","Eyes 450 or full face 900 pulses",P],
+   ["EMFACE®","Needle-free lift · 1–4 areas",P],
+   ["Exion™ Collagen Lift","Cheeks, eyes, neck, forehead or any 3",P]]},
+ {id:"balance",cat:"Face Design",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"r-smooth.jpg",pos:"50% 35%",items:[
+   ["Chin & Lower Face Balance","Chin projection and profile",P],
+   ["Defined Jawline","HA filler or RADIESSE®",P],
+   ["Under-Eye Hollows","A more rested look",P],
+   ["Temples","Soft fullness for the upper face",P],
+   ["Lip Volume & Shape","Designed to your natural proportions",P],
+   ["Nose Profile","Non-surgical refinement",P],
+   ["Sculptra®","Gradual collagen restoration",P],
+   ["RADIESSE®","Structure for jaw, cheekbones & hands",P]]},
+ {id:"smooth",cat:"Face Design",show:["Botox® &amp; Xeomin®","Brow Lift","Jaw Slimming","Double Chin"],name:"Smooth &amp; Contour",img:"r-texture.jpg",pos:"50% 40%",items:[
+   ["Botox® & Xeomin®","Forehead lines, frown lines & crow’s feet",P],
+   ["Brow Lift","A more open, rested eye",P],
+   ["Masseter · Jaw Slimming","Jaw tension, clenching & a softer lower face",P],
+   ["Double Chin · KYBELLA®","Reduces fat under the chin",P],
+   ["Facial Harmonization","Balances one side of the face",P],
+   ["Lower Face Tightening + Lift","Both sides, slimmer & lifted",P]]},
+ {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-care2.jpg",pos:"50% 55%",items:[
+   ["Gold Skin Analysis","Know your skin first · 20 min","Complimentary"],
+   ["HydraFacial®","Deluxe 60 min or Platinum 75 min",P],
+   ["Signature Facial","Relaxing spa facial · 60 min",P],
+   ["Barrier Recovery Facial","Calms sensitive skin · 60 min",P],
+   ["Gold RF Microneedling","mFace · pores, acne scars & texture",P]]},
+ {id:"glow",cat:"Skin &amp; Glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Brighten &amp; Hydrate",img:"r-tone.jpg",pos:"50% 40%",items:[
+   ["BBL™ Photofacial","Sun spots, redness & uneven tone",P],
+   ["Face Hydration · Rejuran®","Hydration, texture & glow",P],
+   ["Long-Lasting Glow · SKINVIVE™","Cheek smoothness · about 6 months",P],
+   ["Under-Eye Brightening · PRP / PRF","Refreshes tired under-eyes",P],
+   ["Neck Hydration","Crepey, dry neck skin",P],
+   ["Tech Neck · Levels 1–4","Matched to your neck lines",P],
+   ["Scalp & Hair Restoration","Hydration or PRP",P]]},
+ {id:"bodywell",cat:"Body &amp; Wellness",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
+   ["Body Sculpt · Abdomen","Non-invasive fat reduction · 30 min",P],
+   ["Fat Dissolving · Body","One area per session",P],
+   ["Trap Tox · Shoulder Line","Longer neck & softer shoulders",P],
+   ["Stretch Mark Repair","Microneedling + collagen",P],
+   ["NAD+ IV Drip","250 mg or 500 mg · after screening",P],
+   ["EXOMIND™","Sleep, mood & focus · 30 min",P]]}
 ];
 document.getElementById('fxGrid').innerHTML=RESULTS.map(r=>`
   <button type="button" class="fx" data-result="${r.id}" aria-label="${r.name}: see treatments and book">
     <img src="${r.img}" alt="" style="object-position:${r.pos}">
-    <span class="ttl">${r.name}</span>
+    <span class="ttl"><small class="fcat">${r.cat}</small>${r.name}</span>
     <ul class="list" aria-hidden="true">${r.show.map(t=>`<li>${t}</li>`).join('')}</ul>
   </button>`).join('');
 document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.closest('.fx'); if(b) openBook(null,null,b.dataset.result);});
@@ -525,15 +523,17 @@ document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.
 (function(){const fab=document.querySelector('.fab'), g=document.getElementById('fxGrid');
  if(!('IntersectionObserver' in window)) return;
  new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('away',e.intersectionRatio>0.5)),{threshold:[0,.5,1]}).observe(g);})();
-(function(){const fab=document.querySelector('.fab'),r=document.getElementById('svcRow');if(!('IntersectionObserver' in window))return;new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('away',e.intersectionRatio>0.5)),{threshold:[0,.5,1]}).observe(r);})();
+(function(){const fab=document.querySelector('.fab'),r=document.getElementById('svcRow');if(!r||!('IntersectionObserver' in window))return;new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('away',e.intersectionRatio>0.5)),{threshold:[0,.5,1]}).observe(r);})();
 
 /* ---------- services cards ---------- */
+if(document.getElementById('svcRow')){
 document.getElementById('svcRow').innerHTML = SERIES.map(s=>`
   <button type="button" class="svc" data-series="${s.id}" aria-label="${s.name}: see details">
     <span class="ph"><img src="${s.img}" alt="" style="object-position:${s.pos}" loading="lazy"></span>
     <span class="ttl">${s.name}</span><span class="tg">${s.tag}</span>
   </button>`).join('');
 document.getElementById('svcRow').addEventListener('click',e=>{const b=e.target.closest('.svc'); if(b) openBook(null,b.dataset.series);});
+}
 
 /* ---------- nav ---------- */
 const nav=document.getElementById('nav');
@@ -575,7 +575,7 @@ function render(){
   if(st.sent){
     body.innerHTML=`<div class="done"><p class="eyebrow">Thank you</p><h3>See you soon, ${esc(st.name.split(' ')[0]||'')}.</h3>
       <p>Your request for <b>${esc(st.tx)}</b> on ${fmtFull(st.date)} at ${st.time} is in. We’ll text you to confirm.</p>
-      <p class="note">Prototype: nothing was booked. On the live site this connects to your scheduling system and sends a confirmation text and email.</p>
+      <p class="note">Prototype: nothing was booked. On the live site this request is sent straight to the clinic’s scheduling system, and our concierge confirms by text.</p>
       <button class="btn btn-line" type="button" id="dDone">Back to site</button></div>`;
     document.getElementById('dDone').onclick=closeBook; return;
   }
@@ -589,7 +589,7 @@ function render(){
       return `<div class="group"><h5>${s.name}</h5><div class="items">${it.map(t=>`<button type="button" class="item" data-tx="${esc(t[0])}" aria-pressed="${st.tx===t[0]}"><b>${esc(t[0])}</b><small>${esc(t[1])}</small><span class="pr">${t[2]}</span></button>`).join('')}</div></div>`;}).join('');
     const cur=res||off;
     const info=off?`<div class="offer"><p>${off.intro}</p>${off.perks?`<ul>${off.perks.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${off.rules?`<small>${off.rules}</small>`:''}</div>`:'';
-    body.innerHTML=`<button type="button" class="opt" data-tx="${CONSULT}" aria-pressed="${st.tx===CONSULT}"><b>Not sure yet? Book a complimentary consultation</b><small>30 minutes with a provider to build a plan around your goals</small></button>
+    body.innerHTML=`<button type="button" class="opt" data-tx="${CONSULT}" aria-pressed="${st.tx===CONSULT}"><b>Not sure yet? Book a complimentary consultation</b><small>30 minutes to build a plan around your whole face and your goals</small></button>
       ${info}
       <input class="search" id="txSearch" type="search" placeholder="Search treatments" value="${esc(st.q)}" aria-label="Search treatments">
       ${cur&&!q?`<div class="filterbar"><span>Showing <b>${cur.name}</b></span><button type="button" class="chip" id="showAll">View all treatments</button></div>`:''}
@@ -648,5 +648,3 @@ document.querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',(
  document.addEventListener('click',e=>{if(!bar.contains(e.target))lis.forEach(x=>x.classList.remove('open'));});
  addEventListener('keydown',e=>{if(e.key==='Escape')lis.forEach(x=>x.classList.remove('open'));});})();
 </script>
-
-</body></html>
