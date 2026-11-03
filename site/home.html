@@ -71,13 +71,15 @@ em.s{font-family:var(--serif);font-style:italic}
 .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(22px,3.2vw,52px);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
 .navbar{position:sticky}
 .navbar ul.top>li{position:static}
-.navbar ul.top>li>a{display:block;padding:20px 0;text-decoration:none;white-space:nowrap;position:relative}
-.navbar ul.top>li>a::after{content:"";position:absolute;left:0;right:0;bottom:14px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease)}
+.navbar ul.top>li>a{display:block;padding:25px 0 17px;text-decoration:none;white-space:nowrap;position:relative}
+.navbar ul.top>li>a::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease)}
 .navbar ul.top>li:hover>a::after,.navbar ul.top>li.open>a::after{transform:scaleX(1);transform-origin:left}
+/* tagged items keep a clay underline that matches their label */
+.navbar ul.top>li:has(.tag)>a::after{transform:scaleX(1);background:var(--clay)}
 .navbar ul.top>li{position:relative}
-/* SIGNATURE / NEW: a small chip right after the label, centred on it, clear of the bar's top rule */
-.navbar ul.top>li{display:flex;align-items:center;gap:8px}
-.tag{order:2;flex:none;font-size:8px;font-weight:600;letter-spacing:.16em;padding:3px 6px 2px;line-height:1;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap}
+/* SIGNATURE / NEW: a small chip just to the right of its own label, raised like a superscript */
+.navbar ul.top>li{display:flex;align-items:center;gap:7px}
+.tag{order:2;flex:none;position:relative;top:-7px;font-size:8px;font-weight:600;letter-spacing:.16em;line-height:1;padding:3px 6px 2px;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap;pointer-events:none}
 .navbar .wrap{position:static}
 .mega{position:fixed;left:0;right:0;background:var(--bg);color:var(--fg);border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:30px max(24px,env(safe-area-inset-right,0px)) 34px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:60}
 .navbar li:hover>.mega,.navbar li.open>.mega{display:block}
@@ -223,9 +225,20 @@ em.s{font-family:var(--serif);font-style:italic}
 .rv-img img{transform:scale(1.14)}
 .rv-img.in img,.rv-img.in .badge{clip-path:inset(0)}
 .rv-img.in img{transform:none}
-.hero .center>*{animation:heroIn 1.3s var(--ease) both}
-.hero .center>:nth-child(2){animation-delay:.12s}.hero .center>:nth-child(3){animation-delay:.24s}.hero .center>:nth-child(4){animation-delay:.36s}
-@keyframes heroIn{from{opacity:0;transform:translateY(26px)}}
+/* hero intro: a cream curtain lifts, the film settles from a soft zoom, then the slogan rises word by word */
+.hero video{animation:filmIn 3.2s var(--ease) both}
+@keyframes filmIn{from{transform:scale(1.12);filter:blur(8px) brightness(1.1)}to{transform:none;filter:none}}
+.hero .veil{position:absolute;inset:0;z-index:1;background:var(--bg);pointer-events:none;animation:veilOut 1.6s cubic-bezier(.65,0,.35,1) .15s both}
+@keyframes veilOut{to{opacity:0;visibility:hidden}}
+.hero .eyebrow{animation:eyebrowIn 1.8s var(--ease) .9s both}
+@keyframes eyebrowIn{from{opacity:0;letter-spacing:.6em}}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .12em;margin-bottom:-.12em}
+.hero h1 .w i{display:inline-block;font-style:inherit;transform:translateY(105%);animation:wordUp 1.3s var(--ease) both;animation-delay:calc(1.15s + var(--i)*.11s)}
+@keyframes wordUp{to{transform:none}}
+.hero .center>p,.hero .center>.btn{animation:heroIn 1.4s var(--ease) both}
+.hero .center>p{animation-delay:1.85s}.hero .center>.btn{animation-delay:2.05s}
+@keyframes heroIn{from{opacity:0;transform:translateY(22px)}}
+@media (prefers-reduced-motion: reduce){.hero .veil{display:none}.hero h1 .w i{transform:none}}
 h2 em.s{color:var(--rose)}
 .gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 @media(min-width:760px){.gut{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
@@ -334,10 +347,11 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <!-- SECTION 1 · HERO -->
   <section class="hero" aria-label="AURA Institute at Rockefeller Center">
     <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="veil" aria-hidden="true"></div>
     <script>(function(){var v=document.getElementById('heroVideo');v.poster='poster-aura3.jpg';v.src='hero-aura3.mp4';v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();</script>
     <div class="center">
       <p class="eyebrow">Rockefeller Center · New York</p>
-      <h1>Feel beautiful. <em class="s">See your light.</em></h1>
+      <h1 aria-label="Feel beautiful. See your light."><span class="w" style="--i:0"><i>Feel</i></span> <span class="w" style="--i:1"><i>beautiful.</i></span> <em class="s"><span class="w" style="--i:2"><i>See</i></span> <span class="w" style="--i:3"><i>your</i></span> <span class="w" style="--i:4"><i>light.</i></span></em></h1>
       <p>Medical aesthetics and wellness at Rockefeller Center. Designed for your whole face, and for how you feel.</p>
       <button class="btn" type="button" data-book>Book a Consultation</button>
     </div>
@@ -468,7 +482,7 @@ const RESULTS=[
    ["Double Chin · KYBELLA®","Reduces fat under the chin",P],
    ["Facial Harmonization","Balances one side of the face",P],
    ["Lower Face Tightening + Lift","Both sides, slimmer & lifted",P]]},
- {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-duo.jpg",pos:"50% 40%",items:[
+ {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-duo.jpg",pos:"50% 45%",items:[
    ["Gold Skin Analysis","Know your skin first · 20 min","Complimentary"],
    ["HydraFacial®","Deluxe 60 min or Platinum 75 min",P],
    ["Signature Facial","Relaxing spa facial · 60 min",P],
