@@ -36,7 +36,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .btn:hover{transform:translateY(-1px)}
 .btn-solid{background:var(--cocoa);color:var(--cream)}
 .btn-solid:hover{background:var(--clay)}
-.btn-lg{padding:17px 40px;font-size:11px;font-weight:600;letter-spacing:.22em}
+.btn-lg{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em}
 
 /* header: utility strip + brand row + sticky dark nav with mega menus (Genesys-style) */
 .util{background:var(--surface);font-size:12px;letter-spacing:.04em;color:var(--muted)}
@@ -49,9 +49,13 @@ em.s{font-family:var(--serif);font-style:italic}
 .hr{display:grid;gap:8px;justify-items:end;min-width:0}
 .r1{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted)}
 .r1 .phone{white-space:nowrap}
-.hsearch{display:flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding-left:8px}
-.hsearch input{border:0;background:transparent;padding:7px 10px;font:inherit;font-size:13px;color:var(--fg);width:170px;outline:none}
-.hsearch button{border:0;background:transparent;padding:6px 10px;color:var(--fg);display:grid;place-items:center}
+/* search: a quiet underlined field, icon on the left */
+.hsearch{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);transition:border-color .4s}
+.hsearch:focus-within{border-bottom-color:var(--fg)}
+.hsearch input{order:2;border:0;background:transparent;padding:8px 0;font:inherit;font-size:14px;color:var(--fg);width:230px;outline:none}
+.hsearch input::placeholder{color:var(--muted)}
+.hsearch button{order:1;border:0;background:transparent;padding:0;color:var(--fg);display:grid;place-items:center}
+.hsearch button svg{width:13px;height:13px}
 .tagline{margin:0;text-align:right;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--muted)}
 .acct{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--fg)}
 .acct:hover{color:var(--clay)}
@@ -62,7 +66,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .navbar.stuck{box-shadow:0 18px 36px -24px rgba(47,34,29,.35)}
 /* Book Now sits in the nav row, right after About, and stays with the sticky bar */
 .navbar .wrap{display:flex;justify-content:center;align-items:center;gap:clamp(22px,3.2vw,52px)}
-.nav-book{flex:none;padding:10px 26px;font-size:10.5px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
+.nav-book{flex:none;border-radius:0;padding:10px 22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
 .nav-book:hover{background:var(--clay)}
 .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(22px,3.2vw,52px);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
 .navbar{position:sticky}
