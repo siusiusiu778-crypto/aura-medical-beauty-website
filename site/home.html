@@ -47,12 +47,12 @@ em.s{font-family:var(--serif);font-style:italic}
 .brandrow .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:14px}
 .logo{font-family:var(--logo);font-size:22px;letter-spacing:.16em;text-decoration:none;white-space:nowrap;color:var(--fg);line-height:1}
 .hr{display:grid;gap:8px;justify-items:end;min-width:0}
-.r1{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted)}
+.r1{display:flex;align-items:center;gap:36px;font-size:13px;color:var(--muted)}
 .r1 .phone{white-space:nowrap}
 /* search: a quiet underlined field, icon on the left */
 .hsearch{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);transition:border-color .4s}
 .hsearch:focus-within{border-bottom-color:var(--fg)}
-.hsearch input{order:2;border:0;background:transparent;padding:8px 0;font:inherit;font-size:14px;color:var(--fg);width:230px;outline:none}
+.hsearch input{order:2;border:0;background:transparent;padding:2px 0 3px;font:inherit;font-size:14px;color:var(--fg);width:230px;outline:none}
 .hsearch input::placeholder{color:var(--muted)}
 .hsearch button{order:1;border:0;background:transparent;padding:0;color:var(--fg);display:grid;place-items:center}
 .hsearch button svg{width:13px;height:13px}
@@ -75,7 +75,9 @@ em.s{font-family:var(--serif);font-style:italic}
 .navbar ul.top>li>a::after{content:"";position:absolute;left:0;right:0;bottom:14px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease)}
 .navbar ul.top>li:hover>a::after,.navbar ul.top>li.open>a::after{transform:scaleX(1);transform-origin:left}
 .navbar ul.top>li{position:relative}
-.tag{position:absolute;top:1px;left:50%;transform:translateX(-50%);font-size:8.5px;font-weight:600;letter-spacing:.16em;padding:1px 6px;color:var(--clay);border:1px solid rgba(176,126,107,.5);white-space:nowrap;z-index:2;line-height:1.4}
+/* SIGNATURE / NEW: a small chip right after the label, centred on it, clear of the bar's top rule */
+.navbar ul.top>li{display:flex;align-items:center;gap:8px}
+.tag{order:2;flex:none;font-size:8px;font-weight:600;letter-spacing:.16em;padding:3px 6px 2px;line-height:1;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap}
 .navbar .wrap{position:static}
 .mega{position:fixed;left:0;right:0;background:var(--bg);color:var(--fg);border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:30px max(24px,env(safe-area-inset-right,0px)) 34px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:60}
 .navbar li:hover>.mega,.navbar li.open>.mega{display:block}
@@ -102,6 +104,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(18,12,10,.45),rgba(18,12,10,.15) 70%),linear-gradient(180deg,rgba(18,12,10,.35),rgba(18,12,10,0) 25%);pointer-events:none}
 .hero .center{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .hero .eyebrow{color:var(--hero-dim)}
+.hero .eyebrow,.hero h1,.hero p{text-shadow:0 1px 2px rgba(40,24,18,.28),0 4px 30px rgba(40,24,18,.45)}
 .hero h1{font-size:clamp(44px,7vw,104px);letter-spacing:-.02em;line-height:1}
 .hero p{margin:0;color:var(--hero-dim);font-size:clamp(15px,1.4vw,19px);max-width:46ch}
 .hero .btn{margin-top:10px;background:rgba(251,247,243,.92);color:#221B17;padding:17px 44px;font-size:13.5px}
@@ -109,6 +112,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .scrollcue{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--hero-dim)}
 
 /* shop by result: six cards fit one desktop screen */
+.results{padding-bottom:clamp(72px,9vw,140px)}
 .results .stage{padding-top:clamp(84px,9vw,110px);padding-bottom:clamp(48px,6vw,80px)}
 .results .head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px;margin-bottom:24px}
 .results .head .t{display:grid;gap:10px}
@@ -243,62 +247,54 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 .promo-copy{display:grid;gap:26px;min-width:0}
 .promo-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(50px,5.2vw,80px);line-height:.95}
 .promo-main{display:grid;gap:6px;padding-top:24px;border-top:1px solid var(--line)}
-.promo-main b{font-family:var(--serif);font-weight:400;font-size:clamp(25px,2.2vw,31px);line-height:1.2;color:var(--fg)}
+.promo-main b{font-weight:400;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--fg)}
 .promo-main span{color:var(--muted);font-size:15px}
 .promo-cta{display:flex;align-items:center;gap:20px 34px;flex-wrap:wrap}
 .olist{list-style:none;margin:4px 0 0;padding:0;border-top:1px solid var(--line)}
-.olist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);color:var(--fg)}
+.olist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--fg)}
 .olist small{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 @media(max-width:860px){.promo-in{grid-template-columns:1fr}}
 
 /* ---------- most loved: small square cards; scroll moves the row sideways, eased ---------- */
 .stars{position:relative;background:var(--bg)}
-.stars .pin{display:flex;flex-direction:column;justify-content:center;padding-block:clamp(84px,9vw,120px)}
-.stars.pinned .pin{position:sticky;top:var(--navh,0px);height:calc(100svh - var(--navh,0px));overflow:hidden;padding-block:24px}
+.stars .pin{padding-block:clamp(90px,10vw,140px)}
 .shead{display:grid;gap:14px;justify-items:center;text-align:center;margin-bottom:clamp(30px,4.5vh,60px)}
 .shead h2{font-family:var(--serif);font-weight:400;font-size:clamp(50px,5vw,76px);line-height:1}
 .sview{--g:clamp(14px,2.2vw,32px);width:100%}
-.sclip{overflow:hidden}
-.stars:not(.pinned) .sclip{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.track{display:flex;gap:var(--g);will-change:transform}
-.star{flex:0 0 calc((100% - 3*var(--g))/4);min-width:0;display:grid;gap:6px;justify-items:center;align-content:start;text-align:center;text-decoration:none;color:var(--ink);scroll-snap-align:start}
-@media(max-width:900px){.star{flex-basis:calc((100% - 2*var(--g))/3)}}
-@media(max-width:600px){.star{flex-basis:calc((100% - var(--g))/2)}}
+.track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--g)}
+@media(max-width:900px){.track{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}}
+.star{min-width:0;display:grid;gap:6px;justify-items:center;align-content:start;text-align:center;text-decoration:none;color:var(--ink);scroll-snap-align:start}
 .star .ph{width:100%;aspect-ratio:1/1;margin-bottom:16px}
 .star:hover .ph img{transform:scale(1.05)}
 .star .eg{margin:0;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
 .star h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,30px);line-height:1.15;transition:color .5s}
 .star:hover h3{font-style:italic;color:var(--clay)}
 .star .effect{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
-.prog{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:clamp(26px,4vh,46px);font-size:10.5px;font-weight:600;letter-spacing:.18em;color:var(--muted);font-variant-numeric:tabular-nums}
-.prog .line{width:clamp(120px,14vw,200px);height:1px;background:var(--line);position:relative;overflow:hidden}
-.prog .line i{position:absolute;inset:0;background:var(--fg);transform-origin:left;transform:scaleX(var(--p,0))}
 
-/* ---------- about: cocoa band, small card left, statement right, moving keyword ribbon ---------- */
-.about3{background:var(--cocoa);color:#D9C3B8;padding-top:clamp(84px,8vw,120px);overflow:hidden}
-.agrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(30px,6vw,100px);align-items:start}
-.acard{max-width:380px;min-width:0}
-.acard .ph{aspect-ratio:4/3;background:#8A7064}
-.acard .label{display:block;margin-top:22px;font-size:12px;color:var(--cream)}
-.acard p{margin:12px 0 0;font-size:16px;line-height:1.75}
-.acard .links{display:flex;gap:30px;margin-top:26px}
-.acard .tlink{display:inline-flex;align-items:center;gap:14px;color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px}
-.acard .tlink svg{width:30px;height:10px;transition:transform .7s var(--ease)}
-.acard .tlink:hover{color:var(--clay-lt)}
-.acard .tlink:hover svg{transform:translateX(6px)}
-.big{font-family:var(--serif);font-weight:400;text-align:right;color:var(--cream);font-size:clamp(60px,7.4vw,124px);line-height:.92;letter-spacing:-.005em;margin:-.12em 0 0}
-.big .ln{display:block;overflow:hidden;padding-bottom:.08em}
+/* ---------- about: cocoa band, photo bleeds to the left edge, statement on the right ---------- */
+.about3{background:var(--cocoa);color:#D9C3B8;overflow:hidden}
+.asplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(560px,52vw,780px)}
+.aimg{min-height:420px;background:#8A7064}
+.aimg img{object-position:50% 60%}
+.acopy{display:flex;flex-direction:column;justify-content:center;gap:26px;padding:clamp(56px,7vw,120px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,7vw,120px) clamp(28px,6vw,100px)}
+.acopy .label{color:var(--clay-lt)}
+.big{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(46px,5.2vw,84px);line-height:1;letter-spacing:-.01em;margin:0}
+.big .ln{display:block;overflow:hidden;padding-bottom:.1em}
 .big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
 .big.in .ln i{transform:none}
-.big .caps{text-transform:uppercase;letter-spacing:.01em}
-.big em{font-style:italic;color:var(--cream)}
-.values{margin-top:clamp(64px,7vw,100px);border-top:1px solid rgba(231,207,195,.16);overflow:hidden;padding-block:clamp(22px,2.4vw,34px)}
+.big em{font-style:italic;color:var(--clay-lt)}
+.acopy p{margin:0;max-width:44ch;font-size:16px;line-height:1.8}
+.acopy .tlink{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px}
+.acopy .tlink svg{width:30px;height:10px;transition:transform .7s var(--ease)}
+.acopy .tlink:hover{color:var(--clay-lt)}
+.acopy .tlink:hover svg{transform:translateX(6px)}
+@media(max-width:860px){.asplit{grid-template-columns:1fr}.aimg{aspect-ratio:4/5;min-height:0}}
+.values{border-top:1px solid rgba(231,207,195,.16);overflow:hidden;padding-block:clamp(22px,2.4vw,34px)}
 .vtrack{display:flex;align-items:center;gap:clamp(28px,3.4vw,56px);width:max-content;animation:marq 38s linear infinite;font-family:var(--serif);font-size:clamp(24px,2.4vw,36px);color:#CDB3A6;white-space:nowrap}
 .vtrack em{color:var(--clay-lt)}
 .vtrack i{width:7px;height:7px;border:1px solid var(--clay-lt);transform:rotate(45deg);flex:none}
 .values:hover .vtrack{animation-play-state:paused}
 @keyframes marq{to{transform:translateX(-50%)}}
-@media(max-width:860px){.agrid{grid-template-columns:1fr}.big{text-align:left;margin-top:12px}}
 
 /* ---------- the AURA experience: four quiet columns on one rule, the active step fills in ---------- */
 .journey{background:var(--bg);padding-block:clamp(90px,10vw,140px)}
@@ -312,7 +308,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 .j4 li.on::after{transform:scaleX(1);transition:transform 4.2s linear}
 .j4.hold li.on::after{transition:transform .7s var(--ease)}
 .j4 .k{display:block;margin-bottom:16px;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
-.j4 h3{font-family:var(--sans);font-weight:300;font-size:clamp(20px,1.75vw,26px);letter-spacing:-.01em;line-height:1.2;color:#BCA9A0;transition:color .6s}
+.j4 h3{font-family:var(--serif);font-weight:400;font-size:clamp(25px,2.1vw,31px);line-height:1.15;color:#BCA9A0;transition:color .6s}
 .j4 p{margin:12px 0 0;font-size:14px;line-height:1.65;color:#BCA9A0;max-width:32ch;transition:color .6s}
 .j4 li.on h3{color:var(--fg)}
 .j4 li.on p{color:var(--ink)}
@@ -326,14 +322,13 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <div class="brandrow"><div class="wrap">
     <a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a>
     <div class="hr">
-      <div class="r1"><span class="phone">Rockefeller Center: (212) [XXX-XXXX] · Text us anytime</span>
+      <div class="r1">
         <form class="hsearch" role="search" onsubmit="event.preventDefault()"><input id="q" type="search" placeholder="Search treatments" aria-label="Search treatments"><button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button></form>
         <a class="acct" href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>My Account</span></a></div>
-      <p class="tagline">Look better. Feel more confident. Medical aesthetics and wellness at Rockefeller Center.</p>
     </div>
   </div></div>
 </header>
-<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag new">Signature</span><a href="face-design.html">Face Design</a><div class="mega"><div class="cols"><div class="grp"><h5>Lift &amp; Tighten</h5><a href="face-design.html#lift">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="face-design.html#lift">Exion™ Collagen Lift</a></div><div class="grp"><h5>Restore &amp; Fill</h5><a href="face-design.html#balancing">Chin &amp; Lower Face Balance</a><a href="face-design.html#balancing">Defined Jawline</a><a href="face-design.html#balancing">Under-Eye Hollows</a><a href="face-design.html#balancing">Temples</a><a href="face-design.html#balancing">Lip Volume &amp; Shape</a><a href="face-design.html#balancing">Nose Profile</a><a href="face-design.html#balancing">Sculptra®</a><a href="face-design.html#balancing">RADIESSE®</a></div><div class="grp"><h5>Smooth &amp; Relax</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="face-design.html#lines">Brow Lift</a></div><div class="grp"><h5>V-Line &amp; Contour</h5><a href="face-design.html#vline">Masseter · Jaw Slimming</a><a href="face-design.html#vline">Double Chin · KYBELLA®</a><a href="face-design.html#vline">Facial Harmonization</a><a href="face-design.html#vline">Lower Face Tightening + Lift</a></div><div class="promo"><b>Not a new face. A better version of you.</b><span>Natural beauty, refined around your own features.</span><a href="#" data-book>Book a Consultation</a></div></div></div></li><li><a href="skin-glow.html">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Start Here</h5><a href="gold-skin-analysis.html">Gold Skin Analysis</a></div><div class="grp"><h5>Deep Cleanse</h5><a href="skin-glow.html#cleanse">HydraFacial®</a><a href="skin-glow.html#cleanse">Signature Facial</a><a href="skin-glow.html#cleanse">Barrier Recovery Facial</a></div><div class="grp"><h5>Brighten &amp; Texture</h5><a href="skin-glow.html#tone">BBL™ Photofacial</a><a href="skin-glow.html#pores">Gold RF Microneedling</a></div><div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="glow-booster.html">Face Hydration · Rejuran®</a><a href="skin-glow.html#hydrate">Long-Lasting Glow · SKINVIVE™</a><a href="skin-glow.html#hydrate">Under-Eye Brightening · PRP / PRF</a></div><div class="grp"><h5>Neck &amp; Scalp</h5><a href="skin-glow.html#neck">Neck Hydration</a><a href="skin-glow.html#neck">Tech Neck · Levels 1–4</a><a href="skin-glow.html#scalp">Scalp &amp; Hair Restoration</a></div></div></div></li><li><span class="tag new">New</span><a href="wellness.html">Wellness &amp; Longevity</a><div class="mega small"><a href="nad-iv.html">NAD+ IV Drip</a><a href="wellness.html#mind">EXOMIND™ · Sleep, mood &amp; focus</a><a href="wellness.html#more">More coming soon</a></div></li><li><a href="body-shape.html">Body</a><div class="mega small"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="body-shape.html">Fat Dissolving · Body</a><a href="body-shape.html">Trap Tox · Shoulder Line</a><a href="body-shape.html">Stretch Mark Repair</a></div></li><li><a href="aura-prime.html">Membership</a><div class="mega small"><a href="aura-prime.html">AURA Prime</a></div></li><li><a href="about.html">About</a><div class="mega small"><a href="face-design.html">The AURA Aesthetic</a><a href="about.html">Our Team</a><a href="about.html">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div></li></ul><button class="btn nav-book" type="button" data-book>Book Now</button></div></nav>
+<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag new">Signature</span><a href="face-design.html">Face Design</a><div class="mega"><div class="cols"><div class="grp"><h5>Lift &amp; Tighten</h5><a href="face-design.html#lift">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="face-design.html#lift">Exion™ Collagen Lift</a></div><div class="grp"><h5>Restore &amp; Fill</h5><a href="face-design.html#balancing">Chin &amp; Lower Face Balance</a><a href="face-design.html#balancing">Defined Jawline</a><a href="face-design.html#balancing">Under-Eye Hollows</a><a href="face-design.html#balancing">Temples</a><a href="face-design.html#balancing">Lip Volume &amp; Shape</a><a href="face-design.html#balancing">Nose Profile</a><a href="face-design.html#balancing">Sculptra®</a><a href="face-design.html#balancing">RADIESSE®</a></div><div class="grp"><h5>Smooth &amp; Relax</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="face-design.html#lines">Brow Lift</a></div><div class="grp"><h5>V-Line &amp; Contour</h5><a href="face-design.html#vline">Masseter · Jaw Slimming</a><a href="face-design.html#vline">Double Chin · KYBELLA®</a><a href="face-design.html#vline">Facial Harmonization</a><a href="face-design.html#vline">Lower Face Tightening + Lift</a></div></div></div></li><li><a href="skin-glow.html">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Deep Cleanse</h5><a href="skin-glow.html#cleanse">HydraFacial®</a><a href="skin-glow.html#cleanse">Signature Facial</a><a href="skin-glow.html#cleanse">Barrier Recovery Facial</a></div><div class="grp"><h5>Brighten &amp; Texture</h5><a href="skin-glow.html#tone">BBL™ Photofacial</a><a href="skin-glow.html#pores">Gold RF Microneedling</a></div><div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="glow-booster.html">Face Hydration · Rejuran®</a><a href="skin-glow.html#hydrate">Long-Lasting Glow · SKINVIVE™</a><a href="skin-glow.html#hydrate">Under-Eye Brightening · PRP / PRF</a></div><div class="grp"><h5>Neck &amp; Scalp</h5><a href="skin-glow.html#neck">Neck Hydration</a><a href="skin-glow.html#neck">Tech Neck · Levels 1–4</a><a href="skin-glow.html#scalp">Scalp &amp; Hair Restoration</a></div></div></div></li><li><span class="tag new">New</span><a href="wellness.html">Wellness &amp; Longevity</a><div class="mega small"><a href="nad-iv.html">NAD+ IV Drip</a><a href="wellness.html#mind">EXOMIND™ · Sleep, mood &amp; focus</a><a href="wellness.html#more">More coming soon</a></div></li><li><a href="body-shape.html">Body</a><div class="mega small"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="body-shape.html">Fat Dissolving · Body</a><a href="body-shape.html">Trap Tox · Shoulder Line</a><a href="body-shape.html">Stretch Mark Repair</a></div></li><li><a href="aura-prime.html">Membership</a><div class="mega small"><a href="aura-prime.html">AURA Prime</a></div></li><li><a href="about.html">About</a><div class="mega small"><a href="face-design.html">The AURA Aesthetic</a><a href="about.html">Our Team</a><a href="about.html">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div></li></ul><button class="btn nav-book" type="button" data-book>Book Now</button></div></nav>
 
 <main id="top">
   <!-- SECTION 1 · HERO -->
@@ -346,7 +341,6 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
       <p>Medical aesthetics and wellness at Rockefeller Center. Designed for your whole face, and for how you feel.</p>
       <button class="btn" type="button" data-book>Book a Consultation</button>
     </div>
-    <div class="scrollcue">Scroll</div>
   </section>
 
   <!-- SECTION 2 · SHOP BY RESULT -->
@@ -362,7 +356,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <!-- SECTION 3 · PROMOTION -->
   <section class="promo-sec gut" id="offers" aria-label="Current offers">
     <div class="promo-in">
-      <div class="ph promo-img rv-img"><span class="badge">Limited time</span><img src="r-care2.jpg" alt="Hands resting on a softly lit face during a facial" style="object-position:50% 55%"></div>
+      <div class="ph promo-img rv-img"><span class="badge">Limited time</span><img src="offer-gold.jpg" alt="A provider treats the jawline with a gold device in warm light" style="object-position:50% 45%"></div>
       <div class="promo-copy">
         <p class="label rv">This season at AURA</p>
         <h2 class="rv" style="--d:.08s">Current <em>offers</em></h2>
@@ -373,25 +367,24 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
     </div>
   </section>
 
-  <!-- SECTION 4 · MOST LOVED (scroll moves the row sideways) -->
+  <!-- SECTION 4 · MOST LOVED -->
   <section class="stars" id="stars" aria-label="Most loved treatments">
     <div class="pin">
       <div class="shead gut"><p class="label rv">Signature treatments</p><h2 class="rv" style="--d:.08s">Most <em>loved</em></h2></div>
-      <div class="sview gut"><div class="wrap2"><div class="sclip"><div class="track" id="starTrack"></div></div></div></div>
-      <div class="prog rv" aria-hidden="true"><span>01</span><span class="line"><i></i></span><span id="starTotal">07</span></div>
+      <div class="sview gut"><div class="wrap2"><div class="track" id="starTrack"></div></div></div>
     </div>
   </section>
 
   <!-- SECTION 5 · ABOUT US -->
   <section class="about3" id="about" aria-label="About AURA Institute">
-    <div class="wrap2 gut agrid">
-      <div class="acard">
-        <div class="ph rv-img"><img src="s-laser.jpg" alt="A provider performs a treatment in a calm, softly lit room" style="object-position:30% 45%"></div>
-        <span class="label rv">About AURA Institute</span>
-        <p class="rv" style="--d:.08s">A physician-led aesthetic clinic at Rockefeller Center. Every visit takes place in a private suite, one guest at a time, and every plan begins with an unhurried consultation.</p>
-        <div class="links rv" style="--d:.16s"><a class="tlink" href="about.html">Learn More<svg viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5h28M24 1l4 4-4 4" fill="none" stroke="currentColor"/></svg></a></div>
+    <div class="asplit">
+      <div class="ph aimg rv-img"><img src="suite-warm.jpg" alt="A private treatment suite in warm light, overlooking Midtown Manhattan"></div>
+      <div class="acopy">
+        <p class="label rv">About AURA Institute</p>
+        <h2 class="big" aria-label="Natural beauty, medical precision."><span class="ln"><i>Natural beauty,</i></span><span class="ln"><i style="--d:.12s"><em>medical precision.</em></i></span></h2>
+        <p class="rv" style="--d:.2s">A physician-led aesthetic clinic at Rockefeller Center. Every visit takes place in a private suite, one guest at a time, and every plan begins with an unhurried consultation.</p>
+        <a class="tlink rv" style="--d:.28s" href="about.html">Learn More<svg viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5h28M24 1l4 4-4 4" fill="none" stroke="currentColor"/></svg></a>
       </div>
-      <h2 class="big" aria-label="Natural beauty, medical precision"><span class="ln"><i>Natural</i></span><span class="ln"><i class="caps" style="--d:.1s">Beauty</i></span><span class="ln"><i style="--d:.2s"><em>Medical</em></i></span><span class="ln"><i style="--d:.3s">precision</i></span></h2>
     </div>
     <div class="values" aria-label="Physician-led, private suites, FDA-cleared devices, authentic product">
       <div class="vtrack" aria-hidden="true">
@@ -406,7 +399,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
     <div class="jin">
       <div class="head"><p class="label rv">Your visit, step by step</p><h2 class="rv" style="--d:.08s">The AURA <em>Experience</em></h2></div>
       <ol class="j4 rv" style="--d:.16s" id="j4"></ol>
-      <div class="cta rv"><button class="btn btn-solid btn-lg" type="button" data-book>Book a Consultation</button></div>
+      <div class="cta rv"><button class="btn btn-solid btn-lg" type="button" data-book>Start Your Skin Analysis</button></div>
     </div>
   </section>
 </main>
@@ -415,7 +408,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <div class="in">
     <div class="top">
       <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Feel beautiful. See your light.</p></div>
-      <div><h4>Location</h4><p>630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111<br><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">Get directions</a></p></div>
+      <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
       <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
       <div><h4>Contact</h4><p>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
     </div>
@@ -475,7 +468,7 @@ const RESULTS=[
    ["Double Chin · KYBELLA®","Reduces fat under the chin",P],
    ["Facial Harmonization","Balances one side of the face",P],
    ["Lower Face Tightening + Lift","Both sides, slimmer & lifted",P]]},
- {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-care2.jpg",pos:"50% 55%",items:[
+ {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-duo.jpg",pos:"50% 40%",items:[
    ["Gold Skin Analysis","Know your skin first · 20 min","Complimentary"],
    ["HydraFacial®","Deluxe 60 min or Platinum 75 min",P],
    ["Signature Facial","Relaxing spa facial · 60 min",P],
@@ -510,15 +503,11 @@ document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.
 const STARS=[
  {img:"s-inject.jpg",pos:"50% 30%",eg:"Botox® & Xeomin®",fx:"Smooth, rested, still you",href:"botox-xeomin.html"},
  {img:"star-lips.jpg",pos:"40% 50%",eg:"Lip Volume & Shape",fx:"Soft definition, true to your proportions",href:"face-design.html#balancing"},
- {img:"star-jaw.jpg",pos:"50% 40%",eg:"Thermage® FLX",fx:"A firmer jawline, no downtime",href:"face-design.html#lift"},
  {img:"r-smooth.jpg",pos:"50% 50%",eg:"Rejuran® Skin Booster",fx:"Deep hydration and a glass-skin glow",href:"glow-booster.html"},
- {img:"s-skin2.jpg",pos:"50% 40%",eg:"Gold RF Microneedling",fx:"Refined pores and smoother texture",href:"skin-glow.html#pores"},
- {img:"svc-lift.jpg",pos:"50% 30%",eg:"EMFACE®",fx:"A needle-free lift for brows and cheeks",href:"emface.html"},
- {img:"star-iv.jpg",pos:"60% 45%",eg:"NAD+ IV Drip",fx:"Energy and recovery from within",href:"nad-iv.html"}
+ {img:"s-skin2.jpg",pos:"50% 40%",eg:"Gold RF Microneedling",fx:"Refined pores and smoother texture",href:"skin-glow.html#pores"}
 ];
-document.getElementById('starTotal').textContent=String(STARS.length).padStart(2,'0');
 document.getElementById('starTrack').innerHTML=STARS.map((t,i)=>`
-  <a class="star" href="${t.href}">
+  <a class="star rv" style="--d:${i*.1}s" href="${t.href}">
     <span class="ph"><img src="${t.img}" alt="" style="object-position:${t.pos}" loading="lazy"></span>
     <p class="eg">e.g. ${t.eg}</p><h3>Star Treatment #${i+1}</h3><p class="effect">${t.fx}</p>
   </a>`).join('');
@@ -544,22 +533,6 @@ const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(REDUCED||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
  els.forEach(e=>io.observe(e));})();
-
-/* ---------- most loved: pin the section; vertical scroll eases the row sideways ---------- */
-(function(){const sec=document.getElementById('stars'),pin=sec.querySelector('.pin'),clip=sec.querySelector('.sclip'),tr=document.getElementById('starTrack');
- const line=sec.querySelector('.prog .line');
- if(REDUCED) return;
- sec.classList.add('pinned');
- const SLOW=2.4;            /* px of page scroll per px of sideways travel: higher = calmer */
- const HOLD=.6;             /* extra scroll (in screen heights) that rests on the first and on the last card */
- let travel=0,top0=0,hold=0,x=0,tx=0,raf=0;
- const step=()=>{x+=(tx-x)*.09;if(Math.abs(tx-x)<.4)x=tx;tr.style.transform=`translate3d(${x.toFixed(1)}px,0,0)`;raf=x!==tx?requestAnimationFrame(step):0;};
- const target=()=>{const p=travel?Math.min(1,Math.max(0,(top0-sec.getBoundingClientRect().top-hold)/(travel*SLOW))):0;
-  tx=-p*travel;line.style.setProperty('--p',p);if(!raf)raf=requestAnimationFrame(step);};
- /* measure with boxes: the track's will-change makes it the cards' offsetParent, so offsetLeft would be off by the gutter */
- const size=()=>{const last=tr.lastElementChild;travel=Math.max(0,last.getBoundingClientRect().right-tr.getBoundingClientRect().left-clip.clientWidth);
-  top0=parseFloat(getComputedStyle(pin).top)||0;hold=innerHeight*HOLD;sec.style.height=(pin.offsetHeight+travel*SLOW+2*hold)+'px';target();};
- addEventListener('scroll',target,{passive:true});addEventListener('resize',size);addEventListener('load',size);size();})();
 
 /* ---------- experience: the active step fills the rule, then hands on to the next ---------- */
 (function(){const ol=document.getElementById('j4'),lis=[...ol.children];let a=0,timer=0;
@@ -672,7 +645,7 @@ document.querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',(
 
 /* ---------- mega menu: position under bar, tap to open on touch ---------- */
 (function(){const bar=document.querySelector('.navbar');const lis=[...bar.querySelectorAll('ul.top>li')];
- const place=()=>{const r=bar.getBoundingClientRect();bar.querySelectorAll('.mega').forEach(m=>{m.style.top=r.bottom+'px';if(m.classList.contains('small')){const lr=m.parentElement.getBoundingClientRect();m.style.left=Math.max(8,Math.min(lr.left-22,innerWidth-278))+'px';}});};
+ const place=()=>{const h=bar.clientHeight;bar.querySelectorAll('.mega').forEach(m=>{m.style.top=h+'px';if(m.classList.contains('small')){const lr=m.parentElement.getBoundingClientRect();m.style.left=Math.max(8,Math.min(lr.left-22,innerWidth-278))+'px';}});};
  addEventListener('scroll',place,{passive:true});addEventListener('resize',place);place();
  lis.forEach(li=>{li.addEventListener('mouseenter',place);li.firstElementChild.nextElementSibling;const a=li.querySelector(':scope>a');
   a.addEventListener('click',e=>{if(matchMedia('(hover:hover)').matches)return;e.preventDefault();place();const o=li.classList.contains('open');lis.forEach(x=>x.classList.remove('open'));if(!o)li.classList.add('open');});});
