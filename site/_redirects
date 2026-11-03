@@ -1,0 +1,14 @@
+# AURA Institute · 301 redirects for the deleted Level 2 category pages.
+# Each old category page now redirects to its closest goal page.
+/face-design.html       /goal-facial-balancing.html   301
+/skin-tightening.html   /goal-skin-tightening.html    301
+/skin-glow.html         /goal-glow-hydration.html     301
+/wellness.html          /goal-body-wellness.html      301
+/body-shape.html        /goal-body-wellness.html      301
+
+# extensionless equivalents, in case the production host serves clean URLs
+/face-design       /goal-facial-balancing   301
+/skin-tightening   /goal-skin-tightening    301
+/skin-glow         /goal-glow-hydration     301
+/wellness          /goal-body-wellness      301
+/body-shape        /goal-body-wellness      301

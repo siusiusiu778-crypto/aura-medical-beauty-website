@@ -1,0 +1,250 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thermage® FLX in NYC | Non-Surgical Skin Tightening | AURA Institute</title>
+<meta name="description" content="Thermage® FLX radiofrequency skin tightening at Rockefeller Center. Non-surgical, no downtime, results that build over months. Book a complimentary consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css">
+<style>
+/* Thermage FLX · Level 3 treatment page. Stacked sections, alternating bg/surface, no tabs, no price. */
+.tsec{padding-block:clamp(56px,8vw,88px)}
+.tsec.alt{background:var(--surface)}
+.thero{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:760px){.thero{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.thero .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
+.thero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.thero .tx{display:grid;gap:16px;min-width:0}
+.thero h1{font-family:var(--serif);font-size:clamp(42px,5vw,68px);line-height:1}
+.thero p.lede{margin:0;color:var(--muted);font-size:17px;max-width:46ch}
+.thero .tlink{font-size:14px;text-decoration:underline;text-underline-offset:4px;width:fit-content}
+@media(max-width:860px){.thero{grid-template-columns:1fr}.thero .ph{order:-1}}
+/* booking box */
+.bookbox{margin-top:8px;display:grid;gap:12px}
+.bbrow{border:1px solid var(--line);background:var(--surface)}
+.bbrow summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:14.5px;font-weight:500}
+.bbrow summary::-webkit-details-marker{display:none}
+.bbrow summary::after{content:none}
+.bbrow summary .chev{transition:transform .3s ease;color:var(--muted)}
+.bbrow[open] summary .chev{transform:rotate(180deg)}
+.bbopts{padding:0 18px 18px;display:grid;gap:10px;border-top:1px solid var(--line);margin-top:0}
+.bbopt{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:14px}
+.bbopt:first-child{padding-top:16px}
+.bbaddr{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.bookbox>.btn{width:100%}
+/* benefits 2x2 */
+.benefits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.benefits div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;display:grid;gap:6px}
+.benefits h3{font-size:17px;font-weight:600}
+.benefits p{margin:0;color:var(--muted);font-size:14.5px}
+@media(max-width:640px){.benefits{grid-template-columns:1fr}}
+.notebar{border-left:3px solid var(--rust);padding:14px 18px;margin-top:24px;font-size:14px;color:var(--fg);background:var(--card)}
+/* is it right for you */
+.fit3{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.fit3 .ph{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.fit3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fitcard{background:var(--card);border:1px solid var(--line);padding:26px;display:grid;gap:14px;align-content:start}
+.fitcard h4{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.fitcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.fitcard li{display:flex;gap:10px}
+.fitcard li::before{content:"✓";color:var(--rust);flex:none}
+.fitcard.no li::before{content:"–"}
+.fitcard .pair{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.fit3{grid-template-columns:1fr 1fr}.fit3>.ph{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:620px){.fit3{grid-template-columns:1fr}}
+/* technology: text left, image right, numbered list via .steps-v */
+.techwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.techwrap .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.techwrap .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.steps-v{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:20px}
+.steps-v li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.steps-v li::before{content:counter(st,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.steps-v b{display:block;font-size:16.5px;font-weight:600;margin-bottom:4px}
+.steps-v span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.techwrap{grid-template-columns:1fr}.techwrap .ph{order:-1}}
+/* at a glance */
+.glance{background:var(--card);border:1px solid var(--line)}
+.glance .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.glance .col{padding:28px 24px;border-right:1px solid var(--line)}
+.glance .col:last-child{border-right:0}
+.glance h5{margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.glance p{margin:0 0 8px;font-size:14px;color:var(--fg);line-height:1.6}
+.glance p:last-child{margin-bottom:0}
+.glance .ft{border-top:1px solid var(--line);padding:16px 24px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.glance .cols{grid-template-columns:1fr 1fr}.glance .col{border-bottom:1px solid var(--line)}.glance .col:nth-child(2n){border-right:0}}
+@media(max-width:560px){.glance .cols{grid-template-columns:1fr}}
+/* faq narrow */
+.faqnarrow{max-width:720px;margin:0 auto}
+/* closing banner */
+.closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
+.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
+.closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
+.closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
+.closing p{margin:0;max-width:48ch;opacity:.9}
+.closing .btn{background:#FBF4EF;color:#3F3029}
+</style></head><body>
+<div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
+<div id="site-header" data-current="skintightening">
+<div class="hdrow"><div class="in">
+  <a class="hdlogo" href="home.html">aura<span>Institute</span></a>
+  <button class="hamb" type="button" id="hambBtn" aria-expanded="false" aria-controls="mobilenav" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></div>
+<div class="navbar" aria-label="Main"><div class="in">
+  <ul class="top">
+    <li data-cat="injectables"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-injectables">Injectables</a>
+      <div class="mega" id="mega-injectables"><div class="cols">
+        <div class="grp"><h5>Dermal Fillers</h5><a href="chin-balance.html">Chin &amp; Lower Face Balance</a><a href="defined-jawline.html">Defined Jawline</a><a href="under-eye-hollows.html">Under-Eye Hollows</a><a href="temples.html">Temples</a><a href="lip-volume.html">Lip Volume &amp; Shape</a><a href="nose-profile.html">Nose Profile</a><a href="sculptra.html">Sculptra®</a><a href="radiesse.html">RADIESSE®</a></div>
+        <div class="grp"><h5>Wrinkle Relaxers</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="botox-brow-lift.html">Botox® Brow Lift</a></div>
+        <div class="grp"><h5>Jawline Contouring</h5><a href="jaw-slimming.html">Jaw Slimming (Masseter Botox®)</a><a href="kybella.html">Double Chin Reduction (KYBELLA®)</a><a href="facial-harmonization.html">Facial Harmonization</a><a href="lower-face-lift.html">Lower Face Tightening + Lift</a></div>
+      </div></div>
+    </li>
+    <li data-cat="skintightening"><span class="tag">Signature</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skintightening">Skin Tightening &amp; Lifting</a>
+      <div class="mega small" id="mega-skintightening"><a href="thermage-flx.html">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="exion.html">Exion™ Collagen Lift</a></div>
+    </li>
+    <li data-cat="skin"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skin">Skin</a>
+      <div class="mega" id="mega-skin"><div class="cols">
+        <div class="grp"><h5>Start Here</h5><a href="gold-skin-analysis.html">Gold Skin Analysis</a></div>
+        <div class="grp"><h5>Deep Cleanse</h5><a href="hydrafacial.html">HydraFacial®</a><a href="signature-facial.html">Signature Facial</a><a href="barrier-recovery-facial.html">Barrier Recovery Facial</a></div>
+        <div class="grp"><h5>Brighten &amp; Texture</h5><a href="bbl-photofacial.html">BBL™ Photofacial</a><a href="gold-rf-microneedling.html">Gold RF Microneedling</a></div>
+        <div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="rejuran.html">Face Hydration · Rejuran®</a><a href="skinvive.html">Long-Lasting Glow · SKINVIVE™</a><a href="under-eye-brightening.html">Under-Eye Brightening · PRP / PRF</a></div>
+        <div class="grp"><h5>Neck &amp; Scalp</h5><a href="neck-hydration.html">Neck Hydration</a><a href="tech-neck.html">Tech Neck · Levels 1–4</a><a href="scalp-hair.html">Scalp &amp; Hair Restoration</a></div>
+      </div></div>
+    </li>
+    <li data-cat="wellness"><span class="tag">New</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-wellness">Wellness &amp; Longevity</a>
+      <div class="mega small" id="mega-wellness"><a href="nad-iv.html">NAD+ IV Drip</a><a href="exomind.html">EXOMIND™</a></div>
+    </li>
+    <li data-cat="body"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-body">Body</a>
+      <div class="mega small" id="mega-body"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="fat-dissolving.html">Fat Dissolving · Body</a><a href="trap-tox.html">Trap Tox · Shoulder Line</a><a href="stretch-mark-repair.html">Stretch Mark Repair</a></div>
+    </li>
+    <li data-cat="membership"><a href="aura-prime.html">Membership</a>
+      <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
+    </li>
+    <li data-cat="about"><a href="about.html">About</a>
+      <div class="mega small" id="mega-about"><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="about.html#team">Our Team</a><a href="about.html#clinic">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div>
+    </li>
+  </ul>
+  <a class="btn nav-book" href="#book">Book a Consultation</a>
+</div></div>
+<div class="mnscrim" id="navScrim"></div>
+<div class="mobilenav" id="mobilenav" aria-hidden="true">
+  <div class="mnhead"><a class="hdlogo" href="home.html">aura<span>Institute</span></a><button class="close" type="button" id="mnClose" aria-label="Close menu">×</button></div>
+  <div class="mnbody">
+    <div class="macc" data-acc="injectables"><button type="button" class="machead" aria-expanded="false">Injectables<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skintightening"><button type="button" class="machead" aria-expanded="false">Skin Tightening &amp; Lifting<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skin"><button type="button" class="machead" aria-expanded="false">Skin<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="wellness"><button type="button" class="machead" aria-expanded="false">Wellness &amp; Longevity<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="body"><button type="button" class="machead" aria-expanded="false">Body<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <a class="mnlink" href="aura-prime.html">Membership</a>
+    <a class="mnlink" href="about.html">About</a>
+    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="#book">Book a Consultation</a>
+  </div>
+</div>
+</div>
+<script src="nav.js"></script>
+<main>
+<div class="wrap crumbs"><a href="home.html">Home</a> / Skin Tightening &amp; Lifting / Thermage® FLX</div>
+
+<section class="tsec" id="top"><div class="thero">
+  <div class="ph"><img src="r-lift.jpg" alt="Close-up of a firm, lifted jawline" style="object-position:50% 45%"></div>
+  <div class="tx">
+    <p class="eyebrow">Skin Tightening</p>
+    <h1>Thermage® <em>FLX</em></h1>
+    <p class="lede">A non-surgical radiofrequency treatment that firms and smooths the skin from within, so you look rested and refreshed, still like yourself.</p>
+    <a class="tlink" href="#how">Learn all about Thermage® FLX</a>
+    <div class="bookbox">
+      <details class="bbrow">
+        <summary>Choose your appointment <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="bbopts">
+          <label class="bbopt"><input type="radio" name="appt" checked> Complimentary consultation</label>
+          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX treatment</label>
+          <p class="bbaddr">AURA Institute · 630 Fifth Avenue, Suite 1812, Rockefeller Center, New York</p>
+        </div>
+      </details>
+      <a class="btn" href="#book">Continue to Booking</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="tsec alt" id="how"><div class="wrap">
+  <div class="head"><p class="eyebrow">How it works</p><h2>How Thermage® FLX works for <em>your</em> skin</h2></div>
+  <p style="margin:0 0 28px;max-width:70ch;color:var(--muted)">Developed by Solta Medical, Thermage® FLX uses monopolar radiofrequency to gently heat the deeper layers of the skin. Existing collagen contracts right away for an instant firming effect, and new collagen keeps building for months after. No needles, no incisions, no downtime.</p>
+  <div class="benefits">
+    <div><h3>Smooths lines</h3><p>Softens forehead lines, crow’s feet, smile lines and neck lines.</p></div>
+    <div><h3>Lifts and firms</h3><p>Tightens loose skin for a firmer, more lifted look.</p></div>
+    <div><h3>Refines contours</h3><p>A cleaner, more defined lower face.</p></div>
+    <div><h3>Renews skin quality</h3><p>Smoother texture, refined pores and a healthy glow as collagen renews.</p></div>
+  </div>
+  <p class="notebar">FDA-cleared for the non-invasive treatment of wrinkles, including around the eyes and on the upper and lower eyelids.</p>
+</div></section>
+
+<section class="tsec" id="fit"><div class="wrap">
+  <div class="head"><p class="eyebrow">Is it right for you?</p><h2>Ideal <em>for</em></h2></div>
+  <div class="fit3">
+    <div class="ph"><img src="svc-lift.jpg" alt="Portrait of a client with smooth, firm skin" style="object-position:40% 30%"></div>
+    <div class="fitcard">
+      <h4>Ideal for</h4>
+      <ul>
+        <li>All skin tones and types</li>
+        <li>Early signs of loosening</li>
+        <li>Fine lines and crepey skin</li>
+        <li>A gradual, natural change without surgery</li>
+        <li>Sensitive skin in a stable phase</li>
+      </ul>
+    </div>
+    <div class="fitcard no">
+      <h4>Does not treat</h4>
+      <ul>
+        <li>Volume loss</li>
+        <li>Sun spots and pigmentation</li>
+        <li>Active acne or breakouts</li>
+        <li>Advanced sagging that needs surgery</li>
+      </ul>
+      <p class="pair">For volume, pair it with <a href="radiesse.html">RADIESSE®</a>. For tone, see <a href="bbl-photofacial.html">BBL™ Photofacial</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="tsec alt" id="tech"><div class="wrap">
+  <div class="head"><p class="eyebrow">The technology</p><h2>Precise, even, <em>comfortable</em></h2></div>
+  <div class="techwrap">
+    <ol class="steps-v">
+      <li><div><b>Even energy delivery</b><span>A patented treatment tip spreads radiofrequency evenly into the skin, reducing hot spots.</span></div></li>
+      <li><div><b>AccuREP™ technology</b><span>Reads your skin with every pulse and adjusts the energy, so each pulse is precise.</span></div></li>
+      <li><div><b>Built-in cooling</b><span>Cools the skin surface while the deeper layers warm, for a more comfortable treatment.</span></div></li>
+    </ol>
+    <div class="ph"><img src="r-texture.jpg" alt="Close-up of smooth, even skin texture" style="object-position:50% 40%"></div>
+  </div>
+</div></section>
+
+<section class="tsec" id="glance"><div class="wrap">
+  <div class="head"><p class="eyebrow">At a glance</p><h2>Thermage® FLX <em>at a glance</em></h2></div>
+  <div class="glance">
+    <div class="cols">
+      <div class="col"><h5>Before your treatment</h5><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days.</p><p>Avoid sunburn, lasers, peels and microneedling for 2 weeks.</p><p>Come in with clean, makeup-free skin.</p></div>
+      <div class="col"><h5>After your treatment</h5><p>No downtime. Back to your day right away.</p><p>Gentle, hydrating skincare for the first week.</p><p>Skip saunas and intense workouts for a week.</p><p>Daily sunscreen for a month.</p></div>
+      <div class="col"><h5>Results</h5><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></div>
+      <div class="col"><h5>Frequency</h5><p>One session, maintained once a year.</p><p>Treatment takes about 30–90 minutes, depending on your plan.</p></div>
+    </div>
+    <div class="ft">Your provider will review your health history and these instructions with you before treatment.</div>
+  </div>
+</div></section>
+
+<section class="tsec alt" id="faq"><div class="wrap faqnarrow">
+  <div class="head" style="text-align:center;justify-items:center"><p class="eyebrow">FAQs</p><h2>Frequently asked <em>questions</em></h2></div>
+  <details open><summary>Does it hurt?</summary><p>Most clients feel warmth and a deep, brief pressure with each pulse. The tip cools your skin, and your provider can adjust the energy to your comfort.</p></details>
+  <details><summary>What are the side effects?</summary><p>Mild redness, warmth or swelling that usually settles within hours to a few days. Less often: tingling, small bumps or temporary darkening of the skin. Blisters or burns are rare.</p></details>
+  <details><summary>Who should not have it?</summary><p>It is not suitable if you have a pacemaker or other implanted electronic device. Please wait if you are pregnant, or have broken or inflamed skin in the area. Talk to us first about metal implants, chronic conditions, filler or tattoos in the area.</p></details>
+  <details><summary>Can I combine it with other treatments?</summary><p>Yes, as part of one plan. It is often paired with EMFACE® for added lift and Dermal Fillers to restore softness. We leave at least 2 weeks between Thermage® FLX and peels, lasers, microneedling or injectables.</p></details>
+  <details><summary>How much does it cost?</summary><p>It depends on your plan. You’ll get a clear quote at your complimentary consultation.</p></details>
+</div></section>
+
+<section class="closing tsec" id="book">
+  <img src="season-laser.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <h2>Not sure which treatment is <em>right</em> for you?</h2>
+    <p>Book a complimentary consultation. We’ll look at your whole face and help you create a plan that stays true to you.</p>
+    <a class="btn" href="#book">Book a Consultation</a>
+  </div>
+</section>
+</main>
+<footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer>
+</body></html>

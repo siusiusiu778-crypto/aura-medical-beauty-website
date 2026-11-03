@@ -3,6 +3,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
+<link rel="stylesheet" href="nav.css">
 <style>
 /* Layout: full-bleed video hero with centered Book Now → About Us split (copy left, image right) → dark Our Services row of five series → floating Book Now. */
 /* shell / cocoa / clay palette, after the AURA reference homepage; light only */
@@ -37,64 +38,6 @@ em.s{font-family:var(--serif);font-style:italic}
 .btn-solid{background:var(--cocoa);color:var(--cream)}
 .btn-solid:hover{background:var(--clay)}
 .btn-lg{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em}
-
-/* header: utility strip + brand row + sticky dark nav with mega menus (Genesys-style) */
-.util{background:var(--surface);font-size:12px;letter-spacing:.04em;color:var(--muted)}
-.util .wrap,.brandrow .wrap,.navbar .wrap{max-width:none}
-.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:34px;flex-wrap:wrap}
-.util a{text-decoration:none}
-.brandrow{background:var(--bg)}
-.brandrow .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:14px}
-.logo{font-family:var(--logo);font-size:22px;letter-spacing:.16em;text-decoration:none;white-space:nowrap;color:var(--fg);line-height:1}
-.hr{display:grid;gap:8px;justify-items:end;min-width:0}
-.r1{display:flex;align-items:center;gap:36px;font-size:13px;color:var(--muted)}
-.r1 .phone{white-space:nowrap}
-/* search: a quiet underlined field, icon on the left */
-.hsearch{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);transition:border-color .4s}
-.hsearch:focus-within{border-bottom-color:var(--fg)}
-.hsearch input{order:2;border:0;background:transparent;padding:2px 0 3px;font:inherit;font-size:14px;color:var(--fg);width:230px;outline:none}
-.hsearch input::placeholder{color:var(--muted)}
-.hsearch button{order:1;border:0;background:transparent;padding:0;color:var(--fg);display:grid;place-items:center}
-.hsearch button svg{width:13px;height:13px}
-.tagline{margin:0;text-align:right;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--muted)}
-.acct{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--fg)}
-.acct:hover{color:var(--clay)}
-@media(max-width:1100px){.tagline,.r1 .phone{display:none}}
-@media(max-width:760px){.acct span{display:none}.hsearch input{width:110px}.r1{gap:14px}}
-@media(max-width:560px){.hsearch{display:none}.logo{font-size:17px}.brandrow .wrap{gap:12px}}
-.navbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(248,240,235,.92);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);color:var(--fg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:box-shadow .6s var(--ease)}
-.navbar.stuck{box-shadow:0 18px 36px -24px rgba(47,34,29,.35)}
-/* Book Now sits in the nav row, right after About, and stays with the sticky bar */
-.navbar .wrap{display:flex;justify-content:center;align-items:center;gap:clamp(22px,3.2vw,52px)}
-.nav-book{flex:none;border-radius:0;padding:10px 22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
-.nav-book:hover{background:var(--clay)}
-.navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(24px,3.2vw,52px);font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
-.navbar{position:sticky}
-.navbar ul.top>li{position:static}
-.navbar ul.top>li>a{display:block;padding:25px 0 17px;text-decoration:none;white-space:nowrap;position:relative}
-.navbar ul.top>li>a::after{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:center;transition:transform .7s var(--ease)}
-.navbar ul.top>li:hover>a::after,.navbar ul.top>li.open>a::after{transform:scaleX(1)}
-.navbar ul.top>li{position:relative}
-/* SIGNATURE / NEW: a small tag centred above its own label */
-.tag{position:absolute;top:7px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:600;letter-spacing:.16em;line-height:1;padding:3px 6px 2px;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap;pointer-events:none;z-index:1}
-.navbar .wrap{position:static}
-.mega{position:fixed;left:0;right:0;background:var(--bg);color:var(--fg);border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:30px max(24px,env(safe-area-inset-right,0px)) 34px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:60}
-.navbar li:hover>.mega,.navbar li.open>.mega{display:block}
-.mega .cols{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px 40px}
-.mega .grp{display:grid;gap:4px;align-content:start}
-.mega h5{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--fg)}
-.mega a{display:flex;align-items:center;gap:8px;text-decoration:none;padding:4px 0;color:var(--muted)}
-.mega a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
-.mega .s{font-size:10px;color:#fff;background:var(--clay);padding:1px 6px;letter-spacing:.04em}
-.mega .promo{background:var(--surface);padding:18px;display:grid;gap:6px;align-content:start}
-.mega .promo b{font-size:16px}.mega .promo span{color:var(--muted);font-size:13.5px}
-.mega .promo a{color:var(--fg);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
-.mega.small{left:auto;right:auto;width:270px;padding:8px 22px;border:1px solid var(--line);box-shadow:0 14px 30px rgba(20,14,11,.14)}
-.navbar li:hover>.mega.small,.navbar li.open>.mega.small{display:block}
-.mega.small a{padding:13px 0;border-bottom:1px solid var(--line);color:var(--fg);font-size:14.5px}
-.mega.small a:last-child{border-bottom:0}
-@media(max-width:1000px){.navbar ul.top{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-inline:max(16px,env(safe-area-inset-left,0px))}.navbar .wrap{padding:0;gap:8px}.navbar ul.top{flex:1;min-width:0}
-  .nav-book{padding-inline:16px;margin-right:max(12px,env(safe-area-inset-right,0px))}}
 
 /* hero (type unchanged: keeps Instrument Sans / Serif) */
 .hero{font-family:var(--sans);font-weight:400;line-height:1.6}
@@ -197,10 +140,10 @@ em.s{font-family:var(--serif);font-style:italic}
 .chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
 .search{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:var(--r);padding:11px 16px;font:inherit;font-size:14px;width:100%}
-.offer{background:var(--surface);border-radius:12px;padding:14px 16px;display:grid;gap:8px;font-size:13.5px}
-.offer p{margin:0}
-.offer ul{margin:0;padding-left:18px;display:grid;gap:6px}
-.offer small{color:var(--muted);font-size:12px}
+.sinfo{background:var(--surface);border-radius:12px;padding:14px 16px;display:grid;gap:8px;font-size:13.5px}
+.sinfo p{margin:0}
+.sinfo ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.sinfo small{color:var(--muted);font-size:12px}
 .filterbar{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--surface);border-radius:12px;padding:10px 14px;font-size:13px}
 .dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .date{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 4px;text-align:center;font-size:12px;display:grid;gap:2px}
@@ -257,7 +200,7 @@ h2 em.s{color:var(--rose)}
 .label{margin:0;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--fg)}
 h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 
-/* ---------- promotion: image left, offer + dates + inclusions right ---------- */
+/* ---------- this season: image left, feature + dates + inclusions right ---------- */
 .promo-sec{background:var(--surface);padding-block:clamp(84px,9vw,130px)}
 .promo-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,100px);align-items:center}
 .promo-img{aspect-ratio:4/3}
@@ -335,19 +278,64 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 @media(max-width:520px){.j4{grid-template-columns:1fr}}
 .journey .cta{text-align:center;margin-top:clamp(60px,6vw,90px)}
 
-</style></head><body><div style="background:#F1E3DB;color:#5B4840;font:12px/1.4 Arial,sans-serif;text-align:center;padding:6px 16px">Page prototype · copy is a final draft, photos are placeholders · <a href="index.html" style="color:inherit">All pages</a></div>
-
-<header id="nav">
-  <div class="brandrow"><div class="wrap">
-    <a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a>
-    <div class="hr">
-      <div class="r1">
-        <form class="hsearch" role="search" onsubmit="event.preventDefault()"><input id="q" type="search" placeholder="Search treatments" aria-label="Search treatments"><button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button></form>
-        <a class="acct" href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>My Account</span></a></div>
-    </div>
-  </div></div>
-</header>
-<nav class="navbar" aria-label="Main"><div class="wrap"><ul class="top"><li><span class="tag new">Signature</span><a href="face-design.html">Face Design</a><div class="mega"><div class="cols"><div class="grp"><h5>Lift &amp; Tighten</h5><a href="face-design.html#lift">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="face-design.html#lift">Exion™ Collagen Lift</a></div><div class="grp"><h5>Restore &amp; Fill</h5><a href="face-design.html#balancing">Chin &amp; Lower Face Balance</a><a href="face-design.html#balancing">Defined Jawline</a><a href="face-design.html#balancing">Under-Eye Hollows</a><a href="face-design.html#balancing">Temples</a><a href="face-design.html#balancing">Lip Volume &amp; Shape</a><a href="face-design.html#balancing">Nose Profile</a><a href="face-design.html#balancing">Sculptra®</a><a href="face-design.html#balancing">RADIESSE®</a></div><div class="grp"><h5>Smooth &amp; Relax</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="face-design.html#lines">Brow Lift</a></div><div class="grp"><h5>V-Line &amp; Contour</h5><a href="face-design.html#vline">Masseter · Jaw Slimming</a><a href="face-design.html#vline">Double Chin · KYBELLA®</a><a href="face-design.html#vline">Facial Harmonization</a><a href="face-design.html#vline">Lower Face Tightening + Lift</a></div></div></div></li><li><a href="skin-glow.html">Skin &amp; Glow</a><div class="mega"><div class="cols"><div class="grp"><h5>Deep Cleanse</h5><a href="skin-glow.html#cleanse">HydraFacial®</a><a href="skin-glow.html#cleanse">Signature Facial</a><a href="skin-glow.html#cleanse">Barrier Recovery Facial</a></div><div class="grp"><h5>Brighten &amp; Texture</h5><a href="skin-glow.html#tone">BBL™ Photofacial</a><a href="skin-glow.html#pores">Gold RF Microneedling</a></div><div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="glow-booster.html">Face Hydration · Rejuran®</a><a href="skin-glow.html#hydrate">Long-Lasting Glow · SKINVIVE™</a><a href="skin-glow.html#hydrate">Under-Eye Brightening · PRP / PRF</a></div><div class="grp"><h5>Neck &amp; Scalp</h5><a href="skin-glow.html#neck">Neck Hydration</a><a href="skin-glow.html#neck">Tech Neck · Levels 1–4</a><a href="skin-glow.html#scalp">Scalp &amp; Hair Restoration</a></div></div></div></li><li><span class="tag new">New</span><a href="wellness.html">Wellness &amp; Longevity</a><div class="mega small"><a href="nad-iv.html">NAD+ IV Drip</a><a href="wellness.html#mind">EXOMIND™ · Sleep, mood &amp; focus</a><a href="wellness.html#more">More coming soon</a></div></li><li><a href="body-shape.html">Body</a><div class="mega small"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="body-shape.html">Fat Dissolving · Body</a><a href="body-shape.html">Trap Tox · Shoulder Line</a><a href="body-shape.html">Stretch Mark Repair</a></div></li><li><a href="aura-prime.html">Membership</a><div class="mega small"><a href="aura-prime.html">AURA Prime</a></div></li><li><a href="about.html">About</a><div class="mega small"><a href="face-design.html">The AURA Aesthetic</a><a href="about.html">Our Team</a><a href="about.html">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div></li></ul><button class="btn nav-book" type="button" data-book>Book Now</button></div></nav>
+</style></head><body>
+<div id="site-header">
+<div class="hdrow"><div class="in">
+  <a class="hdlogo" href="home.html">aura<span>Institute</span></a>
+  <button class="hamb" type="button" id="hambBtn" aria-expanded="false" aria-controls="mobilenav" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></div>
+<div class="navbar" aria-label="Main"><div class="in">
+  <ul class="top">
+    <li data-cat="injectables"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-injectables">Injectables</a>
+      <div class="mega" id="mega-injectables"><div class="cols">
+        <div class="grp"><h5>Dermal Fillers</h5><a href="chin-balance.html">Chin &amp; Lower Face Balance</a><a href="defined-jawline.html">Defined Jawline</a><a href="under-eye-hollows.html">Under-Eye Hollows</a><a href="temples.html">Temples</a><a href="lip-volume.html">Lip Volume &amp; Shape</a><a href="nose-profile.html">Nose Profile</a><a href="sculptra.html">Sculptra®</a><a href="radiesse.html">RADIESSE®</a></div>
+        <div class="grp"><h5>Wrinkle Relaxers</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="botox-brow-lift.html">Botox® Brow Lift</a></div>
+        <div class="grp"><h5>Jawline Contouring</h5><a href="jaw-slimming.html">Jaw Slimming (Masseter Botox®)</a><a href="kybella.html">Double Chin Reduction (KYBELLA®)</a><a href="facial-harmonization.html">Facial Harmonization</a><a href="lower-face-lift.html">Lower Face Tightening + Lift</a></div>
+      </div></div>
+    </li>
+    <li data-cat="skintightening"><span class="tag">Signature</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skintightening">Skin Tightening &amp; Lifting</a>
+      <div class="mega small" id="mega-skintightening"><a href="thermage-flx.html">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="exion.html">Exion™ Collagen Lift</a></div>
+    </li>
+    <li data-cat="skin"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skin">Skin</a>
+      <div class="mega" id="mega-skin"><div class="cols">
+        <div class="grp"><h5>Start Here</h5><a href="gold-skin-analysis.html">Gold Skin Analysis</a></div>
+        <div class="grp"><h5>Deep Cleanse</h5><a href="hydrafacial.html">HydraFacial®</a><a href="signature-facial.html">Signature Facial</a><a href="barrier-recovery-facial.html">Barrier Recovery Facial</a></div>
+        <div class="grp"><h5>Brighten &amp; Texture</h5><a href="bbl-photofacial.html">BBL™ Photofacial</a><a href="gold-rf-microneedling.html">Gold RF Microneedling</a></div>
+        <div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="rejuran.html">Face Hydration · Rejuran®</a><a href="skinvive.html">Long-Lasting Glow · SKINVIVE™</a><a href="under-eye-brightening.html">Under-Eye Brightening · PRP / PRF</a></div>
+        <div class="grp"><h5>Neck &amp; Scalp</h5><a href="neck-hydration.html">Neck Hydration</a><a href="tech-neck.html">Tech Neck · Levels 1–4</a><a href="scalp-hair.html">Scalp &amp; Hair Restoration</a></div>
+      </div></div>
+    </li>
+    <li data-cat="wellness"><span class="tag">New</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-wellness">Wellness &amp; Longevity</a>
+      <div class="mega small" id="mega-wellness"><a href="nad-iv.html">NAD+ IV Drip</a><a href="exomind.html">EXOMIND™</a></div>
+    </li>
+    <li data-cat="body"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-body">Body</a>
+      <div class="mega small" id="mega-body"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="fat-dissolving.html">Fat Dissolving · Body</a><a href="trap-tox.html">Trap Tox · Shoulder Line</a><a href="stretch-mark-repair.html">Stretch Mark Repair</a></div>
+    </li>
+    <li data-cat="membership"><a href="aura-prime.html">Membership</a>
+      <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
+    </li>
+    <li data-cat="about"><a href="about.html">About</a>
+      <div class="mega small" id="mega-about"><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="about.html#team">Our Team</a><a href="about.html#clinic">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div>
+    </li>
+  </ul>
+  <a class="btn nav-book" href="#book">Book a Consultation</a>
+</div></div>
+<div class="mnscrim" id="navScrim"></div>
+<div class="mobilenav" id="mobilenav" aria-hidden="true">
+  <div class="mnhead"><a class="hdlogo" href="home.html">aura<span>Institute</span></a><button class="close" type="button" id="mnClose" aria-label="Close menu">×</button></div>
+  <div class="mnbody">
+    <div class="macc" data-acc="injectables"><button type="button" class="machead" aria-expanded="false">Injectables<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skintightening"><button type="button" class="machead" aria-expanded="false">Skin Tightening &amp; Lifting<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skin"><button type="button" class="machead" aria-expanded="false">Skin<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="wellness"><button type="button" class="machead" aria-expanded="false">Wellness &amp; Longevity<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="body"><button type="button" class="machead" aria-expanded="false">Body<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <a class="mnlink" href="aura-prime.html">Membership</a>
+    <a class="mnlink" href="about.html">About</a>
+    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="#book">Book a Consultation</a>
+  </div>
+</div>
+</div>
+<script src="nav.js"></script>
 
 <main id="top">
   <!-- SECTION 1 · HERO -->
@@ -362,8 +350,8 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
      document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});})();</script>
     <div class="center">
       <p class="eyebrow">Rockefeller Center · New York</p>
-      <h1 aria-label="Feel beautiful. See your light."><span class="w" style="--i:0"><i>Feel</i></span> <span class="w" style="--i:1"><i>beautiful.</i></span> <em class="s"><span class="w" style="--i:2"><i>See</i></span> <span class="w" style="--i:3"><i>your</i></span> <span class="w" style="--i:4"><i>light.</i></span></em></h1>
-      <p>Medical aesthetics and wellness at Rockefeller Center. Designed for your whole face, and for how you feel.</p>
+      <h1 aria-label="Unveil your aura."><span class="w" style="--i:0"><i>Unveil</i></span> <span class="w" style="--i:1"><i>your</i></span> <em class="s"><span class="w" style="--i:2"><i>aura.</i></span></em></h1>
+      <p>Medical aesthetics and wellness at Rockefeller Center. Refined results, never overdone.</p>
       <button class="btn" type="button" data-book>Book a Consultation</button>
     </div>
   </section>
@@ -372,22 +360,23 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <section class="results" id="results">
     <div class="wrap stage">
       <div class="head">
-        <div class="t"><p class="eyebrow">Shop by Result</p><h2>Start with your <em class="s">goal.</em></h2></div>
+        <div class="t"><p class="eyebrow">Find your treatment</p><h2>Start with your <em class="s">goal.</em></h2></div>
       </div>
       <div class="fxgrid" id="fxGrid"></div>
     </div>
   </section>
 
   <!-- SECTION 3 · PROMOTION -->
-  <section class="promo-sec gut" id="offers" aria-label="Current offers">
+  <section class="promo-sec gut" id="season" aria-label="This season at AURA">
     <div class="promo-in">
-      <div class="ph promo-img rv-img"><span class="badge">Limited time</span><img src="offer-laser.jpg?v=3" alt="A client in protective eyewear relaxes while a clinician treats her jawline with a handheld device" style="object-position:50% 48%"></div>
+      <div class="ph promo-img rv-img"><span class="badge">This season</span><img src="r-tone.jpg" alt="Calm, even-toned skin in soft winter light" style="object-position:50% 40%"></div>
       <div class="promo-copy">
         <p class="label rv">This season at AURA</p>
-        <h2 class="rv" style="--d:.08s">Current <em>offers</em></h2>
-        <div class="promo-main rv" style="--d:.16s"><b>[Featured offer, e.g. complimentary Gold Skin Analysis with your first treatment]</b><span>[One line on who it’s for.]</span></div>
-        <ul class="olist rv" style="--d:.24s"><li>[Nov 1 – Nov 30, 2026]<small>Dates</small></li><li>[Gold Skin Analysis · HydraFacial® · LED therapy]<small>Includes</small></li></ul>
-        <div class="promo-cta rv" style="--d:.32s"><button class="btn btn-solid btn-lg" type="button" data-book>Claim Offer</button></div>
+        <h2 class="rv" style="--d:.08s">The Holiday <em>Edit</em></h2>
+        <div class="promo-main rv" style="--d:.16s"><b>Holiday-Ready Skin</b><span>A plan to bring your skin to its best before the season’s events. Plan 4–6 weeks ahead for results that show.</span></div>
+        <ul class="olist rv" style="--d:.24s"><li>November 1 – December 31, 2026<small>Dates</small></li><li>Gold Skin Analysis · HydraFacial® · Face Hydration · Rejuran®<small>Includes</small></li></ul>
+        <p class="note rv" style="--d:.28s;margin:0;color:var(--muted);font-size:13px">Book by December 5 for results by the holidays.</p>
+        <div class="promo-cta rv" style="--d:.32s"><button class="btn btn-solid btn-lg" type="button" data-book>Book Your Visit</button></div>
       </div>
     </div>
   </section>
@@ -406,15 +395,15 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
       <div class="ph aimg rv-img"><img src="suite-cool.jpg" alt="A bright, minimal private treatment suite overlooking Midtown Manhattan" style="object-position:50% 30%"></div>
       <div class="acopy">
         <p class="label rv">About AURA Institute</p>
-        <h2 class="big" aria-label="Natural beauty, medical precision."><span class="ln"><i>Natural beauty,</i></span><span class="ln"><i style="--d:.12s"><em>medical precision.</em></i></span></h2>
-        <p class="rv" style="--d:.2s">A physician-led aesthetic clinic at Rockefeller Center. Every visit takes place in a private suite, one guest at a time, and every plan begins with an unhurried consultation.</p>
+        <h2 class="big" aria-label="Natural beauty, refined."><span class="ln"><i>Natural beauty,</i></span><span class="ln"><i style="--d:.12s"><em>refined.</em></i></span></h2>
+        <p class="rv" style="--d:.2s">A medical aesthetics and wellness clinic at Rockefeller Center. Every visit takes place in a private suite, one guest at a time, and every plan begins with an unhurried consultation.</p>
         <a class="tlink rv" style="--d:.28s" href="about.html">Learn More<svg viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5h28M24 1l4 4-4 4" fill="none" stroke="currentColor"/></svg></a>
       </div>
     </div>
-    <div class="values" aria-label="Physician-led, private suites, FDA-cleared devices, authentic product">
+    <div class="values" aria-label="Licensed professionals, private suites, FDA-cleared devices, authentic product">
       <div class="vtrack" aria-hidden="true">
-        <span>Physician-led</span><i></i><span><em>Private suites</em></span><i></i><span>FDA-cleared devices</span><i></i><span><em>Authentic product</em></span><i></i><span>Natural results</span><i></i>
-        <span>Physician-led</span><i></i><span><em>Private suites</em></span><i></i><span>FDA-cleared devices</span><i></i><span><em>Authentic product</em></span><i></i><span>Natural results</span><i></i>
+        <span>Licensed professionals</span><i></i><span><em>Private suites</em></span><i></i><span>FDA-cleared devices</span><i></i><span><em>Authentic product</em></span><i></i><span>Natural results</span><i></i>
+        <span>Licensed professionals</span><i></i><span><em>Private suites</em></span><i></i><span>FDA-cleared devices</span><i></i><span><em>Authentic product</em></span><i></i><span>Natural results</span><i></i>
       </div>
     </div>
   </section>
@@ -432,7 +421,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 <footer class="foot" id="contact">
   <div class="in">
     <div class="top">
-      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Feel beautiful. See your light.</p></div>
+      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil your aura.</p></div>
       <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
       <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
       <div><h4>Contact</h4><p>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
@@ -458,26 +447,29 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 const C = "Consult";
 const P="Planned at consult";
 const SERIES = [
- {id:"face", n:"01", name:"Face Design", tag:"Lift · Restore · Refine", img:"s-inject.jpg", pos:"45% 40%",
+ {id:"inject", n:"01", name:"Injectables", tag:"Fillers · Relaxers · Contouring", img:"s-inject.jpg", pos:"45% 40%",
   intro:"Natural facial balancing, planned around your own features. We keep what makes you, you.",
-  items:[["Thermage® FLX","Radiofrequency tightening",P],["EMFACE®","Needle-free lift",P],["Exion™ Collagen Lift","Collagen boost by area",P],["Facial Balancing","Chin, jawline, under-eyes, temples, lips, nose",P],["Botox® & Xeomin®","Smooth expression lines",P],["V-Line & Contour","Jaw slimming & double chin",P]]},
- {id:"skinsvc", n:"02", name:"Skin &amp; Glow", tag:"Cleanse · Brighten · Hydrate", img:"s-skin2.jpg", pos:"55% 40%",
+  items:[["Facial Balancing","Chin, jawline, under-eyes, temples, lips, nose",P],["Botox® & Xeomin®","Smooth expression lines",P],["Jawline Contouring","Jaw slimming & double chin reduction",P]]},
+ {id:"tighten", n:"02", name:"Skin Tightening", tag:"Signature", img:"r-lift.jpg", pos:"50% 45%",
+  intro:"Firmer, more lifted skin, without surgery or downtime.",
+  items:[["Thermage® FLX","Radiofrequency tightening",P],["EMFACE®","Needle-free lift",P],["Exion™ Collagen Lift","Collagen boost by area",P]]},
+ {id:"skinsvc", n:"03", name:"Skin", tag:"Cleanse · Brighten · Hydrate", img:"s-skin2.jpg", pos:"55% 40%",
   intro:"Clear, bright, hydrated skin, from face to neck to scalp.",
   items:[["Gold Skin Analysis","Know your skin first","Complimentary"],["HydraFacial®","Deep cleanse & hydration",P],["BBL™ Photofacial","Sun spots & redness",P],["Gold RF Microneedling","Pores & texture",P],["Face Hydration · Rejuran®","Hydration & glow",P],["Tech Neck · Levels 1–4","Neck lines",P]]},
- {id:"wellsvc", n:"03", name:"Wellness &amp; Longevity", tag:"Energy · Sleep · Focus", img:"s-laser.jpg", pos:"25% 50%",
+ {id:"wellsvc", n:"04", name:"Wellness &amp; Longevity", tag:"Energy · Sleep · Focus", img:"s-laser.jpg", pos:"25% 50%",
   intro:"Beauty that starts from within.",
   items:[["NAD+ IV Drip","Energy & recovery",P],["EXOMIND™","Sleep, mood & focus",P]]},
- {id:"bodysvc", n:"04", name:"Body", tag:"Contour · Shoulder line", img:"s-body.jpg", pos:"45% 50%",
+ {id:"bodysvc", n:"05", name:"Body", tag:"Contour · Shoulder line", img:"s-body.jpg", pos:"45% 50%",
   intro:"Contour, smooth and refine, planned around proportion.",
   items:[["Body Sculpt · Abdomen","Non-invasive fat reduction",P],["Trap Tox · Shoulder Line","A longer, softer neckline",P],["Stretch Mark Repair","Microneedling + collagen",P]]},
- {id:"prime", n:"05", name:"AURA Prime", tag:"Monthly membership", img:"about.jpg", pos:"50% 30%", link:"aura-prime.html"}
+ {id:"prime", n:"06", name:"AURA Prime", tag:"Monthly membership", img:"about.jpg", pos:"50% 30%", link:"aura-prime.html"}
 ];
 const RESULTS=[
- {id:"lift",cat:"Face Design",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Lift &amp; Anti-Aging",img:"r-lift.jpg",pos:"50% 45%",items:[
+ {id:"lift",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Skin Tightening",img:"r-lift.jpg",pos:"50% 45%",items:[
    ["Thermage® FLX","Eyes 450 or full face 900 pulses",P],
    ["EMFACE®","Needle-free lift · 1–4 areas",P],
    ["Exion™ Collagen Lift","Cheeks, eyes, neck, forehead or any 3",P]]},
- {id:"balance",cat:"Face Design",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"r-smooth.jpg",pos:"50% 35%",items:[
+ {id:"balance",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"r-smooth.jpg",pos:"50% 35%",items:[
    ["Chin & Lower Face Balance","Chin projection and profile",P],
    ["Defined Jawline","HA filler or RADIESSE®",P],
    ["Under-Eye Hollows","A more rested look",P],
@@ -486,20 +478,20 @@ const RESULTS=[
    ["Nose Profile","Non-surgical refinement",P],
    ["Sculptra®","Gradual collagen restoration",P],
    ["RADIESSE®","Structure for jaw, cheekbones & hands",P]]},
- {id:"smooth",cat:"Face Design",show:["Botox® &amp; Xeomin®","Brow Lift","Jaw Slimming","Double Chin"],name:"Smooth &amp; Contour",img:"r-texture.jpg",pos:"50% 40%",items:[
+ {id:"smooth",show:["Botox® &amp; Xeomin®","Botox® Brow Lift","Jaw Slimming","Double Chin"],name:"Wrinkles &amp; Jawline",img:"r-texture.jpg",pos:"50% 40%",items:[
    ["Botox® & Xeomin®","Forehead lines, frown lines & crow’s feet",P],
-   ["Brow Lift","A more open, rested eye",P],
-   ["Masseter · Jaw Slimming","Jaw tension, clenching & a softer lower face",P],
-   ["Double Chin · KYBELLA®","Reduces fat under the chin",P],
+   ["Botox® Brow Lift","A more open, rested eye",P],
+   ["Jaw Slimming (Masseter Botox®)","Jaw tension, clenching & a softer lower face",P],
+   ["Double Chin Reduction (KYBELLA®)","Reduces fat under the chin",P],
    ["Facial Harmonization","Balances one side of the face",P],
    ["Lower Face Tightening + Lift","Both sides, slimmer & lifted",P]]},
- {id:"skin",cat:"Skin &amp; Glow",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Clear Skin",img:"r-duo.jpg",pos:"50% 45%",items:[
+ {id:"skin",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Facials &amp; Pores",img:"r-duo.jpg",pos:"50% 45%",items:[
    ["Gold Skin Analysis","Know your skin first · 20 min","Complimentary"],
    ["HydraFacial®","Deluxe 60 min or Platinum 75 min",P],
    ["Signature Facial","Relaxing spa facial · 60 min",P],
    ["Barrier Recovery Facial","Calms sensitive skin · 60 min",P],
    ["Gold RF Microneedling","mFace · pores, acne scars & texture",P]]},
- {id:"glow",cat:"Skin &amp; Glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Brighten &amp; Hydrate",img:"r-tone.jpg",pos:"50% 40%",items:[
+ {id:"glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Glow &amp; Hydration",img:"r-tone.jpg",pos:"50% 40%",items:[
    ["BBL™ Photofacial","Sun spots, redness & uneven tone",P],
    ["Face Hydration · Rejuran®","Hydration, texture & glow",P],
    ["Long-Lasting Glow · SKINVIVE™","Cheek smoothness · about 6 months",P],
@@ -507,7 +499,7 @@ const RESULTS=[
    ["Neck Hydration","Crepey, dry neck skin",P],
    ["Tech Neck · Levels 1–4","Matched to your neck lines",P],
    ["Scalp & Hair Restoration","Hydration or PRP",P]]},
- {id:"bodywell",cat:"Body &amp; Wellness",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
+ {id:"bodywell",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
    ["Body Sculpt · Abdomen","Non-invasive fat reduction · 30 min",P],
    ["Fat Dissolving · Body","One area per session",P],
    ["Trap Tox · Shoulder Line","Longer neck & softer shoulders",P],
@@ -518,23 +510,23 @@ const RESULTS=[
 document.getElementById('fxGrid').innerHTML=RESULTS.map((r,i)=>`
   <button type="button" class="fx rv" style="--d:${(i%3)*.1+Math.floor(i/3)*.08}s" data-result="${r.id}" aria-label="${r.name}: see treatments">
     <img src="${r.img}" alt="" style="object-position:${r.pos}">
-    <span class="ttl"><small class="fcat">${r.cat}</small>${r.name}</span>
+    <span class="ttl">${r.name}</span>
     <ul class="list" aria-hidden="true">${r.show.map(t=>`<li>${t}</li>`).join('')}</ul>
   </button>`).join('');
-const FXLINK={"lift": "face-design.html#lift", "balance": "face-design.html#balancing", "smooth": "face-design.html#lines", "skin": "skin-glow.html#cleanse", "glow": "skin-glow.html#hydrate", "bodywell": "body-shape.html"};
+const FXLINK={"lift": "goal-skin-tightening.html", "balance": "goal-facial-balancing.html", "smooth": "goal-wrinkles-jawline.html", "skin": "goal-facials-pores.html", "glow": "goal-glow-hydration.html", "bodywell": "goal-body-wellness.html"};
 document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.closest('.fx'); if(b) location.href=FXLINK[b.dataset.result];});
 
 /* ---------- most loved ---------- */
-const STARS=[
- {img:"s-inject.jpg",pos:"50% 30%",eg:"Botox® & Xeomin®",fx:"Smooth, rested, still you",href:"botox-xeomin.html"},
- {img:"star-lips.jpg",pos:"40% 50%",eg:"Lip Volume & Shape",fx:"Soft definition, true to your proportions",href:"face-design.html#balancing"},
- {img:"offer-gold.jpg",pos:"50% 40%",eg:"Thermage® FLX",fx:"A firmer jawline, no downtime",href:"face-design.html#lift"},
- {img:"r-smooth.jpg",pos:"50% 50%",eg:"Rejuran® Skin Booster",fx:"Deep hydration and a glass-skin glow",href:"glow-booster.html"}
+const MOSTLOVED=[
+ {img:"season-gold.jpg",pos:"50% 40%",name:"Thermage® FLX",fx:"Firmer, smoother skin in one session.",href:"thermage-flx.html"},
+ {img:"svc-lift.jpg",pos:"40% 30%",name:"EMFACE®",fx:"A needle-free lift. Still you, just more lifted.",href:"emface.html"},
+ {img:"s-inject.jpg",pos:"50% 30%",name:"Botox® &amp; Xeomin®",fx:"Smooth, rested, still you.",href:"botox-xeomin.html"},
+ {img:"r-smooth.jpg",pos:"50% 50%",name:"Face Hydration · Rejuran®",fx:"Deep hydration and a glass-skin glow.",href:"rejuran.html"}
 ];
-document.getElementById('starTrack').innerHTML=STARS.map((t,i)=>`
+document.getElementById('starTrack').innerHTML=MOSTLOVED.map((t,i)=>`
   <a class="star rv" style="--d:${i*.1}s" href="${t.href}">
     <span class="ph"><img src="${t.img}" alt="" style="object-position:${t.pos}" loading="lazy"></span>
-    <p class="eg">e.g. ${t.eg}</p><h3>Star Treatment #${i+1}</h3><p class="effect">${t.fx}</p>
+    <h3>${t.name}</h3><p class="effect">${t.fx}</p>
   </a>`).join('');
 
 /* ---------- experience: four steps ---------- */
@@ -544,13 +536,6 @@ const JSTEPS=[
  ["Your Custom Plan","Written options and timing, designed around your features and your schedule."],
  ["Treatment & Aftercare","Performed by a licensed provider in a private suite, followed by clear aftercare and a check-in."]];
 document.getElementById('j4').innerHTML=JSTEPS.map((t,i)=>`<li tabindex="0"><span class="k">${String(i+1).padStart(2,'0')}</span><h3>${t[0].replace('&','&amp;')}</h3><p>${t[1]}</p></li>`).join('');
-
-/* ---------- sticky nav: shadow once the brand row is gone ---------- */
-(function(){const bar=document.querySelector('.navbar'),hd=document.getElementById('nav');
- const setH=()=>document.documentElement.style.setProperty('--navh',bar.offsetHeight+'px');
- setH();addEventListener('resize',setH);
- if(!('IntersectionObserver' in window)) return;
- new IntersectionObserver(([e])=>bar.classList.toggle('stuck',!e.isIntersecting)).observe(hd);})();
 
 /* ---------- reveal on scroll ---------- */
 const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -617,7 +602,7 @@ function render(){
     const groups=list.map(s=>{const it=s.items.filter(t=>!q||t[0].toLowerCase().includes(q)||t[1].toLowerCase().includes(q)); if(!it.length) return '';
       return `<div class="group"><h5>${s.name}</h5><div class="items">${it.map(t=>`<button type="button" class="item" data-tx="${esc(t[0])}" aria-pressed="${st.tx===t[0]}"><b>${esc(t[0])}</b><small>${esc(t[1])}</small><span class="pr">${t[2]}</span></button>`).join('')}</div></div>`;}).join('');
     const cur=res||off;
-    const info=off?`<div class="offer"><p>${off.intro}</p>${off.perks?`<ul>${off.perks.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${off.rules?`<small>${off.rules}</small>`:''}</div>`:'';
+    const info=off?`<div class="sinfo"><p>${off.intro}</p>${off.perks?`<ul>${off.perks.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${off.rules?`<small>${off.rules}</small>`:''}</div>`:'';
     body.innerHTML=`<button type="button" class="opt" data-tx="${CONSULT}" aria-pressed="${st.tx===CONSULT}"><b>Not sure yet? Book a complimentary consultation</b><small>30 minutes to build a plan around your whole face and your goals</small></button>
       ${info}
       <input class="search" id="txSearch" type="search" placeholder="Search treatments" value="${esc(st.q)}" aria-label="Search treatments">
@@ -668,13 +653,5 @@ document.querySelectorAll('[data-learn]').forEach(a=>a.addEventListener('click',
 document.querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',()=>{const [tx,where]=b.dataset.feat.split('|');
   if(where.startsWith('@')) openBook(tx,where.slice(1)); else openBook(tx,null,where);}));
 
-/* ---------- mega menu: position under bar, tap to open on touch ---------- */
-(function(){const bar=document.querySelector('.navbar');const lis=[...bar.querySelectorAll('ul.top>li')];
- const place=()=>{const h=bar.clientHeight;bar.querySelectorAll('.mega').forEach(m=>{m.style.top=h+'px';if(m.classList.contains('small')){const lr=m.parentElement.getBoundingClientRect();m.style.left=Math.max(8,Math.min(lr.left-22,innerWidth-278))+'px';}});};
- addEventListener('scroll',place,{passive:true});addEventListener('resize',place);place();
- lis.forEach(li=>{li.addEventListener('mouseenter',place);li.firstElementChild.nextElementSibling;const a=li.querySelector(':scope>a');
-  a.addEventListener('click',e=>{if(matchMedia('(hover:hover)').matches)return;e.preventDefault();place();const o=li.classList.contains('open');lis.forEach(x=>x.classList.remove('open'));if(!o)li.classList.add('open');});});
- document.addEventListener('click',e=>{if(!bar.contains(e.target))lis.forEach(x=>x.classList.remove('open'));});
- addEventListener('keydown',e=>{if(e.key==='Escape')lis.forEach(x=>x.classList.remove('open'));});})();
 </script>
 </body></html>

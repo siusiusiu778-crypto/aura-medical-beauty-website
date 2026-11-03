@@ -1,213 +1,251 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>EMFACE · AURA Institute</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EMFACE® in NYC | Needle-Free Lift | AURA Institute</title>
+<meta name="description" content="EMFACE® needle-free lift for brows, cheeks and jawline at Rockefeller Center. Radiofrequency and muscle stimulation, no downtime. Book a complimentary consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css">
 <style>
-/* Layout: AURA need-page template (Level 2) — hero split, 3 signs, why-skin-loosens with layer diagram, 3 treatment cards, before/after, FAQ, CTA band. Same tokens as the homepage. */
-:root{--bg:#F7F3EE;--surface:#EFE7DE;--line:#DFD2C5;--fg:#221B17;--muted:#76665B;--accent:#3F3029;--on-accent:#F7F3EE;--card:#FCFAF7;--tan:#D9B48F;--rust:#A0533A;
---sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141110;--surface:#1E1916;--line:#382E28;--fg:#EFE6DD;--muted:#A99789;--accent:#E3CDB9;--on-accent:#1C1512;--card:#1C1714;--rust:#E09A7E;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#141110;--surface:#1E1916;--line:#382E28;--fg:#EFE6DD;--muted:#A99789;--accent:#E3CDB9;--on-accent:#1C1512;--card:#1C1714;--rust:#E09A7E;color-scheme:dark}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
-a{color:inherit}button{font:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-@media(min-width:760px){.wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
-h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
-.serif{font-family:var(--serif)}
-.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;background:var(--accent);color:var(--on-accent)}
-.btn.line{background:transparent;border-color:currentColor;color:var(--fg)}
-.proto{background:var(--fg);color:var(--bg);font-size:12px;text-align:center;padding-block:6px}
-/* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:none}
-.logo{font-size:24px;font-weight:500;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}.logo span{font-size:.46em;letter-spacing:.3em;text-transform:uppercase;vertical-align:.4em;margin-left:4px}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
-.nav ul a{text-decoration:none}.nav ul .on{border-bottom:1px solid currentColor;padding-bottom:3px}
-.nav .btn{padding:10px 20px;font-size:11.5px;border-radius:999px}
-@media(max-width:1080px){.nav ul{display:none}}
-.crumbs{font-size:12.5px;color:var(--muted);padding-block:18px 0}.crumbs a{text-decoration:none}
-/* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);min-height:clamp(420px,42vw,560px);background:var(--tan);color:#241A14;margin-top:18px}
-.hero .tx{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(28px,5vw,72px)}
-.hero h1{font-family:var(--serif);font-size:clamp(44px,5vw,72px);line-height:1}
-.hero p{margin:0;font-size:clamp(16px,1.4vw,19px);max-width:34ch}
-.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-.hero .btn{background:#241A14;color:#F7F3EE}.hero .btn.line{background:transparent;color:#241A14;border-color:#241A14}
-.hero .ph{position:relative;overflow:hidden;min-height:300px}
-.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
-.hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--tan) 0%,rgba(217,180,143,0) 25%)}
-.hero .facts{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;margin-top:10px}.hero .facts b{display:block;font-size:20px;font-weight:600}
-@media(max-width:860px){.hero{grid-template-columns:1fr}.hero .ph{order:-1;aspect-ratio:4/3;min-height:0}.hero .ph::before{background:linear-gradient(0deg,var(--tan),rgba(217,180,143,0) 25%)}}
-section{padding-block:clamp(56px,8vw,104px)}
-.head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,44px);max-width:640px}
-.head h2{font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);line-height:1.05}
-.head p{margin:0;color:var(--muted)}
-/* signs */
-.signs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.sign{border-top:1px solid var(--fg);padding-top:18px;display:grid;gap:10px;min-width:0}
-.sign svg{width:40px;height:40px}
-.sign h3{font-size:19px;font-weight:500}.sign p{margin:0;color:var(--muted);font-size:14.5px}
-@media(max-width:760px){.signs{grid-template-columns:1fr}}
-/* why */
-.why{background:var(--surface)}
-.why .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
-.why .copy{display:grid;gap:16px;min-width:0}.why .copy p{margin:0;max-width:52ch}
-.steps{margin:6px 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:12px}
-.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:baseline;font-size:15px}
-.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:20px;color:var(--rust)}
-.layers{width:100%;height:auto;max-width:100%}
-@media(max-width:860px){.why .grid{grid-template-columns:1fr}}
-/* treatments */
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
-.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
-.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
-.card:hover .ph img{transform:scale(1.04)}
-.card .badge{position:absolute;top:12px;left:12px;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px}
-.card .bd{padding:22px;display:grid;gap:10px;flex:1;align-content:start}
-.card h3{font-size:22px;font-weight:600;letter-spacing:.02em}
-.card .one{margin:0;font-size:14.5px}
-.card dl{margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
-.card dt{color:var(--muted)}.card dd{margin:0}
-.card .ft{padding:0 22px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.card .price{font-variant-numeric:tabular-nums}.card .price s{color:var(--muted);margin-right:6px}.card .price b{font-size:20px;font-weight:600}
-.card .more{font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
-@media(max-width:960px){.cards{grid-template-columns:1fr 1fr}}@media(max-width:620px){.cards{grid-template-columns:1fr}}
-.pick{margin-top:22px;font-size:14px;color:var(--muted)}
-/* before after */
-.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.pair div{aspect-ratio:3/4;background:repeating-linear-gradient(135deg,var(--surface) 0 12px,var(--card) 12px 24px);border:1px dashed var(--line);display:grid;place-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.ba figcaption{font-size:13.5px;margin-top:10px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.ba figcaption span{color:var(--muted)}
-.ba figure{margin:0;min-width:0}
-.note{font-size:12.5px;color:var(--muted);margin-top:16px}
-@media(max-width:760px){.ba{grid-template-columns:1fr}}
-/* faq */
-.faq{display:grid;align-items:start;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px)}
-details{border-bottom:1px solid var(--line);padding-block:18px}
-details:first-of-type{border-top:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px;font-weight:500}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-weight:400;font-size:22px;line-height:1;color:var(--muted)}
-details[open] summary::after{content:"–"}
-details p{margin:12px 0 0;color:var(--muted);max-width:60ch}
-@media(max-width:860px){.faq{grid-template-columns:1fr}}
-/* cta */
-.cta{background:var(--accent);color:var(--on-accent);text-align:center}
-.cta .wrap{display:grid;gap:18px;justify-items:center}
-.cta h2{font-family:var(--serif);font-size:clamp(34px,4vw,54px)}
-.cta p{margin:0;opacity:.8;max-width:46ch}
-.cta .btn{background:var(--on-accent);color:var(--accent)}
-footer{padding-block:28px;font-size:12.5px;color:var(--muted);text-align:center}
-.anno{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--card);border:1px solid var(--line);padding:8px 12px;font-size:12px;color:var(--muted);max-width:min(320px,calc(100vw - 32px))}
-@media (prefers-reduced-motion: reduce){*{transition:none!important}}
-</style><style>
-.ic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.ic div{border-top:1px solid var(--fg);padding-top:16px;font-size:15px}
-.ic b{display:block;font-size:18px;font-weight:500;margin-bottom:4px}
-@media(max-width:860px){.ic{grid-template-columns:1fr 1fr}}
-.visit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:v}
-.visit div{background:var(--card);border:1px solid var(--line);padding:22px;display:grid;gap:8px;counter-increment:v}
-.visit div::before{content:counter(v,decimal-leading-zero);font-family:var(--serif);font-size:30px;color:var(--rust)}
-.visit b{font-size:17px;font-weight:600}.visit span{color:var(--muted);font-size:14.5px}
-@media(max-width:860px){.visit{grid-template-columns:1fr 1fr}}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px)}
-.two h3{font-family:var(--serif);font-size:30px;margin-bottom:12px}.two p{margin:0 0 10px;color:var(--muted)}
-.tl{display:flex;gap:0;margin-top:14px}.tl div{flex:1;border-top:3px solid var(--line);padding-top:10px;font-size:13.5px}.tl div.on{border-color:var(--rust)}.tl b{display:block}
-@media(max-width:760px){.two{grid-template-columns:1fr}}
-table.pr{width:100%;border-collapse:collapse;font-size:15.5px;font-variant-numeric:tabular-nums}
-table.pr th,table.pr td{text-align:left;padding:14px 10px;border-bottom:1px solid var(--line)}
-table.pr th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
-table.pr td.hi{color:var(--rust);font-weight:600}
-.tbl{overflow-x:auto}
-</style>
-<div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders</div>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="home.html">aura<span>Institute</span></a>
-  <ul><li><a href="face-design.html" class="on">Face Design</a></li><li><a href="skin-glow.html">Skin &amp; Glow</a></li><li><a href="wellness.html">Wellness &amp; Longevity</a></li><li><a href="body-shape.html">Body</a></li><li><a href="aura-prime.html">Membership</a></li><li><a href="about.html">About</a></li></ul>
-  <a class="btn" href="#book">Book Now</a>
-</div></header>
+/* EMFACE® · Level 3 treatment page, built on the Thermage FLX template. Stacked sections, alternating bg/surface, no tabs, no price. */
+.tsec{padding-block:clamp(56px,8vw,88px)}
+.tsec.alt{background:var(--surface)}
+.thero{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:760px){.thero{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.thero .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
+.thero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.thero .tx{display:grid;gap:16px;min-width:0}
+.thero h1{font-family:var(--serif);font-size:clamp(42px,5vw,68px);line-height:1}
+.thero p.lede{margin:0;color:var(--muted);font-size:17px;max-width:46ch}
+.thero .tlink{font-size:14px;text-decoration:underline;text-underline-offset:4px;width:fit-content}
+@media(max-width:860px){.thero{grid-template-columns:1fr}.thero .ph{order:-1}}
+/* booking box */
+.bookbox{margin-top:8px;display:grid;gap:12px}
+.bbrow{border:1px solid var(--line);background:var(--surface)}
+.bbrow summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:14.5px;font-weight:500}
+.bbrow summary::-webkit-details-marker{display:none}
+.bbrow summary::after{content:none}
+.bbrow summary .chev{transition:transform .3s ease;color:var(--muted)}
+.bbrow[open] summary .chev{transform:rotate(180deg)}
+.bbopts{padding:0 18px 18px;display:grid;gap:10px;border-top:1px solid var(--line);margin-top:0}
+.bbopt{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:14px}
+.bbopt:first-child{padding-top:16px}
+.bbaddr{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.bookbox>.btn{width:100%}
+/* benefits 2x2 */
+.benefits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.benefits div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;display:grid;gap:6px}
+.benefits h3{font-size:17px;font-weight:600}
+.benefits p{margin:0;color:var(--muted);font-size:14.5px}
+@media(max-width:640px){.benefits{grid-template-columns:1fr}}
+.notebar{border-left:3px solid var(--rust);padding:14px 18px;margin-top:24px;font-size:14px;color:var(--fg);background:var(--card)}
+/* is it right for you */
+.fit3{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.fit3 .ph{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.fit3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fitcard{background:var(--card);border:1px solid var(--line);padding:26px;display:grid;gap:14px;align-content:start}
+.fitcard h4{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.fitcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.fitcard li{display:flex;gap:10px}
+.fitcard li::before{content:"✓";color:var(--rust);flex:none}
+.fitcard.no li::before{content:"–"}
+.fitcard .pair{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.fit3{grid-template-columns:1fr 1fr}.fit3>.ph{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:620px){.fit3{grid-template-columns:1fr}}
+/* technology: text left, image right, numbered list via .steps-v */
+.techwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.techwrap .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.techwrap .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.steps-v{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:20px}
+.steps-v li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.steps-v li::before{content:counter(st,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.steps-v b{display:block;font-size:16.5px;font-weight:600;margin-bottom:4px}
+.steps-v span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.techwrap{grid-template-columns:1fr}.techwrap .ph{order:-1}}
+/* at a glance */
+.glance{background:var(--card);border:1px solid var(--line)}
+.glance .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.glance .col{padding:28px 24px;border-right:1px solid var(--line)}
+.glance .col:last-child{border-right:0}
+.glance h5{margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.glance p{margin:0 0 8px;font-size:14px;color:var(--fg);line-height:1.6}
+.glance p:last-child{margin-bottom:0}
+.glance .ft{border-top:1px solid var(--line);padding:16px 24px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.glance .cols{grid-template-columns:1fr 1fr}.glance .col{border-bottom:1px solid var(--line)}.glance .col:nth-child(2n){border-right:0}}
+@media(max-width:560px){.glance .cols{grid-template-columns:1fr}}
+/* faq narrow */
+.faqnarrow{max-width:720px;margin:0 auto}
+/* closing banner */
+.closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
+.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
+.closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
+.closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
+.closing p{margin:0;max-width:48ch;opacity:.9}
+.closing .btn{background:#FBF4EF;color:#3F3029}
+</style></head><body>
+<div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
+<div id="site-header" data-current="skintightening">
+<div class="hdrow"><div class="in">
+  <a class="hdlogo" href="home.html">aura<span>Institute</span></a>
+  <button class="hamb" type="button" id="hambBtn" aria-expanded="false" aria-controls="mobilenav" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></div>
+<div class="navbar" aria-label="Main"><div class="in">
+  <ul class="top">
+    <li data-cat="injectables"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-injectables">Injectables</a>
+      <div class="mega" id="mega-injectables"><div class="cols">
+        <div class="grp"><h5>Dermal Fillers</h5><a href="chin-balance.html">Chin &amp; Lower Face Balance</a><a href="defined-jawline.html">Defined Jawline</a><a href="under-eye-hollows.html">Under-Eye Hollows</a><a href="temples.html">Temples</a><a href="lip-volume.html">Lip Volume &amp; Shape</a><a href="nose-profile.html">Nose Profile</a><a href="sculptra.html">Sculptra®</a><a href="radiesse.html">RADIESSE®</a></div>
+        <div class="grp"><h5>Wrinkle Relaxers</h5><a href="botox-xeomin.html">Botox® &amp; Xeomin®</a><a href="botox-brow-lift.html">Botox® Brow Lift</a></div>
+        <div class="grp"><h5>Jawline Contouring</h5><a href="jaw-slimming.html">Jaw Slimming (Masseter Botox®)</a><a href="kybella.html">Double Chin Reduction (KYBELLA®)</a><a href="facial-harmonization.html">Facial Harmonization</a><a href="lower-face-lift.html">Lower Face Tightening + Lift</a></div>
+      </div></div>
+    </li>
+    <li data-cat="skintightening"><span class="tag">Signature</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skintightening">Skin Tightening &amp; Lifting</a>
+      <div class="mega small" id="mega-skintightening"><a href="thermage-flx.html">Thermage® FLX</a><a href="emface.html">EMFACE®</a><a href="exion.html">Exion™ Collagen Lift</a></div>
+    </li>
+    <li data-cat="skin"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-skin">Skin</a>
+      <div class="mega" id="mega-skin"><div class="cols">
+        <div class="grp"><h5>Start Here</h5><a href="gold-skin-analysis.html">Gold Skin Analysis</a></div>
+        <div class="grp"><h5>Deep Cleanse</h5><a href="hydrafacial.html">HydraFacial®</a><a href="signature-facial.html">Signature Facial</a><a href="barrier-recovery-facial.html">Barrier Recovery Facial</a></div>
+        <div class="grp"><h5>Brighten &amp; Texture</h5><a href="bbl-photofacial.html">BBL™ Photofacial</a><a href="gold-rf-microneedling.html">Gold RF Microneedling</a></div>
+        <div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="rejuran.html">Face Hydration · Rejuran®</a><a href="skinvive.html">Long-Lasting Glow · SKINVIVE™</a><a href="under-eye-brightening.html">Under-Eye Brightening · PRP / PRF</a></div>
+        <div class="grp"><h5>Neck &amp; Scalp</h5><a href="neck-hydration.html">Neck Hydration</a><a href="tech-neck.html">Tech Neck · Levels 1–4</a><a href="scalp-hair.html">Scalp &amp; Hair Restoration</a></div>
+      </div></div>
+    </li>
+    <li data-cat="wellness"><span class="tag">New</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-wellness">Wellness &amp; Longevity</a>
+      <div class="mega small" id="mega-wellness"><a href="nad-iv.html">NAD+ IV Drip</a><a href="exomind.html">EXOMIND™</a></div>
+    </li>
+    <li data-cat="body"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-body">Body</a>
+      <div class="mega small" id="mega-body"><a href="body-sculpt.html">Body Sculpt · Abdomen</a><a href="fat-dissolving.html">Fat Dissolving · Body</a><a href="trap-tox.html">Trap Tox · Shoulder Line</a><a href="stretch-mark-repair.html">Stretch Mark Repair</a></div>
+    </li>
+    <li data-cat="membership"><a href="aura-prime.html">Membership</a>
+      <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
+    </li>
+    <li data-cat="about"><a href="about.html">About</a>
+      <div class="mega small" id="mega-about"><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="about.html#team">Our Team</a><a href="about.html#clinic">The Clinic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div>
+    </li>
+  </ul>
+  <a class="btn nav-book" href="#book">Book a Consultation</a>
+</div></div>
+<div class="mnscrim" id="navScrim"></div>
+<div class="mobilenav" id="mobilenav" aria-hidden="true">
+  <div class="mnhead"><a class="hdlogo" href="home.html">aura<span>Institute</span></a><button class="close" type="button" id="mnClose" aria-label="Close menu">×</button></div>
+  <div class="mnbody">
+    <div class="macc" data-acc="injectables"><button type="button" class="machead" aria-expanded="false">Injectables<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skintightening"><button type="button" class="machead" aria-expanded="false">Skin Tightening &amp; Lifting<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="skin"><button type="button" class="machead" aria-expanded="false">Skin<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="wellness"><button type="button" class="machead" aria-expanded="false">Wellness &amp; Longevity<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <div class="macc" data-acc="body"><button type="button" class="machead" aria-expanded="false">Body<span class="chev">⌄</span></button><div class="mapanel"></div></div>
+    <a class="mnlink" href="aura-prime.html">Membership</a>
+    <a class="mnlink" href="about.html">About</a>
+    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="#book">Book a Consultation</a>
+  </div>
+</div>
+</div>
+<script src="nav.js"></script>
 <main>
-  <div class="wrap crumbs"><a href="home.html">Home</a> / <a href="face-design.html">Face Design</a> / <a href="face-design.html">Lift &amp; Tighten</a> / EMFACE®</div>
-  <div class="wrap"><div class="hero">
-    <div class="tx">
-      <p class="eyebrow" style="color:#5a4636">Skin Tightening · Signature</p>
-      <h1>EMFACE®</h1>
-      <p>Lift without needles. Radiofrequency and muscle stimulation lift brows, cheeks and jawline in one 20-minute session.</p>
-      <div class="facts"><span><b>20 min</b>per session</span><span><b>No needles</b>non-invasive</span><span><b>No downtime</b>back to work</span></div>
-      <div class="btns"><a class="btn" href="#book">Book EMFACE · $399</a><a class="btn line" href="#pricing">See Pricing</a></div>
-      <p style="font-size:13px;color:#5a4636">First visit, 1 area. Regular $1,000.</p>
+<div class="wrap crumbs"><a href="home.html">Home</a> / Skin Tightening &amp; Lifting / EMFACE®</div>
+
+<section class="tsec" id="top"><div class="thero">
+  <div class="ph"><img src="svc-lift.jpg" alt="Woman with a lifted, defined jawline" style="object-position:40% 30%"></div>
+  <div class="tx">
+    <p class="eyebrow">Skin Tightening</p>
+    <h1>EMFACE<em>®</em></h1>
+    <p class="lede">Lift without needles. Radiofrequency and muscle stimulation lift the brows, cheeks and jawline in one 20-minute session.</p>
+    <a class="tlink" href="#how">Learn all about EMFACE®</a>
+    <div class="bookbox">
+      <details class="bbrow">
+        <summary>Choose your appointment <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="bbopts">
+          <label class="bbopt"><input type="radio" name="appt" checked> Complimentary consultation</label>
+          <label class="bbopt"><input type="radio" name="appt"> EMFACE® treatment</label>
+          <p class="bbaddr">AURA Institute · 630 Fifth Avenue, Suite 1812, Rockefeller Center, New York</p>
+        </div>
+      </details>
+      <a class="btn" href="#book">Continue to Booking</a>
     </div>
-    <div class="ph"><img src="svc-lift.jpg" alt="Woman with a lifted, defined jawline"></div>
-  </div></div>
+  </div>
+</div></section>
 
-  <section><div class="wrap">
-    <div class="head"><p class="eyebrow">Best for</p><h2>Who EMFACE is <em>for</em></h2></div>
-    <div class="ic"><div><b>Forehead lines</b>Softer lines without freezing expression.</div><div><b>Brows &amp; cheeks</b>A gentle lift where volume has dropped.</div><div><b>Jawline</b>A more defined lower face and profile.</div><div><b>Needle-shy clients</b>Results with no injections at all.</div></div>
-  </div></section>
+<section class="tsec alt" id="how"><div class="wrap">
+  <div class="head"><p class="eyebrow">How it works</p><h2>Two layers, <em>one</em> treatment</h2></div>
+  <p style="margin:0 0 28px;max-width:70ch;color:var(--muted)">Most devices treat skin or muscle. EMFACE® treats both at the same time: radiofrequency warms the skin to boost collagen and elastin, while muscle stimulation tones the small muscles that hold your face up. Together they lift and firm, with nothing that breaks the skin.</p>
+  <div class="benefits">
+    <div><h3>Forehead lines</h3><p>Softer lines without freezing your expression.</p></div>
+    <div><h3>Brows &amp; cheeks</h3><p>A gentle lift where volume has dropped.</p></div>
+    <div><h3>Jawline</h3><p>A more defined lower face and profile.</p></div>
+    <div><h3>Needle-shy clients</h3><p>Results with no injections at all.</p></div>
+  </div>
+  <p class="notebar">FDA-cleared radiofrequency and electrical muscle stimulation for facial toning and lifting.</p>
+</div></section>
 
-  <section class="why"><div class="wrap grid">
-    <div class="copy"><p class="eyebrow">How it works</p><h2 class="serif" style="font-size:clamp(32px,3.4vw,48px);line-height:1.05">Two layers, <em>one</em> treatment</h2>
-      <p>Most devices treat skin or muscle. EMFACE treats both at the same time.</p>
-      <ol class="steps"><li><span><b>Radiofrequency</b> warms the skin to boost collagen and elastin.</span></li><li><span><b>Muscle stimulation</b> tones the small muscles that hold your face up.</span></li><li><span>Together they lift and firm, with nothing that breaks the skin.</span></li></ol></div>
-    <svg class="layers" viewBox="0 0 520 300" role="img" aria-label="EMFACE works on skin and muscle layers at once"><g font-family="Instrument Sans, Arial, sans-serif" font-size="13">
-      <rect x="20" y="40" width="300" height="70" fill="#F3DED0"/><rect x="20" y="116" width="300" height="50" fill="#EBCDB5"/><rect x="20" y="172" width="300" height="80" fill="#C98F7C"/>
-      <rect x="70" y="10" width="200" height="24" rx="12" fill="#3F3029"/><text x="170" y="27" text-anchor="middle" fill="#F7F3EE" font-size="12">EMFACE applicator</text>
-      <g fill="currentColor" style="color:var(--fg)"><text x="340" y="80">Skin · RF heat</text><text x="340" y="146">Fat</text><text x="340" y="217">Muscle · stimulation</text></g>
-      <g stroke="var(--rust)" stroke-width="2"><path d="M110 40 v60 M170 40 v60 M230 40 v60" stroke-dasharray="4 4"/><path d="M140 40 v170 M200 40 v170"/></g>
-      <text x="20" y="280" fill="var(--rust)" font-size="12" font-weight="600">Heat for collagen · pulses for tone</text></g></svg>
-  </div></section>
-
-  <section><div class="wrap">
-    <div class="head"><p class="eyebrow">Your visit</p><h2>What to <em>expect</em></h2></div>
-    <div class="visit"><div><b>Consult &amp; mapping</b><span>10 minutes with your provider to choose the areas.</span></div><div><b>Applicators placed</b><span>Soft pads on the forehead and cheeks. No numbing needed.</span></div><div><b>20 minutes</b><span>Warmth and a light tapping sensation. Many clients relax or nap.</span></div><div><b>Back to your day</b><span>Makeup on, straight back to work or lunch.</span></div></div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap two">
-    <div><h3>Results &amp; sessions</h3><p>Best results come from a series of 4 sessions, about 1 month apart. Collagen keeps building for weeks after your last session.</p>
-      <div class="tl"><div class="on"><b>Week 0</b>Session 1</div><div class="on"><b>Week 4</b>Session 2</div><div class="on"><b>Week 8</b>Session 3</div><div class="on"><b>Week 12</b>Session 4</div><div><b>+3 months</b>Full result</div></div>
-      <p class="note">Results vary by individual.</p></div>
-    <div><h3>Aftercare</h3><p>No downtime. You may feel mild warmth or see light redness for a few hours.</p><p>Keep skin hydrated and wear SPF 30+. You can wear makeup the same day.</p></div>
-  </div></section>
-
-  <section class="why" id="pricing"><div class="wrap">
-    <div class="head"><p class="eyebrow">Pricing</p><h2>Simple, <em>transparent</em> pricing</h2></div>
-    <div class="tbl"><table class="pr"><thead><tr><th>Areas</th><th>First visit</th><th>Single session</th><th>4-session package</th><th>Maintenance (4)</th></tr></thead><tbody>
-      <tr><td>1 area</td><td class="hi">$399</td><td>$1,000</td><td>$3,200</td><td>$2,600</td></tr>
-      <tr><td>2 areas</td><td class="hi">$599</td><td>$1,250</td><td>$4,000</td><td>$3,200</td></tr>
-      <tr><td>3 areas</td><td class="hi">$799</td><td>$1,500</td><td>$4,800</td><td>$3,800</td></tr>
-      <tr><td>4 areas</td><td class="hi">$999</td><td>$1,750</td><td>$5,600</td><td>$4,400</td></tr></tbody></table></div>
-    <p class="note">Glow Girl members and Aura VIP credit can be applied. Prices subject to change.</p>
-  </div></section>
-
-  <section><div class="wrap faq">
-    <div class="head"><p class="eyebrow">FAQ</p><h2>Good to <em>know</em></h2></div>
-    <div>
-      <details open><summary>Does it hurt?</summary><p>Most clients describe warmth and a tapping sensation. No numbing is needed, and the level is adjusted for your comfort.</p></details>
-      <details><summary>When will I see results?</summary><p>Some clients notice a lifted look after the first sessions. Results build over the series and for weeks afterward.</p></details>
-      <details><summary>Can I combine it with other treatments?</summary><p>Yes. EMFACE pairs well with Botox, skin boosters and Thermage. Your provider will plan the timing.</p></details>
-      <details><summary>Who should not have EMFACE?</summary><p>It is not recommended during pregnancy or with metal or electronic implants in the face. Your provider will review your history at consultation.</p></details>
+<section class="tsec" id="fit"><div class="wrap">
+  <div class="head"><p class="eyebrow">Is it right for you?</p><h2>Ideal <em>for</em></h2></div>
+  <div class="fit3">
+    <div class="ph"><img src="s-inject.jpg" alt="Portrait of a client with a lifted, defined profile" style="object-position:45% 40%"></div>
+    <div class="fitcard">
+      <h4>Ideal for</h4>
+      <ul>
+        <li>Early forehead and brow drop</li>
+        <li>Soft volume loss in the cheeks</li>
+        <li>A less defined jawline</li>
+        <li>Needle-shy clients</li>
+        <li>Maintaining results between other treatments</li>
+      </ul>
     </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="head"><p class="eyebrow">Pairs well with</p><h2>Complete your <em>plan</em></h2></div>
-    <div class="cards">
-      <article class="card"><div class="ph"><img src="r-lift.jpg" alt="Close-up of a defined jawline" style="object-position:50% 45%"></div><div class="bd"><h3>Thermage® FLX</h3><p class="one">Once-a-year deep tightening to maintain your lift.</p></div><div class="ft"><span class="price">From <b>$1,999</b></span><a class="more" href="#">Learn More</a></div></article>
-      <article class="card"><div class="ph"><img src="about.jpg" alt="Woman with dewy skin" style="object-position:50% 25%"></div><div class="bd"><h3>Glow Boosters</h3><p class="one">Hydration and glow on top of a firmer base.</p></div><div class="ft"><span class="price">From <b>$299</b></span><a class="more" href="#">Learn More</a></div></article>
-      <article class="card"><div class="ph"><img src="svc-laser.jpg" alt="Soft portrait" style="object-position:50% 30%"></div><div class="bd"><h3>Botox®</h3><p class="one">Softens expression lines while EMFACE lifts.</p></div><div class="ft"><span class="price"><b>$12</b> / unit</span><a class="more" href="#">Learn More</a></div></article>
+    <div class="fitcard no">
+      <h4>Does not treat</h4>
+      <ul>
+        <li>Deep, static wrinkles</li>
+        <li>Significant volume loss</li>
+        <li>Loose, excess skin that needs a surgical lift</li>
+        <li>Active skin infection in the treatment area</li>
+      </ul>
+      <p class="pair">For deeper lines, pair it with <a href="botox-xeomin.html">Botox® &amp; Xeomin®</a>. For looser skin, see <a href="thermage-flx.html">Thermage® FLX</a>.</p>
     </div>
-  </div></section>
+  </div>
+</div></section>
 
-  <section class="cta" id="book"><div class="wrap">
-    <p class="eyebrow" style="color:inherit;opacity:.7">First visit · 1 area</p>
-    <h2>Ready to <em>lift</em>?</h2>
-    <p>Try EMFACE for $399 and see how 20 minutes can change your profile.</p>
-    <a class="btn" href="#book">Book EMFACE</a>
-  </div></section>
+<section class="tsec alt" id="tech"><div class="wrap">
+  <div class="head"><p class="eyebrow">The technology</p><h2>Two signals, <em>one</em> session</h2></div>
+  <div class="techwrap">
+    <ol class="steps-v">
+      <li><div><b>Radiofrequency</b><span>Warms the deeper layers of the skin to boost collagen and elastin.</span></div></li>
+      <li><div><b>HIFES muscle stimulation</b><span>Tones the small muscles that hold your face up, the same muscles a facial exercise would reach.</span></div></li>
+      <li><div><b>Continuous temperature control</b><span>Monitors the skin surface throughout, so each pulse stays safe and comfortable.</span></div></li>
+    </ol>
+    <div class="ph"><img src="svc-skin.jpg" alt="Close-up of smooth, lifted skin" style="object-position:50% 40%"></div>
+  </div>
+</div></section>
+
+<section class="tsec" id="glance"><div class="wrap">
+  <div class="head"><p class="eyebrow">At a glance</p><h2>EMFACE® <em>at a glance</em></h2></div>
+  <div class="glance">
+    <div class="cols">
+      <div class="col"><h5>Before your treatment</h5><p>No numbing needed.</p><p>Come in with clean, makeup-free skin.</p><p>Remove any facial piercings or metal jewelry.</p></div>
+      <div class="col"><h5>After your treatment</h5><p>No downtime. Makeup on, straight back to your day.</p><p>Keep skin hydrated and wear SPF 30+.</p></div>
+      <div class="col"><h5>Results</h5><p>Best results come from a series of 4 sessions, about 1 month apart. Collagen keeps building for weeks after your last session.</p><p>Results vary by individual.</p></div>
+      <div class="col"><h5>Frequency</h5><p>A series of 4, then maintained once or twice a year.</p><p>Each session takes about 20 minutes.</p></div>
+    </div>
+    <div class="ft">Your provider will review your health history and these instructions with you before treatment.</div>
+  </div>
+</div></section>
+
+<section class="tsec alt" id="faq"><div class="wrap faqnarrow">
+  <div class="head" style="text-align:center;justify-items:center"><p class="eyebrow">FAQs</p><h2>Frequently asked <em>questions</em></h2></div>
+  <details open><summary>Does it hurt?</summary><p>Most clients describe warmth and a tapping sensation. No numbing is needed, and your provider adjusts the level to your comfort.</p></details>
+  <details><summary>When will I see results?</summary><p>Some clients notice a lifted look after the first sessions. Results build over the series and continue for weeks afterward.</p></details>
+  <details><summary>What are the side effects?</summary><p>Mild warmth or light redness for a few hours. Serious side effects are rare.</p></details>
+  <details><summary>Who should not have it?</summary><p>It is not recommended during pregnancy or with metal or electronic implants in the face, including a pacemaker. Your provider will review your health history at consultation.</p></details>
+  <details><summary>Can I combine it with other treatments?</summary><p>Yes. EMFACE® pairs well with Wrinkle Relaxers and Thermage® FLX. Your provider will plan the timing.</p></details>
+  <details><summary>How much does it cost?</summary><p>It depends on your plan. You’ll get a clear quote at your complimentary consultation.</p></details>
+</div></section>
+
+<section class="closing tsec" id="book">
+  <img src="svc-lift.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <h2>Ready to <em>lift</em>, without needles?</h2>
+    <p>Book a complimentary consultation. We’ll look at your whole face and build a plan that stays true to you.</p>
+    <a class="btn" href="#book">Book a Consultation</a>
+  </div>
+</section>
 </main>
-<footer>AURA Institute · Rockefeller Center, New York · Results vary by individual.</footer>
-</html>
+<footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer>
+</body></html>
