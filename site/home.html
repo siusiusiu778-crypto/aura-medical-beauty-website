@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
 <style>
 /* Layout: full-bleed video hero with centered Book Now → About Us split (copy left, image right) → dark Our Services row of five series → floating Book Now. */
 /* shell / cocoa / clay palette, after the AURA reference homepage; light only */
@@ -68,18 +68,15 @@ em.s{font-family:var(--serif);font-style:italic}
 .navbar .wrap{display:flex;justify-content:center;align-items:center;gap:clamp(22px,3.2vw,52px)}
 .nav-book{flex:none;border-radius:0;padding:10px 22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
 .nav-book:hover{background:var(--clay)}
-.navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(22px,3.2vw,52px);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(24px,3.2vw,52px);font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
 .navbar{position:sticky}
 .navbar ul.top>li{position:static}
 .navbar ul.top>li>a{display:block;padding:25px 0 17px;text-decoration:none;white-space:nowrap;position:relative}
-.navbar ul.top>li>a::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease)}
-.navbar ul.top>li:hover>a::after,.navbar ul.top>li.open>a::after{transform:scaleX(1);transform-origin:left}
-/* tagged items keep a clay underline that matches their label */
-.navbar ul.top>li:has(.tag)>a::after{transform:scaleX(1);background:var(--clay)}
+.navbar ul.top>li>a::after{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:center;transition:transform .7s var(--ease)}
+.navbar ul.top>li:hover>a::after,.navbar ul.top>li.open>a::after{transform:scaleX(1)}
 .navbar ul.top>li{position:relative}
-/* SIGNATURE / NEW: a small chip just to the right of its own label, raised like a superscript */
-.navbar ul.top>li{display:flex;align-items:center;gap:7px}
-.tag{order:2;flex:none;position:relative;top:-7px;font-size:8px;font-weight:600;letter-spacing:.16em;line-height:1;padding:3px 6px 2px;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap;pointer-events:none}
+/* SIGNATURE / NEW: a small tag centred above its own label */
+.tag{position:absolute;top:7px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:600;letter-spacing:.16em;line-height:1;padding:3px 6px 2px;color:var(--cream);background:var(--clay);border-radius:2px;white-space:nowrap;pointer-events:none;z-index:1}
 .navbar .wrap{position:static}
 .mega{position:fixed;left:0;right:0;background:var(--bg);color:var(--fg);border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:30px max(24px,env(safe-area-inset-right,0px)) 34px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:60}
 .navbar li:hover>.mega,.navbar li.open>.mega{display:block}
@@ -100,15 +97,23 @@ em.s{font-family:var(--serif);font-style:italic}
   .nav-book{padding-inline:16px;margin-right:max(12px,env(safe-area-inset-right,0px))}}
 
 /* hero (type unchanged: keeps Instrument Sans / Serif) */
-.hero{--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif;font-family:var(--sans);font-weight:400;line-height:1.6}
+.hero{font-family:var(--sans);font-weight:400;line-height:1.6}
 .hero{position:relative;height:calc(100svh - 172px);min-height:520px;max-height:960px;overflow:hidden;color:var(--hero-fg);background:#B98472}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(18,12,10,.45),rgba(18,12,10,.15) 70%),linear-gradient(180deg,rgba(18,12,10,.35),rgba(18,12,10,0) 25%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 52%,rgba(28,17,13,.5),rgba(28,17,13,.14) 75%),linear-gradient(180deg,rgba(28,17,13,.3),rgba(28,17,13,0) 22%);pointer-events:none}
 .hero .center{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.hero .eyebrow{color:var(--hero-dim)}
-.hero .eyebrow,.hero h1,.hero p{text-shadow:0 1px 2px rgba(40,24,18,.28),0 4px 30px rgba(40,24,18,.45)}
-.hero h1{font-size:clamp(44px,7vw,104px);letter-spacing:-.02em;line-height:1}
-.hero p{margin:0;color:var(--hero-dim);font-size:clamp(15px,1.4vw,19px);max-width:46ch}
+.hero .eyebrow{color:#fff;font-size:12px;font-weight:600;letter-spacing:.32em;max-width:none;white-space:nowrap;display:flex;align-items:center;gap:18px}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:clamp(28px,4vw,56px);height:1px;background:rgba(255,255,255,.75)}
+.hero .eyebrow,.hero h1,.hero p{text-shadow:0 1px 2px rgba(92,56,40,.6),0 2px 12px rgba(92,56,40,.55),0 8px 40px rgba(92,56,40,.6)}
+/* a barely-there golden-brown haze behind the copy, just enough to lift the white type */
+.hero .center::before{content:"";position:absolute;left:50%;top:50%;width:min(1000px,88%);height:62%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(122,86,56,.26),rgba(122,86,56,0));filter:blur(40px);z-index:-1;pointer-events:none}
+/* the big slogan needs less shade than the small type */
+.hero h1{text-shadow:0 1px 2px rgba(92,56,40,.4),0 4px 24px rgba(92,56,40,.35)}
+/* one line, Cormorant, all white: roman, then italic */
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(42px,7.4vw,124px);letter-spacing:-.01em;line-height:1.02}
+.hero h1 em.s{font-weight:500;color:#fff}
+@media(min-width:900px){.hero h1{white-space:nowrap}}
+.hero p{margin:0;color:#fff;font-weight:500;font-size:clamp(16px,1.4vw,19px);max-width:44ch;line-height:1.65}
 .hero .btn{margin-top:10px;background:rgba(251,247,243,.92);color:#221B17;padding:17px 44px;font-size:13.5px}
 .hero .btn:hover{background:#FBF7F3}
 .scrollcue{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--hero-dim)}
@@ -232,7 +237,7 @@ em.s{font-family:var(--serif);font-style:italic}
 @keyframes veilOut{to{opacity:0;visibility:hidden}}
 .hero .eyebrow{animation:eyebrowIn 1.8s var(--ease) .9s both}
 @keyframes eyebrowIn{from{opacity:0;letter-spacing:.6em}}
-.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .12em;margin-bottom:-.12em}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .14em;margin:0 -.04em -.14em}
 .hero h1 .w i{display:inline-block;font-style:inherit;transform:translateY(105%);animation:wordUp 1.3s var(--ease) both;animation-delay:calc(1.15s + var(--i)*.11s)}
 @keyframes wordUp{to{transform:none}}
 .hero .center>p,.hero .center>.btn{animation:heroIn 1.4s var(--ease) both}
@@ -286,18 +291,18 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 
 /* ---------- about: cocoa band, photo bleeds to the left edge, statement on the right ---------- */
 .about3{background:var(--cocoa);color:#D9C3B8;overflow:hidden}
-.asplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(560px,52vw,780px)}
+.asplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(440px,40vw,600px)}
 .aimg{min-height:420px;background:#8A7064}
 .aimg img{object-position:50% 60%}
-.acopy{display:flex;flex-direction:column;justify-content:center;gap:26px;padding:clamp(56px,7vw,120px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,7vw,120px) clamp(28px,6vw,100px)}
+.acopy{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:clamp(48px,5vw,84px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(48px,5vw,84px) clamp(28px,6vw,100px)}
 .acopy .label{color:var(--clay-lt)}
-.big{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(46px,5.2vw,84px);line-height:1;letter-spacing:-.01em;margin:0}
+.big{font-family:var(--serif);font-weight:400;color:#fff;font-size:clamp(46px,5.2vw,84px);line-height:1;letter-spacing:-.01em;margin:0}
 .big .ln{display:block;overflow:hidden;padding-bottom:.1em}
 .big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
 .big.in .ln i{transform:none}
-.big em{font-style:italic;color:var(--clay-lt)}
-.acopy p{margin:0;max-width:44ch;font-size:16px;line-height:1.8}
-.acopy .tlink{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px}
+.big em{font-style:italic;color:#fff}
+.acopy p{margin:0;max-width:44ch;font-size:16px;line-height:1.8;color:#fff}
+.acopy .tlink{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px;color:#fff}
 .acopy .tlink svg{width:30px;height:10px;transition:transform .7s var(--ease)}
 .acopy .tlink:hover{color:var(--clay-lt)}
 .acopy .tlink:hover svg{transform:translateX(6px)}
@@ -370,7 +375,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <!-- SECTION 3 · PROMOTION -->
   <section class="promo-sec gut" id="offers" aria-label="Current offers">
     <div class="promo-in">
-      <div class="ph promo-img rv-img"><span class="badge">Limited time</span><img src="offer-gold.jpg" alt="A provider treats the jawline with a gold device in warm light" style="object-position:50% 45%"></div>
+      <div class="ph promo-img rv-img"><span class="badge">Limited time</span><img src="offer-laser.jpg?v=3" alt="A client in protective eyewear relaxes while a clinician treats her jawline with a handheld device" style="object-position:50% 48%"></div>
       <div class="promo-copy">
         <p class="label rv">This season at AURA</p>
         <h2 class="rv" style="--d:.08s">Current <em>offers</em></h2>
@@ -392,7 +397,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <!-- SECTION 5 · ABOUT US -->
   <section class="about3" id="about" aria-label="About AURA Institute">
     <div class="asplit">
-      <div class="ph aimg rv-img"><img src="suite-warm.jpg" alt="A private treatment suite in warm light, overlooking Midtown Manhattan"></div>
+      <div class="ph aimg rv-img"><img src="suite-cool.jpg" alt="A bright, minimal private treatment suite overlooking Midtown Manhattan" style="object-position:50% 30%"></div>
       <div class="acopy">
         <p class="label rv">About AURA Institute</p>
         <h2 class="big" aria-label="Natural beauty, medical precision."><span class="ln"><i>Natural beauty,</i></span><span class="ln"><i style="--d:.12s"><em>medical precision.</em></i></span></h2>
@@ -517,8 +522,8 @@ document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.
 const STARS=[
  {img:"s-inject.jpg",pos:"50% 30%",eg:"Botox® & Xeomin®",fx:"Smooth, rested, still you",href:"botox-xeomin.html"},
  {img:"star-lips.jpg",pos:"40% 50%",eg:"Lip Volume & Shape",fx:"Soft definition, true to your proportions",href:"face-design.html#balancing"},
- {img:"r-smooth.jpg",pos:"50% 50%",eg:"Rejuran® Skin Booster",fx:"Deep hydration and a glass-skin glow",href:"glow-booster.html"},
- {img:"s-skin2.jpg",pos:"50% 40%",eg:"Gold RF Microneedling",fx:"Refined pores and smoother texture",href:"skin-glow.html#pores"}
+ {img:"offer-gold.jpg",pos:"50% 40%",eg:"Thermage® FLX",fx:"A firmer jawline, no downtime",href:"face-design.html#lift"},
+ {img:"r-smooth.jpg",pos:"50% 50%",eg:"Rejuran® Skin Booster",fx:"Deep hydration and a glass-skin glow",href:"glow-booster.html"}
 ];
 document.getElementById('starTrack').innerHTML=STARS.map((t,i)=>`
   <a class="star rv" style="--d:${i*.1}s" href="${t.href}">
