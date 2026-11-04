@@ -3,7 +3,7 @@
 <meta name="description" content="Thermage® FLX radiofrequency skin tightening at Rockefeller Center. Non-surgical, no downtime, results that build over months. Book a complimentary consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css?v=2">
+<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2">
 <style>
 /* Thermage FLX · Level 3 treatment page. Stacked sections, alternating bg/surface, no tabs, no price. */
 .tsec{padding-block:clamp(56px,8vw,88px)}
@@ -196,7 +196,7 @@ section[id]{scroll-margin-top:72px}
 .tsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(231,207,195,.18)}
 .tsteps .n{font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay-lt)}
 .tsteps b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px}
-.tsteps span{font-size:14.5px;line-height:1.65}
+.tsteps span{font-size:14.5px;line-height:1.65;color:#fff}
 @media(max-width:860px){.tgrid{grid-template-columns:1fr}.tgrid .ph{aspect-ratio:4/3}}
 /* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
 .g4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -302,7 +302,7 @@ p,h3,.rows li{text-wrap:pretty}
 /* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */
 .fit5{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.78fr);align-items:start}
 .fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
-.pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:var(--card);border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
+.pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:#F1E3DB;border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
 .pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
 .pairnote a{color:var(--fg);text-decoration-color:var(--clay);text-underline-offset:4px}
 @media(max-width:900px){.fit5{grid-template-columns:1fr 1fr}.fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
@@ -327,6 +327,17 @@ p,h3,.rows li{text-wrap:pretty}
 summary{font-size:20px;font-weight:500}
 details{padding-block:16px}
 details p{font-size:14px;line-height:1.7}
+
+
+/* ===== v8: at a glance, bulleted and a size down so each point fits on one line ===== */
+.g4{max-width:1040px;column-gap:clamp(32px,4vw,64px)}  /* narrower, so the four blocks read as one group, wide enough that every point stays on one line */
+.g4 li{padding-right:24px}
+.faqgrid{max-width:1020px;margin-inline:auto}
+.g4 li{border-top:.5px solid rgba(47,34,29,.42)}  /* solid hairline: half a pixel on high-resolution screens; the softer tone keeps it fine on 1x screens too */
+.g4 p{position:relative;max-width:none;padding-left:18px;font-size:14.5px;line-height:1.6;margin-bottom:9px}
+#glance .head{max-width:none}
+.faqgrid .head h2{font-size:clamp(40px,4.4vw,64px);line-height:1}  /* same size as the At a glance heading */
+.g4 p::before{content:"";position:absolute;left:2px;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--clay)}
 </style></head><body>
 <div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
 <div id="site-header" data-current="skintightening">
@@ -394,7 +405,7 @@ details p{font-size:14px;line-height:1.7}
 
 <section class="thtop" id="top"><div class="wrap thero2">
   <div class="tframe">
-    <div class="ph rv-img"><img src="thermage-banner.jpg" alt="A clinician rests a Thermage® FLX handpiece along a client's jawline" style="object-position:16% 45%"></div>
+    <div class="ph rv-img"><img src="thermage-hero.jpg?v=2" alt="A provider holds a radiofrequency handpiece to a relaxed client's cheek during a skin-tightening treatment" style="object-position:50% 45%"></div>
   </div>
   <div class="tx">
     <p class="eyebrow kicker rv" style="--d:.15s">Skin Tightening</p>
@@ -438,14 +449,14 @@ details p{font-size:14px;line-height:1.7}
         <li>Active acne or breakouts</li>
         <li>Advanced sagging that needs surgery</li>
       </ul></div>
-    <div class="ph rv-img fitimg"><img src="fit-lips.jpg" alt="Close-up of clear, dewy skin and soft lips" style="object-position:50% 45%"></div>
+    <div class="ph rv-img fitimg"><img src="thermage-fit.jpg" alt="Close-up of smooth, dewy skin along the cheek and lips" style="object-position:50% 50%"></div>
   </div>
   <p class="pairnote rv"><span class="pl">Pairs well</span><span class="pt">For volume, pair it with <a href="radiesse.html">RADIESSE®</a>. For tone, see <a href="bbl-photofacial.html">BBL™ Photofacial</a>.</span></p>
 </div></section>
 
 <section class="techband" id="tech">
   <div class="tgrid">
-    <div class="ph rv-img"><img src="r-texture.jpg" alt="Close-up of smooth, even skin texture" style="object-position:50% 40%"></div>
+    <div class="ph rv-img"><img src="thermage-tech.jpg" alt="A smiling woman with glowing skin, hand resting on her cheek" style="object-position:50% 35%"></div>
     <div class="tcopy">
       <p class="eyebrow rv">The technology</p>
       <h2 class="rv" style="--d:.08s">Precise, even, <em>comfortable</em></h2>
@@ -463,7 +474,7 @@ details p{font-size:14px;line-height:1.7}
   <ol class="g4">
     <li class="rv" style="--d:0s"><span class="k">01</span><h3>Before your treatment</h3><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days.</p><p>Avoid sunburn, lasers, peels and microneedling for 2 weeks.</p><p>Come in with clean, makeup-free skin.</p></li>
     <li class="rv" style="--d:.1s"><span class="k">02</span><h3>After your treatment</h3><p>No downtime. Back to your day right away.</p><p>Gentle, hydrating skincare for the first week.</p><p>Skip saunas and intense workouts for a week.</p><p>Daily sunscreen for a month.</p></li>
-    <li class="rv" style="--d:.2s"><span class="k">03</span><h3>Results</h3><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></li>
+    <li class="rv" style="--d:.2s"><span class="k">03</span><h3>Results</h3><p>Skin feels firmer right after treatment.</p><p>Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></li>
     <li class="rv" style="--d:.3s"><span class="k">04</span><h3>Frequency</h3><p>One session, maintained once a year.</p><p>Treatment takes about 30–90 minutes, depending on your plan.</p></li>
   </ol>
   <p class="gnote rv">Your provider will review your health history and these instructions with you before treatment.</p>
