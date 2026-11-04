@@ -1,76 +1,141 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>About AURA Institute | Medical Aesthetics at Rockefeller Center, NYC</title>
-<meta name="description" content="AURA Institute is a medical aesthetics and wellness clinic at 630 Fifth Avenue, Rockefeller Center. Natural, refined results planned around your own features.">
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About AURA Institute | Medical Aesthetics at Rockefeller Center, NYC</title>
+<meta name="description" content="AURA Institute is a medical aesthetics and wellness clinic at Rockefeller Center, New York. Face design, skin treatments, body contouring and wellness therapies, planned around your own features.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css?v=2"><link rel="stylesheet" href="col.css"><link rel="stylesheet" href="svc.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What happens at my first visit?","acceptedAnswer":{"@type":"Answer","text":"We start with a consultation. We review your health history, look at your skin and features, and talk about what you'd like to change. Then we recommend a plan, and you decide what to do and when."}},
-{"@type":"Question","name":"Is the consultation complimentary?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your consultation, including a Gold Skin Analysis, is complimentary."}},
-{"@type":"Question","name":"I don't know which treatment I need. Where do I start?","acceptedAnswer":{"@type":"Answer","text":"That's what the consultation is for. You can also browse by goal on our homepage, from skin tightening to glow and hydration."}},
-{"@type":"Question","name":"Will I still look like myself?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our approach is refined, never overdone. We make small, precise changes that bring your own features forward."}},
-{"@type":"Question","name":"Is there downtime?","acceptedAnswer":{"@type":"Answer","text":"Most of our treatments have little or no downtime, and many fit into a lunch break. Your provider will tell you what to expect before every treatment."}},
-{"@type":"Question","name":"Who should not have treatment?","acceptedAnswer":{"@type":"Answer","text":"Some treatments aren't suitable during pregnancy or breastfeeding, or with certain health conditions or medications. We review all of this at your consultation."}},
-{"@type":"Question","name":"How much do treatments cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on your plan. You'll get a clear quote at your consultation, before any treatment."}},
-{"@type":"Question","name":"Do you offer a membership?","acceptedAnswer":{"@type":"Answer","text":"Yes. AURA Prime is our membership for clients who want ongoing care. Ask us at your visit."}},
-{"@type":"Question","name":"Do you offer consultations in Mandarin?","acceptedAnswer":{"@type":"Answer","text":"Yes. All consultations are available in English and Mandarin."}},
-{"@type":"Question","name":"What is your cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Please give us at least 24 hours' notice to cancel or reschedule."}}
-]}
-</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css?v=2">
 <style>
+/* About · single page: hero band → intro → who we are → standards → technology → aesthetic → closing → footer.
+   Homepage palette and type (shell / cocoa / clay, Cormorant + Hanken), light only. */
+:root,:root[data-theme]{--ease:cubic-bezier(.16,1,.3,1);--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--muted:#9D857B;--ink:#5B4840;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--rust:#B07E6B;--clay:#B07E6B;--clay-lt:#E3B7A3;--cocoa:#2F221D;--cream:#FBF4EF;--mocha:#7A5A4B;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond","Cormorant","Times New Roman",serif;--logo:"Tenor Sans","Optima","Candara",sans-serif;color-scheme:light}
 html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-#aesthetic,#team,#clinic,#faq{scroll-margin-top:140px}
+body{color:var(--ink);font-weight:300;line-height:1.7}
+h1,h2,h3{color:var(--fg)}
+h1 em,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
+p,h3{text-wrap:pretty}
+.proto{background:#F1E3DB;color:#5B4840}
+section{padding-block:clamp(80px,9vw,128px)}
+section[id]{scroll-margin-top:72px}
+.alt{background:var(--surface)}
+.eyebrow{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--fg)}
+.eyebrow.cl{color:var(--clay)}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1.02;margin-top:14px}
+.btn{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s,color .5s}
+.btn:hover{background:var(--clay)}
+.tlink{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;color:var(--fg);transition:color .4s}
+.tlink:hover{color:var(--clay)}
 
-.ahero{padding-block:28px 0}
-.ahero .chd2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;padding-bottom:28px}
-.ahero .chd2 h1{font-family:var(--serif);font-size:clamp(48px,6vw,84px);line-height:.95;margin:10px 0 0}
-.ahero .chd2 p{margin:0;color:var(--muted);font-size:17px}
-@media(max-width:860px){.ahero .chd2{grid-template-columns:1fr;gap:14px}}
-.afacts{border-top:1px solid var(--fg);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.afacts>div{padding:20px 16px 20px 0;display:grid;gap:4px}
-.afacts .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.afacts b{font-weight:500;font-size:15.5px}
-.afacts small{color:var(--muted);font-size:12.5px}
-@media(max-width:700px){.afacts{grid-template-columns:1fr 1fr}}
+/* 01 hero: mocha band over a full-bleed photo */
+.ahero{position:relative;overflow:hidden;background:var(--mocha);color:var(--cream);padding-block:clamp(56px,7vw,104px) clamp(36px,4vw,56px)}
+.ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.ahero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(122,90,75,.86) 0%,rgba(122,90,75,.8) 60%,rgba(98,70,58,.9) 100%)}
+.ahero .wrap{position:relative;z-index:2;display:grid;gap:clamp(36px,5vw,64px)}
+.ahero .eyebrow{color:var(--cream)}
+.ahero h1{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(54px,9vw,128px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
+.ahero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ahero h1 .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.ahero h1.in .ln i{transform:none}
+.ahero h1 em{font-style:normal;color:var(--cream);text-transform:uppercase;letter-spacing:-.005em}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap}
+.hbar p{margin:0;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,244,239,.9)}
+.hbar .btn{background:var(--cream);color:var(--cocoa);padding:14px 26px}
+.hbar .btn:hover{background:var(--clay-lt)}
 
-.scode{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
-@media(max-width:860px){.scode{grid-template-columns:1fr}}
-.scard{background:var(--card);border:1px solid var(--line);padding:30px 26px;display:grid;gap:16px}
-.scard h3{font-family:var(--serif);font-size:26px;margin:0}
-.srange .bar{height:1px;background:var(--line);margin:10px 0 8px;position:relative}
-.srange .bar::after{content:"";position:absolute;top:50%;left:50%;width:7px;height:7px;border-radius:50%;background:var(--rust);transform:translate(-50%,-50%)}
-.srange .lbl{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.scard p{margin:0;color:var(--muted);font-size:14.5px}
-.aquote{text-align:center;max-width:720px;margin:56px auto 0;display:grid;gap:14px;justify-items:center}
+/* intro statement + jump links */
+.intro{padding-block:clamp(64px,7vw,104px) clamp(48px,5vw,72px);text-align:center}
+.intro .lead{max-width:40ch;text-wrap:balance;margin:0 auto;font-family:var(--serif);font-weight:400;font-size:clamp(25px,2.5vw,34px);line-height:1.32;color:var(--fg)}
+.intro .lead em{font-style:italic;color:var(--clay)}
+.jumps{margin-top:clamp(36px,4vw,52px);display:flex;justify-content:center;flex-wrap:wrap;gap:12px clamp(22px,3vw,40px)}
+.jumps a{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding-bottom:4px;border-bottom:1px solid transparent;transition:color .4s,border-color .4s}
+.jumps a:hover{color:var(--fg);border-color:var(--clay)}
 
-.teamgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:36px}
-@media(max-width:960px){.teamgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.teamgrid{grid-template-columns:1fr}}
-.tcard{display:grid;gap:10px}
-.tcard .ph-empty{aspect-ratio:1}
-.tcard h4{margin:0;font-size:18px;font-weight:600}
-.tcard .role{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
-.tcard p{margin:0;color:var(--muted);font-size:14px}
+/* 02 who we are: heading left, copy right */
+#who{padding-top:clamp(40px,4vw,56px)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start}
+.two .copy{margin:0;padding-top:30px;font-size:16px;line-height:1.8;max-width:50ch}
+@media(max-width:860px){.two{grid-template-columns:1fr}.two .copy{padding-top:0}}
 
-.split .cim{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
-.split .cim img{width:100%;height:100%;object-fit:cover;display:block}
-.prin .pnum{display:block;font-family:var(--serif);font-size:30px;color:var(--rust);line-height:1;margin-bottom:8px}
-.fdanote{border-left:3px solid var(--accent);padding:14px 18px;font-size:14px;color:var(--muted);margin-top:22px}
-.tbl{margin-top:22px}
+/* 03 standards: centered head, 3x2 ruled grid */
+.ctr{text-align:center}
+.std{list-style:none;margin:clamp(44px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,3vw,44px);row-gap:clamp(40px,4.4vw,60px)}
+.std li{border-top:1px solid var(--clay);padding-top:20px;display:grid;gap:8px;align-content:start}
+.std .n{font-family:var(--serif);font-size:26px;line-height:1;color:var(--clay)}
+.std h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15;margin-top:8px}
+.std p{margin:0;font-size:14.5px;line-height:1.7;max-width:36ch}
+@media(max-width:900px){.std{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.std{grid-template-columns:1fr}}
 
-.rels{margin-top:40px}
-.rel .ph-empty{aspect-ratio:4/3}
+/* 04 technology: copy + photo left, brand table right */
+.tech{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:start}
+.tech .copy{margin:22px 0 0;font-size:15.5px;line-height:1.8;max-width:44ch}
+.tech .ph{position:relative;margin-top:clamp(32px,4vw,52px);aspect-ratio:5/4;overflow:hidden;background:var(--surface)}
+.tech .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.brands{width:100%;border-collapse:collapse;font-variant-numeric:normal}
+.brands th{padding:0 0 12px;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--fg);border-bottom:1px solid var(--fg)}
+.brands td{padding:20px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.brands td:first-child{font-family:var(--serif);font-size:clamp(20px,1.8vw,24px);font-weight:500;line-height:1.2;color:var(--fg);padding-right:16px}
+.brands th:last-child,.brands td:last-child{text-align:right}
+.brands td:last-child{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);white-space:nowrap}
+.fda{margin:22px 0 0;font-size:13px;line-height:1.7;color:var(--clay)}
+@media(max-width:860px){.tech{grid-template-columns:1fr}}
+@media(max-width:480px){.brands td:last-child{white-space:normal}}
 
-.closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
-.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
-.closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
-.closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
-.closing p{margin:0;max-width:48ch;opacity:.9}
-.closing .btn{background:#FBF4EF;color:#3F3029}
-</style>
-</head><body><div class="proto">Page prototype · copy is a final draft, photos are placeholders · <a href="index.html">All pages</a></div>
+/* 05 the aura aesthetic: heading left, copy right, photo collage, closing line */
+.aeshead{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:clamp(32px,4vw,48px)}
+.aeshead .h2{white-space:normal}
+.aeshead .copy{margin:0;font-size:15px;line-height:1.75;max-width:42ch}
+.collage{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.5fr) minmax(0,.5fr);grid-template-rows:auto auto;gap:clamp(10px,1.2vw,16px)}
+.collage figure{margin:0;position:relative;overflow:hidden;background:var(--surface)}
+.collage figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.collage figure:hover img{transform:scale(1.03)}
+.collage .big{grid-row:1/3;aspect-ratio:1/1}
+.collage .sm{aspect-ratio:1/1}
+.collage figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:40px 18px 16px;background:linear-gradient(0deg,rgba(47,34,29,.55),rgba(47,34,29,0));color:var(--cream);font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.2}
+.collage .big figcaption{font-size:22px;padding:56px 22px 20px}
+.collage .note{grid-column:2/4;align-self:end;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding:clamp(8px,1.5vw,20px) 0 0}
+.aesfoot{display:flex;justify-content:space-between;align-items:center;gap:18px 32px;flex-wrap:wrap;margin-top:clamp(28px,3vw,40px)}
+.aesfoot p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,30px);color:var(--clay)}
+@media(max-width:860px){.aeshead{grid-template-columns:1fr;align-items:start}.collage{grid-template-columns:1fr 1fr}.collage .big{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}}
+
+/* 06 closing: full-bleed photo, oversized line, two short columns */
+.closing{position:relative;overflow:hidden;background:var(--cocoa);color:var(--cream);padding-block:clamp(72px,9vw,128px) clamp(56px,6vw,88px);min-height:clamp(480px,52vw,720px);display:flex;align-items:center}
+.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.closing::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(47,34,29,.74) 0%,rgba(47,34,29,.58) 55%,rgba(47,34,29,.3) 100%)}
+.closing .wrap{position:relative;z-index:2;width:100%}
+.closing .eyebrow{color:rgba(251,244,239,.88)}
+.closing h2{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(52px,8.4vw,124px);line-height:.92;letter-spacing:-.01em;margin-top:14px;max-width:11ch}
+.closing h2 em{color:var(--cream)}
+.closing .cols{margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(28px,6vw,96px);align-items:start;max-width:880px}
+.closing .cols p{margin:0;font-size:11.5px;font-weight:500;letter-spacing:.18em;line-height:1.9;text-transform:uppercase;color:var(--cream);max-width:34ch}
+.closing .btn{background:var(--cream);color:var(--cocoa);justify-self:start}
+.closing .btn:hover{background:var(--clay-lt)}
+@media(max-width:640px){.closing .cols{grid-template-columns:1fr}}
+
+/* footer: same as the homepage */
+.foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot .top{grid-template-columns:1fr}}
+.foot .logo{font-family:var(--logo);font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.foot p{margin:0;font-size:14px;line-height:1.9}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--cream)}
+.foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* scroll reveal, as on the homepage */
+.rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.14);transition:clip-path 1.3s var(--ease),transform 1.8s var(--ease)!important;transition-delay:var(--d,0s)!important}
+.rv-img.in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv,.rv-img img,.ahero h1 .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style></head><body>
+<div class="proto">Page prototype · copy is a final draft, photos are placeholders · <a href="index.html">All pages</a></div>
 <div id="site-header" data-current="about">
 <div class="brandrow"><div class="in">
   <a class="hdlogo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a>
@@ -111,7 +176,7 @@ html{scroll-behavior:smooth}
       <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
     </li>
     <li data-cat="about"><a href="about.html">About</a>
-      <div class="mega small" id="mega-about"><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="about.html#team">Our Team</a><a href="about.html#clinic">The Clinic</a><a href="about.html#faq">Journal &amp; FAQ</a></div>
+      <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Our Standards</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div>
     </li>
   </ul>
   <a class="btn nav-book" href="#book">Book Now</a>
@@ -133,213 +198,115 @@ html{scroll-behavior:smooth}
 </div>
 <script src="nav.js?v=2"></script>
 <main>
-<div class="wrap crumbs"><a href="home.html">Home</a> / About</div>
 
-<div class="wrap ahero">
-  <div class="chd2">
-    <div><p class="eyebrow">About AURA Institute</p><h1>Unveil your <em>aura.</em></h1></div>
-    <p>A medical aesthetics and wellness clinic at Rockefeller Center, New York. We offer injectables, skin tightening, skin treatments, body contouring and wellness care in a private suite on Fifth Avenue. Every plan is built around your own features, for results that look natural and feel like you.</p>
+<section class="ahero" id="top">
+  <img src="suite-warm.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rv">About AURA Institute</p>
+      <h1 aria-label="The light was always yours."><span class="ln"><i style="--d:.15s">The light was</i></span><span class="ln"><i style="--d:.3s"><em>always yours.</em></i></span></h1>
+    </div>
+    <div class="hbar rv" style="--d:.5s">
+      <p>A medical aesthetics and wellness clinic at Rockefeller Center, New York.</p>
+      <a class="btn" href="#book">Book a Consultation →</a>
+    </div>
   </div>
-  <div class="afacts">
-    <div><span class="k">Location</span><b>630 Fifth Avenue, Suite 1812</b><small>Rockefeller Center</small></div>
-    <div><span class="k">Licensed &amp; insured</span><b>NY State–licensed professionals</b><small>Fully insured</small></div>
-    <div><span class="k">Languages</span><b>English &amp; Mandarin</b><small>Bilingual consultations</small></div>
-    <div><span class="k">Established</span><b data-confirm>[2026]</b><small>New York, NY</small></div>
-  </div>
+</section>
+
+<div class="wrap intro">
+  <p class="lead rv">AURA Institute offers face design, skin treatments, body contouring and wellness therapies in a private suite on Fifth Avenue. Every plan is built around your own features, for results that look <em>natural</em> and feel like you.</p>
+  <nav class="jumps rv" style="--d:.12s" aria-label="About sections">
+    <a href="#who">Who We Are</a>
+    <a href="#standards">Our Standards</a>
+    <a href="#technology">Technology &amp; Products</a>
+    <a href="#aesthetic">The AURA Aesthetic</a>
+  </nav>
 </div>
 
-<nav class="tabs" aria-label="About sections">
-  <div class="wrap">
-    <a href="#aesthetic">The AURA Aesthetic</a>
-    <a href="#team">Our Team</a>
-    <a href="#clinic">The Clinic</a>
-    <a href="#faq">Journal &amp; FAQ</a>
+<section id="who"><div class="wrap two">
+  <div><p class="eyebrow cl rv">Who we are</p><h2 class="h2 rv" style="--d:.08s">Look like yourself on your <em>best day.</em></h2></div>
+  <p class="copy rv" style="--d:.16s">An aura is the light a person carries: the glow others see, and the confidence you feel. AURA Institute was founded to bring out both. We combine proven medical aesthetic treatments with wellness care, and plan every visit around your whole face and how you want to feel.</p>
+</div></section>
+
+<section class="alt" id="standards"><div class="wrap">
+  <div class="ctr"><p class="eyebrow cl rv">Our standards</p><h2 class="h2 rv" style="--d:.08s">Safety, in <em>every</em> detail</h2></div>
+  <ol class="std">
+    <li class="rv" style="--d:0s"><span class="n">01</span><h3>A full consultation first</h3><p>We review your health history, medications and past treatments before recommending anything.</p></li>
+    <li class="rv" style="--d:.08s"><span class="n">02</span><h3>Skin testing when needed</h3><p>For treatments that call for it, we test your skin before your first session.</p></li>
+    <li class="rv" style="--d:.16s"><span class="n">03</span><h3>Sterile, single-use supplies</h3><p>Needles and tips are single-use and opened in front of you.</p></li>
+    <li class="rv" style="--d:0s"><span class="n">04</span><h3>Every product recorded</h3><p>We record the product and lot number of every injectable, and you are welcome to see the box before treatment.</p></li>
+    <li class="rv" style="--d:.08s"><span class="n">05</span><h3>A follow-up after every treatment</h3><p>We check in on your results and recovery, and plan what comes next.</p></li>
+    <li class="rv" style="--d:.16s"><span class="n">06</span><h3>Prepared for the unexpected</h3><p>Our team follows set safety protocols and keeps emergency supplies on site.</p></li>
+  </ol>
+</div></section>
+
+<section id="technology"><div class="wrap tech">
+  <div>
+    <p class="eyebrow cl rv">Technology &amp; products</p>
+    <h2 class="h2 rv" style="--d:.08s">Authentic, <em>direct from the source</em></h2>
+    <p class="copy rv" style="--d:.16s">Our devices are purchased directly from their manufacturers, and every treatment uses genuine tips and applicators. Injectables come only from authorized distributors, never from third parties.</p>
+    <div class="ph rv-img"><img src="loved-facial-device.jpg" alt="A provider uses a facial device during a skin treatment" style="object-position:50% 30%" loading="lazy"></div>
   </div>
-</nav>
-
-<section id="aesthetic">
-  <div class="wrap">
-    <div class="head" style="max-width:760px;margin-inline:auto;text-align:center">
-      <p class="eyebrow">01 · The AURA Aesthetic</p>
-      <h2>Trends fade. <em>Your style stays.</em></h2>
-      <p>There is no single standard of beauty. Before we plan any treatment, we read your facial style across three dimensions, then design to bring it forward, never to replace it.</p>
-    </div>
-
-    <div class="scode">
-      <div class="scard">
-        <h3>Scale</h3>
-        <div class="srange"><div class="bar"></div><div class="lbl"><span>Delicate</span><span>Bold</span></div></div>
-        <p>The size and fullness of your features and contours.</p>
-      </div>
-      <div class="scard">
-        <h3>Line</h3>
-        <div class="srange"><div class="bar"></div><div class="lbl"><span>Soft</span><span>Structured</span></div></div>
-        <p>Whether your contours read curved and soft, or angular and defined.</p>
-      </div>
-      <div class="scard">
-        <h3>Contrast</h3>
-        <div class="srange"><div class="bar"></div><div class="lbl"><span>Serene</span><span>Striking</span></div></div>
-        <p>The presence of your features, from calm and harmonious to vivid and striking.</p>
-      </div>
-    </div>
-
-    <div class="fm">
-      <div class="fig"><img src="svc-skin.jpg" alt="Close-up portrait used to illustrate facial proportion and balance" style="object-position:50% 30%"></div>
-      <div>
-        <h2>How we read your face</h2>
-        <ol>
-          <li><b>01</b><div><strong>Thirds and fifths.</strong><span>How the upper, middle and lower face, and the width of your features, relate.</span></div></li>
-          <li><b>02</b><div><strong>Profile and alignment.</strong><span>Brow, nose, lips and chin, and how they line up from the side.</span></div></li>
-          <li><b>03</b><div><strong>Light and shadow.</strong><span>The highlight points that catch light, and the soft hollows between them.</span></div></li>
-          <li><b>04</b><div><strong>Movement.</strong><span>How your face moves when you talk, smile and frown.</span></div></li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="aquote">
-      <p class="quote">Look like yourself on your best day.</p>
-      <p class="note2">Precision over perfection. Small changes, placed where they matter. Your style is mapped together with you at your consultation.</p>
-      <a class="more" href="goal-facial-balancing.html">Explore Facial Balancing →</a>
-    </div>
+  <div class="rv" style="--d:.2s">
+    <table class="brands">
+      <thead><tr><th scope="col">Treatment</th><th scope="col">Manufacturer</th></tr></thead>
+      <tbody>
+        <tr><td>Thermage® FLX</td><td>Solta Medical</td></tr>
+        <tr><td>EMFACE®, Exion™, EXOMIND™</td><td>BTL</td></tr>
+        <tr><td>BBL™ Photofacial</td><td>Sciton</td></tr>
+        <tr><td>Botox® Cosmetic</td><td>Allergan Aesthetics</td></tr>
+        <tr><td>Xeomin®, RADIESSE®</td><td>Merz Aesthetics</td></tr>
+        <tr><td>Sculptra®</td><td>Galderma</td></tr>
+        <tr><td>HydraFacial®</td><td>HydraFacial</td></tr>
+      </tbody>
+    </table>
+    <p class="fda">FDA-cleared devices and FDA-approved injectables, used as directed by licensed professionals.</p>
   </div>
-</section>
+</div></section>
 
-<section id="team" class="alt">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">02 · Our Team</p>
-      <h2>Licensed, trained, and <em>on your side.</em></h2>
-      <p>Our team plans together, so your injectables, skin tightening and skin treatments follow one design, not separate appointments.</p>
-    </div>
-
-    <div class="fv"><div class="st">
-      <div><i>01</i><h4>Licensed professionals.</h4><p>Every treatment is performed by a New York State–licensed professional.</p></div>
-      <div><i>02</i><h4>Manufacturer-trained.</h4><p>Our team is trained by the makers of the devices we use, including Solta Medical and BTL.</p></div>
-      <div><i>03</i><h4>One plan, one team.</h4><p>Your providers plan together, so every treatment works toward the same result.</p></div>
-      <div><i>04</i><h4>Bilingual care.</h4><p>Consultations in English and Mandarin.</p></div>
-    </div></div>
-
-    <div class="teamgrid">
-      <div class="tcard"><div class="ph-empty">Photo coming soon</div><h4 data-confirm>[Name]</h4><p class="role">Lead Injector</p><p data-confirm>[Specializes in facial balancing and natural-looking results.]</p></div>
-      <div class="tcard"><div class="ph-empty">Photo coming soon</div><h4 data-confirm>[Name]</h4><p class="role">Aesthetic Specialist</p><p data-confirm>[Skin tightening, lasers and skin treatments.]</p></div>
-      <div class="tcard"><div class="ph-empty">Photo coming soon</div><h4 data-confirm>[Name]</h4><p class="role">Wellness &amp; IV Nurse</p><p data-confirm>[NAD+ and wellness care.]</p></div>
-      <div class="tcard"><div class="ph-empty">Photo coming soon</div><h4 data-confirm>[Name]</h4><p class="role">Client Care</p><p data-confirm>[Your first point of contact, from booking to follow-up.]</p></div>
-    </div>
+<section class="alt" id="aesthetic"><div class="wrap">
+  <div class="aeshead">
+    <div><p class="eyebrow cl rv">The AURA aesthetic</p><h2 class="h2 rv" style="--d:.08s">Trends fade. <em>Your style stays.</em></h2></div>
+    <p class="copy rv" style="--d:.16s">There is no single standard of beauty. We look at the scale of your features, the line of your contours and the contrast of your look, then design to bring your style forward, never to replace it.</p>
   </div>
-</section>
-
-<section id="clinic">
-  <div class="wrap">
-    <div class="split">
-      <div class="cim"><img src="suite-warm.jpg" alt="A calm, light-filled treatment suite at AURA Institute"></div>
-      <div>
-        <p class="eyebrow">03 · The Clinic</p>
-        <h2>A private suite at <em>Rockefeller Center.</em></h2>
-        <p>Calm, light-filled and private, with dedicated treatment rooms steps from Fifth Avenue. One guest at a time, and many treatments fit into a lunch break.</p>
-        <div class="mini" style="margin-top:22px">
-          <div><span>Address</span><span>630 Fifth Avenue, Suite 1812, New York, NY 10111</span></div>
-          <div><span>Mon – Fri</span><span>9am – 8pm</span></div>
-          <div><span>Saturday</span><span>10am – 6pm</span></div>
-          <div><span data-confirm>Sunday</span><span data-confirm>Closed</span></div>
-          <div><span>Contact</span><span data-confirm>(212) [XXX-XXXX]</span></div>
-          <div><span>Email</span><span data-confirm>hello@[aurainstitute].com</span></div>
-          <div><span>Getting here</span><span data-confirm>[Steps from the 47–50 Sts–Rockefeller Center subway station (B, D, F, M)]</span></div>
-        </div>
-        <p class="note"><a class="more" href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">Get Directions →</a></p>
-      </div>
-    </div>
-
-    <div style="margin-top:64px">
-      <p class="eyebrow">Our standards</p>
-      <h2 style="font-family:var(--serif);font-size:clamp(30px,3vw,42px);margin:8px 0 28px">Simple, <em>clear</em> standards</h2>
-      <div class="prin">
-        <div><span class="pnum">01</span><h3>A full consultation first.</h3><p>We review your health history, medications and past treatments before recommending anything.</p></div>
-        <div data-confirm><span class="pnum">02</span><h3>Skin testing when needed.</h3><p>For treatments that call for it, we test your skin before your first session.</p></div>
-        <div><span class="pnum">03</span><h3>Sterile, single-use supplies.</h3><p>Needles and tips are single-use and opened in front of you.</p></div>
-        <div data-confirm><span class="pnum">04</span><h3>Every product recorded.</h3><p>We record the product and lot number of every injectable, and you are welcome to see the box before treatment.</p></div>
-        <div><span class="pnum">05</span><h3>A follow-up after every treatment.</h3><p>We check in on your results and recovery, and plan what comes next.</p></div>
-        <div data-confirm><span class="pnum">06</span><h3>Prepared for the unexpected.</h3><p>Our team follows set safety protocols and keeps emergency supplies on site.</p></div>
-      </div>
-    </div>
-
-    <div style="margin-top:64px;max-width:760px">
-      <p class="eyebrow">Authentic, direct from the source</p>
-      <h2 style="font-family:var(--serif);font-size:clamp(30px,3vw,42px);margin:8px 0 18px">Authentic, <em>direct</em> from the source</h2>
-      <p style="color:var(--muted)">Our devices are purchased directly from their manufacturers, and every treatment uses genuine tips and applicators. Injectables come only from authorized distributors.</p>
-    </div>
-    <div class="tbl">
-      <table class="tbl2">
-        <thead><tr><th>Treatment</th><th>Brand</th></tr></thead>
-        <tbody>
-          <tr><td>Thermage® FLX</td><td>Solta Medical</td></tr>
-          <tr><td>EMFACE®, Exion™, EXOMIND™</td><td>BTL</td></tr>
-          <tr><td>BBL™ Photofacial</td><td data-confirm>Sciton</td></tr>
-          <tr><td>Botox® Cosmetic</td><td>Allergan Aesthetics</td></tr>
-          <tr><td>Xeomin®, RADIESSE®</td><td>Merz Aesthetics</td></tr>
-          <tr><td>Sculptra®</td><td>Galderma</td></tr>
-          <tr><td>HydraFacial®</td><td data-confirm>HydraFacial</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fdanote">FDA-cleared devices and FDA-approved injectables, used as directed by licensed professionals.</p>
+  <div class="collage">
+    <figure class="big rv-img"><img src="about.jpg" alt="Portrait of a woman with soft, natural features" style="object-position:50% 25%" loading="lazy"><figcaption>Scale of features</figcaption></figure>
+    <figure class="sm rv-img" style="--d:.12s"><img src="star-jaw.jpg" alt="Close-up of a defined jawline and neck" style="object-position:50% 40%" loading="lazy"><figcaption>Line of contours</figcaption></figure>
+    <figure class="sm rv-img" style="--d:.24s"><img src="r-tone.jpg" alt="Close-up of clear, even-toned skin" style="object-position:50% 35%" loading="lazy"><figcaption>Contrast of your look</figcaption></figure>
   </div>
-</section>
-
-<section id="faq" class="alt">
-  <div class="wrap">
-    <div class="head faqc" style="margin-inline:auto;text-align:center">
-      <p class="eyebrow">04 · Journal &amp; FAQ</p>
-      <h2>Good <em>questions.</em></h2>
-      <p>Answers to what we're asked most. Can't find yours? Text us anytime.</p>
-    </div>
-
-    <div class="qa faqc" style="margin-inline:auto">
-      <details open><summary>What happens at my first visit?</summary><p>We start with a consultation. We review your health history, look at your skin and features, and talk about what you'd like to change. Then we recommend a plan, and you decide what to do and when.</p></details>
-      <details><summary>Is the consultation complimentary?</summary><p>Yes. Your consultation, including a Gold Skin Analysis, is complimentary.</p></details>
-      <details><summary>I don't know which treatment I need. Where do I start?</summary><p>That's what the consultation is for. You can also browse by goal on our homepage, from skin tightening to glow and hydration.</p></details>
-      <details><summary>Will I still look like myself?</summary><p>Yes. Our approach is refined, never overdone. We make small, precise changes that bring your own features forward.</p></details>
-      <details><summary>Is there downtime?</summary><p>Most of our treatments have little or no downtime, and many fit into a lunch break. Your provider will tell you what to expect before every treatment.</p></details>
-      <details><summary>Who should not have treatment?</summary><p>Some treatments aren't suitable during pregnancy or breastfeeding, or with certain health conditions or medications. We review all of this at your consultation.</p></details>
-      <details><summary>How much do treatments cost?</summary><p>It depends on your plan. You'll get a clear quote at your consultation, before any treatment.</p></details>
-      <details><summary>Do you offer a membership?</summary><p>Yes. AURA Prime is our membership for clients who want ongoing care. Ask us at your visit.</p></details>
-      <details><summary>Do you offer consultations in Mandarin?</summary><p>Yes. All consultations are available in English and Mandarin.</p></details>
-      <details><summary>What is your cancellation policy?</summary><p data-confirm>[Please give us at least 24 hours' notice to cancel or reschedule.]</p></details>
-    </div>
-
-    <div style="margin-top:56px">
-      <p class="eyebrow" style="text-align:center">From the journal</p>
-      <div class="rels">
-        <a class="rel" href="journal-botox-vs-xeomin.html"><div class="ph-empty">Image coming soon</div><h4>Thermage® FLX vs. EMFACE®: which is right for you?</h4><p data-confirm>[How the two compare, and when we pair them.]</p></a>
-        <a class="rel" href="journal-faq.html"><div class="ph-empty">Image coming soon</div><h4>Your first visit to AURA, step by step</h4><p data-confirm>[What to expect, from consultation to aftercare.]</p></a>
-        <a class="rel" href="journal-faq.html"><div class="ph-empty">Image coming soon</div><h4>Winter skin: how to keep your glow</h4><p data-confirm>[Hydration tips for cold New York months.]</p></a>
-      </div>
-    </div>
+  <div class="aesfoot rv">
+    <p>Precision over perfection.</p>
+    <a class="tlink" href="goal-facial-balancing.html">Explore Face Design →</a>
   </div>
-</section>
+</div></section>
 
 <section class="closing" id="book">
-  <img src="about-reception.jpg" alt="" aria-hidden="true">
+  <img src="suite-gold.jpg" alt="" aria-hidden="true">
   <div class="wrap">
-    <h2>Begin with a <em>conversation.</em></h2>
-    <p>Book a complimentary consultation. We'll look at your whole face and create a plan that stays true to you.</p>
-    <a class="btn" href="#book">Book a Consultation</a>
+    <h2 class="rv">Begin with a <em>conversation</em></h2>
+    <div class="cols">
+      <p class="rv" style="--d:.12s">Book a complimentary consultation. We’ll look at your whole face and create a plan that stays true to you.</p>
+      <a class="btn rv" style="--d:.24s" href="#book">Book a Consultation</a>
+    </div>
   </div>
 </section>
 </main>
-<footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer>
+<footer class="foot" id="contact">
+  <div class="in">
+    <div class="top">
+      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil your aura.</p></div>
+      <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
+      <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
+      <div><h4>Contact</h4><p>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+    <div class="legal"><span>© 2026 AURA Institute. Individual results may vary. All treatments follow a medical consultation.</span><nav><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav></div>
+  </div>
+</footer>
 <script>
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
-  var secs=tabs.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-  if(!('IntersectionObserver' in window) || !secs.length) return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){
-        tabs.forEach(function(t){t.classList.toggle('on', t.getAttribute('href')==='#'+en.target.id);});
-      }
-    });
-  },{rootMargin:'-140px 0px -70% 0px',threshold:0});
-  secs.forEach(function(s){io.observe(s);});
-})();
+/* reveal on scroll, as on the homepage */
+(function(){const els=document.querySelectorAll('.rv,.rv-img,.ahero h1');
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+ els.forEach(e=>io.observe(e));})();
 </script>
 </body></html>
