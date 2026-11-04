@@ -7,6 +7,11 @@
   var current = mount.getAttribute('data-current') || '';
 
   function init(){
+    // keep the nav bar pinned: the sticky header is offset by exactly the brand row's height
+    var brand = mount.querySelector('.brandrow');
+    function setBrandH(){ if(brand) mount.style.setProperty('--brand-h', brand.offsetHeight + 'px'); }
+    setBrandH(); window.addEventListener('resize', setBrandH);
+
     if(current){
       var li = mount.querySelector('.navbar ul.top>li[data-cat="'+current+'"]');
       if(li) li.setAttribute('aria-current','true');

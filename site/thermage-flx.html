@@ -1,9 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Thermage® FLX in NYC | Non-Surgical Skin Tightening | AURA Institute</title>
 <meta name="description" content="Thermage® FLX radiofrequency skin tightening at Rockefeller Center. Non-surgical, no downtime, results that build over months. Book a complimentary consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="nav.css?v=2">
 <style>
 /* Thermage FLX · Level 3 treatment page. Stacked sections, alternating bg/surface, no tabs, no price. */
 .tsec{padding-block:clamp(56px,8vw,88px)}
@@ -81,6 +81,252 @@
 .closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
 .closing p{margin:0;max-width:48ch;opacity:.9}
 .closing .btn{background:#FBF4EF;color:#3F3029}
+
+/* ---- homepage look: shell / cocoa / clay palette, Cormorant headings + Hanken body, light only ---- */
+:root,:root[data-theme]{--ease:cubic-bezier(.16,1,.3,1);--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--muted:#9D857B;--ink:#5B4840;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--rust:#B07E6B;--clay:#B07E6B;--clay-lt:#E3B7A3;--cocoa:#2F221D;--cream:#FBF4EF;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond","Cormorant","Times New Roman",serif;color-scheme:light}
+body{color:var(--ink);font-weight:300;line-height:1.7}
+h1,h2,h3{color:var(--fg)}
+h1 em,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
+.proto{background:#F1E3DB;color:#5B4840}
+.crumbs{font-size:12px;letter-spacing:.04em}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--fg)}
+.tsec{padding-block:clamp(80px,9vw,128px)}
+.head{gap:14px}
+.head h2{font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1}
+.btn{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
+.btn:hover{background:var(--clay)}
+/* how it works */
+.benefits div{padding:28px 28px}
+.benefits h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.15}
+.benefits p{color:var(--ink)}
+.notebar{border-left-color:var(--clay);background:var(--card);color:var(--ink)}
+/* fit cards + glance + steps */
+.fitcard h4,.glance h5{color:var(--clay);font-size:11px;font-weight:600;letter-spacing:.2em}
+.fitcard li::before{color:var(--clay)}
+.steps-v li::before{color:var(--clay);font-size:32px}
+.steps-v b{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--fg)}
+.steps-v span{color:var(--ink)}
+.glance p{color:var(--ink)}
+/* faq */
+summary{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--fg)}
+details p{color:var(--ink)}
+/* closing band + footer in cocoa, like the homepage */
+.closing{background:var(--cocoa)}
+.closing::before{background:rgba(47,34,29,.62)}
+.closing h2{font-weight:400;font-size:clamp(40px,4.6vw,64px)}
+.closing h2 em{color:var(--clay-lt)}
+.closing .btn{background:var(--cream);color:var(--cocoa)}
+.closing .btn:hover{background:var(--clay-lt)}
+
+/* hero v2: photo left with an offset clay frame, copy right */
+.thtop{padding-block:clamp(28px,3vw,44px) clamp(72px,8vw,112px)}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:72px}
+.thero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.tframe{position:relative;padding:0 0 clamp(18px,2vw,28px) clamp(18px,2vw,28px)}
+.tframe::before{content:"";position:absolute;left:0;bottom:0;width:72%;height:78%;background:var(--surface);border:1px solid var(--line)}
+.tframe .ph{position:relative;height:clamp(340px,calc(100svh - 230px),540px);overflow:hidden;background:var(--surface)}
+.tframe .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thero2 .tx{display:grid;gap:20px;min-width:0}
+.kicker{color:var(--clay);font-weight:700;letter-spacing:.22em;margin-bottom:-6px}
+.big{font-family:var(--serif);font-weight:400;white-space:nowrap;font-size:clamp(40px,5.2vw,82px);line-height:.92;letter-spacing:-.01em;color:var(--fg);margin:0}
+.big .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.big.in .ln i{transform:none}
+.big em{font-style:italic;color:var(--clay)}
+.thero2 .lede{margin:0;max-width:44ch;font-size:17px;line-height:1.75;color:var(--ink)}
+.ctas{display:flex;align-items:center;gap:20px 30px;flex-wrap:wrap;margin-top:6px}
+.ctas .tlink{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;color:var(--fg)}
+.ctas .tlink:hover{color:var(--clay)}
+@media(max-width:860px){.thero2{grid-template-columns:1fr}}
+/* benefit icons: fine line art on a soft tile */
+.benefits .bimg{display:grid;place-items:center;aspect-ratio:4/3;background:var(--card);border:1px solid var(--line)}
+.benefits .bimg svg{width:auto;height:66%;fill:none;stroke:var(--fg);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s var(--ease)}
+.benefits .bimg .ac{stroke:var(--clay);stroke-width:1.6}
+.benefits .bimg circle.ac{fill:var(--clay)}
+.benefits div:hover .bimg svg{transform:translateY(-4px)}
+/* scroll reveal, as on the homepage */
+.rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.14);transition:clip-path 1.3s var(--ease),transform 1.8s var(--ease)!important;transition-delay:var(--d,0s)!important}
+.rv-img.in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion: reduce){.rv,.rv-img img,.big .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+/* jump menu: a small dropdown beside the booking button */
+.jump{position:relative}
+.jump summary{list-style:none;display:inline-flex;align-items:center;gap:12px;padding:15px 20px;border:1px solid var(--line);background:var(--card);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);cursor:pointer;transition:border-color .4s}
+.jump summary::-webkit-details-marker{display:none}
+.jump summary::after{content:"";width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .4s var(--ease)}
+.jump[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.jump summary:hover,.jump[open] summary{border-color:var(--fg)}
+.jump nav{position:absolute;z-index:20;top:calc(100% + 6px);left:0;min-width:240px;background:var(--card);border:1px solid var(--line);box-shadow:0 22px 40px -24px rgba(47,34,29,.35);display:grid;padding:6px 0;animation:jumpIn .4s var(--ease)}
+.jump nav a{padding:11px 20px;font-size:14px;color:var(--ink);text-decoration:none;transition:background .3s,color .3s}
+.jump nav a:hover{background:var(--surface);color:var(--fg)}
+@keyframes jumpIn{from{opacity:0;transform:translateY(-6px)}}
+/* how it works: icons in open columns divided by hairlines */
+.benefits{gap:0}
+.benefits div{padding:0 clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.benefits div:first-child{border-left:0}
+.benefits .bimg{aspect-ratio:auto;height:clamp(120px,12vw,160px);background:none;border:0;margin-bottom:6px}
+@media(max-width:900px){.benefits div:nth-child(3){border-left:0}}
+/* is it right for you: tall photo, two ruled lists */
+.fitgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,100px);align-items:center}
+.fitimg{aspect-ratio:4/5;overflow:hidden;position:relative}
+.fitimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fitcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
+.fitcols h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rows li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--fg)}
+.rows.yes li::before{content:"✓";color:var(--clay)}
+.rows.no li{color:var(--ink)}
+.rows.no li::before{content:"—";color:var(--muted)}
+.fitcopy .pair{margin:26px 0 0;font-size:14px;color:var(--muted)}
+.fitcopy .pair a{color:var(--fg)}
+@media(max-width:860px){.fitgrid{grid-template-columns:1fr}.fitcols{grid-template-columns:1fr}}
+/* technology: cocoa band like the homepage About, photo bleeding to the left edge */
+.techband{background:var(--cocoa);color:#D9C3B8}
+.tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(480px,44vw,640px)}
+.tgrid .ph{position:relative;overflow:hidden;min-height:380px}
+.tgrid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tcopy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(56px,6vw,96px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,6vw,96px) clamp(28px,6vw,100px)}
+.tcopy .eyebrow{color:var(--clay-lt)}
+.tcopy h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:#fff}
+.tcopy h2 em{color:var(--clay-lt)}
+.tsteps{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid rgba(231,207,195,.18)}
+.tsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(231,207,195,.18)}
+.tsteps .n{font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay-lt)}
+.tsteps b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px}
+.tsteps span{font-size:14.5px;line-height:1.65}
+@media(max-width:860px){.tgrid{grid-template-columns:1fr}.tgrid .ph{aspect-ratio:4/3}}
+/* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
+.g4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.g4 li{border-top:1px solid var(--fg);padding:26px clamp(18px,2.4vw,40px) 0 0}
+.g4 .k{display:block;margin-bottom:14px;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+.g4 h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15;margin-bottom:12px}
+.g4 p{margin:0 0 8px;font-size:14px;line-height:1.65;color:var(--ink)}
+.gnote{margin:clamp(36px,4vw,52px) 0 0;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.g4{grid-template-columns:1fr 1fr;row-gap:40px}}
+@media(max-width:520px){.g4{grid-template-columns:1fr}}
+/* layout after the treatment wireframe */
+.head.ctr{margin-inline:auto;text-align:center;justify-items:center}
+/* how it works: four image cards */
+#how .intro{margin:-12px auto clamp(36px,4vw,56px);max-width:64ch;text-align:center;color:var(--ink)}
+.benefits{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px);border:0}
+.benefits div{border:0;padding:0;justify-items:center;align-content:start;text-align:center;gap:8px}
+.benefits .bimg{display:block;width:100%;aspect-ratio:1;overflow:hidden;background:var(--surface);margin-bottom:12px}
+.benefits .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease,ease)}
+.benefits div:hover .bimg img{transform:scale(1.05)}
+@media(max-width:900px){.benefits{grid-template-columns:1fr 1fr;row-gap:36px}}
+.notebar{margin:clamp(36px,4vw,52px) auto 0;max-width:70ch;text-align:center;border:0;border-top:1px solid var(--line);background:none;padding:18px 0 0;font-size:13px;color:var(--muted)}
+/* ideal for: both cards the same height as the photo */
+.fit3{align-items:stretch}
+.fit3 .ph{aspect-ratio:auto;min-height:360px}
+.fitcard{height:100%}
+/* technology: steps on fine rules */
+.steps-v{gap:0}
+.steps-v li{border-top:1px solid var(--line);padding-block:22px}
+.steps-v li:last-child{border-bottom:1px solid var(--line)}
+/* at a glance: four quiet columns on a cocoa rule */
+.glance{background:none;border:0}
+.glance .col{border:0;border-top:1px solid var(--fg);padding:22px 28px 0 0}
+.glance .cols{gap:0 24px}
+.glance .ft{border:0;padding:28px 0 0;text-align:center}
+@media(max-width:900px){.glance .col{border-bottom:0}}
+/* faq: title left, questions right */
+.faqgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.faqgrid .head{margin:0;position:sticky;top:96px}
+@media(max-width:860px){.faqgrid{grid-template-columns:1fr}.faqgrid .head{position:static}}
+/* footer: same as the homepage */
+.foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot .top{grid-template-columns:1fr}}
+.foot .logo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.foot p{margin:0;font-size:14px;line-height:1.9}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--cream)}
+.foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* ===== v5: refinements after the reference layout ===== */
+.tframe::before{background:none}
+.kicker{margin-bottom:-14px}
+.big .ln{padding-bottom:.2em;margin-bottom:-.12em}
+.thero2 .tx{transform:translateY(-14px)}
+/* how it works: heading left, intro right, four portrait cards */
+.hhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.hhead .head{margin:0}
+.hintro p{margin:0;font-size:15.5px;line-height:1.75;color:var(--ink);max-width:52ch}
+.hintro .tagline{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,27px);line-height:1.25;color:var(--fg)}
+.bcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.bcards>div{display:grid;gap:8px;align-content:start}
+.bcards .bimg{display:block;aspect-ratio:4/5;overflow:hidden;background:#E8DBD0;margin-bottom:12px}
+.bcards .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.bcards>div:hover .bimg img{transform:scale(1.04)}
+.bcards h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15}
+.bcards p{margin:0;font-size:14px;line-height:1.65;color:var(--ink)}
+.fda{margin:clamp(36px,4vw,52px) 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:900px){.hhead{grid-template-columns:1fr}.bcards{grid-template-columns:1fr 1fr;row-gap:36px}}
+/* ideal for: small photo beside the two ruled lists */
+.fit5{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.fit5 .fitimg{aspect-ratio:3/4;position:relative;overflow:hidden}
+.fit5 h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.fit5 .pair{margin:22px 0 0;font-size:14px;color:var(--muted)}
+.fit5 .pair a{color:var(--fg)}
+@media(max-width:900px){.fit5{grid-template-columns:1fr 1fr}.fit5 .fitimg{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:560px){.fit5{grid-template-columns:1fr}}
+/* faq: title stays put; bold questions */
+.faqgrid .head{position:static}
+summary{font-weight:600}
+/* closing band shorter, so it shares one screen with the footer */
+.closing.tsec{padding-block:clamp(56px,6vw,88px)}
+.closing .wrap{gap:16px}
+
+/* ===== v6 ===== */
+p,h3,.rows li{text-wrap:pretty}
+/* hero: more air on the right */
+.thero2 .tx{gap:30px;transform:none;align-content:center}
+.thero2 .kicker{margin-bottom:-12px}
+.thero2 .lede{max-width:40ch;font-size:17.5px;line-height:1.8}
+.thero2 .ctas{margin-top:6px}
+/* how it works: heading block and intro share one top line; illustrations float free, no tile */
+.hhead{align-items:start}
+.hintro{padding-top:30px}
+.bcards .bimg{background:none;aspect-ratio:1/1.05;margin-bottom:6px}
+.bcards .bimg img{object-fit:contain;padding:4% 8%}
+.bcards>div:hover .bimg img{transform:translateY(-6px)}
+/* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */
+.fit5{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.78fr);align-items:start}
+.fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
+.pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:var(--card);border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
+.pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pairnote a{color:var(--fg);text-decoration-color:var(--clay);text-underline-offset:4px}
+@media(max-width:900px){.fit5{grid-template-columns:1fr 1fr}.fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
+@media(max-width:560px){.fit5{grid-template-columns:1fr}}
+/* technology: title sits higher */
+.tcopy{justify-content:flex-start;padding-top:clamp(48px,5vw,80px);gap:12px}
+.tcopy .eyebrow{margin-bottom:2px}
+/* at a glance: type as the homepage AURA Experience */
+.g4 li{padding-right:clamp(20px,3vw,48px)}
+.g4 h3{font-weight:400;font-size:clamp(25px,2.1vw,31px);line-height:1.15;margin-bottom:14px}
+.g4 p{font-size:15px;line-height:1.65;max-width:32ch}
+
+/* ===== v7 ===== */
+/* at a glance: 2x2 grid */
+.g4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(36px,6vw,96px);row-gap:clamp(40px,4vw,56px);max-width:1040px;margin:0 auto}
+.g4 p{max-width:46ch}
+@media(max-width:620px){.g4{grid-template-columns:1fr}}
+/* faq: smaller, lighter, like the earlier layout */
+.faqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.faqgrid .head h2{font-size:clamp(36px,3.6vw,52px);line-height:1.05}
+.faqgrid .head h2 em{display:block}
+summary{font-size:20px;font-weight:500}
+details{padding-block:16px}
+details p{font-size:14px;line-height:1.7}
 </style></head><body>
 <div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
 <div id="site-header" data-current="skintightening">
@@ -143,112 +389,133 @@
   </div>
 </div>
 </div>
-<script src="nav.js"></script>
+<script src="nav.js?v=2"></script>
 <main>
-<div class="wrap crumbs"><a href="home.html">Home</a> / Skin Tightening &amp; Lifting / Thermage® FLX</div>
 
-<section class="tsec" id="top"><div class="thero">
-  <div class="ph"><img src="r-lift.jpg" alt="Close-up of a firm, lifted jawline" style="object-position:50% 45%"></div>
+<section class="thtop" id="top"><div class="wrap thero2">
+  <div class="tframe">
+    <div class="ph rv-img"><img src="thermage-banner.jpg" alt="A clinician rests a Thermage® FLX handpiece along a client's jawline" style="object-position:16% 45%"></div>
+  </div>
   <div class="tx">
-    <p class="eyebrow">Skin Tightening</p>
-    <h1>Thermage® <em>FLX</em></h1>
-    <p class="lede">A non-surgical radiofrequency treatment that firms and smooths the skin from within, so you look rested and refreshed, still like yourself.</p>
-    <a class="tlink" href="#how">Learn all about Thermage® FLX</a>
-    <div class="bookbox">
-      <details class="bbrow">
-        <summary>Choose your appointment <span class="chev" aria-hidden="true">⌄</span></summary>
-        <div class="bbopts">
-          <label class="bbopt"><input type="radio" name="appt" checked> Complimentary consultation</label>
-          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX treatment</label>
-          <p class="bbaddr">AURA Institute · 630 Fifth Avenue, Suite 1812, Rockefeller Center, New York</p>
-        </div>
-      </details>
-      <a class="btn" href="#book">Continue to Booking</a>
+    <p class="eyebrow kicker rv" style="--d:.15s">Skin Tightening</p>
+    <h1 class="big" aria-label="Thermage® FLX"><span class="ln"><i style="--d:.25s">Thermage® <em>FLX</em></i></span></h1>
+    <p class="lede rv" style="--d:.45s">A non-surgical radiofrequency treatment that firms and smooths the skin from within, so you look rested and refreshed, still like yourself.</p>
+    <div class="ctas rv" style="--d:.6s">
+      <a class="btn" href="#book">Book a Consultation</a>
     </div>
   </div>
 </div></section>
 
 <section class="tsec alt" id="how"><div class="wrap">
-  <div class="head"><p class="eyebrow">How it works</p><h2>How Thermage® FLX works for <em>your</em> skin</h2></div>
-  <p style="margin:0 0 28px;max-width:70ch;color:var(--muted)">Developed by Solta Medical, Thermage® FLX uses monopolar radiofrequency to gently heat the deeper layers of the skin. Existing collagen contracts right away for an instant firming effect, and new collagen keeps building for months after. No needles, no incisions, no downtime.</p>
-  <div class="benefits">
-    <div><h3>Smooths lines</h3><p>Softens forehead lines, crow’s feet, smile lines and neck lines.</p></div>
-    <div><h3>Lifts and firms</h3><p>Tightens loose skin for a firmer, more lifted look.</p></div>
-    <div><h3>Refines contours</h3><p>A cleaner, more defined lower face.</p></div>
-    <div><h3>Renews skin quality</h3><p>Smoother texture, refined pores and a healthy glow as collagen renews.</p></div>
+  <div class="hhead">
+    <div class="head"><p class="eyebrow rv">How it works</p><h2 class="rv" style="--d:.08s">How Thermage® FLX works <em>for your skin</em></h2></div>
+    <div class="hintro rv" style="--d:.16s"><p>Developed by Solta Medical, Thermage® FLX uses monopolar radiofrequency to gently heat the deeper layers of the skin. Existing collagen contracts right away for an instant firming effect, and new collagen keeps building for months after.</p><p class="tagline">No needles, no incisions, no downtime.</p></div>
   </div>
-  <p class="notebar">FDA-cleared for the non-invasive treatment of wrinkles, including around the eyes and on the upper and lower eyelids.</p>
+  <div class="bcards">
+    <div class="rv" style="--d:0s"><span class="bimg"><img src="art-smooth.png?v=2" alt="" loading="lazy"></span><h3>Smooths lines</h3><p>Softens forehead lines, crow’s feet, smile lines and neck lines.</p></div>
+    <div class="rv" style="--d:.1s"><span class="bimg"><img src="art-lift.png?v=2" alt="" loading="lazy"></span><h3>Lifts and firms</h3><p>Tightens loose skin for a firmer, more lifted look.</p></div>
+    <div class="rv" style="--d:.2s"><span class="bimg"><img src="art-contour.png?v=2" alt="" loading="lazy"></span><h3>Refines contours</h3><p>A cleaner, more defined lower face.</p></div>
+    <div class="rv" style="--d:.3s"><span class="bimg"><img src="art-glow.png?v=2" alt="" loading="lazy"></span><h3>Renews skin quality</h3><p>Smoother texture, refined pores and a healthy glow as collagen renews.</p></div>
+  </div>
+  <p class="fda rv">FDA-cleared for the non-invasive treatment of wrinkles, including around the eyes and on the upper and lower eyelids.</p>
 </div></section>
 
 <section class="tsec" id="fit"><div class="wrap">
-  <div class="head"><p class="eyebrow">Is it right for you?</p><h2>Ideal <em>for</em></h2></div>
-  <div class="fit3">
-    <div class="ph"><img src="svc-lift.jpg" alt="Portrait of a client with smooth, firm skin" style="object-position:40% 30%"></div>
-    <div class="fitcard">
-      <h4>Ideal for</h4>
-      <ul>
+  <div class="head"><p class="eyebrow rv">Is it right for you?</p><h2 class="rv" style="--d:.08s">Ideal <em>for</em></h2></div>
+  <div class="fit5">
+    <div class="rv" style="--d:.14s"><h4>Ideal for</h4>
+      <ul class="rows yes">
         <li>All skin tones and types</li>
         <li>Early signs of loosening</li>
         <li>Fine lines and crepey skin</li>
         <li>A gradual, natural change without surgery</li>
         <li>Sensitive skin in a stable phase</li>
-      </ul>
-    </div>
-    <div class="fitcard no">
-      <h4>Does not treat</h4>
-      <ul>
+      </ul></div>
+    <div class="rv" style="--d:.24s"><h4>Does not treat</h4>
+      <ul class="rows no">
         <li>Volume loss</li>
         <li>Sun spots and pigmentation</li>
         <li>Active acne or breakouts</li>
         <li>Advanced sagging that needs surgery</li>
-      </ul>
-      <p class="pair">For volume, pair it with <a href="radiesse.html">RADIESSE®</a>. For tone, see <a href="bbl-photofacial.html">BBL™ Photofacial</a>.</p>
-    </div>
+      </ul></div>
+    <div class="ph rv-img fitimg"><img src="fit-lips.jpg" alt="Close-up of clear, dewy skin and soft lips" style="object-position:50% 45%"></div>
   </div>
+  <p class="pairnote rv"><span class="pl">Pairs well</span><span class="pt">For volume, pair it with <a href="radiesse.html">RADIESSE®</a>. For tone, see <a href="bbl-photofacial.html">BBL™ Photofacial</a>.</span></p>
 </div></section>
 
-<section class="tsec alt" id="tech"><div class="wrap">
-  <div class="head"><p class="eyebrow">The technology</p><h2>Precise, even, <em>comfortable</em></h2></div>
-  <div class="techwrap">
-    <ol class="steps-v">
-      <li><div><b>Even energy delivery</b><span>A patented treatment tip spreads radiofrequency evenly into the skin, reducing hot spots.</span></div></li>
-      <li><div><b>AccuREP™ technology</b><span>Reads your skin with every pulse and adjusts the energy, so each pulse is precise.</span></div></li>
-      <li><div><b>Built-in cooling</b><span>Cools the skin surface while the deeper layers warm, for a more comfortable treatment.</span></div></li>
-    </ol>
-    <div class="ph"><img src="r-texture.jpg" alt="Close-up of smooth, even skin texture" style="object-position:50% 40%"></div>
+<section class="techband" id="tech">
+  <div class="tgrid">
+    <div class="ph rv-img"><img src="r-texture.jpg" alt="Close-up of smooth, even skin texture" style="object-position:50% 40%"></div>
+    <div class="tcopy">
+      <p class="eyebrow rv">The technology</p>
+      <h2 class="rv" style="--d:.08s">Precise, even, <em>comfortable</em></h2>
+      <ol class="tsteps">
+        <li class="rv" style="--d:.14s"><span class="n">01</span><div><b>Even energy delivery</b><span>A patented treatment tip spreads radiofrequency evenly into the skin, reducing hot spots.</span></div></li>
+        <li class="rv" style="--d:.24s"><span class="n">02</span><div><b>AccuREP™ technology</b><span>Reads your skin with every pulse and adjusts the energy, so each pulse is precise.</span></div></li>
+        <li class="rv" style="--d:.34s"><span class="n">03</span><div><b>Built-in cooling</b><span>Cools the skin surface while the deeper layers warm, for a more comfortable treatment.</span></div></li>
+      </ol>
+    </div>
   </div>
-</div></section>
+</section>
 
 <section class="tsec" id="glance"><div class="wrap">
-  <div class="head"><p class="eyebrow">At a glance</p><h2>Thermage® FLX <em>at a glance</em></h2></div>
-  <div class="glance">
-    <div class="cols">
-      <div class="col"><h5>Before your treatment</h5><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days.</p><p>Avoid sunburn, lasers, peels and microneedling for 2 weeks.</p><p>Come in with clean, makeup-free skin.</p></div>
-      <div class="col"><h5>After your treatment</h5><p>No downtime. Back to your day right away.</p><p>Gentle, hydrating skincare for the first week.</p><p>Skip saunas and intense workouts for a week.</p><p>Daily sunscreen for a month.</p></div>
-      <div class="col"><h5>Results</h5><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></div>
-      <div class="col"><h5>Frequency</h5><p>One session, maintained once a year.</p><p>Treatment takes about 30–90 minutes, depending on your plan.</p></div>
-    </div>
-    <div class="ft">Your provider will review your health history and these instructions with you before treatment.</div>
-  </div>
+  <div class="head ctr"><p class="eyebrow rv">At a glance</p><h2 class="rv" style="--d:.08s">Thermage® FLX <em>at a glance</em></h2></div>
+  <ol class="g4">
+    <li class="rv" style="--d:0s"><span class="k">01</span><h3>Before your treatment</h3><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days.</p><p>Avoid sunburn, lasers, peels and microneedling for 2 weeks.</p><p>Come in with clean, makeup-free skin.</p></li>
+    <li class="rv" style="--d:.1s"><span class="k">02</span><h3>After your treatment</h3><p>No downtime. Back to your day right away.</p><p>Gentle, hydrating skincare for the first week.</p><p>Skip saunas and intense workouts for a week.</p><p>Daily sunscreen for a month.</p></li>
+    <li class="rv" style="--d:.2s"><span class="k">03</span><h3>Results</h3><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></li>
+    <li class="rv" style="--d:.3s"><span class="k">04</span><h3>Frequency</h3><p>One session, maintained once a year.</p><p>Treatment takes about 30–90 minutes, depending on your plan.</p></li>
+  </ol>
+  <p class="gnote rv">Your provider will review your health history and these instructions with you before treatment.</p>
 </div></section>
 
-<section class="tsec alt" id="faq"><div class="wrap faqnarrow">
-  <div class="head" style="text-align:center;justify-items:center"><p class="eyebrow">FAQs</p><h2>Frequently asked <em>questions</em></h2></div>
-  <details open><summary>Does it hurt?</summary><p>Most clients feel warmth and a deep, brief pressure with each pulse. The tip cools your skin, and your provider can adjust the energy to your comfort.</p></details>
-  <details><summary>What are the side effects?</summary><p>Mild redness, warmth or swelling that usually settles within hours to a few days. Less often: tingling, small bumps or temporary darkening of the skin. Blisters or burns are rare.</p></details>
-  <details><summary>Who should not have it?</summary><p>It is not suitable if you have a pacemaker or other implanted electronic device. Please wait if you are pregnant, or have broken or inflamed skin in the area. Talk to us first about metal implants, chronic conditions, filler or tattoos in the area.</p></details>
-  <details><summary>Can I combine it with other treatments?</summary><p>Yes, as part of one plan. It is often paired with EMFACE® for added lift and Dermal Fillers to restore softness. We leave at least 2 weeks between Thermage® FLX and peels, lasers, microneedling or injectables.</p></details>
-  <details><summary>How much does it cost?</summary><p>It depends on your plan. You’ll get a clear quote at your complimentary consultation.</p></details>
+<section class="tsec alt" id="faq"><div class="wrap faqgrid">
+  <div class="head"><p class="eyebrow rv">FAQs</p><h2 class="rv" style="--d:.08s">Frequently asked <em>questions</em></h2></div>
+  <div class="faqlist">
+  <details open class="rv"><summary>Does it hurt?</summary><p>Most clients feel warmth and a deep, brief pressure with each pulse. The tip cools your skin, and your provider can adjust the energy to your comfort.</p></details>
+  <details class="rv"><summary>What are the side effects?</summary><p>Mild redness, warmth or swelling that usually settles within hours to a few days. Less often: tingling, small bumps or temporary darkening of the skin. Blisters or burns are rare.</p></details>
+  <details class="rv"><summary>Who should not have it?</summary><p>It is not suitable if you have a pacemaker or other implanted electronic device. Please wait if you are pregnant, or have broken or inflamed skin in the area. Talk to us first about metal implants, chronic conditions, filler or tattoos in the area.</p></details>
+  <details class="rv"><summary>Can I combine it with other treatments?</summary><p>Yes, as part of one plan. It is often paired with EMFACE® for added lift and Dermal Fillers to restore softness. We leave at least 2 weeks between Thermage® FLX and peels, lasers, microneedling or injectables.</p></details>
+  <details class="rv"><summary>How much does it cost?</summary><p>It depends on your plan. You’ll get a clear quote at your complimentary consultation.</p></details>
+  </div>
 </div></section>
 
 <section class="closing tsec" id="book">
   <img src="season-laser.jpg" alt="" aria-hidden="true">
   <div class="wrap">
-    <h2>Not sure which treatment is <em>right</em> for you?</h2>
-    <p>Book a complimentary consultation. We’ll look at your whole face and help you create a plan that stays true to you.</p>
-    <a class="btn" href="#book">Book a Consultation</a>
+    <h2 class="rv">Not sure which treatment is <em>right</em> for you?</h2>
+    <p class="rv" style="--d:.1s">Book a complimentary consultation. We’ll look at your whole face and help you create a plan that stays true to you.</p>
+    <a class="btn rv" style="--d:.2s" href="#book">Book a Consultation</a>
   </div>
 </section>
 </main>
-<footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer>
+<footer class="foot" id="contact">
+  <div class="in">
+    <div class="top">
+      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil your aura.</p></div>
+      <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
+      <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
+      <div><h4>Contact</h4><p>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+    <div class="legal"><span>© 2026 AURA Institute. Individual results may vary. All treatments follow a medical consultation.</span><nav><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav></div>
+  </div>
+</footer>
+<script>
+/* reveal on scroll, as on the homepage */
+(function(){const els=document.querySelectorAll('.rv,.rv-img,.big');
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+ els.forEach(e=>io.observe(e));})();
+</script>
+<script>
+/* jump menu: close after picking a section, and when clicking elsewhere */
+(function(){const j=document.querySelector('.jump');if(!j)return;
+ j.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>j.removeAttribute('open')));
+ document.addEventListener('click',e=>{if(!j.contains(e.target))j.removeAttribute('open');});})();
+</script>
+<script>
+/* faq: one answer open at a time */
+(function(){const ds=[...document.querySelectorAll('.faqlist details')];
+ ds.forEach(d=>d.addEventListener('toggle',()=>{if(d.open)ds.forEach(o=>{if(o!==d)o.open=false;});}));})();
+</script>
 </body></html>

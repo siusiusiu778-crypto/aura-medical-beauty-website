@@ -6,7 +6,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
 #site-header{--nb-bg:#F8F0EB;--nb-surface:#F1E3DB;--nb-line:#E3CFC4;--nb-fg:#2F221D;--nb-muted:#9D857B;--nb-cocoa:#2F221D;--nb-clay:#B07E6B;--nb-cream:#FBF4EF;
-  font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;position:relative;z-index:80}
+  font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;z-index:80;
+  /* the whole header is sticky, offset by the brand row's height: the brand row scrolls away, the nav bar stays pinned */
+  position:sticky;top:calc(-1 * var(--brand-h,62px))}
 #site-header *{box-sizing:border-box}
 #site-header a{color:inherit;text-decoration:none}
 #site-header button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
