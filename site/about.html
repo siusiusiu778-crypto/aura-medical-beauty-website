@@ -29,11 +29,11 @@ section[id]{scroll-margin-top:72px}
 /* 01 hero: mocha band over a full-bleed photo */
 .ahero{position:relative;overflow:hidden;background:var(--mocha);color:var(--cream);padding-block:clamp(56px,7vw,104px) clamp(36px,4vw,56px)}
 .ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.ahero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(122,90,75,.86) 0%,rgba(122,90,75,.8) 60%,rgba(98,70,58,.9) 100%)}
+.ahero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(122,90,75,.74) 0%,rgba(122,90,75,.66) 60%,rgba(98,70,58,.8) 100%)}
 .ahero .wrap{position:relative;z-index:2;display:grid;gap:clamp(36px,5vw,64px)}
 .ahero .eyebrow{color:var(--cream)}
 .ahero h1{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(54px,9vw,128px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
-.ahero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ahero h1 .ln{display:block;overflow:hidden;padding-bottom:.22em;margin-bottom:-.16em}
 .ahero h1 .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
 .ahero h1.in .ln i{transform:none}
 .ahero h1 em{font-style:normal;color:var(--cream);text-transform:uppercase;letter-spacing:-.005em}
@@ -44,11 +44,8 @@ section[id]{scroll-margin-top:72px}
 
 /* intro statement + jump links */
 .intro{padding-block:clamp(64px,7vw,104px) clamp(48px,5vw,72px);text-align:center}
-.intro .lead{max-width:40ch;text-wrap:balance;margin:0 auto;font-family:var(--serif);font-weight:400;font-size:clamp(25px,2.5vw,34px);line-height:1.32;color:var(--fg)}
+.intro .lead{max-width:1060px;text-wrap:balance;margin:0 auto;font-family:var(--serif);font-weight:400;font-size:clamp(25px,2.5vw,34px);line-height:1.32;color:var(--fg)}
 .intro .lead em{font-style:italic;color:var(--clay)}
-.jumps{margin-top:clamp(36px,4vw,52px);display:flex;justify-content:center;flex-wrap:wrap;gap:12px clamp(22px,3vw,40px)}
-.jumps a{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding-bottom:4px;border-bottom:1px solid transparent;transition:color .4s,border-color .4s}
-.jumps a:hover{color:var(--fg);border-color:var(--clay)}
 
 /* 02 who we are: heading left, copy right */
 #who{padding-top:clamp(40px,4vw,56px)}
@@ -82,7 +79,7 @@ section[id]{scroll-margin-top:72px}
 @media(max-width:480px){.brands td:last-child{white-space:normal}}
 
 /* 05 the aura aesthetic: heading left, copy right, photo collage, closing line */
-.aeshead{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:clamp(32px,4vw,48px)}
+.aeshead{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start;margin-bottom:clamp(32px,4vw,48px)}
 .aeshead .h2{white-space:normal}
 .aeshead .copy{margin:0;font-size:15px;line-height:1.75;max-width:42ch}
 .collage{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.5fr) minmax(0,.5fr);grid-template-rows:auto auto;gap:clamp(10px,1.2vw,16px)}
@@ -93,24 +90,23 @@ section[id]{scroll-margin-top:72px}
 .collage .sm{aspect-ratio:1/1}
 .collage figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:40px 18px 16px;background:linear-gradient(0deg,rgba(47,34,29,.55),rgba(47,34,29,0));color:var(--cream);font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.2}
 .collage .big figcaption{font-size:22px;padding:56px 22px 20px}
-.collage .note{grid-column:2/4;align-self:end;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding:clamp(8px,1.5vw,20px) 0 0}
 .aesfoot{display:flex;justify-content:space-between;align-items:center;gap:18px 32px;flex-wrap:wrap;margin-top:clamp(28px,3vw,40px)}
 .aesfoot p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,30px);color:var(--clay)}
 @media(max-width:860px){.aeshead{grid-template-columns:1fr;align-items:start}.collage{grid-template-columns:1fr 1fr}.collage .big{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}}
 
 /* 06 closing: full-bleed photo, oversized line, two short columns */
-.closing{position:relative;overflow:hidden;background:var(--cocoa);color:var(--cream);padding-block:clamp(72px,9vw,128px) clamp(56px,6vw,88px);min-height:clamp(480px,52vw,720px);display:flex;align-items:center}
-.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.closing{position:relative;overflow:hidden;background:var(--cocoa);color:var(--cream);padding-block:clamp(56px,6vw,88px)}
+.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
 .closing::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(47,34,29,.74) 0%,rgba(47,34,29,.58) 55%,rgba(47,34,29,.3) 100%)}
 .closing .wrap{position:relative;z-index:2;width:100%}
 .closing .eyebrow{color:rgba(251,244,239,.88)}
-.closing h2{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(52px,8.4vw,124px);line-height:.92;letter-spacing:-.01em;margin-top:14px;max-width:11ch}
+.closing .cgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px clamp(28px,6vw,96px);align-items:start}
+.closing h2{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(52px,7.4vw,112px);line-height:.92;letter-spacing:-.01em;max-width:11ch}
 .closing h2 em{color:var(--cream)}
-.closing .cols{margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(28px,6vw,96px);align-items:start;max-width:880px}
-.closing .cols p{margin:0;font-size:11.5px;font-weight:500;letter-spacing:.18em;line-height:1.9;text-transform:uppercase;color:var(--cream);max-width:34ch}
-.closing .btn{background:var(--cream);color:var(--cocoa);justify-self:start}
+.closing .cgrid p{margin:0;padding-top:.9em;justify-self:end;font-size:11.5px;font-weight:500;letter-spacing:.18em;line-height:1.9;text-transform:uppercase;color:var(--cream);max-width:34ch}
+.closing .btn{margin-top:clamp(28px,3vw,44px);background:var(--cream);color:var(--cocoa)}
 .closing .btn:hover{background:var(--clay-lt)}
-@media(max-width:640px){.closing .cols{grid-template-columns:1fr}}
+@media(max-width:760px){.closing .cgrid{grid-template-columns:1fr}.closing .cgrid p{justify-self:start;padding-top:0;grid-row:2}}
 
 /* footer: same as the homepage */
 .foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
@@ -176,7 +172,7 @@ section[id]{scroll-margin-top:72px}
       <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
     </li>
     <li data-cat="about"><a href="about.html">About</a>
-      <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Our Standards</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a><a href="journal-faq.html">Journal &amp; FAQ</a></div>
+      <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Our Standards</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a></div>
     </li>
   </ul>
   <a class="btn nav-book" href="#book">Book Now</a>
@@ -215,12 +211,6 @@ section[id]{scroll-margin-top:72px}
 
 <div class="wrap intro">
   <p class="lead rv">AURA Institute offers face design, skin treatments, body contouring and wellness therapies in a private suite on Fifth Avenue. Every plan is built around your own features, for results that look <em>natural</em> and feel like you.</p>
-  <nav class="jumps rv" style="--d:.12s" aria-label="About sections">
-    <a href="#who">Who We Are</a>
-    <a href="#standards">Our Standards</a>
-    <a href="#technology">Technology &amp; Products</a>
-    <a href="#aesthetic">The AURA Aesthetic</a>
-  </nav>
 </div>
 
 <section id="who"><div class="wrap two">
@@ -270,9 +260,9 @@ section[id]{scroll-margin-top:72px}
     <p class="copy rv" style="--d:.16s">There is no single standard of beauty. We look at the scale of your features, the line of your contours and the contrast of your look, then design to bring your style forward, never to replace it.</p>
   </div>
   <div class="collage">
-    <figure class="big rv-img"><img src="about.jpg" alt="Portrait of a woman with soft, natural features" style="object-position:50% 25%" loading="lazy"><figcaption>Scale of features</figcaption></figure>
-    <figure class="sm rv-img" style="--d:.12s"><img src="star-jaw.jpg" alt="Close-up of a defined jawline and neck" style="object-position:50% 40%" loading="lazy"><figcaption>Line of contours</figcaption></figure>
-    <figure class="sm rv-img" style="--d:.24s"><img src="r-tone.jpg" alt="Close-up of clear, even-toned skin" style="object-position:50% 35%" loading="lazy"><figcaption>Contrast of your look</figcaption></figure>
+    <figure class="big rv-img"><img src="about-window.webp" alt="A woman in profile by a sunlit window overlooking Manhattan" style="object-position:42% 40%" loading="lazy"><figcaption>Scale of features</figcaption></figure>
+    <figure class="sm rv-img" style="--d:.12s"><img src="about-lips.webp" alt="Close-up of soft lips and a defined jawline" style="object-position:50% 50%" loading="lazy"><figcaption>Line of contours</figcaption></figure>
+    <figure class="sm rv-img" style="--d:.24s"><img src="about-smile.webp" alt="A smiling woman resting her head on her arms" style="object-position:50% 40%" loading="lazy"><figcaption>Contrast of your look</figcaption></figure>
   </div>
   <div class="aesfoot rv">
     <p>Precision over perfection.</p>
@@ -281,13 +271,13 @@ section[id]{scroll-margin-top:72px}
 </div></section>
 
 <section class="closing" id="book">
-  <img src="suite-gold.jpg" alt="" aria-hidden="true">
-  <div class="wrap">
-    <h2 class="rv">Begin with a <em>conversation</em></h2>
-    <div class="cols">
-      <p class="rv" style="--d:.12s">Book a complimentary consultation. We’ll look at your whole face and create a plan that stays true to you.</p>
-      <a class="btn rv" style="--d:.24s" href="#book">Book a Consultation</a>
+  <img src="about-facial.jpg" alt="" aria-hidden="true">
+  <div class="wrap cgrid">
+    <div>
+      <h2 class="rv">Begin with a <em>conversation</em></h2>
+      <a class="btn rv" style="--d:.2s" href="#book">Book a Consultation</a>
     </div>
+    <p class="rv" style="--d:.12s">Book a complimentary consultation. We’ll look at your whole face and create a plan that stays true to you.</p>
   </div>
 </section>
 </main>
