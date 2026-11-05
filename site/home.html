@@ -74,6 +74,7 @@ em.s{font-family:var(--serif);font-style:italic}
 @media(max-width:560px){.fxgrid{grid-template-columns:1fr}}
 .fx{position:relative;border:0;padding:0;border-radius:var(--rs);overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--surface);color:#FBF7F3;text-align:center;isolation:isolate}
 .fx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s ease}
+/* skin tightening card: the close-up sits smaller in the lower right on its own beige, edges softened, for more air around the jaw */
 .fx::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,14,11,0) 45%,rgba(20,14,11,.6) 100%);transition:background .45s ease}
 .fx .ttl{position:absolute;left:16px;right:16px;bottom:22px;font-size:clamp(22px,2.1vw,30px);font-weight:500;letter-spacing:-.01em;line-height:1.1;transition:opacity .35s ease,transform .45s ease}
 .fx .ttl .fcat{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.85;margin-bottom:6px}
@@ -469,11 +470,11 @@ const SERIES = [
  {id:"prime", n:"06", name:"AURA Prime", tag:"Monthly membership", img:"about.jpg", pos:"50% 30%", link:"aura-prime.html"}
 ];
 const RESULTS=[
- {id:"lift",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Skin Tightening",img:"r-lift.jpg",pos:"50% 45%",items:[
+ {id:"lift",show:["Thermage® FLX","EMFACE®","Exion™ Collagen Lift"],name:"Skin Tightening",img:"goal-lift.jpg?v=3",pos:"50% 22%",items:[
    ["Thermage® FLX","Eyes 450 or full face 900 pulses",P],
    ["EMFACE®","Needle-free lift · 1–4 areas",P],
    ["Exion™ Collagen Lift","Cheeks, eyes, neck, forehead or any 3",P]]},
- {id:"balance",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"r-smooth.jpg",pos:"50% 35%",items:[
+ {id:"balance",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"goal-balance.jpg?v=2",pos:"40% 45%",items:[
    ["Chin & Lower Face Balance","Chin projection and profile",P],
    ["Defined Jawline","HA filler or RADIESSE®",P],
    ["Under-Eye Hollows","A more rested look",P],
@@ -482,20 +483,20 @@ const RESULTS=[
    ["Nose Profile","Non-surgical refinement",P],
    ["Sculptra®","Gradual collagen restoration",P],
    ["RADIESSE®","Structure for jaw, cheekbones & hands",P]]},
- {id:"smooth",show:["Botox® &amp; Xeomin®","Botox® Brow Lift","Jaw Slimming","Double Chin"],name:"Wrinkles &amp; Jawline",img:"r-texture.jpg",pos:"50% 40%",items:[
+ {id:"smooth",show:["Botox® &amp; Xeomin®","Botox® Brow Lift","Jaw Slimming","Double Chin"],name:"Wrinkles &amp; Jawline",img:"goal-smooth.jpg",pos:"50% 35%",items:[
    ["Botox® & Xeomin®","Forehead lines, frown lines & crow’s feet",P],
    ["Botox® Brow Lift","A more open, rested eye",P],
    ["Jaw Slimming (Masseter Botox®)","Jaw tension, clenching & a softer lower face",P],
    ["Double Chin Reduction (KYBELLA®)","Reduces fat under the chin",P],
    ["Facial Harmonization","Balances one side of the face",P],
    ["Lower Face Tightening + Lift","Both sides, slimmer & lifted",P]]},
- {id:"skin",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Facials &amp; Pores",img:"goal-pores.jpg",pos:"50% 30%",alt:"Close-up of clear, glowing skin",items:[
+ {id:"skin",show:["Gold Skin Analysis","HydraFacial®","Gold RF Microneedling"],name:"Facials &amp; Pores",img:"goal-skin.jpg?v=4",pos:"45% 40%",alt:"Close-up of clear, glowing skin",items:[
    ["Gold Skin Analysis","Know your skin first · 20 min","Complimentary"],
    ["HydraFacial®","Deluxe 60 min or Platinum 75 min",P],
    ["Signature Facial","Relaxing spa facial · 60 min",P],
    ["Barrier Recovery Facial","Calms sensitive skin · 60 min",P],
    ["Gold RF Microneedling","mFace · pores, acne scars & texture",P]]},
- {id:"glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Glow &amp; Hydration",img:"r-tone.jpg",pos:"50% 40%",items:[
+ {id:"glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Glow &amp; Hydration",img:"goal-glow.jpg?v=3",pos:"50% 40%",items:[
    ["BBL™ Photofacial","Sun spots, redness & uneven tone",P],
    ["Face Hydration · Rejuran®","Hydration, texture & glow",P],
    ["Long-Lasting Glow · SKINVIVE™","Cheek smoothness · about 6 months",P],
@@ -503,7 +504,7 @@ const RESULTS=[
    ["Neck Hydration","Crepey, dry neck skin",P],
    ["Tech Neck · Levels 1–4","Matched to your neck lines",P],
    ["Scalp & Hair Restoration","Hydration or PRP",P]]},
- {id:"bodywell",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"r-body2.jpg",pos:"50% 35%",items:[
+ {id:"bodywell",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"goal-body.jpg",pos:"50% 40%",items:[
    ["Body Sculpt · Abdomen","Non-invasive fat reduction · 30 min",P],
    ["Fat Dissolving · Body","One area per session",P],
    ["Trap Tox · Shoulder Line","Longer neck & softer shoulders",P],
@@ -522,10 +523,10 @@ document.getElementById('fxGrid').addEventListener('click',e=>{const b=e.target.
 
 /* ---------- most loved ---------- */
 const MOSTLOVED=[
- {img:"season-gold.jpg",pos:"50% 40%",name:"Thermage® FLX",fx:"Firmer, smoother skin in one session.",href:"thermage-flx.html"},
- {img:"loved-facial-device.jpg",pos:"50% 40%",name:"EMFACE®",fx:"A needle-free lift. Still you, just more lifted.",href:"emface.html",alt:"Facial treatment with a handpiece in a calm treatment room"},
- {img:"s-inject.jpg",pos:"50% 30%",name:"Botox® &amp; Xeomin®",fx:"Smooth, rested, still you.",href:"botox-xeomin.html"},
- {img:"r-smooth.jpg",pos:"50% 50%",name:"Rejuran®",fx:"Deep hydration and a glass-skin glow.",href:"rejuran.html"}
+ {img:"loved-thermage.jpg",pos:"50% 50%",alt:"A provider glides a radiofrequency handpiece along a client's neck",name:"Thermage® FLX",fx:"Firmer, smoother skin in one session.",href:"thermage-flx.html"},
+ {img:"loved-emface.jpg",pos:"50% 50%",name:"EMFACE®",fx:"A needle-free lift. Still you, just more lifted.",href:"emface.html",alt:"EMFACE applicators placed on a client's forehead and cheek"},
+ {img:"loved-botox.jpg",pos:"50% 40%",alt:"A provider in black gloves places a fine injection at the brow",name:"Botox® &amp; Xeomin®",fx:"Smooth, rested, still you.",href:"botox-xeomin.html"},
+ {img:"loved-rejuran.jpg",pos:"50% 50%",alt:"Close-up of a fine needle above dewy cheek skin",name:"Rejuran®",fx:"Deep hydration and a glass-skin glow.",href:"rejuran.html"}
 ];
 document.getElementById('starTrack').innerHTML=MOSTLOVED.map((t,i)=>`
   <a class="star rv" style="--d:${i*.1}s" href="${t.href}">

@@ -304,7 +304,8 @@ p,h3,.rows li{text-wrap:pretty}
 .fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
 .pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:#F1E3DB;border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
 .pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
-.pairnote a{color:var(--fg);text-decoration-color:var(--clay);text-underline-offset:4px}
+.pairnote a{color:var(--clay);font-weight:500;text-decoration:none;padding-bottom:2px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.pairnote a:hover,.pairnote a:focus-visible{background-size:100% 1px;font-weight:600}  /* same colour; turns bolder and an underline draws in */
 @media(max-width:900px){.fit5{grid-template-columns:1fr 1fr}.fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
 @media(max-width:560px){.fit5{grid-template-columns:1fr}}
 /* technology: title sits higher */
@@ -468,17 +469,6 @@ details p{font-size:14px;line-height:1.7}
     </div>
   </div>
 </section>
-
-<section class="tsec" id="glance"><div class="wrap">
-  <div class="head ctr"><p class="eyebrow rv">At a glance</p><h2 class="rv" style="--d:.08s">Thermage® FLX <em>at a glance</em></h2></div>
-  <ol class="g4">
-    <li class="rv" style="--d:0s"><span class="k">01</span><h3>Before your treatment</h3><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days.</p><p>Avoid sunburn, lasers, peels and microneedling for 2 weeks.</p><p>Come in with clean, makeup-free skin.</p></li>
-    <li class="rv" style="--d:.1s"><span class="k">02</span><h3>After your treatment</h3><p>No downtime. Back to your day right away.</p><p>Gentle, hydrating skincare for the first week.</p><p>Skip saunas and intense workouts for a week.</p><p>Daily sunscreen for a month.</p></li>
-    <li class="rv" style="--d:.2s"><span class="k">03</span><h3>Results</h3><p>Skin feels firmer right after treatment.</p><p>Results build over 1–3 months and keep improving for up to 6 months.</p><p>Results vary by individual.</p></li>
-    <li class="rv" style="--d:.3s"><span class="k">04</span><h3>Frequency</h3><p>One session, maintained once a year.</p><p>Treatment takes about 30–90 minutes, depending on your plan.</p></li>
-  </ol>
-  <p class="gnote rv">Your provider will review your health history and these instructions with you before treatment.</p>
-</div></section>
 
 <section class="tsec alt" id="faq"><div class="wrap faqgrid">
   <div class="head"><p class="eyebrow rv">FAQs</p><h2 class="rv" style="--d:.08s">Frequently asked <em>questions</em></h2></div>
