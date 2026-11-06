@@ -1,7 +1,54 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>AURA Prime · AURA Institute</title>
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AURA Prime Membership | Monthly Facials &amp; Skin Care | AURA Institute</title>
+<meta name="description" content="AURA Prime at Rockefeller Center: $299/month for a monthly facial, a quarterly BBL™ Photofacial or Rejuran® treatment, and Wellness Credits toward NAD+.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2"><link rel="stylesheet" href="svc.css"><link rel="stylesheet" href="mem.css"></head><body><div class="proto">Page prototype · copy is a final draft, photos are placeholders · <a href="index.html">All pages</a></div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2">
+<link rel="stylesheet" href="l3.css?v=1">
+<style>
+/* membership-only components */
+.pricetag{display:flex;align-items:baseline;gap:10px;margin:0}
+.pricetag b{font-family:var(--serif);font-weight:400;font-size:clamp(44px,4.4vw,60px);line-height:1;color:var(--fg)}
+.pricetag span{font-size:14px;letter-spacing:.04em;color:var(--ink)}
+.pricenote{margin:-14px 0 0;font-size:13px;color:var(--muted)}
+.joinrow{display:flex;align-items:center;gap:18px 28px;flex-wrap:wrap}
+.bcards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.bcards.three{grid-template-columns:1fr}}
+.bcards.txt .k.lbl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.bcards.txt p a{color:var(--fg);text-underline-offset:3px}
+.yr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:.5px solid rgba(47,34,29,.42);border-left:1px solid var(--line)}
+.yr li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 14px 18px;display:grid;gap:6px;align-content:start;min-height:132px;background:var(--bg)}
+.yr .m{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.yr .t{font-size:14px;color:var(--ink)}
+.yr .q{font-size:13px;color:#fff;background:var(--clay);padding:3px 8px;justify-self:start}
+.yr .c{font-family:var(--serif);font-size:20px;color:var(--fg);margin-top:auto}
+.yr .n{font-size:13px;color:#fff;background:var(--cocoa);padding:3px 8px;justify-self:start}
+@media(max-width:860px){.yr{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:150px;overflow-x:auto;scroll-snap-type:x mandatory}.yr li{scroll-snap-align:start}}
+.yrlabel{margin:clamp(48px,5vw,72px) 0 0;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.yrsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:clamp(20px,2.4vw,28px);text-align:center}
+.yrsum b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,4vw,56px);line-height:1;color:var(--clay)}
+.yrsum span{font-size:14px;color:var(--ink)}
+@media(max-width:560px){.yrsum{grid-template-columns:1fr}}
+.join3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.join3 li{border-top:.5px solid rgba(47,34,29,.42);padding-top:20px}
+.join3 .k{display:block;font-family:var(--serif);font-size:28px;color:var(--clay);line-height:1;margin-bottom:10px}
+.join3 h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);margin:0 0 6px}
+.join3 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+@media(max-width:760px){.join3{grid-template-columns:1fr}}
+/* FAQ: heading and photo on the left, questions on the right; the left column matches the height of the questions */
+.faqrev{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:stretch;max-width:1120px;margin-inline:auto}
+.faqrev .faqside{display:grid;grid-template-rows:auto 1fr;gap:24px}
+.faqrev .faqside .head{margin:0}
+.faqrev .faqside .eyebrow{margin-top:0}
+.faqrev .faqside h2{font-size:clamp(32px,3.2vw,46px);line-height:1.05;white-space:nowrap}
+.faqrev .faqside .ph{position:relative;overflow:hidden;background:var(--surface);min-height:280px}
+.faqrev .faqside .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.faqrev .faqlist{align-self:start}
+@media(max-width:860px){.faqrev{grid-template-columns:1fr}.faqrev .faqside h2{white-space:normal}.faqrev .faqside .ph{min-height:0;aspect-ratio:16/10}}
+.faqlist ul.terms{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px;line-height:1.65;color:var(--ink)}
+</style>
+</head><body>
+<div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
 <div id="site-header" data-current="membership">
 <div class="brandrow"><div class="in">
   <a class="hdlogo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a>
@@ -28,8 +75,8 @@
         <div class="grp"><h5>Start Here</h5><a href="gold-skin-analysis.html">Gold Skin Analysis</a></div>
         <div class="grp"><h5>Deep Cleanse</h5><a href="hydrafacial.html">HydraFacial®</a><a href="signature-facial.html">Signature Facial</a><a href="barrier-recovery-facial.html">Barrier Recovery Facial</a></div>
         <div class="grp"><h5>Brighten &amp; Texture</h5><a href="bbl-photofacial.html">BBL™ Photofacial</a><a href="gold-rf-microneedling.html">Gold RF Microneedling</a></div>
-        <div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="rejuran.html">Face Hydration · Rejuran®</a><a href="skinvive.html">Long-Lasting Glow · SKINVIVE™</a><a href="under-eye-brightening.html">Under-Eye Brightening · PRP / PRF</a></div>
-        <div class="grp"><h5>Neck &amp; Scalp</h5><a href="neck-hydration.html">Neck Hydration</a><a href="tech-neck.html">Tech Neck · Levels 1–4</a><a href="scalp-hair.html">Scalp &amp; Hair Restoration</a></div>
+        <div class="grp"><h5>Hydrate &amp; Glow · Face</h5><a href="rejuran.html">Rejuran®</a><a href="skinvive.html">SKINVIVE™</a><a href="under-eye-brightening.html">Under-Eye Brightening</a></div>
+        <div class="grp"><h5>Neck &amp; Scalp</h5><a href="neck-hydration.html">Neck Hydration</a><a href="tech-neck.html">Tech Neck</a><a href="scalp-hair.html">Scalp &amp; Hair Restoration</a></div>
       </div></div>
     </li>
     <li data-cat="wellness"><span class="tag">New</span><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-wellness">Wellness &amp; Longevity</a>
@@ -42,7 +89,7 @@
       <div class="mega small" id="mega-membership"><a href="aura-prime.html">AURA Prime</a></div>
     </li>
     <li data-cat="about"><a href="about.html">About</a>
-      <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Our Standards</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a></div>
+      <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Why AURA</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a></div>
     </li>
   </ul>
   <a class="btn nav-book" href="#book">Book Now</a>
@@ -62,14 +109,72 @@
   </div>
 </div>
 </div>
-<script src="nav.js?v=2"></script><main><div class="wrap crumbs"><a href="home.html">Home</a> / Membership</div><div class="wrap"><div class="mh"><div class="tx"><p class="eyebrow" style="color:inherit;opacity:.75">AURA Membership</p><h1>AURA <em>Prime</em></h1>
-<div class="pr"><i>Monthly membership · 3-month minimum</i></div>
-<p>A steady, consistent, never-overdone rhythm for your skin. From everyday facials to seasonal light treatments, make glowing a monthly habit.</p>
-<div class="btns"><a class="btn" href="#join">Join Now</a><a class="btn line" href="#included">What’s Included</a></div></div>
-<div class="ph"><img src="about.jpg" alt="" style="object-position:50% 30%"></div></div></div><section id="included"><div class="wrap"><div class="head"><p class="eyebrow">What’s included</p><h2>Three perks, <em>every</em> month</h2><p>Everything you need to keep skin consistent, from monthly care to seasonal resets.</p></div><div class="perks">
-<div class="perk"><span class="fq">✦ Every month</span><h3>1 facial of your choice</h3><p>Pick the facial your skin needs that month.</p><ul><li>HydraFacial®</li><li>Barrier Recovery Facial</li><li>Signature Facial</li></ul></div>
-<div class="perk"><span class="fq">✦ Every 3 months</span><h3>BBL™ Photofacial or Rejuran®</h3><p>Unlocks after 3 consecutive months. A seasonal reset for:</p><div class="tags"><span>Dull tone</span><span>Uneven tone</span><span>Redness</span><span>Skin maintenance</span></div></div>
-<div class="perk"><span class="fq">✦ Every month</span><h3>50 Wellness Credits</h3><p>Credits are added automatically and keep adding up.</p><div class="eq">500 Wellness Credits = 1 NAD+ Wellness Treatment</div></div></div></div></section><section id="year" class="alt"><div class="wrap"><div class="head"><p class="eyebrow">Your first year</p><h2>A year with <em>Prime</em>, month by month</h2><p>Here is how the perks add up over 12 consecutive months.</p></div><div class="yr"><div class="mo"><b>Month 1</b><span class="f">Facial</span><span class="c">50 credits</span></div><div class="mo"><b>Month 2</b><span class="f">Facial</span><span class="c">100 credits</span></div><div class="mo"><b>Month 3</b><span class="f">Facial</span><span class="q">BBL™ or Rejuran®</span><span class="c">150 credits</span></div><div class="mo"><b>Month 4</b><span class="f">Facial</span><span class="c">200 credits</span></div><div class="mo"><b>Month 5</b><span class="f">Facial</span><span class="c">250 credits</span></div><div class="mo"><b>Month 6</b><span class="f">Facial</span><span class="q">BBL™ or Rejuran®</span><span class="c">300 credits</span></div><div class="mo"><b>Month 7</b><span class="f">Facial</span><span class="c">350 credits</span></div><div class="mo"><b>Month 8</b><span class="f">Facial</span><span class="c">400 credits</span></div><div class="mo"><b>Month 9</b><span class="f">Facial</span><span class="q">BBL™ or Rejuran®</span><span class="c">450 credits</span></div><div class="mo"><b>Month 10</b><span class="f">Facial</span><span class="n">500 = 1 NAD+</span></div><div class="mo"><b>Month 11</b><span class="f">Facial</span><span class="c">50 credits</span></div><div class="mo"><b>Month 12</b><span class="f">Facial</span><span class="q">BBL™ or Rejuran®</span><span class="c">100 credits</span></div></div>
-<div class="lg"><span style="--c:#efe4d8">Monthly facial</span><span style="--c:var(--accent)">Quarterly BBL™ or Rejuran®</span><span style="--c:#e4e8dc">Wellness Credits</span><span style="--c:var(--rust)">NAD+ unlocked</span></div>
-<div class="tot"><div><b>12</b><span>facials</span></div><div><b>4</b><span>BBL™ or Rejuran® sessions</span></div><div><b>600</b><span>Wellness Credits, enough for 1 NAD+ treatment</span></div></div></div></section><section id="rules"><div class="wrap"><div class="head"><p class="eyebrow">Membership rules</p><h2>Simple, <em>clear</em> rules</h2></div><ol class="rules"><li><i>01</i><span>AURA Prime has a 3-month minimum.</span></li><li><i>02</i><span>The quarterly BBL™ / Rejuran® perk unlocks after 3 consecutive months.</span></li><li><i>03</i><span>Your monthly facial must be used within that month.</span></li><li><i>04</i><span>Perks not yet unlocked cannot be exchanged for cash or refunded.</span></li><li><i>05</i><span>Wellness Credits keep adding up.</span></li><li><i>06</i><span>To cancel, please give 30 days’ notice.</span></li></ol></div></section><section id="join"><div class="wrap"><div class="head"><p class="eyebrow">How to join</p><h2>Start your <em>Prime</em> routine</h2></div><div class="join"><div><i>01</i><h4>Join</h4><p>Sign up at the front desk or book a visit online. Billing starts on your join date.</p></div>
-<div><i>02</i><h4>Choose your facial</h4><p>Book your monthly facial any time that month.</p></div><div><i>03</i><h4>Keep glowing</h4><p>Your quarterly perk unlocks at month 3. Credits add up toward NAD+.</p></div></div></div></section><section class="alt" id="faq"><div class="wrap faqc"><p class="eyebrow" style="text-align:center">FAQs</p><h2 class="bh2" style="text-align:center">Membership <em>questions</em></h2><div class="qa"><details open><summary>When does the quarterly BBL™ or Rejuran® unlock?</summary><p>After 3 consecutive months of membership, and every 3 months after that.</p></details><details><summary>What if I don’t use my facial this month?</summary><p>Monthly facials must be used within that month and don’t carry over.</p></details><details><summary>Do Wellness Credits expire?</summary><p>Credits keep adding up while you are a member. 500 credits can be redeemed for 1 NAD+ Wellness Treatment.</p></details><details><summary>Can I get cash or a refund for unused perks?</summary><p>Perks that haven’t been unlocked cannot be exchanged for cash or refunded.</p></details><details><summary>How do I cancel?</summary><p>After the 3-month minimum, give us 30 days’ notice at the front desk or by email.</p></details><details><summary>Who is AURA Prime for?</summary><p>Anyone who wants consistent, never-overdone results: a facial every month, a seasonal brightening or hydration treatment every quarter, and Wellness Credits toward NAD+.</p></details></div></div></section><section class="cta" id="book"><div class="wrap"><p class="eyebrow" style="color:inherit;opacity:.7">Rockefeller Center, New York</p><h2>Make great skin a <em>habit</em>.</h2><p>Join at the front desk, or book a visit and we’ll set you up.</p><a class="btn" href="#book">Join Now</a></div></section></main><footer>AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.</footer></body></html>
+<script src="nav.js?v=2"></script>
+<main>
+<div class="wrap crumbs"><a href="home.html">Home</a> / Membership / AURA Prime</div>
+
+<section class="thtop" id="top"><div class="wrap thero2">
+  <div class="tframe">
+    <div class="ph rv-img"><img src="prime-hero.jpg" alt="Three smiling women with glowing skin lying head to head" style="object-position:50% 58%"></div>
+  </div>
+  <div class="tx">
+    <p class="eyebrow kicker rv" style="--d:.15s">Membership</p>
+    <h1 class="big" aria-label="AURA Prime"><span class="ln"><i style="--d:.25s">AURA <em>Prime</em></i></span></h1>
+    <p class="lede rv" style="--d:.45s">A steady, never-overdone rhythm for your skin. A facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p>
+    <p class="pricetag rv" style="--d:.5s"><b>$299</b><span>/ month</span></p>
+    <p class="pricenote rv" style="--d:.52s">3-month minimum · Cancel with 30 days’ notice</p>
+    <div class="chips rv" style="--d:.55s"><span>Monthly facial</span><span>Quarterly BBL™ or Rejuran®</span><span>Wellness Credits</span></div>
+    <div class="joinrow rv" style="--d:.6s"><a class="btn" href="#book">Join AURA Prime</a><span class="ctas"><a class="tlink" href="#faq">Talk to us first</a></span></div>
+  </div>
+</div></section>
+
+<section class="tsec alt" id="how"><div class="wrap">
+  <div class="hhead">
+    <div class="head"><p class="eyebrow rv">What’s included</p><h2 class="rv" style="--d:.08s">Everything that’s <em>included</em></h2></div>
+    <div class="hintro rv" style="--d:.16s"><p>Everything you need to keep your skin consistent, from monthly care to seasonal resets, with credits that add up toward wellness.</p><p class="tagline">Make glowing a monthly habit.</p></div>
+  </div>
+  <div class="bcards txt three">
+    <div class="rv" style="--d:0s"><span class="k lbl">Every month</span><h3>1 facial of your choice</h3><p>Pick the facial your skin needs that month: <a href="hydrafacial.html">HydraFacial®</a>, <a href="signature-facial.html">Signature Facial</a> or <a href="barrier-recovery-facial.html">Barrier Recovery Facial</a>.</p></div>
+    <div class="rv" style="--d:.1s"><span class="k lbl">Every 3 months</span><h3>BBL™ Photofacial or Rejuran®</h3><p>Unlocks after 3 consecutive months. A seasonal reset with <a href="bbl-photofacial.html">BBL™ Photofacial</a> for tone and redness, or <a href="rejuran.html">Rejuran®</a> for hydration.</p></div>
+    <div class="rv" style="--d:.2s"><span class="k lbl">Every month</span><h3>50 Wellness Credits</h3><p>Added automatically, and they keep adding up. 500 credits = 1 <a href="nad-iv.html">NAD+ IV Drip</a>.</p></div>
+  </div>
+  <p class="yrlabel rv">Your first year adds up to</p>
+  <div class="yrsum">
+    <div class="rv"><b>12</b><span>facials</span></div>
+    <div class="rv" style="--d:.1s"><b>4</b><span>BBL™ or Rejuran® treatments</span></div>
+    <div class="rv" style="--d:.2s"><b>600</b><span>Wellness Credits, enough for 1 NAD+ IV Drip</span></div>
+  </div>
+</div></section>
+
+<section class="tsec" id="faq"><div class="wrap faqrev">
+  <div class="faqside">
+    <div class="head"><p class="eyebrow rv">FAQs</p><h2 class="rv" style="--d:.08s">Membership <em>questions</em></h2></div>
+    <div class="ph rv-img"><img src="prime-faq.jpg" alt="A woman with healthy, glowing skin resting her face in her hands" style="object-position:50% 35%"></div>
+  </div>
+  <div class="faqlist">
+  <details open class="rv"><summary>What does it cost?</summary><p>AURA Prime is $299 per month, with a 3-month minimum.</p></details><details class="rv"><summary>How do I join?</summary><p>Sign up at the front desk, or book a visit online and we’ll set you up.</p></details><details class="rv"><summary>When does the quarterly BBL™ or Rejuran® unlock?</summary><p>After 3 consecutive months of membership, and every 3 months after that.</p></details><details class="rv"><summary>What if I don’t use my facial this month?</summary><p>Your monthly facial needs to be used within that month and doesn’t carry over.</p></details><details class="rv"><summary>Do Wellness Credits expire?</summary><p>No. Credits keep adding up. 500 credits can be redeemed for 1 NAD+ IV Drip.</p></details><details class="rv"><summary>How do I cancel?</summary><p>After the 3-month minimum, give us 30 days’ notice.</p></details><details class="rv"><summary>Who is AURA Prime for?</summary><p>Anyone who wants consistent, never-overdone results: a facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p></details><details class="rv"><summary>Membership terms</summary><ul class="terms"><li>AURA Prime has a 3-month minimum.</li><li>The quarterly BBL™ / Rejuran® perk unlocks after 3 consecutive months.</li><li>Your monthly facial must be used within that month.</li><li>Perks not yet unlocked cannot be exchanged for cash or refunded.</li><li>Wellness Credits keep adding up.</li><li>To cancel, please give 30 days’ notice.</li></ul></details>
+  </div>
+</div></section>
+
+<section class="closing tsec" id="book">
+  <img src="suite-warm.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <h2 class="rv">Make great skin a <em>habit</em>.</h2>
+    <p class="rv" style="--d:.1s">Join at the front desk, or book a visit and we’ll set you up.</p>
+    <a class="btn rv" style="--d:.2s" href="#book">Join AURA Prime</a>
+  </div>
+</section>
+</main>
+<footer class="foot" id="contact">
+  <div class="in">
+    <div class="top">
+      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil your aura.</p></div>
+      <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
+      <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
+      <div><h4>Contact</h4><p data-confirm>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+    <div class="legal"><span>© 2026 AURA Institute. Individual results may vary. All treatments follow a medical consultation.</span><nav><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav></div>
+  </div>
+</footer>
+<script src="l3.js?v=1"></script>
+</body></html>
