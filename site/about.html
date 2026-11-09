@@ -1,5 +1,6 @@
 <!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About AURA Institute | Medical Aesthetics at Rockefeller Center, NYC</title>
+<link rel="preload" as="image" href="about-lobby3.jpg">
 <meta name="description" content="AURA Institute is a medical aesthetics and wellness clinic at Rockefeller Center, New York. Injectables, skin tightening, skin treatments, body contouring and wellness care, planned around your own features.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
@@ -28,8 +29,14 @@ section[id]{scroll-margin-top:72px}
 
 /* 01 hero: mocha band over a full-bleed photo */
 .ahero{position:relative;overflow:hidden;background:var(--mocha);color:var(--cream);padding-block:clamp(88px,10vw,152px) clamp(52px,6vw,88px)}
-.ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 72%}
-.ahero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(138,106,90,.62) 0%,rgba(138,106,90,.54) 60%,rgba(112,82,68,.68) 100%)}
+.ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 60%}
+/* the photo as it is; the type is lifted with a soft cocoa glow and shadow, as on the homepage hero */
+.ahero .wrap>div:first-child{position:relative}
+.ahero .wrap>div:first-child::before{content:"";position:absolute;left:-8%;top:-22%;width:min(980px,82%);height:144%;background:radial-gradient(closest-side,rgba(96,62,44,.5),rgba(96,62,44,0));filter:blur(40px);z-index:-1;pointer-events:none}
+.hbar{position:relative}
+.hbar::before{content:"";position:absolute;left:-4%;top:-60%;width:min(720px,64%);height:220%;background:radial-gradient(closest-side,rgba(96,62,44,.46),rgba(96,62,44,0));filter:blur(30px);z-index:-1;pointer-events:none}
+.ahero .eyebrow,.hbar p{text-shadow:0 1px 2px rgba(80,48,34,.6),0 2px 12px rgba(80,48,34,.42),0 8px 40px rgba(80,48,34,.3)}
+.ahero h1{text-shadow:0 1px 2px rgba(80,48,34,.4),0 4px 24px rgba(80,48,34,.3)}
 .ahero .wrap{position:relative;z-index:2;display:grid;gap:clamp(36px,5vw,64px)}
 .ahero .eyebrow{color:var(--cream)}
 .ahero h1{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(54px,9vw,128px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
@@ -47,7 +54,7 @@ section[id]{scroll-margin-top:72px}
 .intro .wrap{display:grid;grid-template-columns:minmax(150px,200px) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:start}
 .intro .eyebrow{padding-top:.95em}
 .intro .lead{margin:0;max-width:46ch;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,42px);line-height:1.22;color:var(--fg)}
-.intro .lead em{font-style:italic}
+.intro .lead em{font-style:italic;color:var(--clay)}
 @media(max-width:760px){.intro .wrap{grid-template-columns:1fr;gap:14px}.intro .eyebrow{padding-top:0}}
 /* who we are: dark band, heading and copy on the left, photo on the right */
 #who{background:var(--cocoa);color:#D9C3B8;padding-block:clamp(72px,8vw,120px)}
@@ -94,23 +101,25 @@ section[id]{scroll-margin-top:72px}
 .aes .t1 .h2{margin-top:0}
 .aes .t1 .copy{margin:0;font-size:15.5px;line-height:1.8;max-width:40ch}
 .aes .t1 .tlink{margin-top:10px}
-.aes .p1{grid-column:6/13;grid-row:1;aspect-ratio:5/4;z-index:2;align-self:start}
-.aes .p2{grid-column:1/8;grid-row:2;aspect-ratio:5/4;margin-top:clamp(-72px,-4.5vw,-32px);z-index:1}
-.aes .side{grid-column:9/13;grid-row:2;align-self:end;display:grid;gap:22px;padding-top:clamp(40px,5vw,72px)}
-.aes .p3{aspect-ratio:4/5}
-.aes .side .q{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,32px);line-height:1.2;color:var(--clay)}
+.aes .p1{grid-column:6/13;grid-row:1;aspect-ratio:3/2;z-index:1;align-self:start}
+.aes .p2{grid-column:1/5;grid-row:2;aspect-ratio:3/2;margin-top:clamp(20px,2.2vw,32px);z-index:1}
+/* bottom row: the eye and the neck photos side by side, the closing line to their right */
+.aes .side{display:contents}
+.aes .p3{grid-column:6/9;grid-row:2;align-self:start;aspect-ratio:408/480;margin-top:clamp(-96px,-6vw,-40px);z-index:2;box-shadow:0 0 0 clamp(8px,.9vw,14px) var(--surface)}  /* the neck photo keeps its own portrait shape and tucks over the wide photo */
+.aes .side .q{grid-column:9/13;grid-row:2;align-self:end;margin:0;padding:0 0 4px clamp(4px,1vw,16px);font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,32px);line-height:1.2;color:var(--clay)}
+#aesthetic{padding-block:clamp(44px,4.4vw,64px)}
 .eyebrow.dot{display:inline-flex;align-items:center;gap:12px}
 .eyebrow.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);flex:none}
 @media(max-width:860px){
   .aes{grid-template-columns:1fr;row-gap:24px}
-  .aes .t1,.aes .p1,.aes .p2,.aes .side{grid-column:1;grid-row:auto}
+  .aes .t1,.aes .p1,.aes .p2,.aes .p3,.aes .side .q{grid-column:1;grid-row:auto}
   .aes .t1{padding-bottom:8px}
   .aes .p2{margin-top:0}
-  .aes .side{padding-top:0;grid-template-columns:1fr 1fr;align-items:end}
+  .aes .p3{margin-top:0;box-shadow:none}
 }
 /* 06 closing: full-bleed photo, oversized line, two short columns */
 .closing{position:relative;overflow:hidden;background:var(--cocoa);color:var(--cream);padding-block:clamp(56px,6vw,88px)}
-.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
 .closing::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(47,34,29,.74) 0%,rgba(47,34,29,.58) 55%,rgba(47,34,29,.3) 100%)}
 .closing .wrap{position:relative;z-index:2;width:100%}
 .closing .eyebrow{color:rgba(251,244,239,.88)}
@@ -189,7 +198,7 @@ section[id]{scroll-margin-top:72px}
       <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Why AURA</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a></div>
     </li>
   </ul>
-  <a class="btn nav-book" href="#book">Book Now</a>
+  <a class="btn nav-book" href="home.html#book">Book Now</a>
 </div></div>
 <div class="mnscrim" id="navScrim"></div>
 <div class="mobilenav" id="mobilenav" aria-hidden="true">
@@ -202,7 +211,7 @@ section[id]{scroll-margin-top:72px}
     <div class="macc" data-acc="body"><button type="button" class="machead" aria-expanded="false">Body<span class="chev">⌄</span></button><div class="mapanel"></div></div>
     <a class="mnlink" href="aura-prime.html">Membership</a>
     <a class="mnlink" href="about.html">About</a>
-    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="#book">Book a Consultation</a>
+    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="home.html#book">Book a Consultation</a>
   </div>
 </div>
 </div>
@@ -210,7 +219,7 @@ section[id]{scroll-margin-top:72px}
 <main>
 
 <section class="ahero" id="top">
-  <img src="about-lobby.jpg" alt="" aria-hidden="true">
+  <img src="about-lobby3.jpg" alt="" aria-hidden="true" fetchpriority="high">
   <div class="wrap">
     <div>
       <p class="eyebrow rv">About AURA Institute</p>
@@ -218,7 +227,7 @@ section[id]{scroll-margin-top:72px}
     </div>
     <div class="hbar rv" style="--d:.5s">
       <p>A medical aesthetics and wellness clinic at Rockefeller Center, New York.</p>
-      <a class="btn" href="#book">Book a Consultation →</a>
+      <a class="btn" href="home.html#book">Book a Consultation →</a>
     </div>
   </div>
 </section>
@@ -234,7 +243,7 @@ section[id]{scroll-margin-top:72px}
     <h2 class="h2 rv" style="--d:.1s">Look like yourself on your <em>best day.</em></h2>
     <p class="copy rv" style="--d:.2s">An aura is the light a person carries: the glow others see, and the confidence you feel. AURA Institute was created to bring out both. We bring advanced technology, precise injectables and wellness care together under one roof, and plan every visit around your whole face, not a single area. Consultations are available in English and Mandarin.</p>
   </div>
-  <figure class="rv-img" style="--d:.15s"><img src="r-duo.jpg" alt="Two women laughing, with clear, glowing skin" style="object-position:50% 40%" loading="lazy"></figure>
+  <figure class="rv-img" style="--d:.15s"><img src="r-duo.jpg" alt="Two women laughing, with clear, glowing skin" style="object-position:50% 40%"></figure>
 </div></section>
 
 <section class="alt" id="standards"><div class="wrap">
@@ -254,7 +263,7 @@ section[id]{scroll-margin-top:72px}
     <p class="eyebrow cl rv">Technology &amp; products</p>
     <h2 class="h2 rv" style="--d:.08s">Authentic, <em>direct from the source</em></h2>
     <p class="copy rv" style="--d:.16s">Our devices are purchased directly from their manufacturers, and every treatment uses genuine tips and applicators. Injectables come only from authorized distributors, never from third parties.</p>
-    <div class="ph rv-img"><img src="about-device.webp" alt="A client relaxes during a skin-tightening treatment with a handheld device" style="object-position:55% 50%" loading="lazy"></div>
+    <div class="ph rv-img"><img src="about-device.webp" alt="A client relaxes during a skin-tightening treatment with a handheld device" style="object-position:55% 50%"></div>
   </div>
   <div class="rv" style="--d:.2s">
     <table class="brands">
@@ -280,20 +289,20 @@ section[id]{scroll-margin-top:72px}
     <p class="copy rv" style="--d:.16s">There is no single standard of beauty. We look at the scale of your features, the line of your contours and the contrast of your look, then design to bring your style forward, never to replace it.</p>
     <a class="tlink rv" style="--d:.24s" href="goal-facial-balancing.html">Explore Facial Balancing →</a>
   </div>
-  <figure class="p1 rv-img"><img src="about-smile.webp" alt="A smiling woman resting her head on her arms" style="object-position:50% 38%" loading="lazy"></figure>
-  <figure class="p2 rv-img" style="--d:.1s"><img src="about-eye.jpg" alt="Close-up of an eye and brow in soft window light" style="object-position:50% 40%" loading="lazy"></figure>
+  <figure class="p1 rv-img"><img src="about-smile.webp" alt="A smiling woman resting her head on her arms" style="object-position:50% 38%"></figure>
+  <figure class="p2 rv-img" style="--d:.1s"><img src="about-eye.jpg" alt="Close-up of an eye and brow in soft window light" style="object-position:50% 40%"></figure>
   <div class="side">
-    <figure class="p3 rv-img" style="--d:.2s"><img src="about-neck.jpg" alt="A woman with her head tilted back, eyes closed, showing a long neckline" style="object-position:50% 30%" loading="lazy"></figure>
+    <figure class="p3 rv-img" style="--d:.2s"><img src="about-neck.jpg" alt="A woman with her head tilted back, eyes closed, showing a long neckline" style="object-position:50% 30%"></figure>
     <p class="q rv" style="--d:.3s">Precision over perfection.</p>
   </div>
 </div></section>
 
 <section class="closing" id="book">
-  <img src="about-facial.jpg" alt="" aria-hidden="true">
+  <img src="about-closing.jpg" alt="" aria-hidden="true">
   <div class="wrap cgrid">
     <div>
       <h2 class="rv">Begin with a <em>conversation</em></h2>
-      <a class="btn rv" style="--d:.2s" href="#book">Book a Consultation</a>
+      <a class="btn rv" style="--d:.2s" href="home.html#book">Book a Consultation</a>
     </div>
     <p class="rv" style="--d:.12s">Book a complimentary consultation. We’ll look at your whole face and create a plan that stays true to you.</p>
   </div>

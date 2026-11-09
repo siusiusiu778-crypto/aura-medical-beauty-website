@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2">
-<link rel="stylesheet" href="l3.css?v=1">
+<link rel="stylesheet" href="l3.css?v=9">
 <style>
 /* membership-only components */
 .pricetag{display:flex;align-items:baseline;gap:10px;margin:0}
@@ -46,6 +46,69 @@
 .faqrev .faqlist{align-self:start}
 @media(max-width:860px){.faqrev{grid-template-columns:1fr}.faqrev .faqside h2{white-space:normal}.faqrev .faqside .ph{min-height:0;aspect-ratio:16/10}}
 .faqlist ul.terms{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px;line-height:1.65;color:var(--ink)}
+
+/* hero: one wide photo with the name set large across its lower edge; copy in two columns below */
+.phero{padding-block:clamp(10px,1.4vw,20px) clamp(72px,8vw,112px)}
+.pframe{position:relative;overflow:hidden;height:clamp(400px,62svh,640px);background:#7F6253}
+.pframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.6s var(--ease)}
+.pframe.in img{transform:none}
+.pframe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(47,34,29,.12) 0%,rgba(47,34,29,0) 32%,rgba(47,34,29,.1) 58%,rgba(47,34,29,.5) 100%)}
+.ptag{position:absolute;z-index:2;top:clamp(18px,2vw,30px);right:clamp(20px,2.6vw,40px);margin:0;display:grid;gap:4px;justify-items:end;text-align:right;color:#FBF4EF}
+.ptag span{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.ptag i{font-family:var(--serif);font-size:clamp(17px,1.4vw,20px)}
+.ptitle{position:absolute;z-index:2;right:clamp(16px,2.6vw,40px);bottom:clamp(-14px,-1vw,-6px);margin:0;display:flex;align-items:baseline;gap:.2em;font-family:var(--serif);font-weight:400;color:#FBF4EF;font-size:clamp(50px,12.5vw,196px);line-height:.9;letter-spacing:-.02em;white-space:nowrap}
+.ptitle .ln{display:block;overflow:hidden;padding:0 .04em .06em}
+.ptitle .ln i{display:block;font-style:normal;transform:translateY(110%);transition:transform 1.5s var(--ease);transition-delay:var(--d,0s)}
+.ptitle.in .ln i{transform:none}
+.ptitle em{font-style:italic;color:#F1D3C4}
+.pbody{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(28px,6vw,110px);margin-top:clamp(30px,3.4vw,52px);align-items:start}
+.pl{display:grid;gap:18px}
+.pl .kicker{display:inline-flex;align-items:center;gap:14px;margin:0}
+.pl .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.pline{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.3vw,50px);line-height:1.05;color:var(--fg)}
+.pline em{font-style:italic;color:var(--clay)}
+.pr{display:grid;gap:24px;max-width:520px}
+.pr .lede{margin:0;font-size:16.5px;line-height:1.8;color:var(--ink)}
+.pprice{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+.pprice .pricenote{margin:0}
+.pr .chips{gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pr .chips>span{border:0;border-radius:0;padding:0 16px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--fg);position:relative}
+.pr .chips>span:first-child{padding-left:0}
+.pr .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.pr .ctas .tlink{font-size:11px}
+@media(max-width:860px){.pbody{grid-template-columns:1fr}.pframe{height:clamp(340px,56svh,520px)}.ptag{display:none}}
+@media(prefers-reduced-motion:reduce){.pframe img,.ptitle .ln i{transform:none!important;transition:none!important}}
+/* what's included: a large count for each benefit, then the detail on a hairline */
+.inc3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.inc3 article{display:grid;align-content:start}
+.inc3 .num{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(84px,9.5vw,148px);line-height:1;color:var(--clay);font-variant-numeric:lining-nums}
+.inc3 .cap{margin:12px 0 0;padding-bottom:22px;border-bottom:.5px solid rgba(47,34,29,.42);font-family:var(--serif);font-style:italic;font-size:clamp(21px,1.8vw,26px);line-height:1.2;color:var(--fg)}
+.inc3 .lbl{margin-top:22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.inc3 h3{margin:10px 0 8px;font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);line-height:1.15}
+.inc3 p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink)}
+.inc3 .more{justify-self:start;margin-top:18px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--fg);padding-bottom:4px;border-bottom:1px solid currentColor;transition:color .4s}
+.inc3 .more:hover{color:var(--clay)}
+.incfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:clamp(48px,5vw,72px);padding-top:18px;border-top:1px solid var(--line);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.incfoot a{color:var(--fg);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.incfoot a:hover{color:var(--clay)}
+@media(max-width:860px){.inc3{grid-template-columns:1fr;row-gap:56px}}
+
+/* v2: no rule before the category; join on the left with a quiet "talk to us" line; counts fade in one by one; links share one baseline */
+.crumbs{text-indent:0}
+.pl .kicker::before{content:none}
+.pl .kicker{display:block}
+.pjoin{display:grid;justify-items:start;gap:16px;margin-top:clamp(10px,1.4vw,20px)}
+.ptalk{margin:0;font-size:14px;color:var(--muted)}
+.ptalk a{margin-left:4px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--fg);text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .45s var(--ease),color .4s}
+.ptalk a span{display:inline-block;font-style:normal;transition:transform .45s var(--ease)}
+.ptalk a:hover{background-size:100% 1px;color:var(--clay)}
+.ptalk a:hover span{transform:translateX(4px)}
+.inc3 article{display:flex;flex-direction:column}
+.inc3 .num.rv{transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease)}
+.inc3 .num.rv.in{transform:none}
+.inc3 .lbl{display:block}
+.inc3 .more{align-self:flex-start;margin-top:auto;padding-top:0}
+.inc3 article>p:not(.num):not(.cap){margin-bottom:22px}
 </style>
 </head><body>
 <div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
@@ -92,7 +155,7 @@
       <div class="mega small" id="mega-about"><a href="about.html#who">Who We Are</a><a href="about.html#standards">Why AURA</a><a href="about.html#technology">Technology &amp; Products</a><a href="about.html#aesthetic">The AURA Aesthetic</a></div>
     </li>
   </ul>
-  <a class="btn nav-book" href="#book">Book Now</a>
+  <a class="btn nav-book" href="home.html#book">Book Now</a>
 </div></div>
 <div class="mnscrim" id="navScrim"></div>
 <div class="mobilenav" id="mobilenav" aria-hidden="true">
@@ -105,7 +168,7 @@
     <div class="macc" data-acc="body"><button type="button" class="machead" aria-expanded="false">Body<span class="chev">⌄</span></button><div class="mapanel"></div></div>
     <a class="mnlink" href="aura-prime.html">Membership</a>
     <a class="mnlink" href="about.html">About</a>
-    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="#book">Book a Consultation</a>
+    <a class="btn" style="width:100%;margin-top:18px;background:#2F221D;color:#FBF4EF;padding:14px;text-align:center;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase" href="home.html#book">Book a Consultation</a>
   </div>
 </div>
 </div>
@@ -113,18 +176,23 @@
 <main>
 <div class="wrap crumbs"><a href="home.html">Home</a> / Membership / AURA Prime</div>
 
-<section class="thtop" id="top"><div class="wrap thero2">
-  <div class="tframe">
-    <div class="ph rv-img"><img src="prime-hero.jpg" alt="Three smiling women with glowing skin lying head to head" style="object-position:50% 58%"></div>
+<section class="phero" id="top"><div class="wrap">
+  <div class="pframe">
+    <img src="prime-hero-2.jpg" alt="Four smiling women with glowing skin, cheek to cheek" style="object-position:50% 30%">
+    <p class="ptag rv" style="--d:.5s"><span>Membership · $299 a month</span><i>Your skin, on a steady rhythm</i></p>
+    <h1 class="ptitle" aria-label="AURA Prime"><span class="ln"><i style="--d:.2s">AURA</i></span><span class="ln"><i style="--d:.36s"><em>Prime</em></i></span></h1>
   </div>
-  <div class="tx">
-    <p class="eyebrow kicker rv" style="--d:.15s">Membership</p>
-    <h1 class="big" aria-label="AURA Prime"><span class="ln"><i style="--d:.25s">AURA <em>Prime</em></i></span></h1>
-    <p class="lede rv" style="--d:.45s">A steady, never-overdone rhythm for your skin. A facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p>
-    <p class="pricetag rv" style="--d:.5s"><b>$299</b><span>/ month</span></p>
-    <p class="pricenote rv" style="--d:.52s">3-month minimum · Cancel with 30 days’ notice</p>
-    <div class="chips rv" style="--d:.55s"><span>Monthly facial</span><span>Quarterly BBL™ or Rejuran®</span><span>Wellness Credits</span></div>
-    <div class="joinrow rv" style="--d:.6s"><a class="btn" href="#book">Join AURA Prime</a><span class="ctas"><a class="tlink" href="#faq">Talk to us first</a></span></div>
+  <div class="pbody">
+    <div class="pl">
+      <p class="eyebrow kicker rv" style="--d:.1s">Membership · Skin &amp; wellness</p>
+      <p class="pline rv" style="--d:.18s">A steady rhythm, <em>never overdone.</em></p>
+      <div class="pjoin rv" style="--d:.3s"><a class="btn" href="home.html?tx=AURA%20Prime#book">Join AURA Prime</a><p class="ptalk">Not sure yet? <a href="#faq">Talk to us first <span aria-hidden="true">→</span></a></p></div>
+    </div>
+    <div class="pr">
+      <p class="lede rv" style="--d:.26s">A facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p>
+      <div class="pprice rv" style="--d:.32s"><p class="pricetag"><b>$299</b><span>/ month</span></p><p class="pricenote">3-month minimum · Cancel with 30 days’ notice</p></div>
+      <div class="chips rv" style="--d:.38s"><span>Monthly facial</span><span>Quarterly BBL™ or Rejuran®</span><span>Wellness Credits</span></div>
+    </div>
   </div>
 </div></section>
 
@@ -133,23 +201,22 @@
     <div class="head"><p class="eyebrow rv">What’s included</p><h2 class="rv" style="--d:.08s">Everything that’s <em>included</em></h2></div>
     <div class="hintro rv" style="--d:.16s"><p>Everything you need to keep your skin consistent, from monthly care to seasonal resets, with credits that add up toward wellness.</p><p class="tagline">Make glowing a monthly habit.</p></div>
   </div>
-  <div class="bcards txt three">
-    <div class="rv" style="--d:0s"><span class="k lbl">Every month</span><h3>1 facial of your choice</h3><p>Pick the facial your skin needs that month: <a href="hydrafacial.html">HydraFacial®</a>, <a href="signature-facial.html">Signature Facial</a> or <a href="barrier-recovery-facial.html">Barrier Recovery Facial</a>.</p></div>
-    <div class="rv" style="--d:.1s"><span class="k lbl">Every 3 months</span><h3>BBL™ Photofacial or Rejuran®</h3><p>Unlocks after 3 consecutive months. A seasonal reset with <a href="bbl-photofacial.html">BBL™ Photofacial</a> for tone and redness, or <a href="rejuran.html">Rejuran®</a> for hydration.</p></div>
-    <div class="rv" style="--d:.2s"><span class="k lbl">Every month</span><h3>50 Wellness Credits</h3><p>Added automatically, and they keep adding up. 500 credits = 1 <a href="nad-iv.html">NAD+ IV Drip</a>.</p></div>
+  <div class="inc3" id="inc3">
+    <article><p class="num rv" style="--d:0.0s">12</p><p class="cap">facials a year</p>
+      <span class="lbl">Every month</span><h3>1 facial of your choice</h3><p>Pick the facial your skin needs that month: HydraFacial®, Signature Facial or Barrier Recovery Facial.</p><a class="more" href="hydrafacial.html">View facials →</a></article>
+    <article><p class="num rv" style="--d:0.3s">600</p><p class="cap">Wellness Credits a year</p>
+      <span class="lbl">Every month</span><h3>50 Wellness Credits</h3><p>Added automatically, and they keep adding up. 500 credits = 1 NAD+ IV Drip.</p><a class="more" href="nad-iv.html">NAD+ IV Drip →</a></article>
+    <article><p class="num rv" style="--d:0.6s">4</p><p class="cap">seasonal resets a year</p>
+      <span class="lbl">Every 3 months</span><h3>BBL™ Photofacial or Rejuran®</h3><p>Unlocks after 3 consecutive months. BBL™ Photofacial for tone and redness, or Rejuran® for hydration.</p><a class="more" href="bbl-photofacial.html">BBL™ &amp; Rejuran® →</a></article>
   </div>
-  <p class="yrlabel rv">Your first year adds up to</p>
-  <div class="yrsum">
-    <div class="rv"><b>12</b><span>facials</span></div>
-    <div class="rv" style="--d:.1s"><b>4</b><span>BBL™ or Rejuran® treatments</span></div>
-    <div class="rv" style="--d:.2s"><b>600</b><span>Wellness Credits, enough for 1 NAD+ IV Drip</span></div>
-  </div>
+  <div class="incfoot rv"><span>Numbers shown for your first 12 months</span><a href="home.html?tx=AURA%20Prime#book">Join AURA Prime →</a></div>
+</div>
 </div></section>
 
 <section class="tsec" id="faq"><div class="wrap faqrev">
   <div class="faqside">
     <div class="head"><p class="eyebrow rv">FAQs</p><h2 class="rv" style="--d:.08s">Membership <em>questions</em></h2></div>
-    <div class="ph rv-img"><img src="prime-faq.jpg" alt="A woman with healthy, glowing skin resting her face in her hands" style="object-position:50% 35%"></div>
+    <div class="ph rv-img"><img src="prime-faq-2.jpg" alt="A woman with healthy, glowing skin resting her face in her hands" style="object-position:50% 35%"></div>
   </div>
   <div class="faqlist">
   <details open class="rv"><summary>What does it cost?</summary><p>AURA Prime is $299 per month, with a 3-month minimum.</p></details><details class="rv"><summary>How do I join?</summary><p>Sign up at the front desk, or book a visit online and we’ll set you up.</p></details><details class="rv"><summary>When does the quarterly BBL™ or Rejuran® unlock?</summary><p>After 3 consecutive months of membership, and every 3 months after that.</p></details><details class="rv"><summary>What if I don’t use my facial this month?</summary><p>Your monthly facial needs to be used within that month and doesn’t carry over.</p></details><details class="rv"><summary>Do Wellness Credits expire?</summary><p>No. Credits keep adding up. 500 credits can be redeemed for 1 NAD+ IV Drip.</p></details><details class="rv"><summary>How do I cancel?</summary><p>After the 3-month minimum, give us 30 days’ notice.</p></details><details class="rv"><summary>Who is AURA Prime for?</summary><p>Anyone who wants consistent, never-overdone results: a facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p></details><details class="rv"><summary>Membership terms</summary><ul class="terms"><li>AURA Prime has a 3-month minimum.</li><li>The quarterly BBL™ / Rejuran® perk unlocks after 3 consecutive months.</li><li>Your monthly facial must be used within that month.</li><li>Perks not yet unlocked cannot be exchanged for cash or refunded.</li><li>Wellness Credits keep adding up.</li><li>To cancel, please give 30 days’ notice.</li></ul></details>
@@ -161,7 +228,7 @@
   <div class="wrap">
     <h2 class="rv">Make great skin a <em>habit</em>.</h2>
     <p class="rv" style="--d:.1s">Join at the front desk, or book a visit and we’ll set you up.</p>
-    <a class="btn rv" style="--d:.2s" href="#book">Join AURA Prime</a>
+    <a class="btn rv" style="--d:.2s" href="home.html?tx=AURA%20Prime#book">Join AURA Prime</a>
   </div>
 </section>
 </main>
@@ -176,5 +243,10 @@
     <div class="legal"><span>© 2026 AURA Institute. Individual results may vary. All treatments follow a medical consultation.</span><nav><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav></div>
   </div>
 </footer>
-<script src="l3.js?v=1"></script>
+<script>
+/* hero reveal */
+(function(){const fr=document.querySelector('.pframe'),ti=document.querySelector('.ptitle');
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{fr.classList.add('in');ti.classList.add('in');}));})();
+</script>
+<script src="l3.js?v=5"></script>
 </body></html>

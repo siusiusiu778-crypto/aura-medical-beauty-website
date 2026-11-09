@@ -374,3 +374,117 @@ span[data-confirm]{border-bottom:1px dashed var(--clay)}
 @media(max-width:860px){.prodcard{grid-template-columns:1fr}.prodcard dl>div{grid-template-columns:1fr}}
 .prodcard .psteps{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .prodcard .psteps b{font-weight:600;color:var(--fg)}
+
+/* ===== v9: a softer hero copy column, used by every Level 3 page ===== */
+.thero2 .tx{gap:26px}
+.thero2 .kicker{display:inline-flex;align-items:center;gap:14px;margin-bottom:-8px}
+.thero2 .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.thero2 .lede{font-size:17px;line-height:1.8;max-width:42ch}
+/* key facts: a quiet ruled strip instead of pills */
+.thero2 .chips{gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:46ch}
+.thero2 .chips>span{border:0;border-radius:0;padding:0 18px;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fg);position:relative}
+.thero2 .chips>span:first-child{padding-left:0}
+.thero2 .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.thero2 .chips>span span{font-size:inherit;letter-spacing:inherit}
+/* booking: an underlined picker beside the button; options open as a dropdown */
+.thero2 .bookbox{grid-template-columns:minmax(0,1fr) auto;gap:14px 22px;align-items:end;max-width:46ch}
+.thero2 .bbrow{position:relative;border:0;border-bottom:1px solid var(--fg);background:none}
+.thero2 .bbrow summary{padding:12px 0;font-family:var(--serif);font-size:20px;font-weight:400;color:var(--fg)}
+.thero2 .bbrow summary .chev{font-size:13px;color:var(--fg)}
+.thero2 .bbopts{position:absolute;z-index:6;top:calc(100% + 8px);left:0;width:max(100%,320px);padding:4px 20px 18px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -26px rgba(47,34,29,.38);animation:jumpIn .4s var(--ease)}
+.thero2 .bookbox>.btn{width:auto;white-space:nowrap;padding:16px 28px}
+/* "Learn all about …": small and quiet */
+.thero2 .ctas{margin-top:-4px}
+.thero2 .ctas .tlink{font-size:10px;letter-spacing:.22em;color:var(--muted);border-bottom-color:var(--line);padding-bottom:4px;transition:color .4s,border-color .4s}
+.thero2 .ctas .tlink::after{content:" ↓";letter-spacing:0}
+.thero2 .ctas .tlink:hover{color:var(--fg);border-bottom-color:var(--fg)}
+@media(max-width:520px){.thero2 .bookbox{grid-template-columns:1fr}.thero2 .bookbox>.btn{width:100%}.thero2 .chips>span{padding:0 12px}}
+
+/* how it works with photographs (.bcards.photo): staggered portrait photos, a numbered caption on a hairline */
+.bcards.photo{counter-reset:bc;align-items:start}
+.bcards.photo>div{counter-increment:bc;gap:10px}
+.bcards.photo>div:nth-child(even){margin-top:clamp(32px,4.4vw,72px)}
+.bcards.photo .bimg{aspect-ratio:4/5;background:var(--surface);margin-bottom:14px}
+.bcards.photo .bimg img{object-fit:cover;padding:0;transition:transform 1.6s var(--ease)}
+.bcards.photo>div:hover .bimg img{transform:scale(1.04)}
+.bcards.photo h3{padding-top:16px;border-top:.5px solid rgba(47,34,29,.42)}
+.bcards.photo h3::before{content:counter(bc,decimal-leading-zero);display:block;margin-bottom:10px;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+@media(max-width:900px){.bcards.photo>div:nth-child(even){margin-top:0}}
+.thero2 .bookbox,.thero2 .chips{max-width:540px}
+.thero2 .bbrow summary{white-space:nowrap;font-size:19px}
+
+/* "About the treatment / technology" as the cocoa band: photo on the left, numbered rows on the right */
+.tsteps .tdd{font-size:14.5px;line-height:1.65;color:#fff}
+.tsteps .tdd a{color:var(--clay-lt)}
+.tsteps .psteps{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.tsteps .psteps li{display:block;padding:0;border:0}
+.tsteps .psteps b{display:inline;margin:0;font-family:var(--sans);font-size:inherit;font-weight:600;color:#fff}
+
+/* ===== v10 ===== */
+/* breadcrumb sits just above the photo, lined up with its left edge */
+.crumbs{padding-top:clamp(22px,2.4vw,34px);text-indent:clamp(18px,2vw,28px)}
+.thtop{padding-top:12px}
+/* hero: no rule before the category; the appointment picker is a rounded pill */
+.thero2 .kicker{display:block}
+.thero2 .kicker::before{content:none}
+.thero2 .bbrow{border:1px solid rgba(47,34,29,.38);border-radius:999px;padding:0 22px;transition:border-color .4s}
+.thero2 .bbrow:hover,.thero2 .bbrow[open]{border-color:var(--fg)}
+.thero2 .bbrow summary{padding:12px 0;font-size:18px}
+.thero2 .bbrow summary .chev{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:-8px;border-radius:50%;background:var(--surface);font-size:12px}
+.thero2 .bbopts{border-radius:18px;top:calc(100% + 10px)}
+.thero2 .bookbox{align-items:center}
+/* how it works photos: a size smaller */
+.bcards.photo{max-width:1040px;margin-inline:auto;column-gap:clamp(20px,3vw,44px)}
+.bcards.photo .bimg{aspect-ratio:1}
+.bcards.photo>div:nth-child(even){margin-top:clamp(24px,3.4vw,52px)}
+
+/* ===== v11 ===== */
+/* appointment picker: a quiet dropdown list; picking an option closes it and shows the choice in the pill */
+.thero2 .bbrow summary .bbl{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.thero2 .bbrow summary .chev,.thero2 .bbrow[open] summary .chev{transform:none;font-size:0;flex:none}
+.thero2 .bbrow summary .chev::before{content:"";width:6px;height:6px;border-right:1.2px solid var(--fg);border-bottom:1.2px solid var(--fg);transform:translateY(-1.5px) rotate(45deg)}
+.thero2 .bbopts{border-top:1px solid var(--line);margin:0;padding:8px;gap:2px;width:max(100%,340px)}
+.thero2 .bbopt{position:relative;display:block;padding:12px 40px 12px 14px;border-radius:12px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.thero2 .bbopt:first-child{padding-top:12px}
+.thero2 .bbopt:hover{background:var(--surface);color:var(--fg)}
+.thero2 .bbopt input{position:absolute;opacity:0;pointer-events:none}
+.thero2 .bbopt.sel{color:var(--fg);font-weight:500}
+.thero2 .bbopt.sel::after{content:"";position:absolute;right:18px;top:50%;width:5px;height:10px;margin-top:-7px;border-right:1.4px solid var(--clay);border-bottom:1.4px solid var(--clay);transform:rotate(45deg)}
+.thero2 .bbaddr{margin:6px 14px 6px;font-size:12px;line-height:1.6}
+/* hero: copy starts level with the top of the photo; the booking row sits level with its bottom */
+@media(min-width:861px){
+  .thero2{align-items:stretch}
+  .thero2 .tx{display:flex;flex-direction:column;gap:24px;padding-bottom:clamp(18px,2vw,28px)}
+  .thero2 .kicker{margin:0 0 -8px}
+  .thero2 .ctas{order:1;margin-top:-6px}
+  .thero2 .bookbox{order:2;margin-top:auto}
+}
+/* how it works photos: softer, less clinical */
+.bcards.photo .bimg img{filter:blur(.55px) saturate(.96);transform:scale(1.02)}
+.bcards.photo>div:hover .bimg img{transform:scale(1.06)}
+.thero2 .bbrow summary::after,.thero2 .bbrow[open] summary::after{content:none!important;display:none}
+.thero2 .bbopts{border-top:1px solid var(--line)}
+.thero2 .bbrow[open] .bbopts{border-top-color:var(--line)}
+.thero2 .bbrow summary:focus{outline:none}
+.thero2 .bbrow:has(summary:focus-visible){border-color:var(--fg);box-shadow:0 0 0 3px rgba(176,126,107,.25)}
+
+/* ===== v12: hero right column as two groups — about the treatment on top, a booking block at the bottom ===== */
+@media(min-width:861px){
+  .tframe .ph{height:clamp(360px,calc(100svh - 300px),500px)}
+  .thero2 .tx{gap:22px}
+  .thero2 .ctas{order:2;margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+  .thero2 .ctas::before{content:"Book your visit";font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+  .thero2 .bookbox{order:3;margin-top:-4px}
+  .thero2 .chips{border-bottom:0;padding-bottom:0}
+}
+.thero2 .ctas,.thero2 .bookbox{max-width:540px}
+
+/* ===== v13: duration row ruled above and below again; no "Book your visit / Learn all" row in the hero ===== */
+.thero2 .chips{border-bottom:1px solid var(--line);padding-bottom:13px}
+.thero2 .ctas{display:none!important}
+@media(min-width:861px){.thero2 .bookbox{margin-top:auto}}
+/* picker opens upward when there isn't room below */
+.thero2 .bbrow.up .bbopts{top:auto;bottom:calc(100% + 10px)}
+
+/* ===== v14: hero copy as one compact block, centred beside the photo ===== */
+@media(min-width:861px){.thero2 .tx{justify-content:center;gap:22px;padding-bottom:0}.thero2 .bookbox{margin-top:4px}}

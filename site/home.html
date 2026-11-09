@@ -73,7 +73,8 @@ em.s{font-family:var(--serif);font-style:italic}
 @media(max-width:1000px){.fxgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.fxgrid{grid-template-columns:1fr}}
 .fx{position:relative;border:0;padding:0;border-radius:var(--rs);overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--surface);color:#FBF7F3;text-align:center;isolation:isolate}
-.fx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s ease}
+.fx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s ease;filter:blur(.7px);transform:scale(1.03)}  /* a touch of softness so the enlarged photos don't show pixels */
+.fx:not(:nth-child(3n+1)) img{filter:none}  /* the middle and right columns are sharp enough as they are */
 /* skin tightening card: the close-up sits smaller in the lower right on its own beige, edges softened, for more air around the jaw */
 .fx::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,14,11,0) 45%,rgba(20,14,11,.6) 100%);transition:background .45s ease}
 .fx .ttl{position:absolute;left:16px;right:16px;bottom:22px;font-size:clamp(22px,2.1vw,30px);font-weight:500;letter-spacing:-.01em;line-height:1.1;transition:opacity .35s ease,transform .45s ease}
@@ -81,7 +82,7 @@ em.s{font-family:var(--serif);font-style:italic}
 .fx .list{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.1vw,14px);padding:20px;list-style:none;margin:0;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .45s ease}
 .fx .list li{font-size:clamp(12px,.95vw,14px);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 @media (hover:hover){
-  .fx:hover img,.fx:focus-visible img{transform:scale(1.05)}
+  .fx:hover img,.fx:focus-visible img{transform:scale(1.07)}
   .fx:hover::after,.fx:focus-visible::after{background:rgba(20,14,11,.55)}
   .fx:hover .ttl,.fx:focus-visible .ttl{opacity:0;transform:translateY(8px)}
   .fx:hover .list,.fx:focus-visible .list{opacity:1;transform:none}
@@ -109,9 +110,9 @@ em.s{font-family:var(--serif);font-style:italic}
 .foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
 
 /* drawer */
-.scrim{position:fixed;inset:0;z-index:70;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim{position:fixed;inset:0;z-index:95;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
 .scrim.on{opacity:1;pointer-events:auto}
-.drawer{position:fixed;z-index:71;top:0;right:0;bottom:0;width:min(540px,100vw);background:var(--bg);transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer{position:fixed;z-index:96;top:0;right:0;bottom:0;width:min(540px,100vw);background:var(--bg);transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
 .drawer.on{transform:none}
 .dh{padding:20px 24px 16px;border-bottom:1px solid var(--line);display:grid;gap:12px}
 .dh .top{display:flex;justify-content:space-between;align-items:center}
@@ -221,6 +222,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 /* ---------- most loved: small square cards; scroll moves the row sideways, eased ---------- */
 .stars{position:relative;background:var(--bg)}
 .stars .pin{padding-block:clamp(90px,10vw,140px)}
+.stars{margin-block:clamp(48px,6vw,96px)}  /* more room between Most loved and the sections above and below */
 .shead{display:grid;gap:14px;justify-items:center;text-align:center;margin-bottom:clamp(30px,4.5vh,60px)}
 .shead h2{font-family:var(--serif);font-weight:400;font-size:clamp(50px,5vw,76px);line-height:1}
 .sview{--g:clamp(14px,2.2vw,32px);width:100%}
@@ -233,6 +235,26 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
 .star h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,30px);line-height:1.15;transition:color .5s;white-space:nowrap}
 .star:hover h3{font-style:italic;color:var(--clay)}
 .star .effect{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* six cards: on desktop the section pins and the row slides right to left as you scroll,
+   until the sixth card is fully in view; a short hold, then the page moves on */
+.stars{overflow-x:clip}
+@media(min-width:901px){
+  .stars.hs .pin{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(72px,9vh,112px) clamp(56px,8vh,104px)}
+  .stars.hs .wrap2{max-width:1120px}  /* slightly smaller cards, more air above and below */
+  .stars.hs .track{display:flex;gap:var(--g);will-change:transform}
+  .stars.hs .star{flex:0 0 calc((100% - 3 * var(--g)) / 4)}
+}
+@media(max-width:900px){.track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stars.hs .wrap2{overflow:hidden}  /* only four cards show at first; the rest slide in from the right edge */
+.star .no{font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay);margin-bottom:2px}
+.sprog{display:none}
+@media(min-width:901px){
+  .stars.hs .sprog{display:flex;align-items:center;gap:14px;max-width:210px;margin:clamp(40px,6vh,64px) auto 0;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--muted)}
+  .sprog i{flex:1;height:1px;background:var(--line);position:relative;overflow:hidden}
+  .sprog b{position:absolute;inset:0;background:var(--fg);transform-origin:left;transform:scaleX(0)}
+}
+
 
 /* ---------- about: cocoa band, photo bleeds to the left edge, statement on the right ---------- */
 .about3{background:var(--cocoa);color:#D9C3B8;overflow:hidden}
@@ -390,7 +412,7 @@ h2 em.s,h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
   <section class="stars" id="stars" aria-label="Most loved treatments">
     <div class="pin">
       <div class="shead gut"><p class="label rv">Signature treatments</p><h2 class="rv" style="--d:.08s">Most <em>loved</em></h2></div>
-      <div class="sview gut"><div class="wrap2"><div class="track" id="starTrack"></div></div></div>
+      <div class="sview gut"><div class="wrap2"><div class="track" id="starTrack"></div><div class="sprog" aria-hidden="true"><span>01</span><i><b id="sprogFill"></b></i><span>06</span></div></div></div>
     </div>
   </section>
 
@@ -474,7 +496,7 @@ const RESULTS=[
    ["Thermage® FLX","Eyes 450 or full face 900 pulses",P],
    ["EMFACE®","Needle-free lift · 1–4 areas",P],
    ["Exion™ Collagen Lift","Cheeks, eyes, neck, forehead or any 3",P]]},
- {id:"balance",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"goal-balance.jpg?v=2",pos:"40% 45%",items:[
+ {id:"balance",show:["Chin &amp; Jawline","Under-Eye &amp; Temples","Lips &amp; Nose","Sculptra® · RADIESSE®"],name:"Facial Balancing",img:"goal-balance-5.jpg",pos:"45% 50%",items:[
    ["Chin & Lower Face Balance","Chin projection and profile",P],
    ["Defined Jawline","HA filler or RADIESSE®",P],
    ["Under-Eye Hollows","A more rested look",P],
@@ -483,7 +505,7 @@ const RESULTS=[
    ["Nose Profile","Non-surgical refinement",P],
    ["Sculptra®","Gradual collagen restoration",P],
    ["RADIESSE®","Structure for jaw, cheekbones & hands",P]]},
- {id:"smooth",show:["Botox® &amp; Xeomin®","Botox® Brow Lift","Jaw Slimming","Double Chin"],name:"Wrinkles &amp; Jawline",img:"goal-smooth.jpg",pos:"50% 35%",items:[
+ {id:"smooth",show:["Botox® &amp; Xeomin®","Botox® Brow Lift","Jaw Slimming","Double Chin"],name:"Wrinkles &amp; Jawline",img:"goal-smooth-2.jpg",pos:"50% 35%",items:[
    ["Botox® & Xeomin®","Forehead lines, frown lines & crow’s feet",P],
    ["Botox® Brow Lift","A more open, rested eye",P],
    ["Jaw Slimming (Masseter Botox®)","Jaw tension, clenching & a softer lower face",P],
@@ -496,7 +518,7 @@ const RESULTS=[
    ["Signature Facial","Relaxing spa facial · 60 min",P],
    ["Barrier Recovery Facial","Calms sensitive skin · 60 min",P],
    ["Gold RF Microneedling","mFace · pores, acne scars & texture",P]]},
- {id:"glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Glow &amp; Hydration",img:"goal-glow.jpg?v=3",pos:"50% 40%",items:[
+ {id:"glow",show:["BBL™ Photofacial","Rejuran®","SKINVIVE™","Neck &amp; Scalp"],name:"Glow &amp; Hydration",img:"goal-glow-5.jpg",pos:"55% 40%",items:[
    ["BBL™ Photofacial","Sun spots, redness & uneven tone",P],
    ["Rejuran®","Hydration, texture & glow",P],
    ["SKINVIVE™","Cheek smoothness · about 6 months",P],
@@ -504,7 +526,7 @@ const RESULTS=[
    ["Neck Hydration","Crepey, dry neck skin",P],
    ["Tech Neck","Matched to your neck lines",P],
    ["Scalp & Hair Restoration","Hydration or PRP",P]]},
- {id:"bodywell",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"goal-body.jpg",pos:"50% 40%",items:[
+ {id:"bodywell",show:["Body Sculpt","Trap Tox","NAD+ IV Drip","EXOMIND™"],name:"Body &amp; Wellness",img:"goal-body-5.jpg",pos:"50% 35%",items:[
    ["Body Sculpt · Abdomen","Non-invasive fat reduction · 30 min",P],
    ["Fat Dissolving · Body","One area per session",P],
    ["Trap Tox · Shoulder Line","Longer neck & softer shoulders",P],
@@ -526,12 +548,14 @@ const MOSTLOVED=[
  {img:"loved-thermage.jpg",pos:"50% 50%",alt:"A provider glides a radiofrequency handpiece along a client's neck",name:"Thermage® FLX",fx:"Firmer, smoother skin in one session.",href:"thermage-flx.html"},
  {img:"loved-emface.jpg",pos:"50% 50%",name:"EMFACE®",fx:"A needle-free lift. Still you, just more lifted.",href:"emface.html",alt:"EMFACE applicators placed on a client's forehead and cheek"},
  {img:"loved-botox.jpg",pos:"50% 40%",alt:"A provider in black gloves places a fine injection at the brow",name:"Botox® &amp; Xeomin®",fx:"Smooth, rested, still you.",href:"botox-xeomin.html"},
- {img:"loved-rejuran.jpg",pos:"50% 50%",alt:"Close-up of a fine needle above dewy cheek skin",name:"Rejuran®",fx:"Deep hydration and a glass-skin glow.",href:"rejuran.html"}
+ {img:"loved-rejuran.jpg",pos:"50% 50%",alt:"Close-up of a fine needle above dewy cheek skin",name:"Rejuran®",fx:"Deep hydration and a glass-skin glow.",href:"rejuran.html"},
+ {img:"loved-facial-device.jpg",pos:"50% 30%",alt:"A provider uses a facial device during a skin treatment",name:"HydraFacial®",fx:"Clean, clear, glowing skin in one visit.",href:"hydrafacial.html"},
+ {img:"star-iv.jpg",pos:"50% 50%",alt:"A calm IV drip lounge",name:"NAD+ IV Drip",fx:"Wellness that starts from within.",href:"nad-iv.html"}
 ];
 document.getElementById('starTrack').innerHTML=MOSTLOVED.map((t,i)=>`
   <a class="star rv" style="--d:${i*.1}s" href="${t.href}">
     <span class="ph"><img src="${t.img}" alt="${t.alt||''}" style="object-position:${t.pos}" loading="lazy"></span>
-    <h3>${t.name}</h3><p class="effect">${t.fx}</p>
+    <span class="no">${String(i+1).padStart(2,'0')}</span><h3>${t.name}</h3><p class="effect">${t.fx}</p>
   </a>`).join('');
 
 /* ---------- experience: four steps ---------- */
@@ -548,6 +572,16 @@ const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(REDUCED||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
  els.forEach(e=>io.observe(e));})();
+
+/* ---------- most loved: pinned sideways scroll (desktop) ---------- */
+(function(){const sec=document.getElementById('stars'),tr=document.getElementById('starTrack'),fill=document.getElementById('sprogFill'),mq=matchMedia('(min-width:901px)');
+ let travel=0,cur=0,target=0,raf=0;const SLOW=2;
+ const step=()=>{cur+=(target-cur)*.09;if(Math.abs(target-cur)<.5)cur=target;tr.style.transform=`translate3d(${-cur}px,0,0)`;fill.style.transform=`scaleX(${travel?Math.max(.18,cur/travel):1})`;raf=cur!==target?requestAnimationFrame(step):0;};
+ const update=()=>{if(!sec.classList.contains('hs'))return;target=Math.min(Math.max(-sec.getBoundingClientRect().top,0)/SLOW,travel);if(REDUCED){cur=target;tr.style.transform=`translate3d(${-cur}px,0,0)`;fill.style.transform=`scaleX(${travel?Math.max(.18,cur/travel):1})`;return;}if(!raf)raf=requestAnimationFrame(step);};
+ const size=()=>{if(!mq.matches){sec.classList.remove('hs');sec.style.height='';tr.style.transform='';return;}
+  sec.classList.add('hs');tr.style.transform='';travel=Math.max(0,tr.scrollWidth-tr.parentElement.clientWidth);fill.style.transform='scaleX(.18)';
+  sec.style.height=(innerHeight+travel*SLOW+Math.round(innerHeight*.3))+'px';update();};
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',size);size();})();
 
 /* ---------- experience: the active step fills the rule, then hands on to the next ---------- */
 (function(){const ol=document.getElementById('j4'),lis=[...ol.children];let a=0,timer=0;
@@ -575,8 +609,13 @@ function openBook(pre,series,result){
   document.body.style.overflow='hidden'; render();
   setTimeout(()=>document.getElementById('dClose').focus(),50);
 }
-function closeBook(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus();}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-book]'); if(b){e.preventDefault();openBook(null,null);}});
+function closeBook(){if(fromOther&&!st.sent){fromOther=false;history.back();}drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus();}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-book],a[href="#book"]'); if(b){e.preventDefault();openBook(null,null);}});
+/* every Book button on the site links here (home.html#book, optionally ?tx=Treatment) and opens booking straight away */
+let fromOther=false;
+function bookFromUrl(){if(location.hash!=='#book')return;const tx=new URLSearchParams(location.search).get('tx');
+ try{fromOther=!!document.referrer&&new URL(document.referrer).origin===location.origin&&!/home\.html/.test(new URL(document.referrer).pathname);}catch(_){fromOther=false;}
+ history.replaceState(null,'',location.pathname);openBook(tx||null,null);if(tx){st.step=tx?1:0;render();}}
 scrim.addEventListener('click',closeBook); document.getElementById('dClose').addEventListener('click',closeBook);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('on'))closeBook();});
 
@@ -652,6 +691,8 @@ function validate(){
 nextB.onclick=()=>{ if(!validate()){ if(st.step<2) selL.textContent=st.step===0?'Choose a treatment to continue':'Choose a day and time'; return; }
   if(st.step===3) st.sent=true; else st.step++; render(); body.scrollTop=0; };
 backB.onclick=()=>{ if(st.step>0){st.step--;render();} };
+
+bookFromUrl();addEventListener('hashchange',bookFromUrl);
 
 /* ---------- featured ---------- */
 document.querySelectorAll('[data-learn]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openBook(null,null,a.dataset.learn);}));
