@@ -97,6 +97,37 @@
     }
   }
 
+  /* chip rows between two rules (treatment hero, AURA Prime): always one line. The type and the spacing
+     shrink together to fit the row's width, and grow back up to the design size when there is room. */
+  function fitChips(){
+    [].slice.call(document.querySelectorAll('.thero2 .chips, .pr .chips')).forEach(function(row){
+      var spans = [].slice.call(row.children);
+      spans.forEach(function(s){ s.style.fontSize = ''; s.style.paddingLeft = ''; s.style.paddingRight = ''; s.style.letterSpacing = ''; });
+      var avail = row.clientWidth;
+      if(!avail) return;
+      // short on room: close up the wide tracking first, so the type itself has to shrink less
+      if(row.scrollWidth > avail + 0.5) spans.forEach(function(s){ s.style.letterSpacing = '.07em'; });
+      for(var k = 0; k < 3; k++){
+        var need = row.scrollWidth;
+        if(need <= avail + 0.5) break;
+        var r = avail / need;
+        spans.forEach(function(s, i){
+          var cs = getComputedStyle(s);
+          s.style.fontSize = Math.max(7, parseFloat(cs.fontSize) * r) + 'px';
+          if(i > 0) s.style.paddingLeft = (parseFloat(cs.paddingLeft) * r) + 'px';
+          s.style.paddingRight = (parseFloat(cs.paddingRight) * r) + 'px';
+        });
+      }
+    });
+  }
+  function startFit(){
+    fitChips();
+    var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(fitChips, 60); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitChips);
+    window.addEventListener('load', fitChips);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startFit); else startFit();
+
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', init);
   } else {

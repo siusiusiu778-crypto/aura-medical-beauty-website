@@ -3,8 +3,8 @@
 <meta name="description" content="AURA Prime at Rockefeller Center: $299/month for a monthly facial, a quarterly BBL™ Photofacial or Rejuran® treatment, and Wellness Credits toward NAD+.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2">
-<link rel="stylesheet" href="l3.css?v=9">
+<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=4">
+<link rel="stylesheet" href="l3.css?v=13">
 <style>
 /* membership-only components */
 .pricetag{display:flex;align-items:baseline;gap:10px;margin:0}
@@ -71,8 +71,8 @@
 .pr .lede{margin:0;font-size:16.5px;line-height:1.8;color:var(--ink)}
 .pprice{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
 .pprice .pricenote{margin:0}
-.pr .chips{gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pr .chips>span{border:0;border-radius:0;padding:0 16px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--fg);position:relative}
+.pr .chips{flex-wrap:nowrap;white-space:nowrap;overflow:hidden;gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pr .chips>span{flex:none;border:0;border-radius:0;padding:0 16px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--fg);position:relative}
 .pr .chips>span:first-child{padding-left:0}
 .pr .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
 .pr .ctas .tlink{font-size:11px}
@@ -109,6 +109,38 @@
 .inc3 .lbl{display:block}
 .inc3 .more{align-self:flex-start;margin-top:auto;padding-top:0}
 .inc3 article>p:not(.num):not(.cap){margin-bottom:22px}
+/* "Talk to us first": a small dialog with our contact details and a complimentary full-face consultation */
+.talkdlg{width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 32px);margin:auto;padding:0;border:0;background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(20,14,11,.28);overflow:auto;opacity:0;transform:translateY(16px);transition:opacity .45s var(--ease),transform .55s var(--ease),overlay .45s allow-discrete,display .45s allow-discrete}
+.talkdlg[open]{opacity:1;transform:none}
+@starting-style{.talkdlg[open]{opacity:0;transform:translateY(16px)}}
+.talkdlg::backdrop{background:rgba(32,22,18,.5);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.talkdlg .tin{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.talkdlg .tx{padding:clamp(28px,4vw,48px)}
+.talkdlg .x{position:absolute;top:10px;right:12px;z-index:2;width:40px;height:40px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
+.talkdlg .x:hover{color:var(--fg)}
+@media(min-width:681px){.talkdlg .x{color:rgba(251,244,239,.6)}.talkdlg .x:hover{color:var(--cream)}}
+.talkdlg h2{margin:12px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,40px);line-height:1.05;color:var(--fg)}
+.talkdlg h2 em{font-style:italic;color:var(--clay)}
+.talkdlg .lead{margin:14px 0 0;font-size:14.5px;line-height:1.7;max-width:36ch}
+.talkdlg dl{margin:24px 0 0;display:grid;gap:0}
+.talkdlg dl div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line);align-items:baseline}
+.talkdlg dl div:last-child{border-bottom:1px solid var(--line)}
+.talkdlg dt{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.talkdlg dd{margin:0;font-size:14px;line-height:1.6;color:var(--fg)}
+.talkdlg dd a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.talkdlg dd a:hover{border-color:var(--fg)}
+.talkdlg .bk{background:var(--cocoa);color:#D9C3B8;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:14px}
+.talkdlg .bk .eyebrow{color:var(--clay-lt)}
+.talkdlg .bk h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.1;color:var(--cream)}
+.talkdlg .bk h3 em{font-style:italic;color:var(--clay-lt)}
+.talkdlg .bk ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:8px;font-size:14px;line-height:1.55}
+.talkdlg .bk li{position:relative;padding-left:18px}
+.talkdlg .bk li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--clay-lt)}
+.talkdlg .bk .btn{margin-top:auto;background:var(--cream);color:var(--cocoa);justify-content:center}
+.talkdlg .bk .btn:hover{background:var(--clay-lt)}
+.talkdlg .bk .fine{margin:0;font-size:12px;color:rgba(217,195,184,.75)}
+@media(max-width:680px){.talkdlg .tin{grid-template-columns:1fr}.talkdlg .bk .btn{margin-top:10px}}
+@media (prefers-reduced-motion: reduce){.talkdlg{transition:none}}
 </style>
 </head><body>
 <div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
@@ -172,7 +204,7 @@
   </div>
 </div>
 </div>
-<script src="nav.js?v=2"></script>
+<script src="nav.js?v=4"></script>
 <main>
 <div class="wrap crumbs"><a href="home.html">Home</a> / Membership / AURA Prime</div>
 
@@ -186,7 +218,7 @@
     <div class="pl">
       <p class="eyebrow kicker rv" style="--d:.1s">Membership · Skin &amp; wellness</p>
       <p class="pline rv" style="--d:.18s">A steady rhythm, <em>never overdone.</em></p>
-      <div class="pjoin rv" style="--d:.3s"><a class="btn" href="home.html?tx=AURA%20Prime#book">Join AURA Prime</a><p class="ptalk">Not sure yet? <a href="#faq">Talk to us first <span aria-hidden="true">→</span></a></p></div>
+      <div class="pjoin rv" style="--d:.3s"><a class="btn" href="home.html?tx=AURA%20Prime#book">Join AURA Prime</a><p class="ptalk">Not sure yet? <a href="#faq" data-talk aria-haspopup="dialog" aria-controls="talk">Talk to us first <span aria-hidden="true">→</span></a></p></div>
     </div>
     <div class="pr">
       <p class="lede rv" style="--d:.26s">A facial every month, a seasonal BBL™ or Rejuran® treatment every quarter, and Wellness Credits toward NAD+.</p>
@@ -232,6 +264,34 @@
   </div>
 </section>
 </main>
+<dialog class="talkdlg" id="talk" aria-labelledby="talkT">
+  <div class="tin">
+    <button type="button" class="x" data-close aria-label="Close">×</button>
+    <div class="tx">
+      <p class="eyebrow cl">Talk to us first</p>
+      <h2 id="talkT">Questions before <em>you join?</em></h2>
+      <p class="lead">Call, write or stop by. We’re happy to walk you through AURA Prime and what it would look like for your skin.</p>
+      <dl>
+        <div><dt>Call</dt><dd data-confirm><a href="tel:+1212">(212) [XXX-XXXX]</a></dd></div>
+        <div><dt>Email</dt><dd data-confirm><a href="mailto:hello@aurainstitute.com">hello@[aurainstitute].com</a></dd></div>
+        <div><dt>Visit</dt><dd><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812</a><br>Rockefeller Center, New York</dd></div>
+        <div><dt>Hours</dt><dd>Mon – Fri · 9 am – 8 pm<br>Sat · 10 am – 6 pm</dd></div>
+        <div><dt>Social</dt><dd><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></dd></div>
+      </dl>
+    </div>
+    <div class="bk">
+      <p class="eyebrow">Complimentary · 30 minutes</p>
+      <h3>A full-face consultation, <em>made for you</em></h3>
+      <ul>
+        <li>We look at your whole face, not a single area</li>
+        <li>A custom plan built around your goals</li>
+        <li>See if AURA Prime is the right rhythm for you</li>
+      </ul>
+      <a class="btn" href="home.html?tx=Complimentary%20Consultation#book">Book a Consultation →</a>
+      <p class="fine">No commitment. In English or Mandarin.</p>
+    </div>
+  </div>
+</dialog>
 <footer class="foot" id="contact">
   <div class="in">
     <div class="top">
@@ -247,6 +307,13 @@
 /* hero reveal */
 (function(){const fr=document.querySelector('.pframe'),ti=document.querySelector('.ptitle');
  requestAnimationFrame(()=>requestAnimationFrame(()=>{fr.classList.add('in');ti.classList.add('in');}));})();
+</script>
+<script>
+/* "Talk to us first" dialog: opens from the hero link, closes on ×, Esc or a click on the backdrop */
+(function(){const d=document.getElementById('talk');if(!d||!d.showModal)return;
+ document.querySelectorAll('[data-talk]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();d.showModal();}));
+ d.querySelector('[data-close]').addEventListener('click',()=>d.close());
+ d.addEventListener('click',e=>{if(e.target===d)d.close();});})();
 </script>
 <script src="l3.js?v=5"></script>
 </body></html>

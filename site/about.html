@@ -1,10 +1,10 @@
 <!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About AURA Institute | Medical Aesthetics at Rockefeller Center, NYC</title>
-<link rel="preload" as="image" href="about-lobby3.jpg">
+<link rel="preload" as="image" href="about-reception-crop.jpg">
 <meta name="description" content="AURA Institute is a medical aesthetics and wellness clinic at Rockefeller Center, New York. Injectables, skin tightening, skin treatments, body contouring and wellness care, planned around your own features.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Tenor+Sans&display=swap">
-<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=2">
+<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=4">
 <style>
 /* About · single page: hero band → intro → who we are → standards → technology → aesthetic → closing → footer.
    Homepage palette and type (shell / cocoa / clay, Cormorant + Hanken), light only. */
@@ -29,15 +29,15 @@ section[id]{scroll-margin-top:72px}
 
 /* 01 hero: mocha band over a full-bleed photo */
 .ahero{position:relative;overflow:hidden;background:var(--mocha);color:var(--cream);padding-block:clamp(88px,10vw,152px) clamp(52px,6vw,88px)}
-.ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 60%}
+.ahero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 0%;filter:brightness(.8) contrast(1.06) saturate(.88) sepia(.1)}  /* tone the photo down to the warm, muted look of the rest of the site, so the white type reads without shadows */
 /* the photo as it is; the type is lifted with a soft cocoa glow and shadow, as on the homepage hero */
 .ahero .wrap>div:first-child{position:relative}
-.ahero .wrap>div:first-child::before{content:"";position:absolute;left:-8%;top:-22%;width:min(980px,82%);height:144%;background:radial-gradient(closest-side,rgba(96,62,44,.5),rgba(96,62,44,0));filter:blur(40px);z-index:-1;pointer-events:none}
+.ahero .wrap>div:first-child::before{display:none;content:"";position:absolute;left:-8%;top:-22%;width:min(980px,82%);height:144%;background:radial-gradient(closest-side,rgba(96,62,44,.5),rgba(96,62,44,0));filter:blur(40px);z-index:-1;pointer-events:none}
 .hbar{position:relative}
-.hbar::before{content:"";position:absolute;left:-4%;top:-60%;width:min(720px,64%);height:220%;background:radial-gradient(closest-side,rgba(96,62,44,.46),rgba(96,62,44,0));filter:blur(30px);z-index:-1;pointer-events:none}
-.ahero .eyebrow,.hbar p{text-shadow:0 1px 2px rgba(80,48,34,.6),0 2px 12px rgba(80,48,34,.42),0 8px 40px rgba(80,48,34,.3)}
-.ahero h1{text-shadow:0 1px 2px rgba(80,48,34,.4),0 4px 24px rgba(80,48,34,.3)}
-.ahero .wrap{position:relative;z-index:2;display:grid;gap:clamp(36px,5vw,64px)}
+.hbar::before{display:none;content:"";position:absolute;left:-4%;top:-60%;width:min(720px,64%);height:220%;background:radial-gradient(closest-side,rgba(96,62,44,.46),rgba(96,62,44,0));filter:blur(30px);z-index:-1;pointer-events:none}
+/* neutral soft shadow on the hero headline only (black, not brown); the small type stays flat */
+.ahero h1{text-shadow:0 1px 2px rgba(0,0,0,.14),0 4px 26px rgba(0,0,0,.22)}
+.ahero .wrap{position:relative;z-index:2;display:grid;gap:clamp(20px,2.6vw,36px)}
 .ahero .eyebrow{color:var(--cream)}
 .ahero h1{font-family:var(--serif);font-weight:400;color:var(--cream);font-size:clamp(54px,9vw,128px);line-height:.9;letter-spacing:-.01em;margin-top:14px}
 .ahero h1 .ln{display:block;overflow:hidden;padding-bottom:.22em;margin-bottom:-.16em}
@@ -45,7 +45,7 @@ section[id]{scroll-margin-top:72px}
 .ahero h1.in .ln i{transform:none}
 .ahero h1 em{font-style:normal;color:var(--cream);text-transform:uppercase;letter-spacing:-.005em}
 .hbar{display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap}
-.hbar p{margin:0;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,244,239,.9)}
+.hbar p{margin:0;max-width:440px;line-height:1.9;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,244,239,.9)}
 .hbar .btn{background:var(--cream);color:var(--cocoa);padding:14px 26px}
 .hbar .btn:hover{background:var(--clay-lt)}
 
@@ -62,7 +62,7 @@ section[id]{scroll-margin-top:72px}
 #who .eyebrow{color:var(--clay-lt)}
 #who .h2{color:var(--cream)}
 #who .h2 em{color:var(--clay-lt)}
-#who .copy{margin:22px 0 0;font-size:15.5px;line-height:1.8;max-width:46ch;color:#D9C3B8}
+#who .copy{margin:22px 0 0;font-size:15.5px;line-height:1.8;max-width:46ch;color:var(--cream)}
 #who figure{margin:0;position:relative;aspect-ratio:3/2;overflow:hidden;background:#3a2b24}
 #who figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media(max-width:860px){#who .two{grid-template-columns:1fr}#who figure{order:-1}}
@@ -92,30 +92,32 @@ section[id]{scroll-margin-top:72px}
 @media(max-width:860px){.tech{grid-template-columns:1fr}}
 @media(max-width:480px){.brands td:last-child{white-space:normal}}
 
-/* 05 the aura aesthetic: editorial collage. Copy top-left, a wide photo top-right; a large photo below on the
-   left that tucks under the first; a smaller photo and the closing line bottom-right. */
-.aes{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,28px)}
+/* 05 the aura aesthetic: editorial collage on a 24-column grid.
+   Row 1: copy top-left, a wide photo top-right. Row 2: a small landscape photo bottom-left and a portrait photo
+   beside it that tucks up over the wide photo's lower-left corner (with a ring of the section colour around it);
+   the closing line sits bottom-right under the wide photo. Row 2 items share one bottom edge. */
+.aes{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));column-gap:clamp(8px,1.1vw,14px);align-items:end}
 .aes figure{margin:0;position:relative;overflow:hidden;background:var(--surface)}
 .aes figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.aes .t1{grid-column:1/6;grid-row:1;align-self:start;display:grid;gap:18px;justify-items:start;padding:clamp(4px,1vw,12px) 0 16px}
+.aes .t1{grid-column:1/11;grid-row:1;align-self:start;display:grid;gap:18px;justify-items:start;padding:clamp(4px,1vw,12px) clamp(8px,2vw,32px) clamp(14px,1.6vw,22px) 0}
 .aes .t1 .h2{margin-top:0}
 .aes .t1 .copy{margin:0;font-size:15.5px;line-height:1.8;max-width:40ch}
 .aes .t1 .tlink{margin-top:10px}
-.aes .p1{grid-column:6/13;grid-row:1;aspect-ratio:3/2;z-index:1;align-self:start}
-.aes .p2{grid-column:1/5;grid-row:2;aspect-ratio:3/2;margin-top:clamp(20px,2.2vw,32px);z-index:1}
-/* bottom row: the eye and the neck photos side by side, the closing line to their right */
+.aes .p1{grid-column:12/25;grid-row:1/3;align-self:start;aspect-ratio:8/5;margin-top:clamp(20px,2.6vw,36px);z-index:1}
+.aes .p2{grid-column:1/10;grid-row:2;align-self:end;aspect-ratio:11/5;margin-top:clamp(8px,1vw,16px);z-index:1}
 .aes .side{display:contents}
-.aes .p3{grid-column:6/9;grid-row:2;align-self:start;aspect-ratio:408/480;margin-top:clamp(-96px,-6vw,-40px);z-index:2;box-shadow:0 0 0 clamp(8px,.9vw,14px) var(--surface)}  /* the neck photo keeps its own portrait shape and tucks over the wide photo */
-.aes .side .q{grid-column:9/13;grid-row:2;align-self:end;margin:0;padding:0 0 4px clamp(4px,1vw,16px);font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,32px);line-height:1.2;color:var(--clay)}
-#aesthetic{padding-block:clamp(44px,4.4vw,64px)}
+.aes .p3{grid-column:10/15;grid-row:2;align-self:start;aspect-ratio:4/5;margin-top:clamp(-100px,-6.5vw,-52px);z-index:2;box-shadow:0 0 0 clamp(6px,.8vw,12px) var(--surface)}
+.aes .side .q{grid-column:17/25;grid-row:2;align-self:start;justify-self:end;text-align:right;margin:clamp(84px,8.2vw,112px) 0 0;padding:0 0 2px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,2.7vw,38px);line-height:1.2;color:var(--clay)}
+#aesthetic{padding-block:clamp(64px,6.4vw,92px) clamp(96px,9vw,132px)}
 .eyebrow.dot{display:inline-flex;align-items:center;gap:12px}
 .eyebrow.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);flex:none}
 @media(max-width:860px){
-  .aes{grid-template-columns:1fr;row-gap:24px}
-  .aes .t1,.aes .p1,.aes .p2,.aes .p3,.aes .side .q{grid-column:1;grid-row:auto}
-  .aes .t1{padding-bottom:8px}
-  .aes .p2{margin-top:0}
-  .aes .p3{margin-top:0;box-shadow:none}
+  .aes{grid-template-columns:repeat(12,minmax(0,1fr));row-gap:0;column-gap:12px}
+  .aes .t1{grid-column:1/13;grid-row:1;padding:0 0 28px}
+  .aes .p1{grid-column:1/13;grid-row:2;margin-top:0}
+  .aes .p2{grid-column:1/8;grid-row:3;margin-top:0;align-self:end}
+  .aes .p3{grid-column:8/13;grid-row:3;margin-top:-36px}
+  .aes .side .q{grid-column:1/13;grid-row:4;justify-self:end;margin-top:20px}
 }
 /* 06 closing: full-bleed photo, oversized line, two short columns */
 .closing{position:relative;overflow:hidden;background:var(--cocoa);color:var(--cream);padding-block:clamp(56px,6vw,88px)}
@@ -215,11 +217,11 @@ section[id]{scroll-margin-top:72px}
   </div>
 </div>
 </div>
-<script src="nav.js?v=2"></script>
+<script src="nav.js?v=4"></script>
 <main>
 
 <section class="ahero" id="top">
-  <img src="about-lobby3.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <img src="about-reception-crop.jpg" alt="" aria-hidden="true" fetchpriority="high">
   <div class="wrap">
     <div>
       <p class="eyebrow rv">About AURA Institute</p>
@@ -243,7 +245,7 @@ section[id]{scroll-margin-top:72px}
     <h2 class="h2 rv" style="--d:.1s">Look like yourself on your <em>best day.</em></h2>
     <p class="copy rv" style="--d:.2s">An aura is the light a person carries: the glow others see, and the confidence you feel. AURA Institute was created to bring out both. We bring advanced technology, precise injectables and wellness care together under one roof, and plan every visit around your whole face, not a single area. Consultations are available in English and Mandarin.</p>
   </div>
-  <figure class="rv-img" style="--d:.15s"><img src="r-duo.jpg" alt="Two women laughing, with clear, glowing skin" style="object-position:50% 40%"></figure>
+  <figure class="rv-img" style="--d:.15s"><img src="about-trio.webp" alt="Three women smiling cheek to cheek, with clear, glowing skin" style="object-position:50% 40%"></figure>
 </div></section>
 
 <section class="alt" id="standards"><div class="wrap">
@@ -290,9 +292,9 @@ section[id]{scroll-margin-top:72px}
     <a class="tlink rv" style="--d:.24s" href="goal-facial-balancing.html">Explore Facial Balancing →</a>
   </div>
   <figure class="p1 rv-img"><img src="about-smile.webp" alt="A smiling woman resting her head on her arms" style="object-position:50% 38%"></figure>
-  <figure class="p2 rv-img" style="--d:.1s"><img src="about-eye.jpg" alt="Close-up of an eye and brow in soft window light" style="object-position:50% 40%"></figure>
+  <figure class="p2 rv-img" style="--d:.1s"><img src="about-eye2.webp" alt="Close-up of an eye and brow in warm light and shadow" style="object-position:50% 46%"></figure>
   <div class="side">
-    <figure class="p3 rv-img" style="--d:.2s"><img src="about-neck.jpg" alt="A woman with her head tilted back, eyes closed, showing a long neckline" style="object-position:50% 30%"></figure>
+    <figure class="p3 rv-img" style="--d:.2s"><img src="about-profile.png" alt="A woman in profile with her head tilted back and eyes closed, showing a long neckline" style="object-position:50% 40%"></figure>
     <p class="q rv" style="--d:.3s">Precision over perfection.</p>
   </div>
 </div></section>

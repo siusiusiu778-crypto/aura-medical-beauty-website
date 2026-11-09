@@ -5,6 +5,11 @@
    specificity tie against these, regardless of stylesheet load order. */
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
+/* the page itself only scrolls vertically; parts built to scroll sideways (carousels etc.) keep their own overflow-x.
+   clip (not hidden) so the sticky header keeps working; hidden on html is the fallback for older browsers. */
+html{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+
 #site-header{--nb-bg:#F8F0EB;--nb-surface:#F1E3DB;--nb-line:#E3CFC4;--nb-fg:#2F221D;--nb-muted:#9D857B;--nb-cocoa:#2F221D;--nb-clay:#B07E6B;--nb-cream:#FBF4EF;
   font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;z-index:80;
   /* the whole header is sticky, offset by the brand row's height: the brand row scrolls away, the nav bar stays pinned */
@@ -39,15 +44,17 @@
 
 /* nav bar: category dropdowns + Book Now */
 #site-header .navbar{background:rgba(248,240,235,.92);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);border-top:1px solid var(--nb-line);border-bottom:1px solid var(--nb-line);position:sticky;top:env(safe-area-inset-top,0px);z-index:80}
-#site-header .navbar .in{max-width:1320px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:clamp(22px,3.2vw,52px)}
+#site-header .navbar .in{max-width:1320px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,52px)}
 @media(min-width:760px){#site-header .navbar .in{padding-inline:max(48px,env(safe-area-inset-left,0px))}}
-#site-header .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(22px,3.2vw,52px);font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;flex:1}
+#site-header .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(14px,2.6vw,52px);font-size:clamp(10px,.98vw,12.5px);font-weight:500;letter-spacing:.2em;text-transform:uppercase;flex:1}
 #site-header .navbar ul.top>li{position:relative}
 #site-header .navbar ul.top>li>button,#site-header .navbar ul.top>li>a{display:block;padding:25px 0 17px;position:relative;white-space:nowrap}
 #site-header .navbar ul.top>li>button::after,#site-header .navbar ul.top>li>a::after{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transition:transform .7s}
 #site-header .navbar ul.top>li:hover>button::after,#site-header .navbar ul.top>li:hover>a::after,#site-header .navbar ul.top>li.open>button::after,#site-header .navbar ul.top>li[aria-current]>button::after,#site-header .navbar ul.top>li[aria-current]>a::after{transform:scaleX(1)}
-#site-header .tag{position:absolute;top:7px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:600;letter-spacing:.14em;padding:3px 6px 2px;color:var(--nb-cream);background:var(--nb-clay);border-radius:2px;white-space:nowrap;pointer-events:none}
-#site-header .nav-book{flex:none;border-radius:0;padding:10px 22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--nb-cocoa);color:var(--nb-cream);transition:background .5s}
+/* badge: anchored by its BOTTOM edge 4px above the label text (which starts 25px down), so if a device renders it
+   larger (minimum font size, text zoom) it can only grow upward, never down into the label. Solid fill, drawn above the text. */
+#site-header .tag{position:absolute;top:auto;bottom:calc(100% - 21px);left:50%;transform:translateX(-50%);z-index:2;font-size:8px;line-height:1.25;font-weight:600;letter-spacing:.14em;padding:2px 6px 1px;color:#FBF4EF;background:#A87563;opacity:1;border-radius:2px;white-space:nowrap;pointer-events:none}
+#site-header .nav-book{flex:none;border-radius:0;padding:10px clamp(14px,1.7vw,22px);font-size:clamp(9.5px,.82vw,10.5px);font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--nb-cocoa);color:var(--nb-cream);transition:background .5s}
 #site-header .nav-book:hover{background:var(--nb-clay)}
 #site-header .mega{position:fixed;left:0;right:0;background:var(--nb-bg);border-top:1px solid var(--nb-line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:28px max(24px,env(safe-area-inset-right,0px)) 32px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:82}
 #site-header .navbar ul.top>li:hover>.mega,#site-header .navbar ul.top>li.open>.mega{display:block}
@@ -64,8 +71,8 @@
 /* mobile slide-in menu */
 #site-header .mnscrim{position:fixed;inset:0;z-index:90;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
 #site-header .mnscrim.on{opacity:1;pointer-events:auto}
-#site-header .mobilenav{position:fixed;z-index:91;top:0;right:0;bottom:0;width:min(400px,86vw);background:var(--nb-bg);transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;overflow-y:auto}
-#site-header .mobilenav.on{transform:none}
+#site-header .mobilenav{position:fixed;z-index:91;top:0;right:0;bottom:0;width:min(400px,86vw);background:var(--nb-bg);transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s linear .35s;display:flex;flex-direction:column;overflow-y:auto}
+#site-header .mobilenav.on{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
 #site-header .mnhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--nb-line)}
 #site-header .mnhead .close{font-size:26px;line-height:1;color:var(--nb-muted);padding:4px 8px;margin:-4px -8px}
 #site-header .mnbody{padding:12px 20px 28px;display:grid;gap:2px}
