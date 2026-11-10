@@ -489,3 +489,18 @@ span[data-confirm]{border-bottom:1px dashed var(--clay)}
 
 /* ===== v14: hero copy as one compact block, centred beside the photo ===== */
 @media(min-width:861px){.thero2 .tx{justify-content:center;gap:22px;padding-bottom:0}.thero2 .bookbox{margin-top:4px}}
+
+/* ===== compact-sections (Nov 9): "About the treatment" (two groups) and FAQs (five, all closed) each fit one screen ===== */
+.techband{padding-block:clamp(28px,6vh,72px)}
+.tgrid{min-height:min(clamp(420px,34vw,520px),62vh)}
+.tcopy{padding-top:clamp(28px,5vh,64px);padding-bottom:clamp(28px,5vh,64px)}
+#faq.tsec{padding-block:clamp(48px,8vh,96px)}
+@media(max-width:860px){
+  .techband{padding-block:0}
+  .tgrid .ph{aspect-ratio:21/9}
+  .tcopy{padding-top:32px;padding-bottom:36px}
+  .tsteps li{grid-template-columns:40px 1fr;padding:14px 0}
+  .faqgrid{grid-template-columns:1fr}
+  #faq summary{font-size:18px}
+  #faq details{padding-block:12px}
+}

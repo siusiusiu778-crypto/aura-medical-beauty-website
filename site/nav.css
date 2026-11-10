@@ -23,6 +23,8 @@ html{overflow-x:hidden}
 #site-header .brandrow .in{max-width:1320px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:20px}
 @media(min-width:760px){#site-header .brandrow .in{padding-inline:max(48px,env(safe-area-inset-left,0px))}}
 #site-header .hdlogo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;white-space:nowrap;color:var(--nb-fg);line-height:1}
+#site-header .hdlogo .by,.mnav .hdlogo .by,.hdlogo .by{font-family:"Cormorant Garamond","Cormorant","Instrument Serif",Georgia,serif;font-style:italic;font-weight:500;font-size:.92em;letter-spacing:.02em;text-transform:none;color:#B07E6B;margin-left:.4em}
+@media(max-width:520px){#site-header .hdlogo{font-size:19px}}
 #site-header .hr{display:flex;align-items:center;gap:22px}
 #site-header .hsearch{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--nb-line);transition:border-color .4s}
 #site-header .hsearch:focus-within{border-bottom-color:var(--nb-fg)}

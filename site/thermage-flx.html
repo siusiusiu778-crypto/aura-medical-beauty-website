@@ -3,13 +3,13 @@
 <meta name="description" content="Thermage® FLX radiofrequency skin tightening at Rockefeller Center. Non-surgical, no downtime, results that build over months. Book a complimentary consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=4">
-<link rel="stylesheet" href="l3.css?v=13">
+<link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="nav.css?v=5">
+<link rel="stylesheet" href="l3.css?v=14">
 </head><body>
 <div class="proto">Page prototype · Level 3 treatment page · copy is final draft, photos are placeholders · <a href="index.html">All pages</a></div>
 <div id="site-header" data-current="skintightening">
 <div class="brandrow"><div class="in">
-  <a class="hdlogo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a>
+  <a class="hdlogo" href="home.html" aria-label="AURA Institute by sxy, home">AURA INSTITUTE<span class="by">by sxy</span></a>
   <div class="hr">
     <form class="hsearch" role="search" onsubmit="event.preventDefault()"><input type="search" placeholder="Search treatments" aria-label="Search treatments"><button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button></form>
     <a class="acct" href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>My Account</span></a>
@@ -18,6 +18,7 @@
 </div></div>
 <div class="navbar" aria-label="Main"><div class="in">
   <ul class="top">
+    <li data-cat="blueprint"><a href="facial-blueprint.html">Facial Blueprint</a></li>
     <li data-cat="injectables"><a href="#" class="catbtn" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="mega-injectables">Injectables</a>
       <div class="mega" id="mega-injectables"><div class="cols">
         <div class="grp"><h5>Dermal Fillers</h5><a href="chin-balance.html">Chin &amp; Lower Face Balance</a><a href="defined-jawline.html">Defined Jawline</a><a href="under-eye-hollows.html">Under-Eye Hollows</a><a href="temples.html">Temples</a><a href="lip-volume.html">Lip Volume &amp; Shape</a><a href="nose-profile.html">Nose Profile</a><a href="sculptra.html">Sculptra®</a><a href="radiesse.html">RADIESSE®</a></div>
@@ -54,8 +55,9 @@
 </div></div>
 <div class="mnscrim" id="navScrim"></div>
 <div class="mobilenav" id="mobilenav" aria-hidden="true">
-  <div class="mnhead"><a class="hdlogo" href="home.html" style="font-size:18px">AURA INSTITUTE</a><button class="close" type="button" id="mnClose" aria-label="Close menu">×</button></div>
+  <div class="mnhead"><a class="hdlogo" href="home.html" style="font-size:18px">AURA INSTITUTE<span class="by">by sxy</span></a><button class="close" type="button" id="mnClose" aria-label="Close menu">×</button></div>
   <div class="mnbody">
+    <a class="mnlink" href="facial-blueprint.html">Facial Blueprint</a>
     <div class="macc" data-acc="injectables"><button type="button" class="machead" aria-expanded="false">Injectables<span class="chev">⌄</span></button><div class="mapanel"></div></div>
     <div class="macc" data-acc="skintightening"><button type="button" class="machead" aria-expanded="false">Skin Tightening &amp; Lifting<span class="chev">⌄</span></button><div class="mapanel"></div></div>
     <div class="macc" data-acc="skin"><button type="button" class="machead" aria-expanded="false">Skin<span class="chev">⌄</span></button><div class="mapanel"></div></div>
@@ -85,9 +87,8 @@
         <summary>Choose your appointment <span class="chev" aria-hidden="true">⌄</span></summary>
         <div class="bbopts">
           <label class="bbopt"><input type="radio" name="appt" checked> Complimentary consultation</label>
-          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX · Eyes (450 pulses)</label>
-          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX · Full face (900 pulses)</label>
-          <p class="bbaddr">AURA Institute · 630 Fifth Avenue, Suite 1812, Rockefeller Center, New York</p>
+          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX · Eyes (450 shots)</label>
+          <label class="bbopt"><input type="radio" name="appt"> Thermage® FLX · Face (900 shots)</label>
         </div>
       </details>
       <a class="btn" href="home.html#book">Continue to Booking</a>
@@ -139,9 +140,8 @@
       <p class="eyebrow rv">The technology</p>
       <h2 class="rv" style="--d:.08s">About the <em>technology</em></h2>
       <ol class="tsteps">
-        <li class="rv" style="--d:0.14s"><span class="n">01</span><div><b>Even energy delivery</b><div class="tdd">A patented treatment tip spreads radiofrequency evenly into the skin, reducing hot spots.</div></div></li>
-        <li class="rv" style="--d:0.22s"><span class="n">02</span><div><b>AccuREP™ technology</b><div class="tdd">Reads your skin with every pulse and adjusts the energy, so each pulse is precise.</div></div></li>
-        <li class="rv" style="--d:0.30s"><span class="n">03</span><div><b>Built-in cooling</b><div class="tdd">Cools the skin surface while the deeper layers warm, for a more comfortable treatment.</div></div></li>
+        <li class="rv" style="--d:0.14s"><span class="n">01</span><div><b>The technology</b><div class="tdd">A patented treatment tip spreads radiofrequency evenly into the skin, and AccuREP™ technology reads your skin with every pulse to adjust the energy.</div></div></li>
+        <li class="rv" style="--d:0.22s"><span class="n">02</span><div><b>Comfort</b><div class="tdd">Built-in cooling protects the skin surface while the deeper layers warm, for a more comfortable treatment.</div></div></li>
       </ol>
     </div>
   </div>
@@ -150,11 +150,7 @@
 <section class="tsec alt" id="faq"><div class="wrap faqgrid">
   <div class="head"><p class="eyebrow rv">FAQs</p><h2 class="rv" style="--d:.08s">Frequently asked <em>questions</em></h2></div>
   <div class="faqlist">
-  <details open class="rv"><summary>Does it hurt?</summary><p>Most clients feel warmth and a deep, brief pressure with each pulse. The tip cools your skin, and your provider can adjust the energy to your comfort.</p></details>
-  <details class="rv"><summary>What are the side effects?</summary><p>Mild redness, warmth or swelling that usually settles within hours to a few days. Less often: tingling, small bumps or temporary darkening of the skin. Blisters or burns are rare.</p></details>
-  <details class="rv"><summary>Who should not have it?</summary><p>It is not suitable if you have a pacemaker or other implanted electronic device. Please wait if you are pregnant, or have broken or inflamed skin in the area. Talk to us first about metal implants, chronic conditions, filler or tattoos in the area.</p></details>
-  <details class="rv"><summary>Can I combine it with other treatments?</summary><p>Yes, as part of one plan. It is often paired with EMFACE® for added lift and Dermal Fillers to restore softness. We leave at least 2 weeks between Thermage® FLX and peels, lasers, microneedling or injectables.</p></details>
-  <details class="rv"><summary>How should I prepare?</summary><p>Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days. Avoid sunburn, lasers, peels and microneedling for 2 weeks. Come in with clean, makeup-free skin. Your provider will review your health history and these instructions with you before treatment.</p></details><details class="rv"><summary>What is aftercare like?</summary><p>There’s no downtime, so you can go back to your day right away. Gentle, hydrating skincare for the first week. Skip saunas and intense workouts for a week. Daily sunscreen for a month.</p></details><details class="rv"><summary>When will I see results, and how often should I come in?</summary><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months. Results vary by individual. It’s one session, maintained once a year. Treatment takes about 30–90 minutes, depending on your plan.</p></details><details class="rv"><summary>How much does it cost?</summary><p>It depends on your plan. You’ll get a clear quote at your complimentary consultation.</p></details>
+  <details class="rv"><summary>Does it hurt? Any side effects?</summary><p>Most clients feel warmth and a deep, brief pressure with each pulse. The tip cools your skin, and your provider can adjust the energy to your comfort.</p><p style="margin-top:8px">Mild redness, warmth or swelling that usually settles within hours to a few days. Less often: tingling, small bumps or temporary darkening of the skin. Blisters or burns are rare.</p></details><details class="rv"><summary>Who should not have it?</summary><p>It is not suitable if you have a pacemaker or other implanted electronic device. Please wait if you are pregnant, or have broken or inflamed skin in the area. Talk to us first about metal implants, chronic conditions, filler or tattoos in the area.</p></details><details class="rv"><summary>Can I combine it with other treatments?</summary><p>Yes, as part of one plan. It is often paired with EMFACE® for added lift and Dermal Fillers to restore softness. We leave at least 2 weeks between Thermage® FLX and peels, lasers, microneedling or injectables.</p></details><details class="rv"><summary>What should I know before and after?</summary><p><b>Before:</b> Pause acids, retinol, high-strength vitamin C and exfoliants for 7 days. Avoid sunburn, lasers, peels and microneedling for 2 weeks. Come in with clean, makeup-free skin.</p><p style="margin-top:8px"><b>After:</b> There’s no downtime, so you can go back to your day right away. Gentle, hydrating skincare for the first week. Skip saunas and intense workouts for a week. Daily sunscreen for a month.</p></details><details class="rv"><summary>When will I see results?</summary><p>Skin feels firmer right after treatment. Results build over 1–3 months and keep improving for up to 6 months. Results vary by individual. It’s one session, maintained once a year. Treatment takes about 30–90 minutes, depending on your plan.</p></details>
   </div>
 </div></section>
 
@@ -170,7 +166,7 @@
 <footer class="foot" id="contact">
   <div class="in">
     <div class="top">
-      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil your aura.</p></div>
+      <div><a class="logo" href="home.html" aria-label="AURA Institute home">AURA INSTITUTE</a><p class="tagl">Unveil Your Aura.</p></div>
       <div><h4>Location</h4><p><a href="https://maps.google.com/?q=630+Fifth+Avenue+New+York+NY+10111" target="_blank" rel="noopener">630 Fifth Avenue, Suite 1812<br>Rockefeller Center<br>New York, NY 10111</a></p></div>
       <div><h4>Hours</h4><p>Monday – Friday · 9 am – 8 pm<br>Saturday · 10 am – 6 pm<br>Sunday · Closed</p></div>
       <div><h4>Contact</h4><p data-confirm>(212) [XXX-XXXX]<br>hello@[aurainstitute].com<br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
