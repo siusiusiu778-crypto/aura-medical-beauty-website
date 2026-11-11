@@ -504,3 +504,6 @@ span[data-confirm]{border-bottom:1px dashed var(--clay)}
   #faq summary{font-size:18px}
   #faq details{padding-block:12px}
 }
+
+/* "How it works" photo cards can name the treatment area next to the number, e.g. 01 · Eyes */
+.bcards.photo h3[data-zone]::before{content:counter(bc,decimal-leading-zero) "  \00B7  " attr(data-zone);white-space:pre;text-transform:uppercase}
