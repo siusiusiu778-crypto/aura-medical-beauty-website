@@ -128,6 +128,24 @@
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startFit); else startFit();
 
+  /* back to top: fixed bottom-right button, appears after the first screen */
+  function addTop(){
+    if(document.querySelector('.totop')) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'totop'; b.setAttribute('aria-label', 'Back to top');
+    b.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg>';
+    b.addEventListener('click', function(){
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'});
+    });
+    document.body.appendChild(b);
+    var tick = false;
+    function upd(){ tick = false; b.classList.toggle('on', window.scrollY > window.innerHeight * .8); }
+    window.addEventListener('scroll', function(){ if(!tick){ tick = true; requestAnimationFrame(upd); } }, {passive: true});
+    upd();
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addTop); else addTop();
+
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', init);
   } else {

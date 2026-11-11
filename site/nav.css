@@ -46,9 +46,9 @@ html{overflow-x:hidden}
 
 /* nav bar: category dropdowns + Book Now */
 #site-header .navbar{background:rgba(248,240,235,.92);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);border-top:1px solid var(--nb-line);border-bottom:1px solid var(--nb-line);position:sticky;top:env(safe-area-inset-top,0px);z-index:80}
-#site-header .navbar .in{max-width:1320px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,52px)}
-@media(min-width:760px){#site-header .navbar .in{padding-inline:max(48px,env(safe-area-inset-left,0px))}}
-#site-header .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(14px,2.6vw,52px);font-size:clamp(10px,.98vw,12.5px);font-weight:500;letter-spacing:.2em;text-transform:uppercase;flex:1}
+#site-header .navbar .in{max-width:1320px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.8vw,40px)}
+@media(min-width:760px){#site-header .navbar .in{padding-inline:max(clamp(20px,3vw,48px),env(safe-area-inset-left,0px))}}
+#site-header .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(10px,1.6vw,40px);font-size:clamp(10px,.98vw,12.5px);font-weight:500;letter-spacing:.15em;text-transform:uppercase;flex:1}
 #site-header .navbar ul.top>li{position:relative}
 #site-header .navbar ul.top>li>button,#site-header .navbar ul.top>li>a{display:block;padding:25px 0 17px;position:relative;white-space:nowrap}
 #site-header .navbar ul.top>li>button::after,#site-header .navbar ul.top>li>a::after{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transition:transform .7s}
@@ -68,6 +68,8 @@ html{overflow-x:hidden}
 #site-header .mega.small{left:auto;right:auto;width:270px;padding:8px 22px;border:1px solid var(--nb-line);box-shadow:0 14px 30px rgba(20,14,11,.14)}
 #site-header .mega.small a{padding:13px 0;border-bottom:1px solid var(--nb-line);color:var(--nb-fg);font-size:14.5px}
 #site-header .mega.small a:last-child{border-bottom:0}
+/* eight categories + Book Now must fit on one line from 1001px up: tighter tracking and gaps, a touch wider on big screens */
+@media(min-width:1500px){#site-header .navbar ul.top{letter-spacing:.18em}}
 @media(max-width:1000px){#site-header .navbar{display:none}#site-header .hamb{display:flex}}
 
 /* mobile slide-in menu */
@@ -87,3 +89,11 @@ html{overflow-x:hidden}
 #site-header .mapanel .mgrp h5{margin:10px 0 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--nb-muted)}
 #site-header .mapanel a{display:block;padding:9px 0;font-size:14.5px;color:var(--nb-fg);border-bottom:1px solid rgba(227,207,196,.5)}
 #site-header .mnlink{display:block;padding:16px 0;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--nb-line)}
+
+/* back to top: a small round button, bottom right on every page, shown once you have scrolled down */
+.totop{position:fixed;z-index:80;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid rgba(251,244,239,.25);background:#2F221D;color:#FBF4EF;display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .35s,transform .35s,visibility 0s .35s,background .3s;box-shadow:0 10px 24px -12px rgba(47,34,29,.5)}
+.totop.on{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .35s,background .3s}
+.totop:hover{background:#B07E6B}
+.totop:focus-visible{outline:2px solid #B07E6B;outline-offset:3px}
+.totop svg{width:16px;height:16px}
+@media (prefers-reduced-motion: reduce){.totop{transition:none}}
