@@ -88,25 +88,44 @@
 .fbcta .note{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
 /* under the face: the live reading, then five lines, one per proportion (the active one draws in clay) */
 .fbtop{position:absolute;z-index:3;left:max(clamp(20px,4vw,64px),env(safe-area-inset-left,0px));right:max(clamp(20px,4vw,64px),env(safe-area-inset-right,0px));bottom:clamp(24px,3.2vh,40px)}
-.fbhero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;z-index:2;pointer-events:none;background:linear-gradient(0deg,rgba(230,213,203,.92),rgba(230,213,203,.6) 45%,rgba(230,213,203,0))}
-.fbread{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
-.fbread b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(20px,1.7vw,24px);letter-spacing:0;text-transform:none;color:var(--fg)}
-.fbcap{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.fbchips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,28px);margin-top:16px}
-.fbchips button{all:unset;cursor:pointer;display:block;padding-top:12px;border-top:1px solid rgba(47,34,29,.25);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);position:relative;transition:color .3s}
-.fbchips button::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--clay)}
+.fbhero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:2;pointer-events:none;background:linear-gradient(0deg,rgba(230,213,203,.97),rgba(230,213,203,.88) 30%,rgba(230,213,203,.5) 60%,rgba(230,213,203,0))}
+.fbtop{display:flex;align-items:flex-end;gap:clamp(28px,4vw,72px)}
+.fbread{flex:none;width:clamp(240px,23vw,330px);margin:0}
+.fbstep{margin:0;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.fbtitle{margin:8px 0 0;font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(28px,2.3vw,34px);line-height:1.05;color:var(--fg)}
+.fbdesc{margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--ink);min-height:3.1em}
+.fbnav{flex:1;min-width:0;display:flex;align-items:center;gap:clamp(14px,1.6vw,24px)}
+.fbchips{flex:1;min-width:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.fbchips button{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;padding:16px 0 6px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:rgba(47,34,29,.55);transition:color .3s}
+.fbchips button i{font-style:normal;margin-right:8px}
+.fbchips button::before,.fbchips button::after{content:"";position:absolute;left:0;top:0;height:2px}
+.fbchips button::before{right:0;background:rgba(47,34,29,.16);transition:background .3s}
+.fbchips button::after{width:0;background:#2F221D}
+.fbchips button.done::after{width:100%;background:rgba(47,34,29,.55)}
 .fbchips button:hover{color:var(--fg)}
-.fbchips button[aria-pressed="true"]{color:var(--clay)}
-.fbchips button[aria-pressed="true"]::before{animation:fbLine 4.8s linear forwards}
+.fbchips button:hover::before{background:rgba(47,34,29,.34)}
+.fbchips button[aria-pressed="true"]{color:var(--fg)}
+.fbchips button[aria-pressed="true"]::after{width:100%}
+.fbchips.auto button[aria-pressed="true"]::after{width:0;animation:fbLine 4.8s linear forwards}
 @keyframes fbLine{to{width:100%}}
-.fbchips button:focus-visible{outline:1px solid var(--clay);outline-offset:4px}
-@media (prefers-reduced-motion: reduce){.fbchips button[aria-pressed="true"]::before{animation:none;width:100%}}
+.fbchips button:focus-visible,.fbarrow:focus-visible{outline:1px solid var(--clay);outline-offset:4px}
+.fbarrow{all:unset;box-sizing:border-box;cursor:pointer;flex:none;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(47,34,29,.3);border-radius:50%;transition:background .3s,border-color .3s}
+.fbarrow:hover{background:#2F221D;border-color:#2F221D}
+.fbarrow svg{width:16px;height:16px;stroke:var(--fg);fill:none;stroke-width:1.4;transition:stroke .3s}
+.fbarrow:hover svg{stroke:#FFFAF6}
+@media (prefers-reduced-motion: reduce){.fbchips.auto button[aria-pressed="true"]::after{animation:none;width:100%}}
 @media(max-width:900px){
   .fbhero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column}
   .fbhero::after{display:none}
   .fbmap{position:relative;width:100%;height:auto;-webkit-mask-image:none;mask-image:none;order:1}
   .fbtop{position:relative;order:2;right:auto;bottom:auto;width:auto;padding:20px 20px 0}
-  .fbchips button{font-size:9.5px;letter-spacing:.1em}
+  .fbtop{display:block}
+  .fbread{width:auto}
+  .fbnav{margin-top:18px;gap:10px}
+  .fbarrow{width:40px;height:40px}
+  .fbchips{display:flex;overflow-x:auto;scrollbar-width:none;gap:14px}
+  .fbchips::-webkit-scrollbar{display:none}
+  .fbchips button{flex:none;min-width:92px;letter-spacing:.14em}
   .fbhero .fbin{display:contents}
   .fbcopy{order:3;padding:34px 20px 48px}
   .fbhero .big{white-space:normal;font-size:clamp(42px,11vw,60px)}
@@ -141,7 +160,9 @@
 .fbrv .feat blockquote{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,42px);line-height:1.25;color:var(--fg)}
 .fbrv figcaption{margin-top:18px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .fbrv .rvrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3.4vw,56px);max-width:1180px;margin:clamp(40px,4.4vw,64px) auto 0;text-align:left}
-.fbrv .rvrow figure{margin:0;padding-top:22px;border-top:1px solid rgba(47,34,29,.32);display:grid;grid-template-rows:1fr auto}
+.fbrv .rvrow figure{margin:0;padding-top:22px;border-top:1px solid rgba(47,34,29,.32);display:grid;grid-template-rows:auto 1fr auto}
+.fbrv .stars{display:flex;gap:4px;margin:0 0 16px}
+.fbrv .stars svg{width:14px;height:14px;fill:#B07E6B}
 .fbrv .rvrow figcaption span{display:block}
 .fbrv .rvrow figcaption span+span{margin-top:4px;color:var(--clay)}
 .fbrv .rvrow blockquote{margin:0;font-family:var(--serif);font-size:17.5px;line-height:1.4;color:var(--fg)}
@@ -170,10 +191,15 @@
 <section class="fbhero" id="top">
   <div class="fbmap"><svg class="fbsvg" viewBox="0 100 1080 1070" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A face with a proportion map: landmark points and guide lines"><g class="scene" id="fbFront"><rect x="-400" y="-200" width="1880" height="1600" fill="#EAD9CF"/><image href="fb-front.webp" x="-1.2" y="67.7" width="1045.0" height="1143.5"/><g class="mesh"><g class="ml"><line x1="520.7" y1="308.3" x2="421.7" y2="312.0" style="--i:0"/><line x1="520.7" y1="308.3" x2="619.6" y2="306.2" style="--i:1"/><line x1="520.7" y1="308.3" x2="447.7" y2="465.7" style="--i:2"/><line x1="520.7" y1="308.3" x2="598.0" y2="471.5" style="--i:3"/><line x1="520.7" y1="308.3" x2="511.1" y2="199.1" style="--i:4"/><line x1="421.7" y1="312.0" x2="228.8" y2="492.1" style="--i:5"/><line x1="421.7" y1="312.0" x2="447.7" y2="465.7" style="--i:6"/><line x1="421.7" y1="312.0" x2="511.1" y2="199.1" style="--i:7"/><line x1="619.6" y1="306.2" x2="598.0" y2="471.5" style="--i:8"/><line x1="619.6" y1="306.2" x2="825.2" y2="491.0" style="--i:9"/><line x1="619.6" y1="306.2" x2="511.1" y2="199.1" style="--i:10"/><line x1="187.8" y1="572.4" x2="228.8" y2="492.1" style="--i:11"/><line x1="187.8" y1="572.4" x2="309.2" y2="571.3" style="--i:12"/><line x1="187.8" y1="572.4" x2="221.1" y2="650.1" style="--i:13"/><line x1="187.8" y1="572.4" x2="201.3" y2="644.2" style="--i:14"/><line x1="881.9" y1="563.0" x2="825.2" y2="491.0" style="--i:15"/><line x1="881.9" y1="563.0" x2="757.6" y2="568.1" style="--i:16"/><line x1="881.9" y1="563.0" x2="840.0" y2="642.0" style="--i:17"/><line x1="881.9" y1="563.0" x2="874.7" y2="634.4" style="--i:18"/><line x1="228.8" y1="492.1" x2="447.7" y2="465.7" style="--i:19"/><line x1="228.8" y1="492.1" x2="309.2" y2="571.3" style="--i:20"/><line x1="447.7" y1="465.7" x2="598.0" y2="471.5" style="--i:21"/><line x1="447.7" y1="465.7" x2="309.2" y2="571.3" style="--i:22"/><line x1="447.7" y1="465.7" x2="447.3" y2="590.2" style="--i:23"/><line x1="447.7" y1="465.7" x2="527.1" y2="558.5" style="--i:24"/><line x1="598.0" y1="471.5" x2="825.2" y2="491.0" style="--i:25"/><line x1="598.0" y1="471.5" x2="615.0" y2="591.6" style="--i:26"/><line x1="598.0" y1="471.5" x2="757.6" y2="568.1" style="--i:27"/><line x1="598.0" y1="471.5" x2="527.1" y2="558.5" style="--i:28"/><line x1="825.2" y1="491.0" x2="757.6" y2="568.1" style="--i:29"/><line x1="309.2" y1="571.3" x2="447.3" y2="590.2" style="--i:30"/><line x1="309.2" y1="571.3" x2="452.3" y2="813.8" style="--i:31"/><line x1="309.2" y1="571.3" x2="221.1" y2="650.1" style="--i:32"/><line x1="447.3" y1="590.2" x2="527.1" y2="558.5" style="--i:33"/><line x1="447.3" y1="590.2" x2="527.1" y2="804.5" style="--i:34"/><line x1="447.3" y1="590.2" x2="452.3" y2="813.8" style="--i:35"/><line x1="615.0" y1="591.6" x2="757.6" y2="568.1" style="--i:36"/><line x1="615.0" y1="591.6" x2="527.1" y2="558.5" style="--i:37"/><line x1="615.0" y1="591.6" x2="527.1" y2="804.5" style="--i:38"/><line x1="615.0" y1="591.6" x2="609.1" y2="813.4" style="--i:39"/><line x1="757.6" y1="568.1" x2="609.1" y2="813.4" style="--i:40"/><line x1="757.6" y1="568.1" x2="840.0" y2="642.0" style="--i:41"/><line x1="527.1" y1="558.5" x2="527.1" y2="804.5" style="--i:42"/><line x1="527.1" y1="804.5" x2="452.3" y2="813.8" style="--i:43"/><line x1="527.1" y1="804.5" x2="609.1" y2="813.4" style="--i:44"/><line x1="527.1" y1="804.5" x2="536.6" y2="876.4" style="--i:45"/><line x1="452.3" y1="813.8" x2="221.1" y2="650.1" style="--i:46"/><line x1="452.3" y1="813.8" x2="431.2" y2="935.1" style="--i:47"/><line x1="452.3" y1="813.8" x2="536.6" y2="876.4" style="--i:48"/><line x1="452.3" y1="813.8" x2="296.5" y2="940.7" style="--i:49"/><line x1="609.1" y1="813.4" x2="840.0" y2="642.0" style="--i:50"/><line x1="609.1" y1="813.4" x2="652.2" y2="926.7" style="--i:51"/><line x1="609.1" y1="813.4" x2="536.6" y2="876.4" style="--i:52"/><line x1="609.1" y1="813.4" x2="791.7" y2="932.0" style="--i:53"/><line x1="221.1" y1="650.1" x2="296.5" y2="940.7" style="--i:54"/><line x1="221.1" y1="650.1" x2="201.3" y2="644.2" style="--i:55"/><line x1="840.0" y1="642.0" x2="791.7" y2="932.0" style="--i:56"/><line x1="840.0" y1="642.0" x2="874.7" y2="634.4" style="--i:57"/><line x1="431.2" y1="935.1" x2="536.6" y2="876.4" style="--i:58"/><line x1="431.2" y1="935.1" x2="540.6" y2="991.4" style="--i:59"/><line x1="431.2" y1="935.1" x2="296.5" y2="940.7" style="--i:60"/><line x1="431.2" y1="935.1" x2="399.8" y2="1064.5" style="--i:61"/><line x1="652.2" y1="926.7" x2="536.6" y2="876.4" style="--i:62"/><line x1="652.2" y1="926.7" x2="540.6" y2="991.4" style="--i:63"/><line x1="652.2" y1="926.7" x2="791.7" y2="932.0" style="--i:64"/><line x1="652.2" y1="926.7" x2="679.1" y2="1059.7" style="--i:65"/><line x1="536.6" y1="876.4" x2="540.6" y2="991.4" style="--i:66"/><line x1="540.6" y1="991.4" x2="399.8" y2="1064.5" style="--i:67"/><line x1="540.6" y1="991.4" x2="679.1" y2="1059.7" style="--i:68"/><line x1="540.6" y1="991.4" x2="535.3" y2="1117.8" style="--i:69"/><line x1="296.5" y1="940.7" x2="399.8" y2="1064.5" style="--i:70"/><line x1="791.7" y1="932.0" x2="679.1" y2="1059.7" style="--i:71"/><line x1="399.8" y1="1064.5" x2="535.3" y2="1117.8" style="--i:72"/><line x1="679.1" y1="1059.7" x2="535.3" y2="1117.8" style="--i:73"/></g><g class="md"><circle cx="520.7" cy="308.3" r="6" style="--i:0"/><circle cx="421.7" cy="312.0" r="6" style="--i:1"/><circle cx="619.6" cy="306.2" r="6" style="--i:2"/><circle cx="187.8" cy="572.4" r="6" style="--i:3"/><circle cx="881.9" cy="563.0" r="6" style="--i:4"/><circle cx="228.8" cy="492.1" r="6" style="--i:5"/><circle cx="447.7" cy="465.7" r="6" style="--i:6"/><circle cx="598.0" cy="471.5" r="6" style="--i:7"/><circle cx="825.2" cy="491.0" r="6" style="--i:8"/><circle cx="309.2" cy="571.3" r="6" style="--i:9"/><circle cx="447.3" cy="590.2" r="6" style="--i:10"/><circle cx="615.0" cy="591.6" r="6" style="--i:11"/><circle cx="757.6" cy="568.1" r="6" style="--i:12"/><circle cx="527.1" cy="558.5" r="6" style="--i:13"/><circle cx="527.1" cy="804.5" r="6" style="--i:14"/><circle cx="452.3" cy="813.8" r="6" style="--i:15"/><circle cx="609.1" cy="813.4" r="6" style="--i:16"/><circle cx="221.1" cy="650.1" r="6" style="--i:17"/><circle cx="840.0" cy="642.0" r="6" style="--i:18"/><circle cx="431.2" cy="935.1" r="6" style="--i:19"/><circle cx="652.2" cy="926.7" r="6" style="--i:20"/><circle cx="536.6" cy="876.4" r="6" style="--i:21"/><circle cx="540.6" cy="991.4" r="6" style="--i:22"/><circle cx="296.5" cy="940.7" r="6" style="--i:23"/><circle cx="791.7" cy="932.0" r="6" style="--i:24"/><circle cx="399.8" cy="1064.5" r="6" style="--i:25"/><circle cx="679.1" cy="1059.7" r="6" style="--i:26"/><circle cx="535.3" cy="1117.8" r="6" style="--i:27"/><circle cx="201.3" cy="644.2" r="6" style="--i:28"/><circle cx="874.7" cy="634.4" r="6" style="--i:29"/><circle cx="511.1" cy="199.1" r="6" style="--i:30"/></g></g><g class="ov" data-ov="thirds"><g><line class="gd" x1="151.6" y1="199.0" x2="904.0" y2="187.8"/><line class="gd" x1="157.3" y1="462.3" x2="906.8" y2="452.9"/><line class="gd" x1="174.5" y1="809.9" x2="898.1" y2="799.6"/><line class="gd" x1="180.3" y1="1116.9" x2="900.6" y2="1104.1"/><line class="gk" x1="920.6" y1="195.2" x2="922.7" y2="444.0"/><line class="gk" x1="922.2" y1="459.4" x2="914.2" y2="790.9"/><line class="gk" x1="914.1" y1="806.8" x2="916.3" y2="1095.4"/><circle class="kd" cx="511.0" cy="199.0" r="7"/></g><g class="tag"><rect x="160.2" y="158.0" width="131.6" height="34" rx="17"/><text x="226.0" y="182.0" text-anchor="middle">Hairline</text></g><g class="tag"><rect x="164.2" y="424.3" width="78.8" height="34" rx="17"/><text x="203.6" y="448.3" text-anchor="middle">Brow</text></g><g class="tag"><rect x="184.0" y="770.7" width="144.8" height="34" rx="17"/><text x="256.4" y="794.7" text-anchor="middle">Nose base</text></g><g class="tag"><rect x="186.7" y="1075.5" width="78.8" height="34" rx="17"/><text x="226.1" y="1099.5" text-anchor="middle">Chin</text></g></g><g class="ov" data-ov="fifths"><g><line class="gd" x1="178.9" y1="428.9" x2="193.5" y2="697.6"/><line class="gd" x1="298.0" y1="430.5" x2="310.9" y2="702.9"/><line class="gd" x1="443.1" y1="434.0" x2="449.4" y2="713.2"/><line class="gd" x1="611.6" y1="430.6" x2="618.3" y2="711.2"/><line class="gd" x1="760.7" y1="424.0" x2="756.6" y2="698.2"/><line class="gd" x1="889.6" y1="419.0" x2="880.8" y2="689.5"/><line class="gk" x1="192.7" y1="677.3" x2="880.8" y2="669.8"/><circle class="kd" cx="192.7" cy="677.3" r="7"/><circle class="kd" cx="310.4" cy="682.6" r="7"/><circle class="kd" cx="448.6" cy="692.3" r="7"/><circle class="kd" cx="618.0" cy="690.6" r="7"/><circle class="kd" cx="756.6" cy="678.4" r="7"/><circle class="kd" cx="880.8" cy="669.8" r="7"/></g></g><g class="ov" data-ov="lips"><g><line class="gd" x1="357.9" y1="931.7" x2="718.2" y2="925.9"/><line class="gk" x1="430.5" y1="1026.8" x2="652.2" y2="1023.0"/><line class="gd" x1="431.2" y1="932.4" x2="430.5" y2="1026.8"/><line class="gd" x1="652.4" y1="929.5" x2="652.2" y2="1023.0"/><line class="gk" x1="687.2" y1="860.8" x2="689.8" y2="911.3"/><line class="gk" x1="690.1" y1="922.6" x2="690.3" y2="985.6"/><circle class="kd" cx="431.2" cy="932.4" r="7"/><circle class="kd" cx="652.4" cy="929.5" r="7"/></g><g class="tag"><rect x="702.3" y="855.2" width="144.8" height="34" rx="17"/><text x="774.7" y="879.2" text-anchor="middle">Upper lip</text></g><g class="tag"><rect x="703.0" y="944.9" width="144.8" height="34" rx="17"/><text x="775.4" y="968.9" text-anchor="middle">Lower lip</text></g><g class="tag"><rect x="457.4" y="1055.5" width="171.2" height="34" rx="17"/><text x="543.0" y="1079.5" text-anchor="middle">Smile width</text></g></g><g class="ov" data-ov="contour"><path class="gk" d="M187.8 572.4 L201.3 644.2 L216.0 718.0 L236.0 795.2 L264.0 875.8 L296.5 940.7 L329.4 989.1 L367.9 1033.1 L399.8 1064.5 L434.1 1092.4 L476.7 1111.7 L535.3 1117.8 L594.9 1110.2 L640.3 1089.0 L679.1 1059.7 L714.8 1027.3 L756.2 982.1 L791.7 932.0 L823.5 866.1 L848.1 785.2 L864.2 707.7 L874.7 634.4 L881.9 563.0" fill="none"/><circle class="kd" cx="298.9" cy="741.9" r="8"/><circle class="kd" cx="760.9" cy="735.9" r="8"/><circle class="kd" cx="296.5" cy="940.7" r="8"/><circle class="kd" cx="791.7" cy="932.0" r="8"/><circle class="kd" cx="535.3" cy="1117.8" r="8"/><g class="tag"><rect x="780.1" y="701.6" width="144.8" height="34" rx="17"/><text x="852.5" y="725.6" text-anchor="middle">Cheekbone</text></g><g class="tag"><rect x="809.2" y="921.2" width="118.4" height="34" rx="17"/><text x="868.4" y="945.2" text-anchor="middle">Jawline</text></g><g class="tag"><rect x="568.5" y="1094.0" width="78.8" height="34" rx="17"/><text x="607.9" y="1118.0" text-anchor="middle">Chin</text></g></g></g><g class="scene off" id="fbSide"><rect x="-400" y="-200" width="1880" height="1600" fill="#E0D0C4"/><image href="fb-side.webp" x="0" y="-22.9" width="1080" height="1315.8"/><g class="ov" data-ov="profile"><line class="gk" x1="823.4" y1="560.0" x2="698.6" y2="1000.8"/><circle class="kd" cx="804.3" cy="627.4" r="8"/><line class="gd" x1="816.3" y1="627.4" x2="874.3" y2="627.4"/><g class="tag"><rect x="882.3" y="610.4" width="78.8" height="34" rx="17"/><text x="921.7" y="634.4" text-anchor="middle">Nose</text></g><circle class="kd" cx="796.7" cy="766.2" r="8"/><line class="gd" x1="808.7" y1="766.2" x2="874.3" y2="766.2"/><g class="tag"><rect x="882.3" y="749.2" width="78.8" height="34" rx="17"/><text x="921.7" y="773.2" text-anchor="middle">Lips</text></g><circle class="kd" cx="714.9" cy="943.0" r="8"/><line class="gd" x1="726.9" y1="943.0" x2="874.3" y2="943.0"/><g class="tag"><rect x="882.3" y="926.0" width="78.8" height="34" rx="17"/><text x="921.7" y="950.0" text-anchor="middle">Chin</text></g><g class="tag"><rect x="814.3" y="513.0" width="184.4" height="34" rx="17"/><text x="906.5" y="537.0" text-anchor="middle">Profile line</text></g></g></g></svg></div>
   <div class="fbtop rv" style="--d:.6s">
-    <p class="fbread"><span id="fbLabel">Face map</span><b id="fbValue">Your proportions</b></p>
-    <p class="fbcap" id="fbCap" aria-live="polite">Every face starts as a map: the points and lines we use to read how your features relate to each other.</p>
-    <div class="fbchips" role="group" aria-label="Show a proportion">
-      <button type="button" data-mode="thirds" aria-pressed="false">Thirds</button><button type="button" data-mode="fifths" aria-pressed="false">Fifths</button><button type="button" data-mode="profile" aria-pressed="false">Profile</button><button type="button" data-mode="lips" aria-pressed="false">Lips</button><button type="button" data-mode="contour" aria-pressed="false">Contour</button>
+    <div class="fbread">
+      <p class="fbstep"><span id="fbStep">Your face map</span> · Explore your map</p>
+      <p class="fbtitle" id="fbLabel">Your proportions</p>
+      <p class="fbdesc" id="fbCap" aria-live="polite">Every face starts as a map: the points and lines we use to read how your features relate.</p>
+    </div>
+    <div class="fbnav">
+      <button type="button" class="fbarrow" data-step="-1" aria-label="Previous proportion"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+      <div class="fbchips auto" role="group" aria-label="Show a proportion"><button type="button" data-mode="thirds" aria-pressed="false"><i>01</i>Thirds</button><button type="button" data-mode="fifths" aria-pressed="false"><i>02</i>Fifths</button><button type="button" data-mode="profile" aria-pressed="false"><i>03</i>Profile</button><button type="button" data-mode="lips" aria-pressed="false"><i>04</i>Lips</button><button type="button" data-mode="contour" aria-pressed="false"><i>05</i>Contour</button></div>
+      <button type="button" class="fbarrow" data-step="1" aria-label="Next proportion"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button>
     </div>
   </div>
   <div class="fbin">
@@ -200,9 +226,9 @@
   <div class="head"><p class="eyebrow rv">The AURA aesthetic</p><h2 class="rv" style="--d:.08s">Proportion, <em>not a template</em></h2></div>
   <p class="intro rv" style="--d:.14s">There is no single standard of beauty. Trends fade; your style stays.<i>We design to bring your style forward, never to replace it.</i></p>
   <div class="fbrows">
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-scale.webp" alt="A woman facing the camera, her features in balance" loading="lazy"></div><div class="rv"><span class="n">01</span><span class="k">Scale</span><h3>The scale of your features</h3><p>How large or delicate your features are, and how they sit together.</p></div></div>
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-line2.webp" alt="A woman in profile, showing the line of her nose, lips and jaw" loading="lazy"></div><div class="rv"><span class="n">02</span><span class="k">Line</span><h3>The line of your contours</h3><p>Whether your face reads as soft and curved, or straight and defined.</p></div></div>
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-contrast.webp" alt="A woman in warm light, with soft shadow across her face" loading="lazy"></div><div class="rv"><span class="n">03</span><span class="k">Contrast</span><h3>The contrast of your look</h3><p>The light and shadow of your face, from bold to soft.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-scale2.jpg" alt="A woman with long brown hair looking to camera, her features in easy balance" loading="lazy"></div><div class="rv"><span class="n">01</span><span class="k">Scale</span><h3>The scale of your features</h3><p>How large or delicate your features are, and how they sit together.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-line2.jpg" alt="A woman smiling in a softly lit treatment room, the line of her face and shoulder relaxed" loading="lazy"></div><div class="rv"><span class="n">02</span><span class="k">Line</span><h3>The line of your contours</h3><p>Whether your face reads as soft and curved, or straight and defined.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-contrast2.jpg" alt="A woman with blonde hair in warm light, glancing to the side" loading="lazy"></div><div class="rv"><span class="n">03</span><span class="k">Contrast</span><h3>The contrast of your look</h3><p>The light and shadow of your face, from bold to soft.</p></div></div>
   </div>
 </div></section>
 
@@ -212,9 +238,9 @@
 <section class="tsec alt" id="reviews"><div class="wrap fbrv">
   <div class="head"><p class="eyebrow rv">Client stories</p><h2 class="rv" style="--d:.08s">In their <em>words</em></h2></div>
   <div class="rvrow">
-    <figure class="rv"><blockquote>“I came in asking about lip filler and left with a completely different plan. They showed me how my lips and chin work together, and the small change they suggested made all the difference.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint + Chin Balance</span></figcaption></figure>
-    <figure class="rv" style="--d:.1s"><blockquote>“Zero pressure. They walked me through what to do now and what could wait, and I never felt upsold. I finally understood my own face.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint</span></figcaption></figure>
-    <figure class="rv" style="--d:.2s"><blockquote>“My friends keep telling me I look rested. Nobody can tell I had anything done, which is exactly what I wanted.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint + Botox® &amp; Xeomin®</span></figcaption></figure>
+    <figure class="rv"><p class="stars" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg></p><blockquote>“I came in asking about lip filler and left with a completely different plan. They showed me how my lips and chin work together, and the small change they suggested made all the difference.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint + Chin Balance</span></figcaption></figure>
+    <figure class="rv" style="--d:.1s"><p class="stars" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg></p><blockquote>“Zero pressure. They walked me through what to do now and what could wait, and I never felt upsold. I finally understood my own face.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint</span></figcaption></figure>
+    <figure class="rv" style="--d:.2s"><p class="stars" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z"/></svg></p><blockquote>“My friends keep telling me I look rested. Nobody can tell I had anything done, which is exactly what I wanted.”</blockquote><figcaption><span>Client name</span><span>Facial Blueprint + Botox® &amp; Xeomin®</span></figcaption></figure>
   </div>
   <a class="btn rv" href="home.html#book">Book a Consultation</a>
 </div></section>
@@ -246,20 +272,31 @@
   };
   var svg = document.querySelector('.fbsvg'), front = document.getElementById('fbFront'), side = document.getElementById('fbSide');
   var btns = [].slice.call(document.querySelectorAll('.fbchips button'));
-  var L = document.getElementById('fbLabel'), V = document.getElementById('fbValue'), C = document.getElementById('fbCap');
+  var L = document.getElementById('fbLabel'), S = document.getElementById('fbStep'), C = document.getElementById('fbCap');
   var order = ['thirds', 'fifths', 'profile', 'lips', 'contour'], i = -1, timer = null;
   function show(mode){
     var m = M[mode];
-    btns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-mode') === mode ? 'true' : 'false'); });
+    var k = order.indexOf(mode);
+    btns.forEach(function(b, j){ b.setAttribute('aria-pressed', j === k ? 'true' : 'false'); b.classList.toggle('done', j < k); });
     [].slice.call(svg.querySelectorAll('.ov')).forEach(function(g){ g.classList.toggle('on', g.getAttribute('data-ov') === mode); });
     svg.classList.add('focus');
     front.classList.toggle('off', m[3] !== 'front'); side.classList.toggle('off', m[3] !== 'side');
-    L.textContent = m[0]; V.textContent = m[1]; C.textContent = m[2]; i = order.indexOf(mode);
+    L.textContent = m[0]; S.textContent = '0' + (k + 1) + ' / 0' + order.length; C.textContent = m[2]; i = k;
   }
-  btns.forEach(function(b){ b.addEventListener('click', function(){ clearInterval(timer); timer = null; show(b.getAttribute('data-mode')); }); });
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // the full map draws in first, then the proportions take turns until someone picks one
-  if(!reduce){ setTimeout(function(){ if(timer !== null){ show(order[0]); } }, 3200); timer = setInterval(function(){ if(i >= 0 && !document.hidden){ show(order[(i + 1) % order.length]); } }, 4800); }
+  var chips = document.querySelector('.fbchips'), reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // proportions take turns on their own; a click jumps to one and the tour carries on from there
+  function restart(){
+    clearInterval(timer); timer = null;
+    if(reduce){ return; }
+    chips.classList.remove('auto'); void chips.offsetWidth; chips.classList.add('auto');
+    timer = setInterval(function(){ if(!document.hidden){ show(order[(i + 1) % order.length]); restartBar(); } }, 4800);
+  }
+  function restartBar(){ chips.classList.remove('auto'); void chips.offsetWidth; chips.classList.add('auto'); }
+  function pick(mode){ show(mode); restart(); var b = chips.querySelector('[data-mode="' + mode + '"]'); if(b && chips.scrollWidth > chips.clientWidth){ chips.scrollTo({ left: chips.scrollLeft + b.getBoundingClientRect().left - chips.getBoundingClientRect().left, behavior: 'smooth' }); } }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ pick(b.getAttribute('data-mode')); }); });
+  [].slice.call(document.querySelectorAll('.fbarrow')).forEach(function(a){ a.addEventListener('click', function(){ var n = order.length; pick(order[((i < 0 ? 0 : i) + +a.getAttribute('data-step') + n) % n]); }); });
+  // the full map draws in first, then the tour starts
+  if(reduce){ show(order[0]); } else { setTimeout(function(){ if(i < 0){ pick(order[0]); } }, 3200); }
 })();
 </script>
 
