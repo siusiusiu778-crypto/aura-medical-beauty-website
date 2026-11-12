@@ -145,9 +145,9 @@ section[id]{scroll-margin-top:72px}
 .benefits .bimg circle.ac{fill:var(--clay)}
 .benefits div:hover .bimg svg{transform:translateY(-4px)}
 /* scroll reveal, as on the homepage */
-.rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0s) * .5)}
 .rv.in{opacity:1;transform:none}
-.rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.14);transition:clip-path 1.3s var(--ease),transform 1.8s var(--ease)!important;transition-delay:var(--d,0s)!important}
+.rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.08);transition:clip-path .7s var(--ease),transform 1s var(--ease)!important;transition-delay:calc(var(--d,0s) * .5)!important}
 .rv-img.in img{clip-path:inset(0);transform:none}
 @media (prefers-reduced-motion: reduce){.rv,.rv-img img,.big .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
 /* jump menu: a small dropdown beside the booking button */
@@ -461,7 +461,7 @@ span[data-confirm]{border-bottom:1px dashed var(--clay)}
   .thero2 .bookbox{order:2;margin-top:auto}
 }
 /* how it works photos: softer, less clinical */
-.bcards.photo .bimg img{filter:blur(.55px) saturate(.96);transform:scale(1.02)}
+.bcards.photo .bimg img{transform:none}
 .bcards.photo>div:hover .bimg img{transform:scale(1.06)}
 .thero2 .bbrow summary::after,.thero2 .bbrow[open] summary::after{content:none!important;display:none}
 .thero2 .bbopts{border-top:1px solid var(--line)}

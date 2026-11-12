@@ -2,7 +2,7 @@
 /* reveal on scroll, as on the homepage */
 (function(){const els=document.querySelectorAll('.rv,.rv-img,.big');
  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
- const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px 12% 0px'});
  els.forEach(e=>io.observe(e));})();
 /* jump menu: close after picking a section, and when clicking elsewhere */
 (function(){const j=document.querySelector('.jump');if(!j)return;
