@@ -150,6 +150,10 @@
 .fbrow h3{margin:0 0 10px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.1;color:var(--fg)}
 .fbrow p{margin:0;max-width:38ch;font-size:15px;line-height:1.75;color:var(--ink)}
 @media(max-width:760px){.fbrow,.fbrow:nth-child(even){grid-template-columns:1fr;gap:22px}.fbrow:nth-child(even) .ph{order:0}}
+/* aesthetic photos: the printed dots twinkle like the hero map */
+.fbrow .ph .dots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.fbrow .ph .dots circle{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));transform-box:fill-box;transform-origin:center;animation:fbTwinkle var(--td,3s) ease-in-out var(--tl,1s) infinite}
+@media (prefers-reduced-motion: reduce){.fbrow .ph .dots circle{animation:none}}
 
 /* Client stories: one featured quote, the rest in a row under rules, then the booking button */
 .fbrv{text-align:center}
@@ -232,9 +236,9 @@
   <div class="head"><p class="eyebrow rv">The AURA aesthetic</p><h2 class="rv" style="--d:.08s">Proportion, <em>not a template</em></h2></div>
   <p class="intro rv" style="--d:.14s">There is no single standard of beauty. Trends fade; your style stays.<i>We design to bring your style forward, never to replace it.</i></p>
   <div class="fbrows">
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-scale4.jpg" alt="A woman facing the camera, with fine dotted lines measuring the width of her eyes, nose and mouth" loading="lazy"></div><div class="rv"><span class="n">01</span><span class="k">Scale</span><h3>The scale of your features</h3><p>How large or delicate your features are, and how they sit together.</p></div></div>
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-line4.jpg" alt="A woman in profile, with fine dotted lines tracing her jawline and cheekbone, and arrows showing the direction of a lift" loading="lazy"></div><div class="rv"><span class="n">02</span><span class="k">Line</span><h3>The line of your contours</h3><p>Whether your face reads as soft and curved, or straight and defined.</p></div></div>
-    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-contrast3.jpg" alt="A woman facing the camera, with sunlight across one side of her face and shadow across the other" loading="lazy"></div><div class="rv"><span class="n">03</span><span class="k">Contrast</span><h3>The contrast of your look</h3><p>The light and shadow of your face, from bold to soft.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-scale5.jpg" alt="A woman facing the camera, with dotted lines measuring the width of her eyes, the width of her nose and the width of her chin" loading="lazy"><svg class="dots" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="503.4" cy="379.8" r="6.5"/><circle cx="692.4" cy="383.2" r="6.5"/><circle cx="846.6" cy="383.2" r="6.5"/><circle cx="1041.9" cy="380.0" r="6.5"/><circle cx="692.6" cy="571.3" r="6.5"/><circle cx="853.8" cy="571.4" r="6.5"/><circle cx="648.1" cy="789.2" r="6.5"/><circle cx="901.1" cy="789.3" r="6.5"/></svg></div><div class="rv"><span class="n">01</span><span class="k">Scale</span><h3>The scale of your features</h3><p>How large or delicate your features are, and how they sit together.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-line5.jpg" alt="A woman in profile, with dotted lines tracing her cheekbone and jawline, and arrows showing the direction of a lift" loading="lazy"><svg class="dots" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="553.7" cy="345.7" r="6.5"/><circle cx="894.5" cy="355.0" r="6.5"/><circle cx="917.8" cy="632.5" r="6.5"/><circle cx="331.6" cy="754.8" r="6.5"/></svg></div><div class="rv"><span class="n">02</span><span class="k">Line</span><h3>The line of your contours</h3><p>Whether your face reads as soft and curved, or straight and defined.</p></div></div>
+    <div class="fbrow"><div class="ph rv-img"><img src="fb-aes-contrast4.jpg" alt="A woman looking over her shoulder, with warm light across her cheek and soft shadow behind" loading="lazy"></div><div class="rv"><span class="n">03</span><span class="k">Contrast</span><h3>The contrast of your look</h3><p>The light and shadow of your face, from bold to soft.</p></div></div>
   </div>
 </div></section>
 
@@ -280,6 +284,7 @@
   // give every point and line its own random tempo and start, so the "analysis" flicker never falls into a pattern
   function rnd(a, b){ return (a + Math.random() * (b - a)).toFixed(2) + 's'; }
   [].slice.call(svg.querySelectorAll('.md circle')).forEach(function(c){ c.style.setProperty('--td', rnd(2.2, 6.5)); c.style.setProperty('--tl', rnd(.8, 6)); });
+  [].slice.call(document.querySelectorAll('.fbrow .dots circle')).forEach(function(c){ c.style.setProperty('--td', rnd(2.2, 6.5)); c.style.setProperty('--tl', rnd(.3, 4)); });
   [].slice.call(svg.querySelectorAll('.ml line')).forEach(function(l){ l.style.setProperty('--sd', rnd(2.5, 7)); l.style.setProperty('--sl', rnd(.8, 7)); });
   [].slice.call(svg.querySelectorAll('.kd')).forEach(function(k){ k.style.setProperty('--pd', rnd(1.6, 3.6)); k.style.setProperty('--pl', '-' + rnd(0, 3)); });
   var btns = [].slice.call(document.querySelectorAll('.fbchips button'));
