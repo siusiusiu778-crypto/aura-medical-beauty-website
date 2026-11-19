@@ -1,0 +1,748 @@
+/* 由 scripts/scope-css.mjs 从 legacy/site 生成，请勿手改；补充样式写在同名 .extra.css */
+
+.pg-membership{/* homepage palette (shell / cocoa / clay), light only on every page */--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--ink:#5B4840;--muted:#9D857B;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--tan:#E7CFC3;--rust:#B07E6B;--cocoa:#2F221D;--clay:#B07E6B;--clay-lt:#E3B7A3;--rose:#E7CFC3;--cream:#FBF4EF;--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif;color-scheme:light}
+.pg-membership *{box-sizing:border-box}.pg-membership{-webkit-text-size-adjust:100%}
+.pg-membership{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pg-membership img{max-width:100%}.pg-membership a{color:inherit}.pg-membership button{font:inherit;cursor:pointer}
+.pg-membership :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pg-membership .wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-membership .wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-membership h1,.pg-membership h2,.pg-membership h3{margin:0;font-weight:400;text-wrap:balance}.pg-membership em{font-family:var(--serif)}
+.pg-membership .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+.pg-membership .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;background:var(--accent);color:var(--on-accent)}
+.pg-membership .btn.line{background:transparent;border-color:currentColor;color:inherit}
+.pg-membership .proto{background:var(--fg);color:var(--bg);font-size:12px;text-align:center;padding:6px 16px}
+.pg-membership .proto a{color:inherit}
+.pg-membership .nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-membership .nav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:none}
+.pg-membership .logo{font-size:24px;font-weight:500;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}.pg-membership .logo span{font-size:.46em;letter-spacing:.3em;text-transform:uppercase;vertical-align:.4em;margin-left:4px}
+.pg-membership .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pg-membership .nav ul a{text-decoration:none;white-space:nowrap}.pg-membership .nav ul .on{border-bottom:1px solid currentColor;padding-bottom:3px}
+.pg-membership .nav .btn{padding:10px 20px;font-size:11.5px;border-radius:999px}
+@media(max-width:1180px){.pg-membership .nav ul{display:none}}
+.pg-membership .crumbs{font-size:12.5px;color:var(--muted);padding-block:18px 0}.pg-membership .crumbs a{text-decoration:none}
+.pg-membership .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);min-height:clamp(380px,38vw,520px);background:var(--tan);color:#241A14;margin-top:18px}
+.pg-membership .hero .tx{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(28px,5vw,72px)}
+.pg-membership .hero h1{font-family:var(--serif);font-size:clamp(44px,5vw,72px);line-height:1}
+.pg-membership .hero p{margin:0;font-size:clamp(16px,1.4vw,19px);max-width:36ch}
+.pg-membership .hero .eyebrow{color:#5a4636}
+.pg-membership .hero .btns{display:flex;gap:12px;flex-wrap:wrap}.pg-membership .hero .btn{background:#241A14;color:#F7F3EE}.pg-membership .hero .btn.line{background:transparent;color:#241A14;border-color:#241A14}
+.pg-membership .hero .ph{position:relative;overflow:hidden;min-height:280px}
+.pg-membership .hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--tan) 0%,rgba(217,180,143,0) 25%)}
+@media(max-width:860px){.pg-membership .hero{grid-template-columns:1fr}.pg-membership .hero .ph{order:-1;aspect-ratio:4/3;min-height:0}.pg-membership .hero .ph::before{background:linear-gradient(0deg,var(--tan),rgba(217,180,143,0) 25%)}}
+.pg-membership section{padding-block:clamp(56px,7vw,96px)}
+.pg-membership .alt{background:var(--surface)}
+.pg-membership .head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,44px);max-width:660px}
+.pg-membership .head h2{font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);line-height:1.05}
+.pg-membership .head p{margin:0;color:var(--muted)}
+.pg-membership .needs{display:grid;gap:clamp(36px,5vw,64px)}
+.pg-membership .need{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.pg-membership .need:nth-child(even) .ph{order:2}
+.pg-membership .need .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
+.pg-membership .need .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .need .tx{display:grid;gap:14px;min-width:0}
+.pg-membership .need h3{font-size:clamp(26px,2.4vw,34px);font-family:var(--serif)}
+.pg-membership .need p{margin:0;color:var(--muted);max-width:50ch}
+.pg-membership .tags{display:flex;flex-wrap:wrap;gap:8px}.pg-membership .tags span{border:1px solid var(--line);padding:6px 12px;font-size:13px;background:var(--card)}
+.pg-membership .need .row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.pg-membership .price{font-variant-numeric:tabular-nums}.pg-membership .price b{font-size:20px;font-weight:600}.pg-membership .price s{color:var(--muted);margin-right:6px}
+.pg-membership .more{font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:860px){.pg-membership .need{grid-template-columns:1fr}.pg-membership .need:nth-child(even) .ph{order:0}}
+.pg-membership .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.pg-membership .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:960px){.pg-membership .grid3,.pg-membership .grid4{grid-template-columns:1fr 1fr}}@media(max-width:600px){.pg-membership .grid3,.pg-membership .grid4{grid-template-columns:1fr}}
+.pg-membership .card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-membership .card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}.pg-membership .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .card .bd{padding:22px;display:grid;gap:10px;align-content:start;flex:1}.pg-membership .card h3{font-size:21px;font-weight:600}.pg-membership .card p{margin:0;font-size:14.5px;color:var(--muted)}
+.pg-membership .card .ft{padding:0 22px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-membership .badge{display:inline-block;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;justify-self:start}
+.pg-membership .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.pg-membership .steps div{border-top:1px solid var(--fg);padding-top:16px;counter-increment:s;display:grid;gap:6px}
+.pg-membership .steps div::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-membership .steps b{font-size:17px;font-weight:600}.pg-membership .steps span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-membership .steps{grid-template-columns:1fr 1fr}}
+.pg-membership .tbl{overflow-x:auto}.pg-membership table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.pg-membership th,.pg-membership td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}.pg-membership th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.pg-membership td.hi{color:var(--rust);font-weight:600}
+.pg-membership .note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.pg-membership details{border-bottom:1px solid var(--line);padding-block:18px}.pg-membership details:first-of-type{border-top:1px solid var(--line)}
+.pg-membership summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px;font-weight:500}.pg-membership summary::-webkit-details-marker{display:none}
+.pg-membership summary::after{content:"+";font-size:22px;line-height:1;color:var(--muted)}.pg-membership details[open] summary::after{content:"–"}.pg-membership details p{margin:12px 0 0;color:var(--muted);max-width:62ch}
+.pg-membership .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}@media(max-width:860px){.pg-membership .split{grid-template-columns:1fr}}
+.pg-membership .ph-empty{aspect-ratio:3/4;background:repeating-linear-gradient(135deg,var(--surface) 0 12px,var(--card) 12px 24px);border:1px dashed var(--line);display:grid;place-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pg-membership .cta{background:var(--accent);color:var(--on-accent);text-align:center}.pg-membership .cta .wrap{display:grid;gap:16px;justify-items:center}
+.pg-membership .cta h2{font-family:var(--serif);font-size:clamp(34px,4vw,52px)}.pg-membership .cta p{margin:0;opacity:.8;max-width:48ch}.pg-membership .cta .btn{background:var(--on-accent);color:var(--accent)}
+.pg-membership footer{padding-block:28px;font-size:12.5px;color:var(--muted);text-align:center}
+.pg-membership .mini{display:grid;gap:4px;font-size:14px}.pg-membership .mini div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-block:6px}
+
+.pg-membership .cat{padding-block:clamp(40px,5vw,72px);border-top:1px solid var(--line)}
+.pg-membership .cat:first-of-type{border-top:0}
+.pg-membership .cat .ch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;margin-bottom:24px}
+.pg-membership .cat h2{font-family:var(--serif);font-size:clamp(30px,3vw,42px);line-height:1.05}
+.pg-membership .cat .ch p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.pg-membership .subnav{position:sticky;top:68px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-membership .subnav .wrap{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding-block:14px}
+.pg-membership .subnav a{text-decoration:none;white-space:nowrap}.pg-membership .subnav a:hover{text-decoration:underline;text-underline-offset:5px}
+.pg-membership .prods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:1100px){.pg-membership .prods{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:820px){.pg-membership .prods{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pg-membership .prods{grid-template-columns:1fr}}
+.pg-membership .prod{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-membership .prod .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--surface)}.pg-membership .prod .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.pg-membership .prod:hover .ph img{transform:scale(1.04)}
+.pg-membership .prod .sale{position:absolute;top:10px;left:10px;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px}
+.pg-membership .prod .bd{padding:16px 16px 6px;display:grid;gap:6px;flex:1;align-content:start}
+.pg-membership .prod h3{font-size:17px;font-weight:600;letter-spacing:.01em}
+.pg-membership .prod p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.pg-membership .prod .meta{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.pg-membership .prod .ft{padding:12px 16px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pg-membership .prod .price{font-size:14px}.pg-membership .prod .price b{font-size:17px}
+.pg-membership .prod .acts{display:flex;gap:12px;align-items:center}
+.pg-membership .prod .bk{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--on-accent);padding:7px 12px}
+
+
+/* AURA Institute · shared Level 3 treatment page template (l3.css)
+   Section order: hero (.thtop/.thero2 + .bookbox + .chips) → How it works (.hhead + .bcards + .fda)
+   → Is it right for you? (.fit5 + .pairnote) → The technology / Our approach / Your visit (.techband + .tsteps)
+   → At a glance (.g4) → FAQ (.faqgrid) → closing band (.closing).
+   Every Level 3 page links this file and l3.js. Change the design here once; it applies to every page. */
+.pg-membership .tsec{padding-block:clamp(56px,8vw,88px)}
+.pg-membership .tsec.alt{background:var(--surface)}
+.pg-membership .thero{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:760px){.pg-membership .thero{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-membership .thero .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
+.pg-membership .thero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-membership .thero .tx{display:grid;gap:16px;min-width:0}
+.pg-membership .thero h1{font-family:var(--serif);font-size:clamp(42px,5vw,68px);line-height:1}
+.pg-membership .thero p.lede{margin:0;color:var(--muted);font-size:17px;max-width:46ch}
+.pg-membership .thero .tlink{font-size:14px;text-decoration:underline;text-underline-offset:4px;width:fit-content}
+@media(max-width:860px){.pg-membership .thero{grid-template-columns:1fr}.pg-membership .thero .ph{order:-1}}
+/* booking box */
+.pg-membership .bookbox{margin-top:8px;display:grid;gap:12px}
+.pg-membership .bbrow{border:1px solid var(--line);background:var(--surface)}
+.pg-membership .bbrow summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:14.5px;font-weight:500}
+.pg-membership .bbrow summary::-webkit-details-marker{display:none}
+.pg-membership .bbrow summary::after{content:none}
+.pg-membership .bbrow summary .chev{transition:transform .3s ease;color:var(--muted)}
+.pg-membership .bbrow[open] summary .chev{transform:rotate(180deg)}
+.pg-membership .bbopts{padding:0 18px 18px;display:grid;gap:10px;border-top:1px solid var(--line);margin-top:0}
+.pg-membership .bbopt{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:14px}
+.pg-membership .bbopt:first-child{padding-top:16px}
+.pg-membership .bbaddr{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.pg-membership .bookbox>.btn{width:100%}
+/* benefits 2x2 */
+.pg-membership .benefits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pg-membership .benefits div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;display:grid;gap:6px}
+.pg-membership .benefits h3{font-size:17px;font-weight:600}
+.pg-membership .benefits p{margin:0;color:var(--muted);font-size:14.5px}
+@media(max-width:640px){.pg-membership .benefits{grid-template-columns:1fr}}
+.pg-membership .notebar{border-left:3px solid var(--rust);padding:14px 18px;margin-top:24px;font-size:14px;color:var(--fg);background:var(--card)}
+/* is it right for you */
+.pg-membership .fit3{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.pg-membership .fit3 .ph{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.pg-membership .fit3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-membership .fitcard{background:var(--card);border:1px solid var(--line);padding:26px;display:grid;gap:14px;align-content:start}
+.pg-membership .fitcard h4{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-membership .fitcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.pg-membership .fitcard li{display:flex;gap:10px}
+.pg-membership .fitcard li::before{content:"✓";color:var(--rust);flex:none}
+.pg-membership .fitcard.no li::before{content:"–"}
+.pg-membership .fitcard .pair{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.pg-membership .fit3{grid-template-columns:1fr 1fr}.pg-membership .fit3>.ph{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:620px){.pg-membership .fit3{grid-template-columns:1fr}}
+/* technology: text left, image right, numbered list via .steps-v */
+.pg-membership .techwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.pg-membership .techwrap .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.pg-membership .techwrap .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-membership .steps-v{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:20px}
+.pg-membership .steps-v li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.pg-membership .steps-v li::before{content:counter(st,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-membership .steps-v b{display:block;font-size:16.5px;font-weight:600;margin-bottom:4px}
+.pg-membership .steps-v span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-membership .techwrap{grid-template-columns:1fr}.pg-membership .techwrap .ph{order:-1}}
+/* at a glance */
+.pg-membership .glance{background:var(--card);border:1px solid var(--line)}
+.pg-membership .glance .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-membership .glance .col{padding:28px 24px;border-right:1px solid var(--line)}
+.pg-membership .glance .col:last-child{border-right:0}
+.pg-membership .glance h5{margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-membership .glance p{margin:0 0 8px;font-size:14px;color:var(--fg);line-height:1.6}
+.pg-membership .glance p:last-child{margin-bottom:0}
+.pg-membership .glance .ft{border-top:1px solid var(--line);padding:16px 24px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.pg-membership .glance .cols{grid-template-columns:1fr 1fr}.pg-membership .glance .col{border-bottom:1px solid var(--line)}.pg-membership .glance .col:nth-child(2n){border-right:0}}
+@media(max-width:560px){.pg-membership .glance .cols{grid-template-columns:1fr}}
+/* faq narrow */
+.pg-membership .faqnarrow{max-width:720px;margin:0 auto}
+/* closing banner */
+.pg-membership .closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
+.pg-membership .closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.pg-membership .closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
+.pg-membership .closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
+.pg-membership .closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
+.pg-membership .closing p{margin:0;max-width:48ch;opacity:.9}
+.pg-membership .closing .btn{background:#FBF4EF;color:#3F3029}
+
+/* ---- homepage look: shell / cocoa / clay palette, Cormorant headings + Hanken body, light only ---- */
+.pg-membership,.pg-membership[data-theme]{--ease:cubic-bezier(.16,1,.3,1);--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--muted:#9D857B;--ink:#5B4840;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--rust:#B07E6B;--clay:#B07E6B;--clay-lt:#E3B7A3;--cocoa:#2F221D;--cream:#FBF4EF;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond","Cormorant","Times New Roman",serif;color-scheme:light}
+.pg-membership{color:var(--ink);font-weight:300;line-height:1.7}
+.pg-membership h1,.pg-membership h2,.pg-membership h3{color:var(--fg)}
+.pg-membership h1 em,.pg-membership h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
+.pg-membership .proto{background:#F1E3DB;color:#5B4840}
+.pg-membership .crumbs{font-size:12px;letter-spacing:.04em}
+.pg-membership .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--fg)}
+.pg-membership .tsec{padding-block:clamp(80px,9vw,128px)}
+.pg-membership .head{gap:14px}
+.pg-membership .head h2{font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1}
+.pg-membership .btn{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
+.pg-membership .btn:hover{background:var(--clay)}
+/* how it works */
+.pg-membership .benefits div{padding:28px 28px}
+.pg-membership .benefits h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.15}
+.pg-membership .benefits p{color:var(--ink)}
+.pg-membership .notebar{border-left-color:var(--clay);background:var(--card);color:var(--ink)}
+/* fit cards + glance + steps */
+.pg-membership .fitcard h4,.pg-membership .glance h5{color:var(--clay);font-size:11px;font-weight:600;letter-spacing:.2em}
+.pg-membership .fitcard li::before{color:var(--clay)}
+.pg-membership .steps-v li::before{color:var(--clay);font-size:32px}
+.pg-membership .steps-v b{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--fg)}
+.pg-membership .steps-v span{color:var(--ink)}
+.pg-membership .glance p{color:var(--ink)}
+/* faq */
+.pg-membership summary{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--fg)}
+.pg-membership details p{color:var(--ink)}
+/* closing band + footer in cocoa, like the homepage */
+.pg-membership .closing{background:var(--cocoa)}
+.pg-membership .closing::before{background:rgba(47,34,29,.62)}
+.pg-membership .closing h2{font-weight:400;font-size:clamp(40px,4.6vw,64px)}
+.pg-membership .closing h2 em{color:var(--clay-lt)}
+.pg-membership .closing .btn{background:var(--cream);color:var(--cocoa)}
+.pg-membership .closing .btn:hover{background:var(--clay-lt)}
+
+/* hero v2: photo left with an offset clay frame, copy right */
+.pg-membership .thtop{padding-block:clamp(28px,3vw,44px) clamp(72px,8vw,112px)}
+.pg-membership{scroll-behavior:smooth}
+.pg-membership section[id]{scroll-margin-top:72px}
+.pg-membership .thero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.pg-membership .tframe{position:relative;padding:0 0 clamp(18px,2vw,28px) clamp(18px,2vw,28px)}
+.pg-membership .tframe::before{content:"";position:absolute;left:0;bottom:0;width:72%;height:78%;background:var(--surface);border:1px solid var(--line)}
+.pg-membership .tframe .ph{position:relative;height:clamp(340px,calc(100svh - 230px),540px);overflow:hidden;background:var(--surface)}
+.pg-membership .tframe .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .thero2 .tx{display:grid;gap:20px;min-width:0}
+.pg-membership .kicker{color:var(--clay);font-weight:700;letter-spacing:.22em;margin-bottom:-6px}
+.pg-membership .big{font-family:var(--serif);font-weight:400;white-space:nowrap;font-size:clamp(40px,5.2vw,82px);line-height:.92;letter-spacing:-.01em;color:var(--fg);margin:0}
+.pg-membership .big .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.pg-membership .big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.pg-membership .big.in .ln i{transform:none}
+.pg-membership .big em{font-style:italic;color:var(--clay)}
+.pg-membership .thero2 .lede{margin:0;max-width:44ch;font-size:17px;line-height:1.75;color:var(--ink)}
+.pg-membership .ctas{display:flex;align-items:center;gap:20px 30px;flex-wrap:wrap;margin-top:6px}
+.pg-membership .ctas .tlink{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;color:var(--fg)}
+.pg-membership .ctas .tlink:hover{color:var(--clay)}
+@media(max-width:860px){.pg-membership .thero2{grid-template-columns:1fr}}
+/* benefit icons: fine line art on a soft tile */
+.pg-membership .benefits .bimg{display:grid;place-items:center;aspect-ratio:4/3;background:var(--card);border:1px solid var(--line)}
+.pg-membership .benefits .bimg svg{width:auto;height:66%;fill:none;stroke:var(--fg);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s var(--ease)}
+.pg-membership .benefits .bimg .ac{stroke:var(--clay);stroke-width:1.6}
+.pg-membership .benefits .bimg circle.ac{fill:var(--clay)}
+.pg-membership .benefits div:hover .bimg svg{transform:translateY(-4px)}
+/* scroll reveal, as on the homepage */
+.pg-membership .rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0s) * .5)}
+.pg-membership .rv.in{opacity:1;transform:none}
+.pg-membership .rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.08);transition:clip-path .7s var(--ease),transform 1s var(--ease)!important;transition-delay:calc(var(--d,0s) * .5)!important}
+.pg-membership .rv-img.in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion: reduce){.pg-membership .rv,.pg-membership .rv-img img,.pg-membership .big .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+/* jump menu: a small dropdown beside the booking button */
+.pg-membership .jump{position:relative}
+.pg-membership .jump summary{list-style:none;display:inline-flex;align-items:center;gap:12px;padding:15px 20px;border:1px solid var(--line);background:var(--card);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);cursor:pointer;transition:border-color .4s}
+.pg-membership .jump summary::-webkit-details-marker{display:none}
+.pg-membership .jump summary::after{content:"";width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .4s var(--ease)}
+.pg-membership .jump[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.pg-membership .jump summary:hover,.pg-membership .jump[open] summary{border-color:var(--fg)}
+.pg-membership .jump nav{position:absolute;z-index:20;top:calc(100% + 6px);left:0;min-width:240px;background:var(--card);border:1px solid var(--line);box-shadow:0 22px 40px -24px rgba(47,34,29,.35);display:grid;padding:6px 0;animation:jumpIn .4s var(--ease)}
+.pg-membership .jump nav a{padding:11px 20px;font-size:14px;color:var(--ink);text-decoration:none;transition:background .3s,color .3s}
+.pg-membership .jump nav a:hover{background:var(--surface);color:var(--fg)}
+@keyframes jumpIn{from{opacity:0;transform:translateY(-6px)}}
+/* how it works: icons in open columns divided by hairlines */
+.pg-membership .benefits{gap:0}
+.pg-membership .benefits div{padding:0 clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.pg-membership .benefits div:first-child{border-left:0}
+.pg-membership .benefits .bimg{aspect-ratio:auto;height:clamp(120px,12vw,160px);background:none;border:0;margin-bottom:6px}
+@media(max-width:900px){.pg-membership .benefits div:nth-child(3){border-left:0}}
+/* is it right for you: tall photo, two ruled lists */
+.pg-membership .fitgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,100px);align-items:center}
+.pg-membership .fitimg{aspect-ratio:4/5;overflow:hidden;position:relative}
+.pg-membership .fitimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .fitcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
+.pg-membership .fitcols h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-membership .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-membership .rows li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--fg)}
+.pg-membership .rows.yes li::before{content:"✓";color:var(--clay)}
+.pg-membership .rows.no li{color:var(--ink)}
+.pg-membership .rows.no li::before{content:"—";color:var(--muted)}
+.pg-membership .fitcopy .pair{margin:26px 0 0;font-size:14px;color:var(--muted)}
+.pg-membership .fitcopy .pair a{color:var(--fg)}
+@media(max-width:860px){.pg-membership .fitgrid{grid-template-columns:1fr}.pg-membership .fitcols{grid-template-columns:1fr}}
+/* technology: cocoa band like the homepage About, photo bleeding to the left edge */
+.pg-membership .techband{background:var(--cocoa);color:#D9C3B8}
+.pg-membership .tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(480px,44vw,640px)}
+.pg-membership .tgrid .ph{position:relative;overflow:hidden;min-height:380px}
+.pg-membership .tgrid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .tcopy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(56px,6vw,96px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,6vw,96px) clamp(28px,6vw,100px)}
+.pg-membership .tcopy .eyebrow{color:var(--clay-lt)}
+.pg-membership .tcopy h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:#fff}
+.pg-membership .tcopy h2 em{color:var(--clay-lt)}
+.pg-membership .tsteps{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid rgba(231,207,195,.18)}
+.pg-membership .tsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(231,207,195,.18)}
+.pg-membership .tsteps .n{font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay-lt)}
+.pg-membership .tsteps b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px}
+.pg-membership .tsteps span{font-size:14.5px;line-height:1.65;color:#fff}
+@media(max-width:860px){.pg-membership .tgrid{grid-template-columns:1fr}.pg-membership .tgrid .ph{aspect-ratio:4/3;min-height:0}}
+/* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
+.pg-membership .g4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-membership .g4 li{border-top:1px solid var(--fg);padding:26px clamp(18px,2.4vw,40px) 0 0}
+.pg-membership .g4 .k{display:block;margin-bottom:14px;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+.pg-membership .g4 h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15;margin-bottom:12px}
+.pg-membership .g4 p{margin:0 0 8px;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-membership .gnote{margin:clamp(36px,4vw,52px) 0 0;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-membership .g4{grid-template-columns:1fr 1fr;row-gap:40px}}
+@media(max-width:520px){.pg-membership .g4{grid-template-columns:1fr}}
+/* layout after the treatment wireframe */
+.pg-membership .head.ctr{margin-inline:auto;text-align:center;justify-items:center}
+/* how it works: four image cards */
+.pg-membership #how .intro{margin:-12px auto clamp(36px,4vw,56px);max-width:64ch;text-align:center;color:var(--ink)}
+.pg-membership .benefits{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px);border:0}
+.pg-membership .benefits div{border:0;padding:0;justify-items:center;align-content:start;text-align:center;gap:8px}
+.pg-membership .benefits .bimg{display:block;width:100%;aspect-ratio:1;overflow:hidden;background:var(--surface);margin-bottom:12px}
+.pg-membership .benefits .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease,ease)}
+.pg-membership .benefits div:hover .bimg img{transform:scale(1.05)}
+@media(max-width:900px){.pg-membership .benefits{grid-template-columns:1fr 1fr;row-gap:36px}}
+.pg-membership .notebar{margin:clamp(36px,4vw,52px) auto 0;max-width:70ch;text-align:center;border:0;border-top:1px solid var(--line);background:none;padding:18px 0 0;font-size:13px;color:var(--muted)}
+/* ideal for: both cards the same height as the photo */
+.pg-membership .fit3{align-items:stretch}
+.pg-membership .fit3 .ph{aspect-ratio:auto;min-height:360px}
+.pg-membership .fitcard{height:100%}
+/* technology: steps on fine rules */
+.pg-membership .steps-v{gap:0}
+.pg-membership .steps-v li{border-top:1px solid var(--line);padding-block:22px}
+.pg-membership .steps-v li:last-child{border-bottom:1px solid var(--line)}
+/* at a glance: four quiet columns on a cocoa rule */
+.pg-membership .glance{background:none;border:0}
+.pg-membership .glance .col{border:0;border-top:1px solid var(--fg);padding:22px 28px 0 0}
+.pg-membership .glance .cols{gap:0 24px}
+.pg-membership .glance .ft{border:0;padding:28px 0 0;text-align:center}
+@media(max-width:900px){.pg-membership .glance .col{border-bottom:0}}
+/* faq: title left, questions right */
+.pg-membership .faqgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.pg-membership .faqgrid .head{margin:0;position:sticky;top:96px}
+@media(max-width:860px){.pg-membership .faqgrid{grid-template-columns:1fr}.pg-membership .faqgrid .head{position:static}}
+/* footer: same as the homepage */
+.pg-membership .foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.pg-membership .foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-membership .foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-membership .foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.pg-membership .foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pg-membership .foot .top{grid-template-columns:1fr}}
+.pg-membership .foot .logo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.pg-membership .foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.pg-membership .foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.pg-membership .foot p{margin:0;font-size:14px;line-height:1.9}
+.pg-membership .foot a{text-decoration:none}
+.pg-membership .foot a:hover{color:var(--cream)}
+.pg-membership .foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.pg-membership .foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* ===== v5: refinements after the reference layout ===== */
+.pg-membership .tframe::before{background:none}
+.pg-membership .kicker{margin-bottom:-14px}
+.pg-membership .big .ln{padding-bottom:.2em;margin-bottom:-.12em}
+.pg-membership .thero2 .tx{transform:translateY(-14px)}
+/* how it works: heading left, intro right, four portrait cards */
+.pg-membership .hhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.pg-membership .hhead .head{margin:0}
+.pg-membership .hintro p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink);max-width:49ch;text-align:justify;text-justify:inter-word;text-wrap:wrap}
+.pg-membership .hintro .tagline{text-align:left}
+.pg-membership .hintro .tagline{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,27px);line-height:1.25;color:var(--fg)}
+.pg-membership .bcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.pg-membership .bcards>div{display:grid;gap:8px;align-content:start}
+.pg-membership .bcards .bimg{display:block;aspect-ratio:4/5;overflow:hidden;background:#E8DBD0;margin-bottom:12px}
+.pg-membership .bcards .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.pg-membership .bcards>div:hover .bimg img{transform:scale(1.04)}
+.pg-membership .bcards h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15}
+.pg-membership .bcards p{margin:0;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-membership .fda{margin:clamp(36px,4vw,52px) 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-membership .hhead{grid-template-columns:1fr}.pg-membership .bcards{grid-template-columns:1fr 1fr;row-gap:36px}}
+/* ideal for: small photo beside the two ruled lists */
+.pg-membership .fit5{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.pg-membership .fit5 .fitimg{aspect-ratio:3/4;position:relative;overflow:hidden}
+.pg-membership .fit5 h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-membership .fit5 .pair{margin:22px 0 0;font-size:14px;color:var(--muted)}
+.pg-membership .fit5 .pair a{color:var(--fg)}
+@media(max-width:900px){.pg-membership .fit5{grid-template-columns:1fr 1fr}.pg-membership .fit5 .fitimg{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:560px){.pg-membership .fit5{grid-template-columns:1fr}}
+/* faq: title stays put; bold questions */
+.pg-membership .faqgrid .head{position:static}
+.pg-membership summary{font-weight:600}
+/* closing band shorter, so it shares one screen with the footer */
+.pg-membership .closing.tsec{padding-block:clamp(56px,6vw,88px)}
+.pg-membership .closing .wrap{gap:16px}
+
+/* ===== v6 ===== */
+.pg-membership p,.pg-membership h3,.pg-membership .rows li{text-wrap:pretty}
+/* hero: more air on the right */
+.pg-membership .thero2 .tx{gap:30px;transform:none;align-content:center}
+.pg-membership .thero2 .kicker{margin-bottom:-12px}
+.pg-membership .thero2 .lede{max-width:40ch;font-size:17.5px;line-height:1.8}
+.pg-membership .thero2 .ctas{margin-top:6px}
+/* how it works: heading block and intro share one top line; illustrations float free, no tile */
+.pg-membership .hhead{align-items:start}
+.pg-membership .hintro{padding-top:30px}
+.pg-membership .bcards .bimg{background:none;aspect-ratio:1/1.05;margin-bottom:6px}
+.pg-membership .bcards .bimg img{object-fit:contain;padding:4% 8%}
+.pg-membership .bcards>div:hover .bimg img{transform:translateY(-6px)}
+/* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */
+.pg-membership .fit5{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.78fr);align-items:start}
+.pg-membership .fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
+.pg-membership .pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:#F1E3DB;border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
+.pg-membership .pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-membership .pairnote a{color:var(--clay);font-weight:500;text-decoration:none;padding-bottom:2px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.pg-membership .pairnote a:hover,.pg-membership .pairnote a:focus-visible{background-size:100% 1px;font-weight:600}  /* same colour; turns bolder and an underline draws in */
+@media(max-width:900px){.pg-membership .fit5{grid-template-columns:1fr 1fr}.pg-membership .fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
+@media(max-width:560px){.pg-membership .fit5{grid-template-columns:1fr}}
+/* technology: title sits higher */
+.pg-membership .tcopy{justify-content:flex-start;padding-top:clamp(48px,5vw,80px);gap:12px}
+.pg-membership .tcopy .eyebrow{margin-bottom:2px}
+/* at a glance: type as the homepage AURA Experience */
+.pg-membership .g4 li{padding-right:clamp(20px,3vw,48px)}
+.pg-membership .g4 h3{font-weight:400;font-size:clamp(25px,2.1vw,31px);line-height:1.15;margin-bottom:14px}
+.pg-membership .g4 p{font-size:15px;line-height:1.65;max-width:32ch}
+
+/* ===== v7 ===== */
+/* at a glance: 2x2 grid */
+.pg-membership .g4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(36px,6vw,96px);row-gap:clamp(40px,4vw,56px);max-width:1040px;margin:0 auto}
+.pg-membership .g4 p{max-width:46ch}
+@media(max-width:620px){.pg-membership .g4{grid-template-columns:1fr}}
+/* faq: smaller, lighter, like the earlier layout */
+.pg-membership .faqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pg-membership .faqgrid .head h2{font-size:clamp(36px,3.6vw,52px);line-height:1.05}
+.pg-membership .faqgrid .head h2 em{display:block}
+.pg-membership summary{font-size:20px;font-weight:500}
+.pg-membership details{padding-block:16px}
+.pg-membership details p{font-size:14px;line-height:1.7}
+
+
+/* ===== v8: at a glance, bulleted and a size down so each point fits on one line ===== */
+.pg-membership .g4{max-width:1040px;column-gap:clamp(32px,4vw,64px)}  /* narrower, so the four blocks read as one group, wide enough that every point stays on one line */
+.pg-membership .g4 li{padding-right:24px}
+.pg-membership .faqgrid{max-width:1020px;margin-inline:auto}
+.pg-membership .g4 li{border-top:.5px solid rgba(47,34,29,.42)}  /* solid hairline: half a pixel on high-resolution screens; the softer tone keeps it fine on 1x screens too */
+.pg-membership .g4 p{position:relative;max-width:none;padding-left:18px;font-size:14.5px;line-height:1.6;margin-bottom:9px}
+.pg-membership #glance .head{max-width:none}
+.pg-membership .faqgrid .head h2{font-size:clamp(40px,4.4vw,64px);line-height:1}  /* same size as the At a glance heading */
+.pg-membership .g4 p::before{content:"";position:absolute;left:2px;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--clay)}
+/* booking box inside the hero, plus placeholder marks */
+.pg-membership .thero2 .bookbox{margin-top:0}
+.pg-membership .bbrow{padding:0;border-bottom:1px solid var(--line)}
+.pg-membership .bbrow summary{font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--fg);line-height:1.5}
+.pg-membership .bbrow summary::after{content:none}
+.pg-membership .bbopt{color:var(--ink)}
+.pg-membership .placeholder{color:var(--muted);font-style:italic}
+.pg-membership span[data-confirm]{border-bottom:1px dashed var(--clay)}
+
+/* ---- template additions ---- */
+.pg-membership .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.pg-membership .chips>span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.04em;color:var(--ink);background:transparent}
+.pg-membership .chips>span span{border:0;padding:0;border-radius:0}  /* a value inside a chip that still needs confirming: text only, no chip of its own */
+.pg-membership .big.wrap2{white-space:normal}
+.pg-membership .g6{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(32px,4vw,64px);row-gap:clamp(36px,4vw,52px);max-width:1040px;margin-inline:auto}
+.pg-membership .g6 li{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px}
+.pg-membership .g6 .k{display:block;margin-bottom:12px;font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay)}
+.pg-membership .g6 h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);line-height:1.15;margin:0 0 8px}
+.pg-membership .g6 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+@media(max-width:900px){.pg-membership .g6{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pg-membership .g6{grid-template-columns:1fr}}
+.pg-membership .g6foot{margin:clamp(32px,4vw,48px) auto 0;max-width:1040px;text-align:center;font-size:14.5px;color:var(--muted)}
+.pg-membership .g6foot a{color:var(--fg)}
+/* text-only benefit cards (.bcards.txt): same grid and type as the illustrated cards, a serif numeral instead of a drawing */
+.pg-membership .bcards.txt>div{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px;gap:10px}
+.pg-membership .bcards.txt .k{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--clay);margin-bottom:6px}
+/* "About the product" (.prodcard): material facts for injectables, label + text rows */
+.pg-membership .prodcard{margin-top:clamp(48px,5vw,72px);display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.pg-membership .prodcard h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,42px);line-height:1.05;margin:0}
+.pg-membership .prodcard h3 em{color:var(--clay)}
+.pg-membership .prodcard dl{margin:0;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-membership .prodcard dl>div{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pg-membership .prodcard dt{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);padding-top:4px}
+.pg-membership .prodcard dd{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+@media(max-width:860px){.pg-membership .prodcard{grid-template-columns:1fr}.pg-membership .prodcard dl>div{grid-template-columns:1fr}}
+.pg-membership .prodcard .psteps{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.pg-membership .prodcard .psteps b{font-weight:600;color:var(--fg)}
+
+/* ===== v9: a softer hero copy column, used by every Level 3 page ===== */
+.pg-membership .thero2 .tx{gap:26px}
+.pg-membership .thero2 .kicker{display:inline-flex;align-items:center;gap:14px;margin-bottom:-8px}
+.pg-membership .thero2 .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.pg-membership .thero2 .lede{font-size:17px;line-height:1.8;max-width:42ch}
+/* key facts: a quiet ruled strip instead of pills */
+.pg-membership .thero2 .chips{flex-wrap:nowrap;white-space:nowrap;overflow:hidden;gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:46ch}
+.pg-membership .thero2 .chips>span{flex:none;border:0;border-radius:0;padding:0 18px;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fg);position:relative}
+.pg-membership .thero2 .chips>span:first-child{padding-left:0}
+.pg-membership .thero2 .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.pg-membership .thero2 .chips>span span{font-size:inherit;letter-spacing:inherit}
+/* booking: an underlined picker beside the button; options open as a dropdown */
+.pg-membership .thero2 .bookbox{grid-template-columns:minmax(0,1fr) auto;gap:14px 22px;align-items:end;max-width:46ch}
+.pg-membership .thero2 .bbrow{position:relative;border:0;border-bottom:1px solid var(--fg);background:none}
+.pg-membership .thero2 .bbrow summary{padding:12px 0;font-family:var(--serif);font-size:20px;font-weight:400;color:var(--fg)}
+.pg-membership .thero2 .bbrow summary .chev{font-size:13px;color:var(--fg)}
+.pg-membership .thero2 .bbopts{position:absolute;z-index:6;top:calc(100% + 8px);left:0;width:max(100%,320px);padding:4px 20px 18px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -26px rgba(47,34,29,.38);animation:jumpIn .4s var(--ease)}
+.pg-membership .thero2 .bookbox>.btn{width:auto;white-space:nowrap;padding:16px 28px}
+/* "Learn all about …": small and quiet */
+.pg-membership .thero2 .ctas{margin-top:-4px}
+.pg-membership .thero2 .ctas .tlink{font-size:10px;letter-spacing:.22em;color:var(--muted);border-bottom-color:var(--line);padding-bottom:4px;transition:color .4s,border-color .4s}
+.pg-membership .thero2 .ctas .tlink::after{content:" ↓";letter-spacing:0}
+.pg-membership .thero2 .ctas .tlink:hover{color:var(--fg);border-bottom-color:var(--fg)}
+@media(max-width:520px){.pg-membership .thero2 .bookbox{grid-template-columns:1fr}.pg-membership .thero2 .bookbox>.btn{width:100%}.pg-membership .thero2 .chips>span{padding:0 12px}}
+
+/* how it works with photographs (.bcards.photo): staggered portrait photos, a numbered caption on a hairline */
+.pg-membership .bcards.photo{counter-reset:bc;align-items:start}
+.pg-membership .bcards.photo>div{counter-increment:bc;gap:10px}
+.pg-membership .bcards.photo>div:nth-child(even){margin-top:clamp(32px,4.4vw,72px)}
+.pg-membership .bcards.photo .bimg{aspect-ratio:4/5;background:var(--surface);margin-bottom:14px}
+.pg-membership .bcards.photo .bimg img{object-fit:cover;padding:0;transition:transform 1.6s var(--ease)}
+.pg-membership .bcards.photo>div:hover .bimg img{transform:scale(1.04)}
+.pg-membership .bcards.photo h3{padding-top:16px;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-membership .bcards.photo h3::before{content:counter(bc,decimal-leading-zero);display:block;margin-bottom:10px;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+@media(max-width:900px){.pg-membership .bcards.photo>div:nth-child(even){margin-top:0}}
+.pg-membership .thero2 .bookbox,.pg-membership .thero2 .chips{max-width:540px}
+.pg-membership .thero2 .bbrow summary{white-space:nowrap;font-size:19px}
+
+/* "About the treatment / technology" as the cocoa band: photo on the left, numbered rows on the right */
+.pg-membership .tsteps .tdd{font-size:14.5px;line-height:1.65;color:#fff}
+.pg-membership .tsteps .tdd a{color:var(--clay-lt)}
+.pg-membership .tsteps .psteps{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.pg-membership .tsteps .psteps li{display:block;padding:0;border:0}
+.pg-membership .tsteps .psteps b{display:inline;margin:0;font-family:var(--sans);font-size:inherit;font-weight:600;color:#fff}
+
+/* ===== v10 ===== */
+/* breadcrumb sits just above the photo, lined up with its left edge */
+.pg-membership .crumbs{padding-top:clamp(22px,2.4vw,34px);text-indent:clamp(18px,2vw,28px)}
+.pg-membership .thtop{padding-top:12px}
+/* hero: no rule before the category; the appointment picker is a rounded pill */
+.pg-membership .thero2 .kicker{display:block}
+.pg-membership .thero2 .kicker::before{content:none}
+.pg-membership .thero2 .bbrow{border:1px solid rgba(47,34,29,.38);border-radius:999px;padding:0 22px;transition:border-color .4s}
+.pg-membership .thero2 .bbrow:hover,.pg-membership .thero2 .bbrow[open]{border-color:var(--fg)}
+.pg-membership .thero2 .bbrow summary{padding:12px 0;font-size:18px}
+.pg-membership .thero2 .bbrow summary .chev{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:-8px;border-radius:50%;background:var(--surface);font-size:12px}
+.pg-membership .thero2 .bbopts{border-radius:18px;top:calc(100% + 10px)}
+.pg-membership .thero2 .bookbox{align-items:center}
+/* how it works photos: a size smaller */
+.pg-membership .bcards.photo{max-width:1040px;margin-inline:auto;column-gap:clamp(20px,3vw,44px)}
+.pg-membership .bcards.photo .bimg{aspect-ratio:1}
+.pg-membership .bcards.photo>div:nth-child(even){margin-top:clamp(24px,3.4vw,52px)}
+
+/* ===== v11 ===== */
+/* appointment picker: a quiet dropdown list; picking an option closes it and shows the choice in the pill */
+.pg-membership .thero2 .bbrow summary .bbl{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.pg-membership .thero2 .bbrow summary .chev,.pg-membership .thero2 .bbrow[open] summary .chev{transform:none;font-size:0;flex:none}
+.pg-membership .thero2 .bbrow summary .chev::before{content:"";width:6px;height:6px;border-right:1.2px solid var(--fg);border-bottom:1.2px solid var(--fg);transform:translateY(-1.5px) rotate(45deg)}
+.pg-membership .thero2 .bbopts{border-top:1px solid var(--line);margin:0;padding:8px;gap:2px;width:max(100%,340px)}
+.pg-membership .thero2 .bbopt{position:relative;display:block;padding:12px 40px 12px 14px;border-radius:12px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.pg-membership .thero2 .bbopt:first-child{padding-top:12px}
+.pg-membership .thero2 .bbopt:hover{background:var(--surface);color:var(--fg)}
+.pg-membership .thero2 .bbopt input{position:absolute;opacity:0;pointer-events:none}
+.pg-membership .thero2 .bbopt.sel{color:var(--fg);font-weight:500}
+.pg-membership .thero2 .bbopt.sel::after{content:"";position:absolute;right:18px;top:50%;width:5px;height:10px;margin-top:-7px;border-right:1.4px solid var(--clay);border-bottom:1.4px solid var(--clay);transform:rotate(45deg)}
+.pg-membership .thero2 .bbaddr{margin:6px 14px 6px;font-size:12px;line-height:1.6}
+/* hero: copy starts level with the top of the photo; the booking row sits level with its bottom */
+@media(min-width:861px){
+  .pg-membership .thero2{align-items:stretch}
+  .pg-membership .thero2 .tx{display:flex;flex-direction:column;gap:24px;padding-bottom:clamp(18px,2vw,28px)}
+  .pg-membership .thero2 .kicker{margin:0 0 -8px}
+  .pg-membership .thero2 .ctas{order:1;margin-top:-6px}
+  .pg-membership .thero2 .bookbox{order:2;margin-top:auto}
+}
+/* how it works photos: softer, less clinical */
+.pg-membership .bcards.photo .bimg img{transform:none}
+.pg-membership .bcards.photo>div:hover .bimg img{transform:scale(1.06)}
+.pg-membership .thero2 .bbrow summary::after,.pg-membership .thero2 .bbrow[open] summary::after{content:none!important;display:none}
+.pg-membership .thero2 .bbopts{border-top:1px solid var(--line)}
+.pg-membership .thero2 .bbrow[open] .bbopts{border-top-color:var(--line)}
+.pg-membership .thero2 .bbrow summary:focus{outline:none}
+.pg-membership .thero2 .bbrow:has(summary:focus-visible){border-color:var(--fg);box-shadow:0 0 0 3px rgba(176,126,107,.25)}
+
+/* ===== v12: hero right column as two groups — about the treatment on top, a booking block at the bottom ===== */
+@media(min-width:861px){
+  .pg-membership .tframe .ph{height:clamp(360px,calc(100svh - 300px),500px)}
+  .pg-membership .thero2 .tx{gap:22px}
+  .pg-membership .thero2 .ctas{order:2;margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+  .pg-membership .thero2 .ctas::before{content:"Book your visit";font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+  .pg-membership .thero2 .bookbox{order:3;margin-top:-4px}
+  .pg-membership .thero2 .chips{border-bottom:0;padding-bottom:0}
+}
+.pg-membership .thero2 .ctas,.pg-membership .thero2 .bookbox{max-width:540px}
+
+/* ===== v13: duration row ruled above and below again; no "Book your visit / Learn all" row in the hero ===== */
+.pg-membership .thero2 .chips{border-bottom:1px solid var(--line);padding-bottom:13px}
+.pg-membership .thero2 .ctas{display:none!important}
+@media(min-width:861px){.pg-membership .thero2 .bookbox{margin-top:auto}}
+/* picker opens upward when there isn't room below */
+.pg-membership .thero2 .bbrow.up .bbopts{top:auto;bottom:calc(100% + 10px)}
+
+/* ===== v14: hero copy as one compact block, centred beside the photo ===== */
+@media(min-width:861px){.pg-membership .thero2 .tx{justify-content:center;gap:22px;padding-bottom:0}.pg-membership .thero2 .bookbox{margin-top:4px}}
+
+/* ===== compact-sections (Nov 9): "About the treatment" (two groups) and FAQs (five, all closed) each fit one screen ===== */
+.pg-membership .techband{padding-block:clamp(96px,14vh,170px)}  /* more air above and below (Nov 10) */
+.pg-membership .tgrid{min-height:min(clamp(420px,34vw,520px),62vh)}
+.pg-membership .tcopy{padding-top:clamp(28px,5vh,64px);padding-bottom:clamp(28px,5vh,64px)}
+.pg-membership #faq.tsec{padding-block:clamp(120px,17vh,200px)}
+@media(max-width:860px){
+  .pg-membership .techband{padding-block:0}
+  .pg-membership .tgrid .ph{aspect-ratio:21/9}
+  .pg-membership .tcopy{padding-top:32px;padding-bottom:36px}
+  .pg-membership .tsteps li{grid-template-columns:40px 1fr;padding:14px 0}
+  .pg-membership .faqgrid{grid-template-columns:1fr}
+  .pg-membership #faq summary{font-size:18px}
+  .pg-membership #faq details{padding-block:12px}
+}
+
+/* "How it works" photo cards can name the treatment area next to the number, e.g. 01 · Eyes */
+.pg-membership .bcards.photo h3[data-zone]::before{content:counter(bc,decimal-leading-zero) "  \00B7  " attr(data-zone);white-space:pre;text-transform:uppercase}
+
+
+/* membership-only components */
+.pg-membership .pricetag{display:flex;align-items:baseline;gap:10px;margin:0}
+.pg-membership .pricetag b{font-family:var(--serif);font-weight:400;font-size:clamp(44px,4.4vw,60px);line-height:1;color:var(--fg)}
+.pg-membership .pricetag span{font-size:14px;letter-spacing:.04em;color:var(--ink)}
+.pg-membership .pricenote{margin:-14px 0 0;font-size:13px;color:var(--muted)}
+.pg-membership .joinrow{display:flex;align-items:center;gap:18px 28px;flex-wrap:wrap}
+.pg-membership .bcards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.pg-membership .bcards.three{grid-template-columns:1fr}}
+.pg-membership .bcards.txt .k.lbl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.pg-membership .bcards.txt p a{color:var(--fg);text-underline-offset:3px}
+.pg-membership .yr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:.5px solid rgba(47,34,29,.42);border-left:1px solid var(--line)}
+.pg-membership .yr li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 14px 18px;display:grid;gap:6px;align-content:start;min-height:132px;background:var(--bg)}
+.pg-membership .yr .m{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pg-membership .yr .t{font-size:14px;color:var(--ink)}
+.pg-membership .yr .q{font-size:13px;color:#fff;background:var(--clay);padding:3px 8px;justify-self:start}
+.pg-membership .yr .c{font-family:var(--serif);font-size:20px;color:var(--fg);margin-top:auto}
+.pg-membership .yr .n{font-size:13px;color:#fff;background:var(--cocoa);padding:3px 8px;justify-self:start}
+@media(max-width:860px){.pg-membership .yr{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:150px;overflow-x:auto;scroll-snap-type:x mandatory}.pg-membership .yr li{scroll-snap-align:start}}
+.pg-membership .yrlabel{margin:clamp(48px,5vw,72px) 0 0;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-membership .yrsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:clamp(20px,2.4vw,28px);text-align:center}
+.pg-membership .yrsum b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,4vw,56px);line-height:1;color:var(--clay)}
+.pg-membership .yrsum span{font-size:14px;color:var(--ink)}
+@media(max-width:560px){.pg-membership .yrsum{grid-template-columns:1fr}}
+.pg-membership .join3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.pg-membership .join3 li{border-top:.5px solid rgba(47,34,29,.42);padding-top:20px}
+.pg-membership .join3 .k{display:block;font-family:var(--serif);font-size:28px;color:var(--clay);line-height:1;margin-bottom:10px}
+.pg-membership .join3 h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);margin:0 0 6px}
+.pg-membership .join3 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+@media(max-width:760px){.pg-membership .join3{grid-template-columns:1fr}}
+/* FAQ: heading and photo on the left, questions on the right; the left column matches the height of the questions */
+.pg-membership .faqrev{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:stretch;max-width:1120px;margin-inline:auto}
+.pg-membership .faqrev .faqside{display:grid;grid-template-rows:auto 1fr;gap:24px}
+.pg-membership .faqrev .faqside .head{margin:0}
+.pg-membership .faqrev .faqside .eyebrow{margin-top:0}
+.pg-membership .faqrev .faqside h2{font-size:clamp(32px,3.2vw,46px);line-height:1.05;white-space:nowrap}
+.pg-membership .faqrev .faqside .ph{position:relative;overflow:hidden;background:var(--surface);min-height:280px}
+.pg-membership .faqrev .faqside .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-membership .faqrev .faqlist{align-self:start}
+@media(max-width:860px){.pg-membership .faqrev{grid-template-columns:1fr}.pg-membership .faqrev .faqside h2{white-space:normal}.pg-membership .faqrev .faqside .ph{min-height:0;aspect-ratio:16/10}}
+.pg-membership .faqlist ul.terms{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px;line-height:1.65;color:var(--ink)}
+
+/* hero: one wide photo with the name set large across its lower edge; copy in two columns below */
+.pg-membership .phero{padding-block:clamp(10px,1.4vw,20px) clamp(72px,8vw,112px)}
+.pg-membership .pframe{position:relative;overflow:hidden;height:clamp(400px,62svh,640px);background:#7F6253}
+.pg-membership .pframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.6s var(--ease)}
+.pg-membership .pframe.in img{transform:none}
+.pg-membership .pframe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(47,34,29,.12) 0%,rgba(47,34,29,0) 32%,rgba(47,34,29,.1) 58%,rgba(47,34,29,.5) 100%)}
+.pg-membership .ptag{position:absolute;z-index:2;top:clamp(18px,2vw,30px);right:clamp(20px,2.6vw,40px);margin:0;display:grid;gap:4px;justify-items:end;text-align:right;color:#FBF4EF}
+.pg-membership .ptag span{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.pg-membership .ptag i{font-family:var(--serif);font-size:clamp(17px,1.4vw,20px)}
+.pg-membership .ptitle{position:absolute;z-index:2;right:clamp(16px,2.6vw,40px);bottom:clamp(-14px,-1vw,-6px);margin:0;display:flex;align-items:baseline;gap:.2em;font-family:var(--serif);font-weight:400;color:#FBF4EF;font-size:clamp(50px,12.5vw,196px);line-height:.9;letter-spacing:-.02em;white-space:nowrap}
+.pg-membership .ptitle .ln{display:block;overflow:hidden;padding:0 .04em .06em}
+.pg-membership .ptitle .ln i{display:block;font-style:normal;transform:translateY(110%);transition:transform 1.5s var(--ease);transition-delay:var(--d,0s)}
+.pg-membership .ptitle.in .ln i{transform:none}
+.pg-membership .ptitle em{font-style:italic;color:#F1D3C4}
+.pg-membership .pbody{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(28px,6vw,110px);margin-top:clamp(30px,3.4vw,52px);align-items:start}
+.pg-membership .pl{display:grid;gap:18px}
+.pg-membership .pl .kicker{display:inline-flex;align-items:center;gap:14px;margin:0}
+.pg-membership .pl .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.pg-membership .pline{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.3vw,50px);line-height:1.05;color:var(--fg)}
+.pg-membership .pline em{font-style:italic;color:var(--clay)}
+.pg-membership .pr{display:grid;gap:24px;max-width:520px}
+.pg-membership .pr .lede{margin:0;font-size:16.5px;line-height:1.8;color:var(--ink)}
+.pg-membership .pprice{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-membership .pprice .pricenote{margin:0}
+.pg-membership .pr .chips{flex-wrap:nowrap;white-space:nowrap;overflow:hidden;gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pg-membership .pr .chips>span{flex:none;border:0;border-radius:0;padding:0 16px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--fg);position:relative}
+.pg-membership .pr .chips>span:first-child{padding-left:0}
+.pg-membership .pr .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.pg-membership .pr .ctas .tlink{font-size:11px}
+@media(max-width:860px){.pg-membership .pbody{grid-template-columns:1fr}.pg-membership .pframe{height:clamp(340px,56svh,520px)}.pg-membership .ptag{display:none}}
+@media(prefers-reduced-motion:reduce){.pg-membership .pframe img,.pg-membership .ptitle .ln i{transform:none!important;transition:none!important}}
+/* what's included: a large count for each benefit, then the detail on a hairline */
+.pg-membership .inc3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.pg-membership .inc3 article{display:grid;align-content:start}
+.pg-membership .inc3 .num{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(84px,9.5vw,148px);line-height:1;color:var(--clay);font-variant-numeric:lining-nums}
+.pg-membership .inc3 .cap{margin:14px 0 0;padding-bottom:22px;border-bottom:.5px solid rgba(47,34,29,.42);font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;line-height:1.5;color:var(--ink)}
+.pg-membership .inc3 .lbl{margin-top:22px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-membership .inc3 h3{margin:10px 0 8px;font-family:var(--sans);font-weight:500;font-size:clamp(17px,1.35vw,19px);letter-spacing:.01em;line-height:1.35;color:var(--fg)}
+.pg-membership .inc3 p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink)}
+.pg-membership .inc3 .more{justify-self:start;margin-top:18px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--fg);padding-bottom:4px;border-bottom:1px solid currentColor;transition:color .4s}
+.pg-membership .inc3 .more:hover{color:var(--clay)}
+.pg-membership .incfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:clamp(48px,5vw,72px);padding-top:18px;border-top:1px solid var(--line);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pg-membership .incfoot a{color:var(--fg);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.pg-membership .incfoot a:hover{color:var(--clay)}
+@media(max-width:860px){.pg-membership .inc3{grid-template-columns:1fr;row-gap:56px}}
+
+/* v2: no rule before the category; join on the left with a quiet "talk to us" line; counts fade in one by one; links share one baseline */
+.pg-membership .crumbs{text-indent:0}
+.pg-membership .pl .kicker::before{content:none}
+.pg-membership .pl .kicker{display:block}
+.pg-membership .pjoin{display:grid;justify-items:start;gap:16px;margin-top:clamp(10px,1.4vw,20px)}
+.pg-membership .ptalk{margin:0;font-size:14px;color:var(--muted)}
+.pg-membership .ptalk a{margin-left:4px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--fg);text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .45s var(--ease),color .4s}
+.pg-membership .ptalk a span{display:inline-block;font-style:normal;transition:transform .45s var(--ease)}
+.pg-membership .ptalk a:hover{background-size:100% 1px;color:var(--clay)}
+.pg-membership .ptalk a:hover span{transform:translateX(4px)}
+.pg-membership .inc3 article{display:flex;flex-direction:column}
+.pg-membership .inc3 .num.rv{transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease)}
+.pg-membership .inc3 .num.rv.in{transform:none}
+.pg-membership .inc3 .lbl{display:block}
+.pg-membership .inc3 .more{align-self:flex-start;margin-top:auto;padding-top:0}
+.pg-membership .inc3 article>p:not(.num):not(.cap){margin-bottom:22px}
+/* "Talk to us first": a small dialog with our contact details and a complimentary full-face consultation */
+.pg-membership .talkdlg{width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 32px);margin:auto;padding:0;border:0;background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(20,14,11,.28);overflow:auto;opacity:0;transform:translateY(16px);transition:opacity .45s var(--ease),transform .55s var(--ease),overlay .45s allow-discrete,display .45s allow-discrete}
+.pg-membership .talkdlg[open]{opacity:1;transform:none}
+@starting-style{.pg-membership .talkdlg[open]{opacity:0;transform:translateY(16px)}}
+.pg-membership .talkdlg::backdrop{background:rgba(32,22,18,.5);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.pg-membership .talkdlg .tin{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pg-membership .talkdlg .tx{padding:clamp(28px,4vw,48px)}
+.pg-membership .talkdlg .x{position:absolute;top:10px;right:12px;z-index:2;width:40px;height:40px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
+.pg-membership .talkdlg .x:hover{color:var(--fg)}
+@media(min-width:681px){.pg-membership .talkdlg .x{color:rgba(251,244,239,.6)}.pg-membership .talkdlg .x:hover{color:var(--cream)}}
+.pg-membership .talkdlg h2{margin:12px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,40px);line-height:1.05;color:var(--fg)}
+.pg-membership .talkdlg h2 em{font-style:italic;color:var(--clay)}
+.pg-membership .talkdlg .lead{margin:14px 0 0;font-size:14.5px;line-height:1.7;max-width:36ch}
+.pg-membership .talkdlg dl{margin:24px 0 0;display:grid;gap:0}
+.pg-membership .talkdlg dl div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line);align-items:baseline}
+.pg-membership .talkdlg dl div:last-child{border-bottom:1px solid var(--line)}
+.pg-membership .talkdlg dt{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pg-membership .talkdlg dd{margin:0;font-size:14px;line-height:1.6;color:var(--fg)}
+.pg-membership .talkdlg dd a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.pg-membership .talkdlg dd a:hover{border-color:var(--fg)}
+.pg-membership .talkdlg .bk{background:var(--cocoa);color:#D9C3B8;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:14px}
+.pg-membership .talkdlg .bk .eyebrow{color:var(--clay-lt)}
+.pg-membership .talkdlg .bk h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.1;color:var(--cream)}
+.pg-membership .talkdlg .bk h3 em{font-style:italic;color:var(--clay-lt)}
+.pg-membership .talkdlg .bk ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:8px;font-size:14px;line-height:1.55}
+.pg-membership .talkdlg .bk li{position:relative;padding-left:18px}
+.pg-membership .talkdlg .bk li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--clay-lt)}
+.pg-membership .talkdlg .bk .btn{margin-top:auto;background:var(--cream);color:var(--cocoa);justify-content:center}
+.pg-membership .talkdlg .bk .btn:hover{background:var(--clay-lt)}
+.pg-membership .talkdlg .bk .fine{margin:0;font-size:12px;color:rgba(217,195,184,.75)}
+@media(max-width:680px){.pg-membership .talkdlg .tin{grid-template-columns:1fr}.pg-membership .talkdlg .bk .btn{margin-top:10px}}
+@media (prefers-reduced-motion: reduce){.pg-membership .talkdlg{transition:none}}
+.pg-membership #how .hhead .hintro{justify-self:end;padding-right:0}  /* intro text sits flush with the right edge */
+

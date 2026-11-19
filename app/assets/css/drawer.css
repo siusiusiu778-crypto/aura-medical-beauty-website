@@ -1,0 +1,66 @@
+/* 由 scripts/scope-css.mjs 生成（预约抽屉），请勿手改 */
+.aura .drawer .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r);padding:14px 30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s,transform .2s}
+.aura .drawer .btn:hover{transform:translateY(-1px)}
+.aura .drawer .btn-solid{background:var(--cocoa);color:var(--cream)}
+.aura .drawer .btn-solid:hover{background:var(--clay)}
+.aura .drawer .btn-lg{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em}
+
+
+/* drawer */
+.aura .scrim{position:fixed;inset:0;z-index:95;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+.aura .scrim.on{opacity:1;pointer-events:auto}
+.aura .drawer{position:fixed;z-index:96;top:0;right:0;bottom:0;width:min(540px,100vw);background:var(--bg);transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.aura .drawer.on{transform:none}
+.aura .drawer .dh{padding:20px 24px 16px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.aura .drawer .dh .top{display:flex;justify-content:space-between;align-items:center}
+.aura .drawer .dh h2{font-family:var(--serif);font-size:32px}
+.aura .drawer .dh .close{background:none;border:0;font-size:28px;line-height:1;color:var(--muted)}
+.aura .drawer .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.aura .drawer .steps span{height:3px;border-radius:3px;background:var(--line)}
+.aura .drawer .steps span.on{background:var(--fg)}
+.aura .drawer .stepname{font-size:13px;color:var(--muted)}
+.aura .drawer .db{flex:1;overflow-y:auto;padding:20px 24px;display:grid;gap:18px;align-content:start}
+.aura .drawer .df{padding:14px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.aura .drawer .df .sel{font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aura .drawer .df .btn{padding:11px 22px;font-size:12px}
+.aura .drawer .btn-line{border-color:var(--line);background:transparent}
+.aura .drawer .opt{border:1px solid var(--line);border-radius:var(--rs);padding:14px 16px;background:var(--card);text-align:left;display:grid;gap:2px;width:100%}
+.aura .drawer .opt[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+.aura .drawer .opt b{font-weight:500}
+.aura .drawer .opt small{color:var(--muted);font-size:12.5px}
+.aura .drawer .group h5{margin:0 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.aura .drawer .items{display:grid;gap:8px}
+.aura .drawer .item{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;text-align:left;width:100%}
+.aura .drawer .item b{font-weight:500;font-size:14.5px}
+.aura .drawer .item small{grid-column:1;color:var(--muted);font-size:12.5px}
+.aura .drawer .item .pr{grid-column:2;grid-row:1/3;font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.aura .drawer .item[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+.aura .drawer .chip{border:1px solid var(--line);background:transparent;border-radius:var(--r);padding:8px 14px;font-size:13.5px}
+.aura .drawer .chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.aura .drawer .chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.aura .drawer .search{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:var(--r);padding:11px 16px;font:inherit;font-size:14px;width:100%}
+.aura .drawer .sinfo{background:var(--surface);border-radius:12px;padding:14px 16px;display:grid;gap:8px;font-size:13.5px}
+.aura .drawer .sinfo p{margin:0}
+.aura .drawer .sinfo ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.aura .drawer .sinfo small{color:var(--muted);font-size:12px}
+.aura .drawer .filterbar{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--surface);border-radius:12px;padding:10px 14px;font-size:13px}
+.aura .drawer .dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.aura .drawer .date{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 4px;text-align:center;font-size:12px;display:grid;gap:2px}
+.aura .drawer .date b{font-size:18px;font-weight:500;font-variant-numeric:tabular-nums}
+.aura .drawer .date[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.aura .drawer .times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.aura .drawer .times .chip{padding:9px 0;text-align:center;font-variant-numeric:tabular-nums}
+.aura .drawer .field{display:grid;gap:6px;font-size:13px}
+.aura .drawer .field input,.aura .drawer .field textarea{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;width:100%}
+.aura .drawer .err{color:#B4513A;font-size:12px}
+.aura .drawer .check{display:flex;gap:10px;font-size:13px;color:var(--muted);align-items:flex-start}
+.aura .drawer .summary{border:1px solid var(--line);border-radius:var(--rs);background:var(--card);padding:6px 18px}
+.aura .drawer .summary div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.aura .drawer .summary div:last-child{border:0}
+.aura .drawer .summary span{color:var(--muted)}
+.aura .drawer .note{font-size:12.5px;color:var(--muted);background:var(--surface);border-radius:12px;padding:12px 14px;margin:0}
+.aura .drawer .done{text-align:center;display:grid;gap:14px;padding-top:30px;justify-items:center}
+.aura .drawer .done h3{font-family:var(--serif);font-size:36px}
+.aura .drawer .done p{margin:0;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){.aura .drawer *{animation:none!important;transition:none!important}.aura .drawer html{scroll-behavior:auto}}
+

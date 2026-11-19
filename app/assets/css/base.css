@@ -1,0 +1,26 @@
+/* 全站基础：与原型 site.css 的重置一致，其余样式限定在各页面的 .pg-<页面> 之下（见 scripts/scope-css.mjs） */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #f8f0eb;
+}
+.aura {
+  /* 首页内联样式里的通用变量，抽屉、页脚等全站组件会用到 */
+  --r: 999px;
+  --rs: 14px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 100vh;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "aura-institute-website",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "dev:mock": "NUXT_MOCK_API=1 nuxt dev",
+    "build": "nuxt build",
+    "preview": "node .output/server/index.mjs",
+    "typecheck": "nuxt typecheck",
+    "scope-css": "node scripts/scope-css.mjs",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.6.3",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "postcss": "^8.5.6",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.13"
+  }
+}

@@ -1,0 +1,206 @@
+/* 由 scripts/scope-css.mjs 生成，请勿手改 */
+/* AURA Institute · shared site header (brand row + mega-menu nav). Self-contained (hardcoded colors),
+   safe to drop on any page regardless of that page's own :root tokens. Markup lives inline in every
+   page inside #site-header (no runtime fetch — must work from a plain double-clicked file).
+   Selectors are scoped under #site-header so a page's own generic .btn/.logo rules never win a
+   specificity tie against these, regardless of stylesheet load order. */
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
+/* the page itself only scrolls vertically; parts built to scroll sideways (carousels etc.) keep their own overflow-x.
+   clip (not hidden) so the sticky header keeps working; hidden on html is the fallback for older browsers. */
+html{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+
+#site-header{--nb-bg:#F8F0EB;--nb-surface:#F1E3DB;--nb-line:#E3CFC4;--nb-fg:#2F221D;--nb-muted:#9D857B;--nb-cocoa:#2F221D;--nb-clay:#B07E6B;--nb-cream:#FBF4EF;
+  font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;z-index:80;
+  /* the whole header is sticky, offset by the brand row's height: the brand row scrolls away, the nav bar stays pinned */
+  position:sticky;top:calc(-1 * var(--brand-h,62px))}
+#site-header *{box-sizing:border-box}
+#site-header a{color:inherit;text-decoration:none}
+#site-header button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+
+/* brand row: logo left, search + account (+ mobile hamburger) right */
+#site-header .brandrow{background:var(--nb-bg)}
+#site-header .brandrow .in{max-width:1320px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:20px}
+@media(min-width:760px){#site-header .brandrow .in{padding-inline:max(48px,env(safe-area-inset-left,0px))}}
+#site-header .hdlogo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;white-space:nowrap;color:var(--nb-fg);line-height:1}
+#site-header .hdlogo .by,.mnav .hdlogo .by,.hdlogo .by{font-family:"Cormorant Garamond","Cormorant","Instrument Serif",Georgia,serif;font-style:italic;font-weight:500;font-size:.92em;letter-spacing:.02em;text-transform:none;color:#B07E6B;margin-left:.4em}
+@media(max-width:520px){#site-header .hdlogo{font-size:19px}}
+#site-header .hr{display:flex;align-items:center;gap:22px}
+#site-header .hsearch{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--nb-line);transition:border-color .4s}
+#site-header .hsearch:focus-within{border-bottom-color:var(--nb-fg)}
+#site-header .hsearch input{order:2;border:0;background:transparent;padding:2px 0 3px;font:inherit;font-size:14px;color:var(--nb-fg);width:230px;outline:none}
+#site-header .hsearch input::placeholder{color:var(--nb-muted)}
+#site-header .hsearch button{order:1;border:0;background:transparent;padding:0;color:var(--nb-fg);display:grid;place-items:center}
+#site-header .hsearch button svg{width:13px;height:13px}
+#site-header .acct{display:flex;align-items:center;gap:7px;white-space:nowrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--nb-fg)}
+#site-header .acct:hover{color:var(--nb-clay)}
+#site-header .acct svg{width:18px;height:18px;flex:none}
+@media(max-width:760px){#site-header .acct span{display:none}}
+@media(max-width:560px){#site-header .hsearch{display:none}}
+
+#site-header .hamb{display:none;flex-direction:column;gap:5px;padding:8px;margin:-8px}
+#site-header .hamb span{display:block;width:22px;height:1.5px;background:var(--nb-fg);transition:transform .3s,opacity .3s}
+#site-header .hamb[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+#site-header .hamb[aria-expanded="true"] span:nth-child(2){opacity:0}
+#site-header .hamb[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* nav bar: category dropdowns + Book Now */
+#site-header .navbar{background:rgba(248,240,235,.92);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);border-top:1px solid var(--nb-line);border-bottom:1px solid var(--nb-line);position:sticky;top:env(safe-area-inset-top,0px);z-index:80}
+#site-header .navbar .in{max-width:1320px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.8vw,40px)}
+@media(min-width:760px){#site-header .navbar .in{padding-inline:max(clamp(20px,3vw,48px),env(safe-area-inset-left,0px))}}
+#site-header .navbar ul.top{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:clamp(10px,1.6vw,40px);font-size:clamp(10px,.98vw,12.5px);font-weight:500;letter-spacing:.15em;text-transform:uppercase;flex:1}
+#site-header .navbar ul.top>li{position:relative}
+#site-header .navbar ul.top>li>button,#site-header .navbar ul.top>li>a{display:block;padding:25px 0 17px;position:relative;white-space:nowrap}
+#site-header .navbar ul.top>li>button::after,#site-header .navbar ul.top>li>a::after{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;bottom:11px;height:1px;background:currentColor;transform:scaleX(0);transition:transform .7s}
+#site-header .navbar ul.top>li:hover>button::after,#site-header .navbar ul.top>li:hover>a::after,#site-header .navbar ul.top>li.open>button::after,#site-header .navbar ul.top>li[aria-current]>button::after,#site-header .navbar ul.top>li[aria-current]>a::after{transform:scaleX(1)}
+/* badge: anchored by its BOTTOM edge 4px above the label text (which starts 25px down), so if a device renders it
+   larger (minimum font size, text zoom) it can only grow upward, never down into the label. Solid fill, drawn above the text. */
+#site-header .tag{position:absolute;top:auto;bottom:calc(100% - 21px);left:50%;transform:translateX(-50%);z-index:2;font-size:8px;line-height:1.25;font-weight:600;letter-spacing:.14em;padding:2px 6px 1px;color:#FBF4EF;background:#A87563;opacity:1;border-radius:2px;white-space:nowrap;pointer-events:none}
+#site-header .nav-book{flex:none;border-radius:0;padding:10px clamp(14px,1.7vw,22px);font-size:clamp(9.5px,.82vw,10.5px);font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--nb-cocoa);color:var(--nb-cream);transition:background .5s}
+#site-header .nav-book:hover{background:var(--nb-clay)}
+#site-header .mega{position:fixed;left:0;right:0;background:var(--nb-bg);border-top:1px solid var(--nb-line);box-shadow:0 24px 40px rgba(20,14,11,.14);padding:28px max(24px,env(safe-area-inset-right,0px)) 32px max(24px,env(safe-area-inset-left,0px));display:none;text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px;z-index:82}
+#site-header .navbar ul.top>li:hover>.mega,#site-header .navbar ul.top>li.open>.mega{display:block}
+#site-header .mega .cols{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px 38px}
+#site-header .mega .grp{display:grid;gap:4px;align-content:start}
+#site-header .mega h5{margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--nb-fg)}
+#site-header .mega a{display:block;padding:4px 0;color:var(--nb-muted)}
+#site-header .mega a:hover{color:var(--nb-fg);text-decoration:underline;text-underline-offset:4px}
+#site-header .mega.small{left:auto;right:auto;width:270px;padding:8px 22px;border:1px solid var(--nb-line);box-shadow:0 14px 30px rgba(20,14,11,.14)}
+#site-header .mega.small a{padding:13px 0;border-bottom:1px solid var(--nb-line);color:var(--nb-fg);font-size:14.5px}
+#site-header .mega.small a:last-child{border-bottom:0}
+/* eight categories + Book Now must fit on one line from 1001px up: tighter tracking and gaps, a touch wider on big screens */
+@media(min-width:1500px){#site-header .navbar ul.top{letter-spacing:.18em}}
+@media(max-width:1000px){#site-header .navbar{display:none}#site-header .hamb{display:flex}}
+
+/* mobile slide-in menu */
+#site-header .mnscrim{position:fixed;inset:0;z-index:90;background:rgba(20,14,11,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+#site-header .mnscrim.on{opacity:1;pointer-events:auto}
+#site-header .mobilenav{position:fixed;z-index:91;top:0;right:0;bottom:0;width:min(400px,86vw);background:var(--nb-bg);transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s linear .35s;display:flex;flex-direction:column;overflow-y:auto}
+#site-header .mobilenav.on{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+#site-header .mnhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--nb-line)}
+#site-header .mnhead .close{font-size:26px;line-height:1;color:var(--nb-muted);padding:4px 8px;margin:-4px -8px}
+#site-header .mnbody{padding:12px 20px 28px;display:grid;gap:2px}
+#site-header .macc{border-bottom:1px solid var(--nb-line)}
+#site-header .machead{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left}
+#site-header .machead .chev{transition:transform .3s;color:var(--nb-muted);font-size:11px}
+#site-header .machead[aria-expanded="true"] .chev{transform:rotate(180deg)}
+#site-header .mapanel{display:none;padding:0 0 14px}
+#site-header .macc.open .mapanel{display:grid;gap:2px}
+#site-header .mapanel .mgrp h5{margin:10px 0 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--nb-muted)}
+#site-header .mapanel a{display:block;padding:9px 0;font-size:14.5px;color:var(--nb-fg);border-bottom:1px solid rgba(227,207,196,.5)}
+#site-header .mnlink{display:block;padding:16px 0;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--nb-line)}
+
+/* back to top: a small round button, bottom right on every page, shown once you have scrolled down */
+.totop{position:fixed;z-index:80;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid rgba(251,244,239,.25);background:#2F221D;color:#FBF4EF;display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .35s,transform .35s,visibility 0s .35s,background .3s;box-shadow:0 10px 24px -12px rgba(47,34,29,.5)}
+.totop.on{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .35s,background .3s}
+.totop:hover{background:#B07E6B}
+.totop:focus-visible{outline:2px solid #B07E6B;outline-offset:3px}
+.totop svg{width:16px;height:16px}
+@media (prefers-reduced-motion: reduce){.totop{transition:none}}
+
+
+/* AURA Institute · shared Level 3 treatment page template (l3.css)
+   Section order: hero (.thtop/.thero2 + .bookbox + .chips) → How it works (.hhead + .bcards + .fda)
+   → Is it right for you? (.fit5 + .pairnote) → The technology / Our approach / Your visit (.techband + .tsteps)
+   → At a glance (.g4) → FAQ (.faqgrid) → closing band (.closing).
+   Every Level 3 page links this file and l3.js. Change the design here once; it applies to every page. */
+/* booking box */
+/* benefits 2x2 */
+/* is it right for you */
+/* technology: text left, image right, numbered list via .steps-v */
+/* at a glance */
+/* faq narrow */
+/* closing banner */
+
+/* ---- homepage look: shell / cocoa / clay palette, Cormorant headings + Hanken body, light only ---- */
+/* how it works */
+/* fit cards + glance + steps */
+/* faq */
+/* closing band + footer in cocoa, like the homepage */
+
+/* hero v2: photo left with an offset clay frame, copy right */
+/* benefit icons: fine line art on a soft tile */
+/* scroll reveal, as on the homepage */
+/* jump menu: a small dropdown beside the booking button */
+/* how it works: icons in open columns divided by hairlines */
+/* is it right for you: tall photo, two ruled lists */
+/* technology: cocoa band like the homepage About, photo bleeding to the left edge */
+/* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
+/* layout after the treatment wireframe */
+/* how it works: four image cards */
+/* ideal for: both cards the same height as the photo */
+/* technology: steps on fine rules */
+/* at a glance: four quiet columns on a cocoa rule */
+/* faq: title left, questions right */
+/* footer: same as the homepage */
+.aura .foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.aura .foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.aura .foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.aura .foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.aura .foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.aura .foot .top{grid-template-columns:1fr}}
+.aura .foot .logo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.aura .foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.aura .foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.aura .foot p{margin:0;font-size:14px;line-height:1.9}
+.aura .foot a{text-decoration:none}
+.aura .foot a:hover{color:var(--cream)}
+.aura .foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.aura .foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* ===== v5: refinements after the reference layout ===== */
+/* how it works: heading left, intro right, four portrait cards */
+/* ideal for: small photo beside the two ruled lists */
+/* faq: title stays put; bold questions */
+/* closing band shorter, so it shares one screen with the footer */
+
+/* ===== v6 ===== */
+/* hero: more air on the right */
+/* how it works: heading block and intro share one top line; illustrations float free, no tile */
+/* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */  /* same colour; turns bolder and an underline draws in */
+/* technology: title sits higher */
+/* at a glance: type as the homepage AURA Experience */
+
+/* ===== v7 ===== */
+/* at a glance: 2x2 grid */
+/* faq: smaller, lighter, like the earlier layout */
+
+
+/* ===== v8: at a glance, bulleted and a size down so each point fits on one line ===== */  /* narrower, so the four blocks read as one group, wide enough that every point stays on one line */  /* solid hairline: half a pixel on high-resolution screens; the softer tone keeps it fine on 1x screens too */  /* same size as the At a glance heading */
+/* booking box inside the hero, plus placeholder marks */
+
+/* ---- template additions ---- */  /* a value inside a chip that still needs confirming: text only, no chip of its own */
+/* text-only benefit cards (.bcards.txt): same grid and type as the illustrated cards, a serif numeral instead of a drawing */
+/* "About the product" (.prodcard): material facts for injectables, label + text rows */
+
+/* ===== v9: a softer hero copy column, used by every Level 3 page ===== */
+/* key facts: a quiet ruled strip instead of pills */
+/* booking: an underlined picker beside the button; options open as a dropdown */
+/* "Learn all about …": small and quiet */
+
+/* how it works with photographs (.bcards.photo): staggered portrait photos, a numbered caption on a hairline */
+
+/* "About the treatment / technology" as the cocoa band: photo on the left, numbered rows on the right */
+
+/* ===== v10 ===== */
+/* breadcrumb sits just above the photo, lined up with its left edge */
+/* hero: no rule before the category; the appointment picker is a rounded pill */
+/* how it works photos: a size smaller */
+
+/* ===== v11 ===== */
+/* appointment picker: a quiet dropdown list; picking an option closes it and shows the choice in the pill */
+/* hero: copy starts level with the top of the photo; the booking row sits level with its bottom */
+/* how it works photos: softer, less clinical */
+
+/* ===== v12: hero right column as two groups — about the treatment on top, a booking block at the bottom ===== */
+
+/* ===== v13: duration row ruled above and below again; no "Book your visit / Learn all" row in the hero ===== */
+/* picker opens upward when there isn't room below */
+
+/* ===== v14: hero copy as one compact block, centred beside the photo ===== */
+
+/* ===== compact-sections (Nov 9): "About the treatment" (two groups) and FAQs (five, all closed) each fit one screen ===== */  /* more air above and below (Nov 10) */
+
+/* "How it works" photo cards can name the treatment area next to the number, e.g. 01 · Eyes */
+

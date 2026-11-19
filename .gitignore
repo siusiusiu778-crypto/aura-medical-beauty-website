@@ -1,0 +1,12 @@
+.legacy-moved
+node_modules
+.nuxt
+.output
+.data
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+screenshots/
+.content-schema-ready
