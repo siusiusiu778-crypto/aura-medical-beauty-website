@@ -64,7 +64,7 @@ on("how")              // 区块是否展示（CMS 里 how.show 不为 false）
 
 - 不要登录服务器，不要改服务器配置、Nginx、证书、计划任务。
 - 不要改接口与后端；`server/` 下的服务端路由、`shared/types/api.ts`、`deploy/`、`.github/workflows/` 不要改，除非负责人同意。
-- 不要发布正式域名（以后上线正式域名由负责人手动切换，见 `docs/refactor-plan.md` 第 7 节）。
+- 不要自己合并 PR 或改发布流程；域名、证书、Nginx 由负责人管理（见 `docs/refactor-plan.md`）。
 - 不要把密钥、`.env`、服务器地址、内网地址写进代码或文档。提交前自查：`git diff | grep -nE 'sk-|ghp_|AKIA|BEGIN [A-Z ]*PRIVATE KEY|172\.|192\.168'`。
 - 不要在页面输出里放访客相关的内容（整页会被缓存 10 分钟）。
 - 不要手改 `app/assets/css/` 里由 `pnpm scope-css` 生成的文件（`legacy/` 删除前）；补充样式写在同目录的 `*.extra.css` 里；新模块的样式可以新建自己的 CSS 文件或在组件里写 `<style>`，选择器限定在 `.pg-<页面>` 下。
@@ -128,7 +128,7 @@ gh pr create --fill
 ```
 
 - PR 上会自动跑「check」（类型检查 + 构建），通过后由负责人合并。**用户说"发布""部署"时，按 `.claude/skills/deploy/SKILL.md` 做。**
-- 合并到 `main` 会自动构建并发布到测试环境 `https://overseasstudent.com/aura-institute/`（全站不收录），发布成功后可看 `/aura-institute/_deploy/status.json`。
+- 合并到 `main` 会自动构建并**发布到正式站** `https://aurainstitute.com`，所以合并要谨慎；发布成功后可看 `https://aurainstitute.com/_deploy/status.json`。
 - 发布失败时旧版本继续运行，不受影响；看 Actions 日志修复后重新合并。
 
 注释用简体中文，说明"为什么"。

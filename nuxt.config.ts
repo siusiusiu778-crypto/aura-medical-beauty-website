@@ -1,5 +1,5 @@
 // AURA Institute 官网：Nuxt 4 + SSR。内容来自 Vectra 的 AURA CMS，接口与内容约定见 docs/api-contract.md。
-// 子目录部署：NUXT_APP_BASE_URL（构建与运行都要设置，例如 /aura-institute/），换正式域名时改成 / 即可。
+// 根路径部署（正式域名 aurainstitute.com）；如需挂在子目录，用 NUXT_APP_BASE_URL（构建与运行都要设置，例如 /xxx/）。
 const mock = process.env.NUXT_MOCK_API === "1";
 
 export default defineNuxtConfig({
@@ -18,9 +18,9 @@ export default defineNuxtConfig({
     revalidateSecret: "",
     previewSecret: "",
     public: {
-      siteUrl: "https://overseasstudent.com",
+      siteUrl: "https://aurainstitute.com",
       // 浏览器端接口基址：198 上的同源反代
-      apiBase: mock ? "/_mock/aura" : "/aura-institute/api",
+      apiBase: mock ? "/_mock/aura" : "/api",
       deployEnv: "staging",
       // 允许内嵌本站做可视化编辑预览的 CMS 网址（逗号分隔，NUXT_PUBLIC_CMS_ORIGINS）。留空则不开放。
       cmsOrigins: ""

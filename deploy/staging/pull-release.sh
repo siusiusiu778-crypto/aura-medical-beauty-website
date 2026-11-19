@@ -24,7 +24,9 @@ NAME=aura-institute
 PORT=3500
 TRY_PORT=3501
 KEEP=5
-APP_PATH=/aura-institute/
+# 健康检查路径取环境文件里的 NUXT_APP_BASE_URL（根路径部署就是 /）
+APP_PATH=$(sed -n 's/^NUXT_APP_BASE_URL=//p' "$BASE/aura.env" 2>/dev/null | head -1)
+APP_PATH=${APP_PATH:-/}
 IMAGE=node:22-alpine
 URL="https://github.com/$REPO/releases/download/$TAG"
 

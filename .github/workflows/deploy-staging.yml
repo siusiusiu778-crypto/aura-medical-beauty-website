@@ -1,4 +1,4 @@
-# 发布到测试环境（<测试域名>/aura-institute/）。
+# 发布到正式站（aurainstitute.com）。
 #
 # 推到 main 就会发布。流程里没有任何服务器地址或密钥：
 #   1. 这里做类型检查和构建，把构建产物上传到仓库的 Release「staging」（附带校验值）；
@@ -26,9 +26,9 @@ permissions:
 
 env:
   RELEASE_TAG: staging
-  # 子目录阶段的构建前缀；换正式域名（根路径）后改为 /
-  NUXT_APP_BASE_URL: /aura-institute/
-  STATUS_URL: https://overseasstudent.com/aura-institute/_deploy/status.json
+  # 正式域名 aurainstitute.com 部署在根路径；构建前缀必须与运行环境一致
+  NUXT_APP_BASE_URL: /
+  STATUS_URL: https://aurainstitute.com/_deploy/status.json
 
 jobs:
   deploy:
