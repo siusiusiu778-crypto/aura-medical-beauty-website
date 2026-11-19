@@ -54,7 +54,7 @@ listing {blurb:L10n, price:L10n, tags:[L10n]}      // 预约抽屉与目标页�
 
 ## 4. 公开接口 `/aura/public/*`（匿名，GET 带短缓存头）
 
-后端真实路径：`/portal_backend_v2/api/aura/public/*`。198 上同源反代：`/aura-institute/api/*` → 上述路径（只转发 GET 与 `POST leads`）。
+后端真实路径：`/portal_backend_v2/api/aura/public/*`。198 上同源反代：`/api/*` → 上述路径（只转发 GET 与 `POST leads`）。
 
 | 方法与路径 | 返回 `data` |
 |---|---|
@@ -73,7 +73,7 @@ listing {blurb:L10n, price:L10n, tags:[L10n]}      // 预约抽屉与目标页�
 **线索** `POST /leads` 请求体：
 
 ```json
-{"name":"…","email":"…","phone":"","treatment":"thermage-flx","message":"","pageUrl":"/aura-institute/treatments/thermage-flx","env":"staging","website":"","startedAt":1760000000000}
+{"name":"…","email":"…","phone":"","treatment":"thermage-flx","message":"","pageUrl":"/treatments/thermage-flx","env":"staging","website":"","startedAt":1760000000000}
 ```
 
 `website` 是蜜罐，非空则静默丢弃（仍返回成功）；`startedAt` 是表单首次渲染的毫秒时间戳，距提交少于 3 秒按垃圾处理；同一 IP 10 分钟最多 5 条。成功 201：`{"id":123}`。错误：`aura.lead_invalid`（422）、`aura.lead_rate_limited`（429）。`env` 为 `staging` 时线索标记为测试。
@@ -142,7 +142,7 @@ listing {blurb:L10n, price:L10n, tags:[L10n]}      // 预约抽屉与目标页�
 
 与 uswoo 新官网同一套，`window.postMessage`，官网只在被内嵌、网址带 `?cms-edit`、上层来源在 `NUXT_PUBLIC_CMS_ORIGINS` 里时启用。
 
-- `capabilities.siteOrigins` 是**站点根地址（含子目录前缀）**，如 `https://overseasstudent.com/aura-institute`；消息的 `targetOrigin` 取其 `origin`。
+- `capabilities.siteOrigins` 是**站点根地址**（部署在子目录时含子目录前缀），如 `https://aurainstitute.com`；消息的 `targetOrigin` 取其 `origin`。
 - 预览地址 = 站点根地址 + 路由路径 + `?cms-edit`。路由路径：页面键 `home`→`/`，`about`→`/about`，`membership`→`/membership`，`facial-blueprint`→`/facial-blueprint`，`journal-faq`→`/journal/faq`，`journal-botox-vs-xeomin`→`/journal/botox-vs-xeomin`；治疗→`/treatments/{slug}`；目标→`/goals/{slug}`。`site` 页面用首页预览。
 - 编辑器 → 官网：`{source:"uswoo-cms", type:"content", key, payload}`、`{source:"uswoo-cms", type:"focus", ref}`。官网 → 编辑器：`{source:"uswoo-site", type:"ready", path}`、`{source:"uswoo-site", type:"select", ref}`。
 - 内容键 `key`：页面用页面键；治疗 `treatment/{slug}`；目标 `goal/{slug}`。`ref = "{key}:{字段路径}"`，字段路径用 `.` 连接（列表下标是数字，如 `how.cards.0.title`），按**第一个冒号**切分。
