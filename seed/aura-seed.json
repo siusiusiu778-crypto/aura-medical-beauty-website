@@ -15720,6 +15720,9 @@
           "tagline": {
             "en": "Unveil Your Aura.",
             "zh": ""
+          },
+          "favicon": {
+            "mediaKey": "aura-favicon.png"
           }
         },
         "header": {
@@ -18913,6 +18916,14 @@
         "zh": ""
       },
       "name": "about.jpg"
+    },
+    {
+      "key": "aura-favicon.png",
+      "alt": {
+        "en": "AURA Institute",
+        "zh": ""
+      },
+      "name": "aura-favicon.png"
     },
     {
       "key": "barrier-about.jpg",
