@@ -238,6 +238,7 @@ const paras = (nodes) => L(nodes.map((p) => `<p>${rich(p)}</p>`).join(""));
 /* ------------------------------------------------------------------ 媒体 */
 const mediaAlt = new Map(); // key → alt（取第一处非空）
 const mediaUsed = new Set();
+const mediaRefs = []; // 每处图片引用与它在原型里的 alt；同一张图在不同位置 alt 不同时，在引用上带 alt 覆盖
 const mediaMissing = new Set();
 function mediaKeyOf(src) {
   return (src || "").split("?")[0].split("#")[0].replace(/^\.?\//, "");
@@ -258,9 +259,12 @@ function media(imgNode) {
   const src = imgNode.attrs.src || imgNode.attrs.href || "";
   const key = mediaKeyOf(src);
   if (!key) return null;
-  useMedia(key, decode(imgNode.attrs.alt || ""));
+  const altText = decode(imgNode.attrs.alt || "");
+  useMedia(key, altText);
   const f = focusOf(imgNode.attrs.style);
-  return f ? { mediaKey: key, focus: f } : { mediaKey: key };
+  const ref = f ? { mediaKey: key, focus: f } : { mediaKey: key };
+  mediaRefs.push({ ref, key, alt: altText });
+  return ref;
 }
 function mediaFrom(key, focus, alt) {
   const k = mediaKeyOf(key);
@@ -378,7 +382,15 @@ function bookbox(d, scope) {
   return { show: true, label: L(label), options: all(bb, ".bbopt").map((o) => Lp(o)), cta: Lp(one(bb, "a.btn")) };
 }
 function faqItems(scope) {
-  return all(scope, "details").map((d) => ({ q: Lp(one(d, "summary")), a: paras(d.children.filter((c) => c.tag === "p")) }));
+  return all(scope, "details").map((d) => ({
+    q: Lp(one(d, "summary")),
+    a: L(
+      d.children
+        .filter((c) => c.tag === "p" || c.tag === "ul")
+        .map((c) => (c.tag === "ul" ? `<ul>${c.children.filter((li) => li.tag === "li").map((li) => `<li>${rich(li)}</li>`).join("")}</ul>` : `<p>${rich(c)}</p>`))
+        .join(""),
+    ),
+  }));
 }
 function headOf(scope) {
   const h = one(scope, ".head") || scope;
@@ -405,6 +417,7 @@ function extractTreatment(slug) {
       image: media(heroImg),
       kicker: Lp(one(top, ".eyebrow")),
       title: Lr(one(top, "h1")),
+      crumb: L(plain(one(d, ".crumbs")).split(" / ").pop().trim()),
       lede: Lp(one(top, ".lede")),
       chips: [],
       bookbox: bookbox(d, top),
@@ -412,13 +425,18 @@ function extractTreatment(slug) {
     };
     const secs = all(d, "main > section").filter((s) => s !== top);
     const names = ["how", "fit", "tech", "glance", "faq"];
+    const extras = [];
     secs.forEach((s, i) => {
       const k = names[i];
       if (!k || s.attrs.id === "book") return;
       const h = headOf(s);
+      // 原型里这五个区块只有标题和 [Copy to come]：按原样作为文本区块显示
+      extras.push({ eyebrow: h.eyebrow, title: h.title, text: Lp(one(s, "p.placeholder")), tone: /\balt\b/.test(s.attrs.class || "") ? "alt" : "plain", center: k === "faq" });
       if (k === "glance") return;
       content[k] = { show: false, eyebrow: h.eyebrow, title: h.title };
     });
+    content.extras = extras;
+    content.layout = { footer: "simple" };
     // 隐藏区块也给出完整的空结构，管理端可以直接填写
     Object.assign(content.how, { intro: L(""), tagline: L(""), cards: [], note: L("") });
     Object.assign(content.fit, { yes: { title: L(""), items: [] }, no: { title: L(""), items: [] }, image: null });
@@ -615,7 +633,7 @@ const pageSite = {
     header: {
       searchPlaceholder: L(one(header, ".hsearch input").attrs.placeholder),
       searchLabel: L(one(header, ".hsearch button").attrs["aria-label"]),
-      account: { show: false, label: Lp(one(header, "a.acct")) },
+      account: { show: true, label: Lp(one(header, "a.acct")) },
       bookLabel: Lp(one(header, ".nav-book")),
       mobileBookLabel: Lp(one(header, ".mnbody > a.btn")),
       menuLabel: L(one(header, "#hambBtn").attrs["aria-label"]),
@@ -627,11 +645,12 @@ const pageSite = {
       hours: { title: Lp(one(hoursCol, "h4")), lines: lines(one(hoursCol, "p")).map(L) },
       contact: {
         title: Lp(one(contactCol, "h4")),
-        phone: { show: !!phoneRaw && !hasPlaceholder(phoneRaw), label: L(hasPlaceholder(phoneRaw) ? "" : phoneRaw), href: "" },
-        email: { show: !!emailRaw && !hasPlaceholder(emailRaw), label: L(hasPlaceholder(emailRaw) ? "" : emailRaw), href: "" },
+        phone: { show: !!phoneRaw, label: L(phoneRaw), href: "" },
+        email: { show: !!emailRaw, label: L(emailRaw), href: "" },
         instagram: { show: !!insta, label: Lp(insta), href: insta ? insta.attrs.href : "" },
       },
       legal: { text: Lp(one(footer, ".legal > span")), links: legalLinks.map((a) => ({ label: Lp(a), href: mapHref(a.attrs.href) })) },
+      simple: { text: Lp(one(dom("goal-skin-tightening"), "footer")) },
     },
     floatBook: { show: false, label: L("Book Now") },
     booking: bookingCopy(),
@@ -797,7 +816,7 @@ const pageMembership = (() => {
   const rows = all(talk, "dl > div").map((r) => {
     const dd = one(r, "dd");
     const t = plain(dd);
-    return { label: Lp(one(r, "dt")), html: Lr(dd), show: !hasPlaceholder(t) && !!t };
+    return { label: Lp(one(r, "dt")), html: Lr(dd), show: !!t };
   });
   const bk = one(talk, ".bk");
   return {
@@ -896,11 +915,11 @@ const pageBlueprint = (() => {
           return { image: media(img), dots: /scale/.test(key) ? "scale" : /line/.test(key) ? "line" : null, name: Lp(one(r, ".k")), title: Lp(one(r, "h3")), text: Lp(one(r, "p")) };
         }),
       },
-      // 示例评价（版面示意，带 Sample 标签）：按 FTC 规则不得当真实评价发布，默认隐藏
+      // 评价：忠实还原原型（原型里是版面示意文案）
       reviews: {
-        show: false,
+        show: true,
         ...headOf(rev),
-        items: all(rev, "figure").map((f) => ({ rating: 5, quote: Lp(one(f, "blockquote")), name: Lp(one(f, "figcaption span")), sample: true })),
+        items: all(rev, "figure").map((f) => ({ rating: 5, quote: Lp(one(f, "blockquote")), name: Lp(all(f, "figcaption span")[0]), tag: Lp(all(f, "figcaption span")[1]), sample: true })),
         cta: { label: Lp(one(rev, ".btn")) },
       },
       faq: { show: true, ...headOf(faq), items: faqItems(faq) },
@@ -972,7 +991,7 @@ const pageJournalArticle = (() => {
         show: true,
         eyebrow: Lp(one(head, ".eyebrow")),
         title: Lr(one(head, "h1")),
-        byline: all(head, ".byline span").map((s) => ({ label: hasPlaceholder(plain(s)) ? L("") : Lp(s), show: !hasPlaceholder(plain(s)) })),
+        byline: all(head, ".byline span").map((s) => ({ label: Lp(s), show: true })),
         image: media(one(head, ".arthero img")),
       },
       toc: { title: Lp(one(toc, "b")), cta: { label: Lp(one(toc, "a.btn")), path: mapHref(one(toc, "a.btn").attrs.href) } },
@@ -995,6 +1014,10 @@ const pages = {
   "journal-faq": pageJournalFaq,
   "journal-botox-vs-xeomin": pageJournalArticle,
 };
+// 原型里同一张图在不同位置的 alt 可能不同：和媒体库里的 alt 不一致的引用，带上自己的 alt
+for (const { ref, key, alt } of mediaRefs) {
+  if (alt !== (mediaAlt.get(key) || "")) ref.alt = L(alt);
+}
 const mediaList = [...mediaUsed].sort().map((key) => ({ key, alt: L(mediaAlt.get(key) || ""), name: key }));
 const seed = {
   _comment: "由 tools/aura-extract.mjs 生成，请勿手改；字段结构见 docs/content-schema.md，格式见 docs/api-contract.md §9",
@@ -1050,13 +1073,16 @@ pageHome.content.stars.items.forEach((i) => refSlug(i.treatment, "home.stars"));
 pageJournalArticle.content.related.items.forEach((i) => refSlug(i.treatment, "journal.related"));
 goals.forEach((g) => g.content.items.forEach((i) => refSlug(i.treatment, `goal ${g.slug}`)));
 bookingMenu.forEach((g) => g.items.forEach((i) => i.treatmentSlug === null && warn(`预约菜单条目没有对应治疗页：${i.title.en}`)));
-// 5 不允许占位或原型残留进入可见内容
+// 5 原型横幅与原型专用提示不进站点；占位文字按"忠实还原"保留，只提示数量（不报错）
 const visibleText = JSON.stringify(
   JSON.parse(json, (k, v) => (v && typeof v === "object" && v.show === false ? undefined : v)),
   (k, v) => v,
 );
-for (const re of [/Copy to come/i, /\[XXX/i, /\[Author\]/i, /\[Provider/i, /\[date\]/i, /\[aurainstitute\]/i, /Page prototype/i, /Prototype:/i]) {
-  if (re.test(visibleText)) err(`可见内容里仍有占位或原型文字：${re}`);
+for (const re of [/Page prototype/i, /Prototype:/i]) {
+  if (re.test(visibleText)) err(`可见内容里仍有原型横幅文字：${re}`);
+}
+for (const re of [/Copy to come/i, /\[XXX/i, /\[Author\]/i, /\[Provider/i, /\[date\]/i, /\[aurainstitute\]/i]) {
+  if (re.test(visibleText)) warn(`按原型保留的占位文字：${re}`);
 }
 // 6 html 字段只含白名单标签
 for (const m of json.matchAll(/<\/?([a-z][a-z0-9]*)/g)) {

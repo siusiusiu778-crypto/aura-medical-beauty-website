@@ -99,6 +99,7 @@
 import "~/assets/css/pages/journal.css";
 
 const props = defineProps<{ ctx: Awaited<ReturnType<typeof usePageContent>> }>();
+useFooterStyle(true);
 const { c, ch, img, alt, focus, raw, list, on } = props.ctx;
 const { tx } = useTx();
 const book = useBooking();

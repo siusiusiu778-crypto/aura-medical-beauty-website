@@ -1,5 +1,6 @@
 <template>
-  <footer v-if="on('footer')" id="contact" class="foot">
+  <footer v-if="simple && c('footer.simple.text')" class="simplefoot">{{ c("footer.simple.text") }}</footer>
+  <footer v-else-if="on('footer')" id="contact" class="foot">
     <div class="in">
       <div class="top">
         <div>
@@ -42,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+const simple = useState<boolean>("footer-simple", () => false);
 const { c, raw, list, on } = await useSite();
 // 电话、邮箱、Instagram：show 为 true 且文字不为空才显示（原型里电话邮箱是占位，种子里是关闭的）
 const contacts = computed(() =>
