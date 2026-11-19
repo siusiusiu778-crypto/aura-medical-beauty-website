@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="wrap crumbs">
-      <NuxtLink to="/">{{ tx("Home") }}</NuxtLink> / {{ bi(entity.category.name) }} / {{ bi(entity.name) }}
+      <NuxtLink to="/">{{ tx("Home") }}</NuxtLink> / {{ bi(entity.category.name) }} / {{ c("hero.crumb") || bi(entity.name) }}
     </div>
 
     <section v-if="on('hero')" id="top" class="thtop">
@@ -142,6 +142,17 @@
       </div>
     </section>
 
+    <!-- 没有正式文案的页面：原型里只有标题和占位说明的文本区块，按原样显示 -->
+    <section v-for="i in list('extras')" :key="`extra-${i}`" :id="raw<boolean>(`extras.${i}.center`) ? 'faq' : undefined" class="tsec" :class="{ alt: raw<string>(`extras.${i}.tone`) === 'alt' }">
+      <div class="wrap" :class="{ faqnarrow: raw<boolean>(`extras.${i}.center`) }">
+        <div class="head" :style="raw<boolean>(`extras.${i}.center`) ? 'text-align:center;justify-items:center' : undefined">
+          <p class="eyebrow">{{ c(`extras.${i}.eyebrow`) }}</p>
+          <h2 v-html="ch(`extras.${i}.title`)" />
+        </div>
+        <p class="placeholder" :style="raw<boolean>(`extras.${i}.center`) ? 'text-align:center' : undefined">{{ c(`extras.${i}.text`) }}</p>
+      </div>
+    </section>
+
     <section v-if="on('closing')" id="book" class="closing tsec">
       <img :src="img('closing.image')" alt="" aria-hidden="true" :style="{ objectPosition: focus('closing.image') }" />
       <div class="wrap">
@@ -160,6 +171,7 @@ const props = defineProps<{ ctx: Awaited<ReturnType<typeof useTreatment>> }>();
 const { c, ch, img, alt, focus, raw, list, on, entity } = props.ctx;
 const { tx, bi } = useTx();
 const book = useBooking();
+useFooterStyle(raw<string>("layout.footer") === "simple");
 
 const optionText = (i: number) => c(`hero.bookbox.options.${i}`);
 // 下拉选项的原始文字（不带编辑预览的隐形标记）

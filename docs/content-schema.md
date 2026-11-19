@@ -163,3 +163,19 @@ closing {show, eyebrow:L10n, title:L10n(html), text:L10n, cta:{label:L10n}}
 - 新增 `listing`：`{blurb:L10n, price:L10n, tags:[L10n]}`，用于预约抽屉与目标页行的小字（目标页行文字以目标 `items[].text` 为准）。
 - `fit.pairNote` 即原型的 "Pairs well"；`how.note` 即 FDA 声明一行；`hero.bookbox.options[0]` 为免费咨询或首选项。
 - `tech-neck` 是占位页：`copyComplete=false`，只有 `hero` 与 `closing`，`how`、`fit`、`tech`、`faq` 的 `show=false`。
+
+
+## 还原原型全部信息（2026-11-19）
+
+按要求，当前版本忠实还原重构之前的全部信息，**不论有没有依据**，包括原型里的占位文字：
+
+- `site.header.account.show = true`（My Account）；`site.footer.contact.phone/email` 显示原型里的占位文字（如 `(212) [XXX-XXXX]`）；会员页弹窗里的联系方式同样显示。
+- `site.footer.simple.text`：目标页、两篇 Journal、占位治疗页（tech-neck）在原型里用的一行简版页脚。
+- `facial-blueprint.reviews.show = true`，评价含 `name` 与 `tag`（第二行小字）；`sample` 标记保留但官网不再据此隐藏。
+- Journal 署名（`By [Author]…`、`Medically reviewed by […]`、`Updated [date]`）全部显示。
+- 会员页 FAQ 的 "Membership terms" 答案是一个 `<ul>`（`faq.items[].a` 允许 `ul/li`）。
+- tech-neck 用 `extras` 显示 5 个标题加 `[Copy to come]` 的占位区块；`copyComplete` 仍为 false，所以仍不收录（与原型的 `noindex` 一致）。
+- 同一张图在不同位置的 alt 不同时，用引用上的 `alt` 覆盖。
+- 原型顶部的 "Page prototype" 横幅（含 All pages 链接）不属于站点内容，不还原。
+
+核对工具：`python3 tools/aura-fidelity.py [站点地址]` 逐页比较原型文本与渲染结果，应输出 0 处缺失。

@@ -4534,7 +4534,11 @@
       },
       "cardMedia": {
         "mediaKey": "goal-lift.jpg",
-        "focus": "50% 60%"
+        "focus": "50% 60%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -5746,7 +5750,11 @@
       },
       "cardMedia": {
         "mediaKey": "thermage-hero.jpg",
-        "focus": "50% 45%"
+        "focus": "50% 45%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -6156,7 +6164,11 @@
       },
       "cardMedia": {
         "mediaKey": "loved-emface.jpg",
-        "focus": "50% 40%"
+        "focus": "50% 40%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -6566,7 +6578,11 @@
       },
       "cardMedia": {
         "mediaKey": "goal-glow.jpg",
-        "focus": "62% 40%"
+        "focus": "62% 40%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -6792,7 +6808,11 @@
           },
           "image": {
             "mediaKey": "goal-skin.jpg",
-            "focus": "35% 35%"
+            "focus": "35% 35%",
+            "alt": {
+              "en": "Close-up of a relaxed eye, brow and cheek with smooth, dewy skin",
+              "zh": ""
+            }
           },
           "pairNote": {
             "label": {
@@ -6983,7 +7003,11 @@
       },
       "cardMedia": {
         "mediaKey": "goal-skin.jpg",
-        "focus": "50% 35%"
+        "focus": "50% 35%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -8228,7 +8252,11 @@
       },
       "cardMedia": {
         "mediaKey": "goal-balance.jpg",
-        "focus": "55% 50%"
+        "focus": "55% 50%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
@@ -9653,7 +9681,11 @@
           },
           "image": {
             "mediaKey": "goal-skin.jpg",
-            "focus": "50% 40%"
+            "focus": "50% 40%",
+            "alt": {
+              "en": "Close-up of smooth, glowing skin",
+              "zh": ""
+            }
           },
           "pairNote": {
             "label": {
@@ -9844,14 +9876,22 @@
       },
       "cardMedia": {
         "mediaKey": "goal-glow.jpg",
-        "focus": "50% 40%"
+        "focus": "50% 40%",
+        "alt": {
+          "en": "",
+          "zh": ""
+        }
       },
       "content": {
         "hero": {
           "show": true,
           "image": {
             "mediaKey": "goal-glow.jpg",
-            "focus": "50% 40%"
+            "focus": "50% 40%",
+            "alt": {
+              "en": "A woman with smooth, glowing skin resting a hand on her cheek",
+              "zh": ""
+            }
           },
           "kicker": {
             "en": "Skin · Hydrate & Glow",
@@ -11076,6 +11116,10 @@
             "en": "Tech Neck",
             "zh": ""
           },
+          "crumb": {
+            "en": "Tech Neck · Levels 1–4",
+            "zh": ""
+          },
           "lede": {
             "en": "Softens horizontal neck lines, matched to their depth.",
             "zh": ""
@@ -11182,6 +11226,91 @@
             "zh": ""
           },
           "items": []
+        },
+        "extras": [
+          {
+            "eyebrow": {
+              "en": "How it works",
+              "zh": ""
+            },
+            "title": {
+              "en": "How Tech Neck · Levels 1–4 works for <em>your</em> skin",
+              "zh": ""
+            },
+            "text": {
+              "en": "[Copy to come]",
+              "zh": ""
+            },
+            "tone": "alt",
+            "center": false
+          },
+          {
+            "eyebrow": {
+              "en": "Is it right for you?",
+              "zh": ""
+            },
+            "title": {
+              "en": "Ideal <em>for</em>",
+              "zh": ""
+            },
+            "text": {
+              "en": "[Copy to come]",
+              "zh": ""
+            },
+            "tone": "plain",
+            "center": false
+          },
+          {
+            "eyebrow": {
+              "en": "The technology",
+              "zh": ""
+            },
+            "title": {
+              "en": "Precise, <em>considered</em> care",
+              "zh": ""
+            },
+            "text": {
+              "en": "[Copy to come]",
+              "zh": ""
+            },
+            "tone": "alt",
+            "center": false
+          },
+          {
+            "eyebrow": {
+              "en": "At a glance",
+              "zh": ""
+            },
+            "title": {
+              "en": "Tech Neck · Levels 1–4 <em>at a glance</em>",
+              "zh": ""
+            },
+            "text": {
+              "en": "[Copy to come]",
+              "zh": ""
+            },
+            "tone": "plain",
+            "center": false
+          },
+          {
+            "eyebrow": {
+              "en": "FAQs",
+              "zh": ""
+            },
+            "title": {
+              "en": "Frequently asked <em>questions</em>",
+              "zh": ""
+            },
+            "text": {
+              "en": "[Copy to come]",
+              "zh": ""
+            },
+            "tone": "alt",
+            "center": true
+          }
+        ],
+        "layout": {
+          "footer": "simple"
         },
         "closing": {
           "show": true,
@@ -14101,7 +14230,11 @@
             "group": null,
             "image": {
               "mediaKey": "thermage-hero.jpg",
-              "focus": "50% 45%"
+              "focus": "50% 45%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "Thermage® FLX",
@@ -14127,7 +14260,11 @@
             "group": null,
             "image": {
               "mediaKey": "loved-emface.jpg",
-              "focus": "50% 40%"
+              "focus": "50% 40%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "EMFACE®",
@@ -14153,7 +14290,11 @@
             "group": null,
             "image": {
               "mediaKey": "goal-glow.jpg",
-              "focus": "62% 40%"
+              "focus": "62% 40%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "Exion™ Collagen Lift",
@@ -14666,7 +14807,11 @@
             "group": "jawline",
             "image": {
               "mediaKey": "goal-lift.jpg",
-              "focus": "50% 60%"
+              "focus": "50% 60%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "Double Chin Reduction (KYBELLA®)",
@@ -14845,7 +14990,11 @@
             "group": "start",
             "image": {
               "mediaKey": "goal-skin.jpg",
-              "focus": "50% 35%"
+              "focus": "50% 35%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "Gold Skin Analysis",
@@ -14923,7 +15072,11 @@
             "group": "facials",
             "image": {
               "mediaKey": "goal-balance.jpg",
-              "focus": "55% 50%"
+              "focus": "55% 50%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "Barrier Recovery Facial",
@@ -15127,7 +15280,11 @@
             "group": "hydrate",
             "image": {
               "mediaKey": "goal-glow.jpg",
-              "focus": "50% 40%"
+              "focus": "50% 40%",
+              "alt": {
+                "en": "",
+                "zh": ""
+              }
             },
             "title": {
               "en": "SKINVIVE™",
@@ -15575,7 +15732,7 @@
             "zh": ""
           },
           "account": {
-            "show": false,
+            "show": true,
             "label": {
               "en": "My Account",
               "zh": ""
@@ -15686,17 +15843,17 @@
               "zh": ""
             },
             "phone": {
-              "show": false,
+              "show": true,
               "label": {
-                "en": "",
+                "en": "(212) [XXX-XXXX]",
                 "zh": ""
               },
               "href": ""
             },
             "email": {
-              "show": false,
+              "show": true,
               "label": {
-                "en": "",
+                "en": "hello@[aurainstitute].com",
                 "zh": ""
               },
               "href": ""
@@ -15738,6 +15895,12 @@
                 "href": ""
               }
             ]
+          },
+          "simple": {
+            "text": {
+              "en": "AURA Institute · 630 Fifth Avenue, Suite 1812, New York, NY 10111 · Results vary by individual.",
+              "zh": ""
+            }
           }
         },
         "floatBook": {
@@ -17185,7 +17348,11 @@
           "images": [
             {
               "mediaKey": "about-smile.webp",
-              "focus": "50% 38%"
+              "focus": "50% 38%",
+              "alt": {
+                "en": "A smiling woman resting her head on her arms",
+                "zh": ""
+              }
             },
             {
               "mediaKey": "about-lips.webp",
@@ -17507,7 +17674,7 @@
                 "zh": ""
               },
               "a": {
-                "en": "",
+                "en": "<ul><li>AURA Prime has a 3-month minimum.</li><li>The quarterly BBL™ / Rejuran® perk unlocks after 3 consecutive months.</li><li>Your monthly facial must be used within that month.</li><li>Perks not yet unlocked cannot be exchanged for cash or refunded.</li><li>Wellness Credits keep adding up.</li><li>To cancel, please give 30 days’ notice.</li></ul>",
                 "zh": ""
               }
             }
@@ -17558,7 +17725,7 @@
                 "en": "<a href=\"tel:+1212\">(212) [XXX-XXXX]</a>",
                 "zh": ""
               },
-              "show": false
+              "show": true
             },
             {
               "label": {
@@ -17569,7 +17736,7 @@
                 "en": "<a href=\"mailto:hello@aurainstitute.com\">hello@[aurainstitute].com</a>",
                 "zh": ""
               },
-              "show": false
+              "show": true
             },
             {
               "label": {
@@ -17910,7 +18077,7 @@
           ]
         },
         "reviews": {
-          "show": false,
+          "show": true,
           "eyebrow": {
             "en": "Client stories",
             "zh": ""
@@ -17930,6 +18097,10 @@
                 "en": "Client name",
                 "zh": ""
               },
+              "tag": {
+                "en": "Facial Blueprint + Chin Balance",
+                "zh": ""
+              },
               "sample": true
             },
             {
@@ -17942,6 +18113,10 @@
                 "en": "Client name",
                 "zh": ""
               },
+              "tag": {
+                "en": "Facial Blueprint",
+                "zh": ""
+              },
               "sample": true
             },
             {
@@ -17952,6 +18127,10 @@
               },
               "name": {
                 "en": "Client name",
+                "zh": ""
+              },
+              "tag": {
+                "en": "Facial Blueprint + Botox® & Xeomin®",
                 "zh": ""
               },
               "sample": true
@@ -18317,17 +18496,17 @@
           "byline": [
             {
               "label": {
-                "en": "",
+                "en": "By [Author], AURA Journal",
                 "zh": ""
               },
-              "show": false
+              "show": true
             },
             {
               "label": {
-                "en": "",
+                "en": "Medically reviewed by [Provider name, NP]",
                 "zh": ""
               },
-              "show": false
+              "show": true
             },
             {
               "label": {
@@ -18338,10 +18517,10 @@
             },
             {
               "label": {
-                "en": "",
+                "en": "Updated [date]",
                 "zh": ""
               },
-              "show": false
+              "show": true
             }
           ],
           "image": {

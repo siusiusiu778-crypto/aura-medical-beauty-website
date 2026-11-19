@@ -54,6 +54,7 @@ import "~/assets/css/pages/goal.css";
 
 const props = defineProps<{ ctx: Awaited<ReturnType<typeof useGoal>> }>();
 const { c, ch, img, alt, focus, raw, list, on } = props.ctx;
+useFooterStyle(true);
 const { tx } = useTx();
 const book = useBooking();
 const group = ref("all");

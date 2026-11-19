@@ -21,6 +21,8 @@
 {"id":123,"url":"https://cdn…/x.jpg","kind":"image","alt":{"en":"","zh":""},"width":1200,"height":800,"posterUrl":null,"focus":"50% 45%"}
 ```
 
+同一张图在不同位置需要不同替代文字时，引用上可以带 `"alt": {"en":"…","zh":"…"}`，解析后 `alt` 以引用上的为准（空串也算覆盖），没写则用媒体库里的。
+
 找不到或已删除的媒体解析为 `null`。存储里没有图片的字段写作 `{"mediaId": null}`（管理端编辑器按这个形状识别图片字段）。`kind` 为 `image | video`；视频的 `posterUrl` 是海报图地址。
 种子文件里用 `{"mediaKey":"thermage-hero.jpg","focus":"…"}`，导入脚本上传媒体后换成 `mediaId`。
 
@@ -45,6 +47,8 @@ faq     {show, eyebrow:L10n, title:L10n(html), items:[{q:L10n, a:L10n(html)}]}
 closing {show, image:Media, title:L10n(html), text:L10n, cta:L10n}
 listing {blurb:L10n, price:L10n, tags:[L10n]}      // 预约抽屉与目标页行的小字
 ```
+
+治疗页还有三个可选字段：`hero.crumb:L10n`（面包屑末段，缺省用治疗名）、`layout.footer:"simple"`（用一行简版页脚）、`extras:[{eyebrow:L10n, title:L10n(html), text:L10n, tone:"alt"|"plain", center:bool}]`（没有正式文案时的文本区块，按顺序显示在 `closing` 之前，原型里的占位页用它）。
 
 其他页面（首页、About、Membership、Facial Blueprint、Journal、目标页、`site`）的内容结构由 `docs/content-schema.md` 约定，该文件由种子抽取工具的作者维护。html 字段里的站内链接是不含子目录前缀的根相对路径，官网输出时补 `baseURL`。
 

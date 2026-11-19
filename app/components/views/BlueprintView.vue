@@ -70,7 +70,7 @@
       </div>
     </section>
 
-    <!-- 客户评价：只有真实评价（没有 sample 标记）才展示；示意用的评价按美国 FTC 规定不得当真实评价发布 -->
+    <!-- 客户评价：按原型原样展示（原先被隐藏的示意评价已还原）。原注释：示意用的评价按美国 FTC 规定不得当真实评价发布 -->
     <section v-if="on('reviews') && reviews.length" id="reviews" class="tsec alt">
       <div class="wrap fbrv">
         <div class="head">
@@ -83,7 +83,7 @@
               <svg v-for="s in raw<number>(`reviews.items.${r}.rating`) ?? 5" :key="s" viewBox="0 0 20 20"><path d="M10 1.6l2.47 5.3 5.8.7-4.27 4 1.1 5.74L10 14.5l-5.1 2.84 1.1-5.74-4.27-4 5.8-.7z" /></svg>
             </p>
             <blockquote>{{ c(`reviews.items.${r}.quote`) }}</blockquote>
-            <figcaption><span>{{ c(`reviews.items.${r}.name`) }}</span></figcaption>
+            <figcaption><span>{{ c(`reviews.items.${r}.name`) }}</span><span v-if="c(`reviews.items.${r}.tag`)">{{ c(`reviews.items.${r}.tag`) }}</span></figcaption>
           </figure>
         </div>
         <a class="btn rv" href="#book" role="button" @click.prevent="book.open()">{{ c("reviews.cta.label") }}</a>
@@ -130,8 +130,8 @@ const book = useBooking();
 const mapHtml = computed(() => mapSvg.replace("{{front}}", img("hero.map.front")).replace("{{side}}", img("hero.map.side")));
 const dotsOf = (i: number) => ({ scale: dotsScale, line: dotsLine })[raw<string>(`aesthetic.rows.${i}.dots`) ?? ""] ?? "";
 const introLines = computed(() => splitLines(ch("aesthetic.intro")));
-// 真实评价才展示（sample:true 的不输出）
-const reviews = computed(() => list("reviews.items").filter(i => raw<boolean>(`reviews.items.${i}.sample`) !== true));
+// 忠实还原原型：评价全部展示
+const reviews = computed(() => list("reviews.items"));
 
 const modes = computed(() =>
   list("hero.map.modes").map(i => ({

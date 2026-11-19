@@ -30,7 +30,8 @@ function resolveMedia(node: unknown): unknown {
         id: 0,
         url: `${useRuntimeConfig().app.baseURL}_mock/media/${key}`,
         kind: /\.(mp4|webm)$/i.test(key) ? "video" : "image",
-        alt: meta.alt ?? { en: "", zh: "" },
+        // 引用上带 alt 时覆盖媒体库里的（同一张图在不同位置的替代文字不同）
+        alt: (obj.alt as Json | undefined) ?? meta.alt ?? { en: "", zh: "" },
         width: null,
         height: null,
         posterUrl: null,
