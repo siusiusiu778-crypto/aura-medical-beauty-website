@@ -292,7 +292,9 @@ const metaOf = (name) => {
 };
 const seoOf = (name, noindex = false) => {
   const m = metaOf(name);
-  return { title: L(m.title), description: L(m.description), keywords: L(""), ogMediaId: null, noindex };
+  // 首页标题不带 "Homepage" 后缀（原型里是 "AURA Institute Homepage"，2026-11-19 按要求去掉）
+  const title = name === "home" ? m.title.replace(/\s+Homepage$/i, "") : m.title;
+  return { title: L(title), description: L(m.description), keywords: L(""), ogMediaId: null, noindex };
 };
 
 /** 执行页面脚本里的一段字面量（const NAME = [...]; 或 var NAME = {...};） */
