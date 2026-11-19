@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CHECK_ONLY = process.argv.includes("--check");
+const EXTRA_MEDIA = path.join(root, "seed", "media"); // 原型之外新增的媒体（网页图标等）
 const SITE = [path.join(root, "legacy", "site"), path.join(root, "site")].find((d) => fs.existsSync(path.join(d, "home.html")));
 if (!SITE) {
   console.error("找不到原型目录（legacy/site 或 site）");
@@ -250,7 +251,8 @@ function focusOf(style) {
 function useMedia(key, alt) {
   if (!key) return;
   mediaUsed.add(key);
-  if (!fs.existsSync(path.join(SITE, key))) mediaMissing.add(key);
+  // 原型里的媒体在 SITE 目录；原型之外新增的（如网页图标）放在 seed/media/
+  if (!fs.existsSync(path.join(SITE, key)) && !fs.existsSync(path.join(EXTRA_MEDIA, key))) mediaMissing.add(key);
   if (alt && !mediaAlt.get(key)) mediaAlt.set(key, alt);
   else if (!mediaAlt.has(key)) mediaAlt.set(key, "");
 }
@@ -631,7 +633,13 @@ const legalLinks = all(footer, ".legal nav a");
 const hdLogo = one(header, "a.hdlogo");
 const pageSite = {
   content: {
-    brand: { name: L(plain({ children: hdLogo.children.filter((c) => !(c.tag === "span")) })), by: Lp(one(hdLogo, ".by")), tagline: Lp(one(footer, ".tagl")) },
+    brand: {
+      name: L(plain({ children: hdLogo.children.filter((c) => !(c.tag === "span")) })),
+      by: Lp(one(hdLogo, ".by")),
+      tagline: Lp(one(footer, ".tagl")),
+      // 网页标签页的图标（favicon）：方形透明底 PNG，在 CMS「全站通用 → 品牌」里可换
+      favicon: mediaFrom("aura-favicon.png", undefined, "AURA Institute"),
+    },
     header: {
       searchPlaceholder: L(one(header, ".hsearch input").attrs.placeholder),
       searchLabel: L(one(header, ".hsearch button").attrs["aria-label"]),

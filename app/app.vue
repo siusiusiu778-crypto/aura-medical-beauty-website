@@ -27,7 +27,14 @@ const pageKey = (r: { fullPath: string }) => `${r.fullPath}#${epoch.value}`;
 const { c, img, on } = await useSite();
 
 useHead({
-  link: () => (img("brand.favicon") ? [{ rel: "icon" as const, href: img("brand.favicon"), key: "favicon" }] : []),
+  // 网页标签页图标来自 CMS（全站通用 → 品牌 → favicon）；苹果设备添加到主屏幕时用同一张图
+  link: () =>
+    img("brand.favicon")
+      ? [
+          { rel: "icon" as const, type: "image/png", href: img("brand.favicon"), key: "favicon" },
+          { rel: "apple-touch-icon" as const, href: img("brand.favicon"), key: "apple-touch-icon" }
+        ]
+      : [],
   // 子目录测试阶段整站不被收录；正式站由各页面自己决定
   meta: () => (config.public.deployEnv === "production" ? [] : [{ name: "robots", content: "noindex, nofollow" }])
 });

@@ -16,7 +16,7 @@
 ## 1. `site`（全站）
 
 ```
-brand      {name:L10n, by:L10n, tagline:L10n}                 // AURA INSTITUTE / by sxy / Unveil Your Aura.
+brand      {name:L10n, by:L10n, tagline:L10n, favicon:Media}  // AURA INSTITUTE / by sxy / Unveil Your Aura. / 网页标签页图标（方形透明底 PNG，CMS 里可换；原图在 seed/media/aura-favicon.png）
 header     {searchPlaceholder:L10n, searchLabel:L10n, account:{show:false, label:L10n},
             bookLabel:L10n, mobileBookLabel:L10n, menuLabel:L10n}
 nav        {dropdowns:{about:[{label:L10n, path:string}], membership:[{label:L10n, path:string}]}}
