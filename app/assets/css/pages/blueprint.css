@@ -1,0 +1,737 @@
+/* 由 scripts/scope-css.mjs 从 legacy/site 生成，请勿手改；补充样式写在同名 .extra.css */
+
+.pg-blueprint{/* homepage palette (shell / cocoa / clay), light only on every page */--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--ink:#5B4840;--muted:#9D857B;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--tan:#E7CFC3;--rust:#B07E6B;--cocoa:#2F221D;--clay:#B07E6B;--clay-lt:#E3B7A3;--rose:#E7CFC3;--cream:#FBF4EF;--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif;color-scheme:light}
+.pg-blueprint *{box-sizing:border-box}.pg-blueprint{-webkit-text-size-adjust:100%}
+.pg-blueprint{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pg-blueprint img{max-width:100%}.pg-blueprint a{color:inherit}.pg-blueprint button{font:inherit;cursor:pointer}
+.pg-blueprint :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pg-blueprint .wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-blueprint .wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-blueprint h1,.pg-blueprint h2,.pg-blueprint h3{margin:0;font-weight:400;text-wrap:balance}.pg-blueprint em{font-family:var(--serif)}
+.pg-blueprint .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+.pg-blueprint .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;background:var(--accent);color:var(--on-accent)}
+.pg-blueprint .btn.line{background:transparent;border-color:currentColor;color:inherit}
+.pg-blueprint .proto{background:var(--fg);color:var(--bg);font-size:12px;text-align:center;padding:6px 16px}
+.pg-blueprint .proto a{color:inherit}
+.pg-blueprint .nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-blueprint .nav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:none}
+.pg-blueprint .logo{font-size:24px;font-weight:500;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}.pg-blueprint .logo span{font-size:.46em;letter-spacing:.3em;text-transform:uppercase;vertical-align:.4em;margin-left:4px}
+.pg-blueprint .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pg-blueprint .nav ul a{text-decoration:none;white-space:nowrap}.pg-blueprint .nav ul .on{border-bottom:1px solid currentColor;padding-bottom:3px}
+.pg-blueprint .nav .btn{padding:10px 20px;font-size:11.5px;border-radius:999px}
+@media(max-width:1180px){.pg-blueprint .nav ul{display:none}}
+.pg-blueprint .crumbs{font-size:12.5px;color:var(--muted);padding-block:18px 0}.pg-blueprint .crumbs a{text-decoration:none}
+.pg-blueprint .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);min-height:clamp(380px,38vw,520px);background:var(--tan);color:#241A14;margin-top:18px}
+.pg-blueprint .hero .tx{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(28px,5vw,72px)}
+.pg-blueprint .hero h1{font-family:var(--serif);font-size:clamp(44px,5vw,72px);line-height:1}
+.pg-blueprint .hero p{margin:0;font-size:clamp(16px,1.4vw,19px);max-width:36ch}
+.pg-blueprint .hero .eyebrow{color:#5a4636}
+.pg-blueprint .hero .btns{display:flex;gap:12px;flex-wrap:wrap}.pg-blueprint .hero .btn{background:#241A14;color:#F7F3EE}.pg-blueprint .hero .btn.line{background:transparent;color:#241A14;border-color:#241A14}
+.pg-blueprint .hero .ph{position:relative;overflow:hidden;min-height:280px}
+.pg-blueprint .hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--tan) 0%,rgba(217,180,143,0) 25%)}
+@media(max-width:860px){.pg-blueprint .hero{grid-template-columns:1fr}.pg-blueprint .hero .ph{order:-1;aspect-ratio:4/3;min-height:0}.pg-blueprint .hero .ph::before{background:linear-gradient(0deg,var(--tan),rgba(217,180,143,0) 25%)}}
+.pg-blueprint section{padding-block:clamp(56px,7vw,96px)}
+.pg-blueprint .alt{background:var(--surface)}
+.pg-blueprint .head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,44px);max-width:660px}
+.pg-blueprint .head h2{font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);line-height:1.05}
+.pg-blueprint .head p{margin:0;color:var(--muted)}
+.pg-blueprint .needs{display:grid;gap:clamp(36px,5vw,64px)}
+.pg-blueprint .need{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.pg-blueprint .need:nth-child(even) .ph{order:2}
+.pg-blueprint .need .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
+.pg-blueprint .need .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .need .tx{display:grid;gap:14px;min-width:0}
+.pg-blueprint .need h3{font-size:clamp(26px,2.4vw,34px);font-family:var(--serif)}
+.pg-blueprint .need p{margin:0;color:var(--muted);max-width:50ch}
+.pg-blueprint .tags{display:flex;flex-wrap:wrap;gap:8px}.pg-blueprint .tags span{border:1px solid var(--line);padding:6px 12px;font-size:13px;background:var(--card)}
+.pg-blueprint .need .row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.pg-blueprint .price{font-variant-numeric:tabular-nums}.pg-blueprint .price b{font-size:20px;font-weight:600}.pg-blueprint .price s{color:var(--muted);margin-right:6px}
+.pg-blueprint .more{font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:860px){.pg-blueprint .need{grid-template-columns:1fr}.pg-blueprint .need:nth-child(even) .ph{order:0}}
+.pg-blueprint .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.pg-blueprint .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:960px){.pg-blueprint .grid3,.pg-blueprint .grid4{grid-template-columns:1fr 1fr}}@media(max-width:600px){.pg-blueprint .grid3,.pg-blueprint .grid4{grid-template-columns:1fr}}
+.pg-blueprint .card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-blueprint .card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}.pg-blueprint .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .card .bd{padding:22px;display:grid;gap:10px;align-content:start;flex:1}.pg-blueprint .card h3{font-size:21px;font-weight:600}.pg-blueprint .card p{margin:0;font-size:14.5px;color:var(--muted)}
+.pg-blueprint .card .ft{padding:0 22px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-blueprint .badge{display:inline-block;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;justify-self:start}
+.pg-blueprint .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.pg-blueprint .steps div{border-top:1px solid var(--fg);padding-top:16px;counter-increment:s;display:grid;gap:6px}
+.pg-blueprint .steps div::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-blueprint .steps b{font-size:17px;font-weight:600}.pg-blueprint .steps span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-blueprint .steps{grid-template-columns:1fr 1fr}}
+.pg-blueprint .tbl{overflow-x:auto}.pg-blueprint table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.pg-blueprint th,.pg-blueprint td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}.pg-blueprint th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.pg-blueprint td.hi{color:var(--rust);font-weight:600}
+.pg-blueprint .note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.pg-blueprint details{border-bottom:1px solid var(--line);padding-block:18px}.pg-blueprint details:first-of-type{border-top:1px solid var(--line)}
+.pg-blueprint summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px;font-weight:500}.pg-blueprint summary::-webkit-details-marker{display:none}
+.pg-blueprint summary::after{content:"+";font-size:22px;line-height:1;color:var(--muted)}.pg-blueprint details[open] summary::after{content:"–"}.pg-blueprint details p{margin:12px 0 0;color:var(--muted);max-width:62ch}
+.pg-blueprint .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}@media(max-width:860px){.pg-blueprint .split{grid-template-columns:1fr}}
+.pg-blueprint .ph-empty{aspect-ratio:3/4;background:repeating-linear-gradient(135deg,var(--surface) 0 12px,var(--card) 12px 24px);border:1px dashed var(--line);display:grid;place-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pg-blueprint .cta{background:var(--accent);color:var(--on-accent);text-align:center}.pg-blueprint .cta .wrap{display:grid;gap:16px;justify-items:center}
+.pg-blueprint .cta h2{font-family:var(--serif);font-size:clamp(34px,4vw,52px)}.pg-blueprint .cta p{margin:0;opacity:.8;max-width:48ch}.pg-blueprint .cta .btn{background:var(--on-accent);color:var(--accent)}
+.pg-blueprint footer{padding-block:28px;font-size:12.5px;color:var(--muted);text-align:center}
+.pg-blueprint .mini{display:grid;gap:4px;font-size:14px}.pg-blueprint .mini div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-block:6px}
+
+.pg-blueprint .cat{padding-block:clamp(40px,5vw,72px);border-top:1px solid var(--line)}
+.pg-blueprint .cat:first-of-type{border-top:0}
+.pg-blueprint .cat .ch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;margin-bottom:24px}
+.pg-blueprint .cat h2{font-family:var(--serif);font-size:clamp(30px,3vw,42px);line-height:1.05}
+.pg-blueprint .cat .ch p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.pg-blueprint .subnav{position:sticky;top:68px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-blueprint .subnav .wrap{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding-block:14px}
+.pg-blueprint .subnav a{text-decoration:none;white-space:nowrap}.pg-blueprint .subnav a:hover{text-decoration:underline;text-underline-offset:5px}
+.pg-blueprint .prods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:1100px){.pg-blueprint .prods{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:820px){.pg-blueprint .prods{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pg-blueprint .prods{grid-template-columns:1fr}}
+.pg-blueprint .prod{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-blueprint .prod .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--surface)}.pg-blueprint .prod .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.pg-blueprint .prod:hover .ph img{transform:scale(1.04)}
+.pg-blueprint .prod .sale{position:absolute;top:10px;left:10px;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px}
+.pg-blueprint .prod .bd{padding:16px 16px 6px;display:grid;gap:6px;flex:1;align-content:start}
+.pg-blueprint .prod h3{font-size:17px;font-weight:600;letter-spacing:.01em}
+.pg-blueprint .prod p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.pg-blueprint .prod .meta{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.pg-blueprint .prod .ft{padding:12px 16px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pg-blueprint .prod .price{font-size:14px}.pg-blueprint .prod .price b{font-size:17px}
+.pg-blueprint .prod .acts{display:flex;gap:12px;align-items:center}
+.pg-blueprint .prod .bk{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--on-accent);padding:7px 12px}
+
+
+/* AURA Institute · shared Level 3 treatment page template (l3.css)
+   Section order: hero (.thtop/.thero2 + .bookbox + .chips) → How it works (.hhead + .bcards + .fda)
+   → Is it right for you? (.fit5 + .pairnote) → The technology / Our approach / Your visit (.techband + .tsteps)
+   → At a glance (.g4) → FAQ (.faqgrid) → closing band (.closing).
+   Every Level 3 page links this file and l3.js. Change the design here once; it applies to every page. */
+.pg-blueprint .tsec{padding-block:clamp(56px,8vw,88px)}
+.pg-blueprint .tsec.alt{background:var(--surface)}
+.pg-blueprint .thero{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:760px){.pg-blueprint .thero{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-blueprint .thero .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
+.pg-blueprint .thero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-blueprint .thero .tx{display:grid;gap:16px;min-width:0}
+.pg-blueprint .thero h1{font-family:var(--serif);font-size:clamp(42px,5vw,68px);line-height:1}
+.pg-blueprint .thero p.lede{margin:0;color:var(--muted);font-size:17px;max-width:46ch}
+.pg-blueprint .thero .tlink{font-size:14px;text-decoration:underline;text-underline-offset:4px;width:fit-content}
+@media(max-width:860px){.pg-blueprint .thero{grid-template-columns:1fr}.pg-blueprint .thero .ph{order:-1}}
+/* booking box */
+.pg-blueprint .bookbox{margin-top:8px;display:grid;gap:12px}
+.pg-blueprint .bbrow{border:1px solid var(--line);background:var(--surface)}
+.pg-blueprint .bbrow summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:14.5px;font-weight:500}
+.pg-blueprint .bbrow summary::-webkit-details-marker{display:none}
+.pg-blueprint .bbrow summary::after{content:none}
+.pg-blueprint .bbrow summary .chev{transition:transform .3s ease;color:var(--muted)}
+.pg-blueprint .bbrow[open] summary .chev{transform:rotate(180deg)}
+.pg-blueprint .bbopts{padding:0 18px 18px;display:grid;gap:10px;border-top:1px solid var(--line);margin-top:0}
+.pg-blueprint .bbopt{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:14px}
+.pg-blueprint .bbopt:first-child{padding-top:16px}
+.pg-blueprint .bbaddr{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.pg-blueprint .bookbox>.btn{width:100%}
+/* benefits 2x2 */
+.pg-blueprint .benefits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pg-blueprint .benefits div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;display:grid;gap:6px}
+.pg-blueprint .benefits h3{font-size:17px;font-weight:600}
+.pg-blueprint .benefits p{margin:0;color:var(--muted);font-size:14.5px}
+@media(max-width:640px){.pg-blueprint .benefits{grid-template-columns:1fr}}
+.pg-blueprint .notebar{border-left:3px solid var(--rust);padding:14px 18px;margin-top:24px;font-size:14px;color:var(--fg);background:var(--card)}
+/* is it right for you */
+.pg-blueprint .fit3{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.pg-blueprint .fit3 .ph{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.pg-blueprint .fit3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-blueprint .fitcard{background:var(--card);border:1px solid var(--line);padding:26px;display:grid;gap:14px;align-content:start}
+.pg-blueprint .fitcard h4{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-blueprint .fitcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.pg-blueprint .fitcard li{display:flex;gap:10px}
+.pg-blueprint .fitcard li::before{content:"✓";color:var(--rust);flex:none}
+.pg-blueprint .fitcard.no li::before{content:"–"}
+.pg-blueprint .fitcard .pair{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.pg-blueprint .fit3{grid-template-columns:1fr 1fr}.pg-blueprint .fit3>.ph{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:620px){.pg-blueprint .fit3{grid-template-columns:1fr}}
+/* technology: text left, image right, numbered list via .steps-v */
+.pg-blueprint .techwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.pg-blueprint .techwrap .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.pg-blueprint .techwrap .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-blueprint .steps-v{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:20px}
+.pg-blueprint .steps-v li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.pg-blueprint .steps-v li::before{content:counter(st,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-blueprint .steps-v b{display:block;font-size:16.5px;font-weight:600;margin-bottom:4px}
+.pg-blueprint .steps-v span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-blueprint .techwrap{grid-template-columns:1fr}.pg-blueprint .techwrap .ph{order:-1}}
+/* at a glance */
+.pg-blueprint .glance{background:var(--card);border:1px solid var(--line)}
+.pg-blueprint .glance .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-blueprint .glance .col{padding:28px 24px;border-right:1px solid var(--line)}
+.pg-blueprint .glance .col:last-child{border-right:0}
+.pg-blueprint .glance h5{margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-blueprint .glance p{margin:0 0 8px;font-size:14px;color:var(--fg);line-height:1.6}
+.pg-blueprint .glance p:last-child{margin-bottom:0}
+.pg-blueprint .glance .ft{border-top:1px solid var(--line);padding:16px 24px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.pg-blueprint .glance .cols{grid-template-columns:1fr 1fr}.pg-blueprint .glance .col{border-bottom:1px solid var(--line)}.pg-blueprint .glance .col:nth-child(2n){border-right:0}}
+@media(max-width:560px){.pg-blueprint .glance .cols{grid-template-columns:1fr}}
+/* faq narrow */
+.pg-blueprint .faqnarrow{max-width:720px;margin:0 auto}
+/* closing banner */
+.pg-blueprint .closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
+.pg-blueprint .closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.pg-blueprint .closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
+.pg-blueprint .closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
+.pg-blueprint .closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
+.pg-blueprint .closing p{margin:0;max-width:48ch;opacity:.9}
+.pg-blueprint .closing .btn{background:#FBF4EF;color:#3F3029}
+
+/* ---- homepage look: shell / cocoa / clay palette, Cormorant headings + Hanken body, light only ---- */
+.pg-blueprint,.pg-blueprint[data-theme]{--ease:cubic-bezier(.16,1,.3,1);--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--muted:#9D857B;--ink:#5B4840;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--rust:#B07E6B;--clay:#B07E6B;--clay-lt:#E3B7A3;--cocoa:#2F221D;--cream:#FBF4EF;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond","Cormorant","Times New Roman",serif;color-scheme:light}
+.pg-blueprint{color:var(--ink);font-weight:300;line-height:1.7}
+.pg-blueprint h1,.pg-blueprint h2,.pg-blueprint h3{color:var(--fg)}
+.pg-blueprint h1 em,.pg-blueprint h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
+.pg-blueprint .proto{background:#F1E3DB;color:#5B4840}
+.pg-blueprint .crumbs{font-size:12px;letter-spacing:.04em}
+.pg-blueprint .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--fg)}
+.pg-blueprint .tsec{padding-block:clamp(80px,9vw,128px)}
+.pg-blueprint .head{gap:14px}
+.pg-blueprint .head h2{font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1}
+.pg-blueprint .btn{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
+.pg-blueprint .btn:hover{background:var(--clay)}
+/* how it works */
+.pg-blueprint .benefits div{padding:28px 28px}
+.pg-blueprint .benefits h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.15}
+.pg-blueprint .benefits p{color:var(--ink)}
+.pg-blueprint .notebar{border-left-color:var(--clay);background:var(--card);color:var(--ink)}
+/* fit cards + glance + steps */
+.pg-blueprint .fitcard h4,.pg-blueprint .glance h5{color:var(--clay);font-size:11px;font-weight:600;letter-spacing:.2em}
+.pg-blueprint .fitcard li::before{color:var(--clay)}
+.pg-blueprint .steps-v li::before{color:var(--clay);font-size:32px}
+.pg-blueprint .steps-v b{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--fg)}
+.pg-blueprint .steps-v span{color:var(--ink)}
+.pg-blueprint .glance p{color:var(--ink)}
+/* faq */
+.pg-blueprint summary{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--fg)}
+.pg-blueprint details p{color:var(--ink)}
+/* closing band + footer in cocoa, like the homepage */
+.pg-blueprint .closing{background:var(--cocoa)}
+.pg-blueprint .closing::before{background:rgba(47,34,29,.62)}
+.pg-blueprint .closing h2{font-weight:400;font-size:clamp(40px,4.6vw,64px)}
+.pg-blueprint .closing h2 em{color:var(--clay-lt)}
+.pg-blueprint .closing .btn{background:var(--cream);color:var(--cocoa)}
+.pg-blueprint .closing .btn:hover{background:var(--clay-lt)}
+
+/* hero v2: photo left with an offset clay frame, copy right */
+.pg-blueprint .thtop{padding-block:clamp(28px,3vw,44px) clamp(72px,8vw,112px)}
+.pg-blueprint{scroll-behavior:smooth}
+.pg-blueprint section[id]{scroll-margin-top:72px}
+.pg-blueprint .thero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.pg-blueprint .tframe{position:relative;padding:0 0 clamp(18px,2vw,28px) clamp(18px,2vw,28px)}
+.pg-blueprint .tframe::before{content:"";position:absolute;left:0;bottom:0;width:72%;height:78%;background:var(--surface);border:1px solid var(--line)}
+.pg-blueprint .tframe .ph{position:relative;height:clamp(340px,calc(100svh - 230px),540px);overflow:hidden;background:var(--surface)}
+.pg-blueprint .tframe .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .thero2 .tx{display:grid;gap:20px;min-width:0}
+.pg-blueprint .kicker{color:var(--clay);font-weight:700;letter-spacing:.22em;margin-bottom:-6px}
+.pg-blueprint .big{font-family:var(--serif);font-weight:400;white-space:nowrap;font-size:clamp(40px,5.2vw,82px);line-height:.92;letter-spacing:-.01em;color:var(--fg);margin:0}
+.pg-blueprint .big .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.pg-blueprint .big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.pg-blueprint .big.in .ln i{transform:none}
+.pg-blueprint .big em{font-style:italic;color:var(--clay)}
+.pg-blueprint .thero2 .lede{margin:0;max-width:44ch;font-size:17px;line-height:1.75;color:var(--ink)}
+.pg-blueprint .ctas{display:flex;align-items:center;gap:20px 30px;flex-wrap:wrap;margin-top:6px}
+.pg-blueprint .ctas .tlink{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;color:var(--fg)}
+.pg-blueprint .ctas .tlink:hover{color:var(--clay)}
+@media(max-width:860px){.pg-blueprint .thero2{grid-template-columns:1fr}}
+/* benefit icons: fine line art on a soft tile */
+.pg-blueprint .benefits .bimg{display:grid;place-items:center;aspect-ratio:4/3;background:var(--card);border:1px solid var(--line)}
+.pg-blueprint .benefits .bimg svg{width:auto;height:66%;fill:none;stroke:var(--fg);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s var(--ease)}
+.pg-blueprint .benefits .bimg .ac{stroke:var(--clay);stroke-width:1.6}
+.pg-blueprint .benefits .bimg circle.ac{fill:var(--clay)}
+.pg-blueprint .benefits div:hover .bimg svg{transform:translateY(-4px)}
+/* scroll reveal, as on the homepage */
+.pg-blueprint .rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0s) * .5)}
+.pg-blueprint .rv.in{opacity:1;transform:none}
+.pg-blueprint .rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.08);transition:clip-path .7s var(--ease),transform 1s var(--ease)!important;transition-delay:calc(var(--d,0s) * .5)!important}
+.pg-blueprint .rv-img.in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion: reduce){.pg-blueprint .rv,.pg-blueprint .rv-img img,.pg-blueprint .big .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+/* jump menu: a small dropdown beside the booking button */
+.pg-blueprint .jump{position:relative}
+.pg-blueprint .jump summary{list-style:none;display:inline-flex;align-items:center;gap:12px;padding:15px 20px;border:1px solid var(--line);background:var(--card);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);cursor:pointer;transition:border-color .4s}
+.pg-blueprint .jump summary::-webkit-details-marker{display:none}
+.pg-blueprint .jump summary::after{content:"";width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .4s var(--ease)}
+.pg-blueprint .jump[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.pg-blueprint .jump summary:hover,.pg-blueprint .jump[open] summary{border-color:var(--fg)}
+.pg-blueprint .jump nav{position:absolute;z-index:20;top:calc(100% + 6px);left:0;min-width:240px;background:var(--card);border:1px solid var(--line);box-shadow:0 22px 40px -24px rgba(47,34,29,.35);display:grid;padding:6px 0;animation:jumpIn .4s var(--ease)}
+.pg-blueprint .jump nav a{padding:11px 20px;font-size:14px;color:var(--ink);text-decoration:none;transition:background .3s,color .3s}
+.pg-blueprint .jump nav a:hover{background:var(--surface);color:var(--fg)}
+@keyframes jumpIn{from{opacity:0;transform:translateY(-6px)}}
+/* how it works: icons in open columns divided by hairlines */
+.pg-blueprint .benefits{gap:0}
+.pg-blueprint .benefits div{padding:0 clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.pg-blueprint .benefits div:first-child{border-left:0}
+.pg-blueprint .benefits .bimg{aspect-ratio:auto;height:clamp(120px,12vw,160px);background:none;border:0;margin-bottom:6px}
+@media(max-width:900px){.pg-blueprint .benefits div:nth-child(3){border-left:0}}
+/* is it right for you: tall photo, two ruled lists */
+.pg-blueprint .fitgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,100px);align-items:center}
+.pg-blueprint .fitimg{aspect-ratio:4/5;overflow:hidden;position:relative}
+.pg-blueprint .fitimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .fitcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
+.pg-blueprint .fitcols h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-blueprint .rows li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--fg)}
+.pg-blueprint .rows.yes li::before{content:"✓";color:var(--clay)}
+.pg-blueprint .rows.no li{color:var(--ink)}
+.pg-blueprint .rows.no li::before{content:"—";color:var(--muted)}
+.pg-blueprint .fitcopy .pair{margin:26px 0 0;font-size:14px;color:var(--muted)}
+.pg-blueprint .fitcopy .pair a{color:var(--fg)}
+@media(max-width:860px){.pg-blueprint .fitgrid{grid-template-columns:1fr}.pg-blueprint .fitcols{grid-template-columns:1fr}}
+/* technology: cocoa band like the homepage About, photo bleeding to the left edge */
+.pg-blueprint .techband{background:var(--cocoa);color:#D9C3B8}
+.pg-blueprint .tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(480px,44vw,640px)}
+.pg-blueprint .tgrid .ph{position:relative;overflow:hidden;min-height:380px}
+.pg-blueprint .tgrid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .tcopy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(56px,6vw,96px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,6vw,96px) clamp(28px,6vw,100px)}
+.pg-blueprint .tcopy .eyebrow{color:var(--clay-lt)}
+.pg-blueprint .tcopy h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:#fff}
+.pg-blueprint .tcopy h2 em{color:var(--clay-lt)}
+.pg-blueprint .tsteps{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid rgba(231,207,195,.18)}
+.pg-blueprint .tsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(231,207,195,.18)}
+.pg-blueprint .tsteps .n{font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay-lt)}
+.pg-blueprint .tsteps b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px}
+.pg-blueprint .tsteps span{font-size:14.5px;line-height:1.65;color:#fff}
+@media(max-width:860px){.pg-blueprint .tgrid{grid-template-columns:1fr}.pg-blueprint .tgrid .ph{aspect-ratio:4/3;min-height:0}}
+/* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
+.pg-blueprint .g4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-blueprint .g4 li{border-top:1px solid var(--fg);padding:26px clamp(18px,2.4vw,40px) 0 0}
+.pg-blueprint .g4 .k{display:block;margin-bottom:14px;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+.pg-blueprint .g4 h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15;margin-bottom:12px}
+.pg-blueprint .g4 p{margin:0 0 8px;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-blueprint .gnote{margin:clamp(36px,4vw,52px) 0 0;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-blueprint .g4{grid-template-columns:1fr 1fr;row-gap:40px}}
+@media(max-width:520px){.pg-blueprint .g4{grid-template-columns:1fr}}
+/* layout after the treatment wireframe */
+.pg-blueprint .head.ctr{margin-inline:auto;text-align:center;justify-items:center}
+/* how it works: four image cards */
+.pg-blueprint #how .intro{margin:-12px auto clamp(36px,4vw,56px);max-width:64ch;text-align:center;color:var(--ink)}
+.pg-blueprint .benefits{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px);border:0}
+.pg-blueprint .benefits div{border:0;padding:0;justify-items:center;align-content:start;text-align:center;gap:8px}
+.pg-blueprint .benefits .bimg{display:block;width:100%;aspect-ratio:1;overflow:hidden;background:var(--surface);margin-bottom:12px}
+.pg-blueprint .benefits .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease,ease)}
+.pg-blueprint .benefits div:hover .bimg img{transform:scale(1.05)}
+@media(max-width:900px){.pg-blueprint .benefits{grid-template-columns:1fr 1fr;row-gap:36px}}
+.pg-blueprint .notebar{margin:clamp(36px,4vw,52px) auto 0;max-width:70ch;text-align:center;border:0;border-top:1px solid var(--line);background:none;padding:18px 0 0;font-size:13px;color:var(--muted)}
+/* ideal for: both cards the same height as the photo */
+.pg-blueprint .fit3{align-items:stretch}
+.pg-blueprint .fit3 .ph{aspect-ratio:auto;min-height:360px}
+.pg-blueprint .fitcard{height:100%}
+/* technology: steps on fine rules */
+.pg-blueprint .steps-v{gap:0}
+.pg-blueprint .steps-v li{border-top:1px solid var(--line);padding-block:22px}
+.pg-blueprint .steps-v li:last-child{border-bottom:1px solid var(--line)}
+/* at a glance: four quiet columns on a cocoa rule */
+.pg-blueprint .glance{background:none;border:0}
+.pg-blueprint .glance .col{border:0;border-top:1px solid var(--fg);padding:22px 28px 0 0}
+.pg-blueprint .glance .cols{gap:0 24px}
+.pg-blueprint .glance .ft{border:0;padding:28px 0 0;text-align:center}
+@media(max-width:900px){.pg-blueprint .glance .col{border-bottom:0}}
+/* faq: title left, questions right */
+.pg-blueprint .faqgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.pg-blueprint .faqgrid .head{margin:0;position:sticky;top:96px}
+@media(max-width:860px){.pg-blueprint .faqgrid{grid-template-columns:1fr}.pg-blueprint .faqgrid .head{position:static}}
+/* footer: same as the homepage */
+.pg-blueprint .foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.pg-blueprint .foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-blueprint .foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-blueprint .foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.pg-blueprint .foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pg-blueprint .foot .top{grid-template-columns:1fr}}
+.pg-blueprint .foot .logo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.pg-blueprint .foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.pg-blueprint .foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.pg-blueprint .foot p{margin:0;font-size:14px;line-height:1.9}
+.pg-blueprint .foot a{text-decoration:none}
+.pg-blueprint .foot a:hover{color:var(--cream)}
+.pg-blueprint .foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.pg-blueprint .foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* ===== v5: refinements after the reference layout ===== */
+.pg-blueprint .tframe::before{background:none}
+.pg-blueprint .kicker{margin-bottom:-14px}
+.pg-blueprint .big .ln{padding-bottom:.2em;margin-bottom:-.12em}
+.pg-blueprint .thero2 .tx{transform:translateY(-14px)}
+/* how it works: heading left, intro right, four portrait cards */
+.pg-blueprint .hhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.pg-blueprint .hhead .head{margin:0}
+.pg-blueprint .hintro p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink);max-width:49ch;text-align:justify;text-justify:inter-word;text-wrap:wrap}
+.pg-blueprint .hintro .tagline{text-align:left}
+.pg-blueprint .hintro .tagline{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,27px);line-height:1.25;color:var(--fg)}
+.pg-blueprint .bcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.pg-blueprint .bcards>div{display:grid;gap:8px;align-content:start}
+.pg-blueprint .bcards .bimg{display:block;aspect-ratio:4/5;overflow:hidden;background:#E8DBD0;margin-bottom:12px}
+.pg-blueprint .bcards .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.pg-blueprint .bcards>div:hover .bimg img{transform:scale(1.04)}
+.pg-blueprint .bcards h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15}
+.pg-blueprint .bcards p{margin:0;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-blueprint .fda{margin:clamp(36px,4vw,52px) 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-blueprint .hhead{grid-template-columns:1fr}.pg-blueprint .bcards{grid-template-columns:1fr 1fr;row-gap:36px}}
+/* ideal for: small photo beside the two ruled lists */
+.pg-blueprint .fit5{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.pg-blueprint .fit5 .fitimg{aspect-ratio:3/4;position:relative;overflow:hidden}
+.pg-blueprint .fit5 h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .fit5 .pair{margin:22px 0 0;font-size:14px;color:var(--muted)}
+.pg-blueprint .fit5 .pair a{color:var(--fg)}
+@media(max-width:900px){.pg-blueprint .fit5{grid-template-columns:1fr 1fr}.pg-blueprint .fit5 .fitimg{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:560px){.pg-blueprint .fit5{grid-template-columns:1fr}}
+/* faq: title stays put; bold questions */
+.pg-blueprint .faqgrid .head{position:static}
+.pg-blueprint summary{font-weight:600}
+/* closing band shorter, so it shares one screen with the footer */
+.pg-blueprint .closing.tsec{padding-block:clamp(56px,6vw,88px)}
+.pg-blueprint .closing .wrap{gap:16px}
+
+/* ===== v6 ===== */
+.pg-blueprint p,.pg-blueprint h3,.pg-blueprint .rows li{text-wrap:pretty}
+/* hero: more air on the right */
+.pg-blueprint .thero2 .tx{gap:30px;transform:none;align-content:center}
+.pg-blueprint .thero2 .kicker{margin-bottom:-12px}
+.pg-blueprint .thero2 .lede{max-width:40ch;font-size:17.5px;line-height:1.8}
+.pg-blueprint .thero2 .ctas{margin-top:6px}
+/* how it works: heading block and intro share one top line; illustrations float free, no tile */
+.pg-blueprint .hhead{align-items:start}
+.pg-blueprint .hintro{padding-top:30px}
+.pg-blueprint .bcards .bimg{background:none;aspect-ratio:1/1.05;margin-bottom:6px}
+.pg-blueprint .bcards .bimg img{object-fit:contain;padding:4% 8%}
+.pg-blueprint .bcards>div:hover .bimg img{transform:translateY(-6px)}
+/* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */
+.pg-blueprint .fit5{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.78fr);align-items:start}
+.pg-blueprint .fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
+.pg-blueprint .pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:#F1E3DB;border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
+.pg-blueprint .pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .pairnote a{color:var(--clay);font-weight:500;text-decoration:none;padding-bottom:2px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.pg-blueprint .pairnote a:hover,.pg-blueprint .pairnote a:focus-visible{background-size:100% 1px;font-weight:600}  /* same colour; turns bolder and an underline draws in */
+@media(max-width:900px){.pg-blueprint .fit5{grid-template-columns:1fr 1fr}.pg-blueprint .fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
+@media(max-width:560px){.pg-blueprint .fit5{grid-template-columns:1fr}}
+/* technology: title sits higher */
+.pg-blueprint .tcopy{justify-content:flex-start;padding-top:clamp(48px,5vw,80px);gap:12px}
+.pg-blueprint .tcopy .eyebrow{margin-bottom:2px}
+/* at a glance: type as the homepage AURA Experience */
+.pg-blueprint .g4 li{padding-right:clamp(20px,3vw,48px)}
+.pg-blueprint .g4 h3{font-weight:400;font-size:clamp(25px,2.1vw,31px);line-height:1.15;margin-bottom:14px}
+.pg-blueprint .g4 p{font-size:15px;line-height:1.65;max-width:32ch}
+
+/* ===== v7 ===== */
+/* at a glance: 2x2 grid */
+.pg-blueprint .g4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(36px,6vw,96px);row-gap:clamp(40px,4vw,56px);max-width:1040px;margin:0 auto}
+.pg-blueprint .g4 p{max-width:46ch}
+@media(max-width:620px){.pg-blueprint .g4{grid-template-columns:1fr}}
+/* faq: smaller, lighter, like the earlier layout */
+.pg-blueprint .faqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pg-blueprint .faqgrid .head h2{font-size:clamp(36px,3.6vw,52px);line-height:1.05}
+.pg-blueprint .faqgrid .head h2 em{display:block}
+.pg-blueprint summary{font-size:20px;font-weight:500}
+.pg-blueprint details{padding-block:16px}
+.pg-blueprint details p{font-size:14px;line-height:1.7}
+
+
+/* ===== v8: at a glance, bulleted and a size down so each point fits on one line ===== */
+.pg-blueprint .g4{max-width:1040px;column-gap:clamp(32px,4vw,64px)}  /* narrower, so the four blocks read as one group, wide enough that every point stays on one line */
+.pg-blueprint .g4 li{padding-right:24px}
+.pg-blueprint .faqgrid{max-width:1020px;margin-inline:auto}
+.pg-blueprint .g4 li{border-top:.5px solid rgba(47,34,29,.42)}  /* solid hairline: half a pixel on high-resolution screens; the softer tone keeps it fine on 1x screens too */
+.pg-blueprint .g4 p{position:relative;max-width:none;padding-left:18px;font-size:14.5px;line-height:1.6;margin-bottom:9px}
+.pg-blueprint #glance .head{max-width:none}
+.pg-blueprint .faqgrid .head h2{font-size:clamp(40px,4.4vw,64px);line-height:1}  /* same size as the At a glance heading */
+.pg-blueprint .g4 p::before{content:"";position:absolute;left:2px;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--clay)}
+/* booking box inside the hero, plus placeholder marks */
+.pg-blueprint .thero2 .bookbox{margin-top:0}
+.pg-blueprint .bbrow{padding:0;border-bottom:1px solid var(--line)}
+.pg-blueprint .bbrow summary{font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--fg);line-height:1.5}
+.pg-blueprint .bbrow summary::after{content:none}
+.pg-blueprint .bbopt{color:var(--ink)}
+.pg-blueprint .placeholder{color:var(--muted);font-style:italic}
+.pg-blueprint span[data-confirm]{border-bottom:1px dashed var(--clay)}
+
+/* ---- template additions ---- */
+.pg-blueprint .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.pg-blueprint .chips>span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.04em;color:var(--ink);background:transparent}
+.pg-blueprint .chips>span span{border:0;padding:0;border-radius:0}  /* a value inside a chip that still needs confirming: text only, no chip of its own */
+.pg-blueprint .big.wrap2{white-space:normal}
+.pg-blueprint .g6{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(32px,4vw,64px);row-gap:clamp(36px,4vw,52px);max-width:1040px;margin-inline:auto}
+.pg-blueprint .g6 li{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px}
+.pg-blueprint .g6 .k{display:block;margin-bottom:12px;font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay)}
+.pg-blueprint .g6 h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);line-height:1.15;margin:0 0 8px}
+.pg-blueprint .g6 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+@media(max-width:900px){.pg-blueprint .g6{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pg-blueprint .g6{grid-template-columns:1fr}}
+.pg-blueprint .g6foot{margin:clamp(32px,4vw,48px) auto 0;max-width:1040px;text-align:center;font-size:14.5px;color:var(--muted)}
+.pg-blueprint .g6foot a{color:var(--fg)}
+/* text-only benefit cards (.bcards.txt): same grid and type as the illustrated cards, a serif numeral instead of a drawing */
+.pg-blueprint .bcards.txt>div{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px;gap:10px}
+.pg-blueprint .bcards.txt .k{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--clay);margin-bottom:6px}
+/* "About the product" (.prodcard): material facts for injectables, label + text rows */
+.pg-blueprint .prodcard{margin-top:clamp(48px,5vw,72px);display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.pg-blueprint .prodcard h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,42px);line-height:1.05;margin:0}
+.pg-blueprint .prodcard h3 em{color:var(--clay)}
+.pg-blueprint .prodcard dl{margin:0;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-blueprint .prodcard dl>div{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pg-blueprint .prodcard dt{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);padding-top:4px}
+.pg-blueprint .prodcard dd{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+@media(max-width:860px){.pg-blueprint .prodcard{grid-template-columns:1fr}.pg-blueprint .prodcard dl>div{grid-template-columns:1fr}}
+.pg-blueprint .prodcard .psteps{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.pg-blueprint .prodcard .psteps b{font-weight:600;color:var(--fg)}
+
+/* ===== v9: a softer hero copy column, used by every Level 3 page ===== */
+.pg-blueprint .thero2 .tx{gap:26px}
+.pg-blueprint .thero2 .kicker{display:inline-flex;align-items:center;gap:14px;margin-bottom:-8px}
+.pg-blueprint .thero2 .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.pg-blueprint .thero2 .lede{font-size:17px;line-height:1.8;max-width:42ch}
+/* key facts: a quiet ruled strip instead of pills */
+.pg-blueprint .thero2 .chips{flex-wrap:nowrap;white-space:nowrap;overflow:hidden;gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:46ch}
+.pg-blueprint .thero2 .chips>span{flex:none;border:0;border-radius:0;padding:0 18px;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fg);position:relative}
+.pg-blueprint .thero2 .chips>span:first-child{padding-left:0}
+.pg-blueprint .thero2 .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.pg-blueprint .thero2 .chips>span span{font-size:inherit;letter-spacing:inherit}
+/* booking: an underlined picker beside the button; options open as a dropdown */
+.pg-blueprint .thero2 .bookbox{grid-template-columns:minmax(0,1fr) auto;gap:14px 22px;align-items:end;max-width:46ch}
+.pg-blueprint .thero2 .bbrow{position:relative;border:0;border-bottom:1px solid var(--fg);background:none}
+.pg-blueprint .thero2 .bbrow summary{padding:12px 0;font-family:var(--serif);font-size:20px;font-weight:400;color:var(--fg)}
+.pg-blueprint .thero2 .bbrow summary .chev{font-size:13px;color:var(--fg)}
+.pg-blueprint .thero2 .bbopts{position:absolute;z-index:6;top:calc(100% + 8px);left:0;width:max(100%,320px);padding:4px 20px 18px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -26px rgba(47,34,29,.38);animation:jumpIn .4s var(--ease)}
+.pg-blueprint .thero2 .bookbox>.btn{width:auto;white-space:nowrap;padding:16px 28px}
+/* "Learn all about …": small and quiet */
+.pg-blueprint .thero2 .ctas{margin-top:-4px}
+.pg-blueprint .thero2 .ctas .tlink{font-size:10px;letter-spacing:.22em;color:var(--muted);border-bottom-color:var(--line);padding-bottom:4px;transition:color .4s,border-color .4s}
+.pg-blueprint .thero2 .ctas .tlink::after{content:" ↓";letter-spacing:0}
+.pg-blueprint .thero2 .ctas .tlink:hover{color:var(--fg);border-bottom-color:var(--fg)}
+@media(max-width:520px){.pg-blueprint .thero2 .bookbox{grid-template-columns:1fr}.pg-blueprint .thero2 .bookbox>.btn{width:100%}.pg-blueprint .thero2 .chips>span{padding:0 12px}}
+
+/* how it works with photographs (.bcards.photo): staggered portrait photos, a numbered caption on a hairline */
+.pg-blueprint .bcards.photo{counter-reset:bc;align-items:start}
+.pg-blueprint .bcards.photo>div{counter-increment:bc;gap:10px}
+.pg-blueprint .bcards.photo>div:nth-child(even){margin-top:clamp(32px,4.4vw,72px)}
+.pg-blueprint .bcards.photo .bimg{aspect-ratio:4/5;background:var(--surface);margin-bottom:14px}
+.pg-blueprint .bcards.photo .bimg img{object-fit:cover;padding:0;transition:transform 1.6s var(--ease)}
+.pg-blueprint .bcards.photo>div:hover .bimg img{transform:scale(1.04)}
+.pg-blueprint .bcards.photo h3{padding-top:16px;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-blueprint .bcards.photo h3::before{content:counter(bc,decimal-leading-zero);display:block;margin-bottom:10px;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+@media(max-width:900px){.pg-blueprint .bcards.photo>div:nth-child(even){margin-top:0}}
+.pg-blueprint .thero2 .bookbox,.pg-blueprint .thero2 .chips{max-width:540px}
+.pg-blueprint .thero2 .bbrow summary{white-space:nowrap;font-size:19px}
+
+/* "About the treatment / technology" as the cocoa band: photo on the left, numbered rows on the right */
+.pg-blueprint .tsteps .tdd{font-size:14.5px;line-height:1.65;color:#fff}
+.pg-blueprint .tsteps .tdd a{color:var(--clay-lt)}
+.pg-blueprint .tsteps .psteps{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.pg-blueprint .tsteps .psteps li{display:block;padding:0;border:0}
+.pg-blueprint .tsteps .psteps b{display:inline;margin:0;font-family:var(--sans);font-size:inherit;font-weight:600;color:#fff}
+
+/* ===== v10 ===== */
+/* breadcrumb sits just above the photo, lined up with its left edge */
+.pg-blueprint .crumbs{padding-top:clamp(22px,2.4vw,34px);text-indent:clamp(18px,2vw,28px)}
+.pg-blueprint .thtop{padding-top:12px}
+/* hero: no rule before the category; the appointment picker is a rounded pill */
+.pg-blueprint .thero2 .kicker{display:block}
+.pg-blueprint .thero2 .kicker::before{content:none}
+.pg-blueprint .thero2 .bbrow{border:1px solid rgba(47,34,29,.38);border-radius:999px;padding:0 22px;transition:border-color .4s}
+.pg-blueprint .thero2 .bbrow:hover,.pg-blueprint .thero2 .bbrow[open]{border-color:var(--fg)}
+.pg-blueprint .thero2 .bbrow summary{padding:12px 0;font-size:18px}
+.pg-blueprint .thero2 .bbrow summary .chev{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:-8px;border-radius:50%;background:var(--surface);font-size:12px}
+.pg-blueprint .thero2 .bbopts{border-radius:18px;top:calc(100% + 10px)}
+.pg-blueprint .thero2 .bookbox{align-items:center}
+/* how it works photos: a size smaller */
+.pg-blueprint .bcards.photo{max-width:1040px;margin-inline:auto;column-gap:clamp(20px,3vw,44px)}
+.pg-blueprint .bcards.photo .bimg{aspect-ratio:1}
+.pg-blueprint .bcards.photo>div:nth-child(even){margin-top:clamp(24px,3.4vw,52px)}
+
+/* ===== v11 ===== */
+/* appointment picker: a quiet dropdown list; picking an option closes it and shows the choice in the pill */
+.pg-blueprint .thero2 .bbrow summary .bbl{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.pg-blueprint .thero2 .bbrow summary .chev,.pg-blueprint .thero2 .bbrow[open] summary .chev{transform:none;font-size:0;flex:none}
+.pg-blueprint .thero2 .bbrow summary .chev::before{content:"";width:6px;height:6px;border-right:1.2px solid var(--fg);border-bottom:1.2px solid var(--fg);transform:translateY(-1.5px) rotate(45deg)}
+.pg-blueprint .thero2 .bbopts{border-top:1px solid var(--line);margin:0;padding:8px;gap:2px;width:max(100%,340px)}
+.pg-blueprint .thero2 .bbopt{position:relative;display:block;padding:12px 40px 12px 14px;border-radius:12px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.pg-blueprint .thero2 .bbopt:first-child{padding-top:12px}
+.pg-blueprint .thero2 .bbopt:hover{background:var(--surface);color:var(--fg)}
+.pg-blueprint .thero2 .bbopt input{position:absolute;opacity:0;pointer-events:none}
+.pg-blueprint .thero2 .bbopt.sel{color:var(--fg);font-weight:500}
+.pg-blueprint .thero2 .bbopt.sel::after{content:"";position:absolute;right:18px;top:50%;width:5px;height:10px;margin-top:-7px;border-right:1.4px solid var(--clay);border-bottom:1.4px solid var(--clay);transform:rotate(45deg)}
+.pg-blueprint .thero2 .bbaddr{margin:6px 14px 6px;font-size:12px;line-height:1.6}
+/* hero: copy starts level with the top of the photo; the booking row sits level with its bottom */
+@media(min-width:861px){
+  .pg-blueprint .thero2{align-items:stretch}
+  .pg-blueprint .thero2 .tx{display:flex;flex-direction:column;gap:24px;padding-bottom:clamp(18px,2vw,28px)}
+  .pg-blueprint .thero2 .kicker{margin:0 0 -8px}
+  .pg-blueprint .thero2 .ctas{order:1;margin-top:-6px}
+  .pg-blueprint .thero2 .bookbox{order:2;margin-top:auto}
+}
+/* how it works photos: softer, less clinical */
+.pg-blueprint .bcards.photo .bimg img{transform:none}
+.pg-blueprint .bcards.photo>div:hover .bimg img{transform:scale(1.06)}
+.pg-blueprint .thero2 .bbrow summary::after,.pg-blueprint .thero2 .bbrow[open] summary::after{content:none!important;display:none}
+.pg-blueprint .thero2 .bbopts{border-top:1px solid var(--line)}
+.pg-blueprint .thero2 .bbrow[open] .bbopts{border-top-color:var(--line)}
+.pg-blueprint .thero2 .bbrow summary:focus{outline:none}
+.pg-blueprint .thero2 .bbrow:has(summary:focus-visible){border-color:var(--fg);box-shadow:0 0 0 3px rgba(176,126,107,.25)}
+
+/* ===== v12: hero right column as two groups — about the treatment on top, a booking block at the bottom ===== */
+@media(min-width:861px){
+  .pg-blueprint .tframe .ph{height:clamp(360px,calc(100svh - 300px),500px)}
+  .pg-blueprint .thero2 .tx{gap:22px}
+  .pg-blueprint .thero2 .ctas{order:2;margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+  .pg-blueprint .thero2 .ctas::before{content:"Book your visit";font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+  .pg-blueprint .thero2 .bookbox{order:3;margin-top:-4px}
+  .pg-blueprint .thero2 .chips{border-bottom:0;padding-bottom:0}
+}
+.pg-blueprint .thero2 .ctas,.pg-blueprint .thero2 .bookbox{max-width:540px}
+
+/* ===== v13: duration row ruled above and below again; no "Book your visit / Learn all" row in the hero ===== */
+.pg-blueprint .thero2 .chips{border-bottom:1px solid var(--line);padding-bottom:13px}
+.pg-blueprint .thero2 .ctas{display:none!important}
+@media(min-width:861px){.pg-blueprint .thero2 .bookbox{margin-top:auto}}
+/* picker opens upward when there isn't room below */
+.pg-blueprint .thero2 .bbrow.up .bbopts{top:auto;bottom:calc(100% + 10px)}
+
+/* ===== v14: hero copy as one compact block, centred beside the photo ===== */
+@media(min-width:861px){.pg-blueprint .thero2 .tx{justify-content:center;gap:22px;padding-bottom:0}.pg-blueprint .thero2 .bookbox{margin-top:4px}}
+
+/* ===== compact-sections (Nov 9): "About the treatment" (two groups) and FAQs (five, all closed) each fit one screen ===== */
+.pg-blueprint .techband{padding-block:clamp(96px,14vh,170px)}  /* more air above and below (Nov 10) */
+.pg-blueprint .tgrid{min-height:min(clamp(420px,34vw,520px),62vh)}
+.pg-blueprint .tcopy{padding-top:clamp(28px,5vh,64px);padding-bottom:clamp(28px,5vh,64px)}
+.pg-blueprint #faq.tsec{padding-block:clamp(120px,17vh,200px)}
+@media(max-width:860px){
+  .pg-blueprint .techband{padding-block:0}
+  .pg-blueprint .tgrid .ph{aspect-ratio:21/9}
+  .pg-blueprint .tcopy{padding-top:32px;padding-bottom:36px}
+  .pg-blueprint .tsteps li{grid-template-columns:40px 1fr;padding:14px 0}
+  .pg-blueprint .faqgrid{grid-template-columns:1fr}
+  .pg-blueprint #faq summary{font-size:18px}
+  .pg-blueprint #faq details{padding-block:12px}
+}
+
+/* "How it works" photo cards can name the treatment area next to the number, e.g. 01 · Eyes */
+.pg-blueprint .bcards.photo h3[data-zone]::before{content:counter(bc,decimal-leading-zero) "  \00B7  " attr(data-zone);white-space:pre;text-transform:uppercase}
+
+
+/* Facial Blueprint hero: full bleed. The face map (front photo with its proportion lines and dots, then the 3/4 photo)
+   fills the right side on the photo's own backdrop; the switcher and live reading sit top left, the headline bottom left,
+   the booking button bottom right. */
+.pg-blueprint .fbhero{position:relative;overflow:hidden;background:#E6D5CB;height:calc(100svh - 156px);min-height:600px;max-height:980px}
+.pg-blueprint .fbmap{position:absolute;top:0;bottom:0;right:0;height:100%;aspect-ratio:1/1;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 22%);mask-image:linear-gradient(90deg,transparent,#000 22%)}
+.pg-blueprint .fbsvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pg-blueprint .fbhero .fbin{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 max(clamp(20px,4vw,64px),env(safe-area-inset-right,0px)) clamp(120px,16vh,170px) max(clamp(20px,4vw,64px),env(safe-area-inset-left,0px));pointer-events:none}
+.pg-blueprint .fbhero .fbin>*{pointer-events:auto}
+.pg-blueprint .fbcopy .kicker{margin:0 0 16px}
+.pg-blueprint .fbhero .big{white-space:nowrap;font-size:clamp(48px,5.8vw,100px);line-height:.92;color:var(--fg)}
+.pg-blueprint .fbhero .big .ln{padding-bottom:.08em}
+.pg-blueprint .fbhero .lede{margin:22px 0 0;max-width:42ch;font-size:15.5px;line-height:1.7;color:var(--ink)}
+.pg-blueprint .fbcta{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-top:28px}
+.pg-blueprint .fbcta .note{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+/* under the face: the live reading, then five lines, one per proportion (the active one draws in clay) */
+.pg-blueprint .fbtop{position:absolute;z-index:3;left:max(clamp(20px,4vw,64px),env(safe-area-inset-left,0px));right:max(clamp(20px,4vw,64px),env(safe-area-inset-right,0px));bottom:clamp(24px,3.2vh,40px)}
+.pg-blueprint .fbhero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:2;pointer-events:none;background:linear-gradient(0deg,rgba(230,213,203,.97),rgba(230,213,203,.88) 30%,rgba(230,213,203,.5) 60%,rgba(230,213,203,0))}
+.pg-blueprint .fbtop{display:flex;align-items:flex-end;gap:clamp(28px,4vw,72px)}
+.pg-blueprint .fbread{flex:none;width:clamp(240px,23vw,330px);margin:0}
+.pg-blueprint .fbstep{margin:0;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .fbtitle{margin:8px 0 0;font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(28px,2.3vw,34px);line-height:1.05;color:var(--fg)}
+.pg-blueprint .fbdesc{margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--ink);min-height:3.1em}
+.pg-blueprint .fbnav{flex:1;min-width:0;display:flex;align-items:center;gap:clamp(14px,1.6vw,24px)}
+.pg-blueprint .fbchips{flex:1;min-width:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.pg-blueprint .fbchips button{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;padding:16px 0 6px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:rgba(47,34,29,.55);transition:color .3s}
+.pg-blueprint .fbchips button i{font-style:normal;margin-right:8px}
+.pg-blueprint .fbchips button::before,.pg-blueprint .fbchips button::after{content:"";position:absolute;left:0;top:0;height:2px}
+.pg-blueprint .fbchips button::before{right:0;background:rgba(47,34,29,.16);transition:background .3s}
+.pg-blueprint .fbchips button::after{width:0;background:#2F221D}
+.pg-blueprint .fbchips button.done::after{width:100%;background:rgba(47,34,29,.55)}
+.pg-blueprint .fbchips button:hover{color:var(--fg)}
+.pg-blueprint .fbchips button:hover::before{background:rgba(47,34,29,.34)}
+.pg-blueprint .fbchips button[aria-pressed="true"]{color:var(--fg)}
+.pg-blueprint .fbchips button[aria-pressed="true"]::after{width:100%}
+.pg-blueprint .fbchips.auto button[aria-pressed="true"]::after{width:0;animation:fbLine 4.8s linear forwards}
+@keyframes fbLine{to{width:100%}}
+.pg-blueprint .fbchips button:focus-visible,.pg-blueprint .fbarrow:focus-visible{outline:1px solid var(--clay);outline-offset:4px}
+.pg-blueprint .fbarrow{all:unset;box-sizing:border-box;cursor:pointer;flex:none;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(47,34,29,.3);border-radius:50%;transition:background .3s,border-color .3s}
+.pg-blueprint .fbarrow:hover{background:#2F221D;border-color:#2F221D}
+.pg-blueprint .fbarrow svg{width:16px;height:16px;stroke:var(--fg);fill:none;stroke-width:1.4;transition:stroke .3s}
+.pg-blueprint .fbarrow:hover svg{stroke:#FFFAF6}
+@media (prefers-reduced-motion: reduce){.pg-blueprint .fbchips.auto button[aria-pressed="true"]::after{animation:none;width:100%}}
+@media(max-width:900px){
+  .pg-blueprint .fbhero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column}
+  .pg-blueprint .fbhero::after{display:none}
+  .pg-blueprint .fbmap{position:relative;width:100%;height:auto;-webkit-mask-image:none;mask-image:none;order:1}
+  .pg-blueprint .fbtop{position:relative;order:2;right:auto;bottom:auto;width:auto;padding:20px 20px 0}
+  .pg-blueprint .fbtop{display:block}
+  .pg-blueprint .fbread{width:auto}
+  .pg-blueprint .fbnav{margin-top:18px;gap:10px}
+  .pg-blueprint .fbarrow{width:40px;height:40px}
+  .pg-blueprint .fbchips{display:flex;overflow-x:auto;scrollbar-width:none;gap:14px}
+  .pg-blueprint .fbchips::-webkit-scrollbar{display:none}
+  .pg-blueprint .fbchips button{flex:none;min-width:92px;letter-spacing:.14em}
+  .pg-blueprint .fbhero .fbin{display:contents}
+  .pg-blueprint .fbcopy{order:3;padding:34px 20px 48px}
+  .pg-blueprint .fbhero .big{white-space:normal;font-size:clamp(42px,11vw,60px)}
+}
+
+/* The AURA aesthetic: centred head, then three rows that alternate image and copy */
+.pg-blueprint .fbaes .head{margin-inline:auto;text-align:center;justify-items:center}
+.pg-blueprint .fbaes .intro{margin:18px auto 0;max-width:68ch;text-align:center;font-size:16px;line-height:1.75;color:var(--ink)}
+.pg-blueprint .fbaes .intro i{display:block;margin-top:8px;font-family:var(--serif);font-size:clamp(21px,1.9vw,25px);color:var(--fg)}
+.pg-blueprint .fbrows{display:grid;gap:clamp(48px,6vw,96px);margin-top:clamp(48px,6vw,88px)}
+.pg-blueprint .fbrow{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,110px);align-items:center}
+.pg-blueprint .fbrow:nth-child(even) .ph{order:2}
+.pg-blueprint .fbrow:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.pg-blueprint .fbrow .ph{position:relative;aspect-ratio:4/3;background:#E6D7CD;overflow:hidden}
+.pg-blueprint .fbrow .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-blueprint .fbrow:nth-child(2) .ph{background:#DDC6B8}
+.pg-blueprint .fbrow:nth-child(3) .ph{background:#EBE0D8}
+.pg-blueprint .fbrow .ph small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.pg-blueprint .fbrow .ph em{display:block;margin-top:6px;font-family:var(--serif);font-size:15px;color:var(--ink)}
+.pg-blueprint .fbrow .n{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(64px,7vw,104px);line-height:.9;color:var(--clay)}
+.pg-blueprint .fbrow .k{display:block;margin:18px 0 6px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .fbrow h3{margin:0 0 10px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.1;color:var(--fg)}
+.pg-blueprint .fbrow p{margin:0;max-width:38ch;font-size:15px;line-height:1.75;color:var(--ink)}
+@media(max-width:760px){.pg-blueprint .fbrow,.pg-blueprint .fbrow:nth-child(even){grid-template-columns:1fr;gap:22px}.pg-blueprint .fbrow:nth-child(even) .ph{order:0}}
+/* aesthetic photos: the printed dots twinkle like the hero map */
+.pg-blueprint .fbrow .ph .dots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.pg-blueprint .fbrow .ph .dots circle{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));transform-box:fill-box;transform-origin:center;animation:fbTwinkle var(--td,3s) ease-in-out var(--tl,1s) infinite}
+@media (prefers-reduced-motion: reduce){.pg-blueprint .fbrow .ph .dots circle{animation:none}}
+
+/* Client stories: one featured quote, the rest in a row under rules, then the booking button */
+.pg-blueprint .fbrv{text-align:center}
+.pg-blueprint .fbrv .head{margin-inline:auto;justify-items:center}
+.pg-blueprint .fbrv .stars{margin:14px 0 0;font-size:13px;letter-spacing:.35em;color:var(--fg)}
+.pg-blueprint .fbrv .smp{display:inline-block;margin-top:14px;padding:5px 10px;border:1px dashed var(--clay);border-radius:999px;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+.pg-blueprint .fbrv .feat{margin:clamp(28px,3vw,40px) auto 0;max-width:960px}
+.pg-blueprint .fbrv .feat blockquote{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,42px);line-height:1.25;color:var(--fg)}
+.pg-blueprint .fbrv figcaption{margin-top:18px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pg-blueprint .fbrv .rvrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3.4vw,56px);max-width:1180px;margin:clamp(40px,4.4vw,64px) auto 0;text-align:left}
+.pg-blueprint .fbrv .rvrow figure{margin:0;padding-top:22px;border-top:1px solid rgba(47,34,29,.32);display:grid;grid-template-rows:auto 1fr auto}
+.pg-blueprint .fbrv .stars{display:flex;gap:4px;margin:0 0 16px}
+.pg-blueprint .fbrv .stars svg{width:14px;height:14px;fill:#B07E6B}
+.pg-blueprint .fbrv .rvrow figcaption span{display:block}
+.pg-blueprint .fbrv .rvrow figcaption span+span{margin-top:4px;color:var(--clay)}
+.pg-blueprint .fbrv .rvrow blockquote{margin:0;font-family:var(--serif);font-size:17.5px;line-height:1.4;color:var(--fg)}
+.pg-blueprint .fbrv .rvrow figcaption{margin-top:34px}
+.pg-blueprint .fbrv .btn{margin-top:clamp(40px,5vw,64px)}
+@media(max-width:900px){.pg-blueprint .fbrv .rvrow{grid-template-columns:1fr}}
+/* the map */
+.pg-blueprint .fbsvg .scene{transition:opacity .7s}
+.pg-blueprint .fbsvg .scene.off{opacity:0}
+.pg-blueprint .fbsvg .ml line{stroke:#fff;stroke-opacity:.8;stroke-width:1.1;vector-effect:non-scaling-stroke;opacity:0;animation:fbIn .5s ease forwards;animation-delay:calc(.25s + var(--i) * .018s)}
+.pg-blueprint .fbsvg .md circle{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));opacity:0;animation:fbIn .5s ease forwards;animation-delay:calc(.1s + var(--i) * .03s)}
+.pg-blueprint .fbsvg .mesh{transition:opacity .6s}
+.pg-blueprint .fbsvg.focus .mesh{opacity:.35}
+@keyframes fbIn{to{opacity:1}}
+.pg-blueprint .fbsvg .ov{opacity:0;transition:opacity .6s}
+.pg-blueprint .fbsvg .ov.on{opacity:1}
+.pg-blueprint .fbsvg .gd{stroke:#fff;stroke-width:1.2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;fill:none}
+.pg-blueprint .fbsvg .gk{stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke;fill:none;stroke-linecap:round}
+.pg-blueprint .fbsvg .kd{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.95))}
+.pg-blueprint .fbsvg .num{font-family:var(--serif);font-size:34px;fill:#fff;paint-order:stroke;stroke:rgba(47,34,29,.25);stroke-width:2px}
+.pg-blueprint .fbsvg .tag rect{fill:rgba(47,34,29,.62)}
+.pg-blueprint .fbsvg .tag text{font-family:var(--sans);font-size:19px;font-weight:600;letter-spacing:2.6px;fill:#FBF4EF;text-transform:uppercase}
+/* "analysing" motion: each point and line gets its own random rhythm (set in the script), so the face flickers irregularly */
+.pg-blueprint .fbsvg .ml line{animation:fbIn .5s ease forwards,fbShim var(--sd,3s) ease-in-out infinite;animation-delay:calc(.25s + var(--i) * .018s),var(--sl,1s)}
+.pg-blueprint .fbsvg .md circle{transform-box:fill-box;transform-origin:center;animation:fbIn .5s ease forwards,fbTwinkle var(--td,3s) ease-in-out infinite;animation-delay:calc(.1s + var(--i) * .03s),var(--tl,1s)}
+.pg-blueprint .fbsvg .kd{transform-box:fill-box;transform-origin:center;animation:fbPulse var(--pd,2s) ease-in-out var(--pl,0s) infinite}
+@keyframes fbShim{0%,62%,100%{stroke-opacity:.8}74%{stroke-opacity:.22}84%{stroke-opacity:.95}}
+@keyframes fbTwinkle{0%,70%,100%{transform:scale(1);fill-opacity:1}78%{transform:scale(1.7);fill-opacity:.5}86%{transform:scale(.85);fill-opacity:1}}
+@keyframes fbPulse{0%,55%,100%{transform:scale(1)}70%{transform:scale(1.5)}}
+@media (prefers-reduced-motion: reduce){.pg-blueprint .fbsvg .ml line,.pg-blueprint .fbsvg .md circle{animation:none;opacity:1}}

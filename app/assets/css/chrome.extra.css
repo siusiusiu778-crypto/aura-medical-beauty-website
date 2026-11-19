@@ -1,0 +1,105 @@
+/* 全站外壳的补充样式（原型里没有的部分）：搜索结果、悬浮 Book Now、草稿预览条 */
+
+/* 搜索框的结果列表 */
+#site-header .hsearch {
+  position: relative;
+}
+#site-header .sresults {
+  position: absolute;
+  z-index: 95;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  min-width: 260px;
+  max-height: 340px;
+  overflow: auto;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #fbf4ef;
+  border: 1px solid #e3cfc4;
+  box-shadow: 0 14px 40px rgba(47, 34, 29, 0.14);
+}
+#site-header .sresults a {
+  display: block;
+  padding: 9px 16px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #2f221d;
+  text-decoration: none;
+}
+#site-header .sresults a:hover,
+#site-header .sresults a:focus-visible {
+  background: #f1e3db;
+}
+#site-header .sresults small {
+  display: block;
+  font-size: 12px;
+  color: #9d857b;
+}
+#site-header .sresults .none {
+  padding: 10px 16px;
+  font-size: 13.5px;
+  color: #9d857b;
+}
+
+/* 手机上的悬浮 Book Now（site.floatBook） */
+.aura .floatbook {
+  position: fixed;
+  z-index: 70;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  display: none;
+  padding: 14px 34px;
+  border: 0;
+  background: #2f221d;
+  color: #fbf4ef;
+  font: 600 11.5px/1 var(--sans, sans-serif);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(47, 34, 29, 0.28);
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .aura .floatbook {
+    display: block;
+  }
+}
+
+/* 草稿预览条 */
+.aura .preview-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  padding: 8px 16px;
+  background: #2f221d;
+  color: #fbf4ef;
+  font: 500 13px/1.4 var(--sans, sans-serif);
+  text-align: center;
+}
+
+/* 预约抽屉：提交中与服务端错误 */
+.aura .drawer .srverr {
+  margin: 12px 0 0;
+  color: #a33b2a;
+  font-size: 13.5px;
+}
+.aura .drawer .hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.aura .drawer .btn[disabled] {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+/* 首页：目标卡片原型里是 <button>，这里是链接（可被搜索引擎抓取、可右键新窗口打开） */
+.pg-home a.fx {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}

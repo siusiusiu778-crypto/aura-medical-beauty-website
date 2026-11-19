@@ -1,0 +1,610 @@
+/* 由 scripts/scope-css.mjs 从 legacy/site 生成，请勿手改；补充样式写在同名 .extra.css */
+
+.pg-treatment{/* homepage palette (shell / cocoa / clay), light only on every page */--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--ink:#5B4840;--muted:#9D857B;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--tan:#E7CFC3;--rust:#B07E6B;--cocoa:#2F221D;--clay:#B07E6B;--clay-lt:#E3B7A3;--rose:#E7CFC3;--cream:#FBF4EF;--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif","Times New Roman",serif;color-scheme:light}
+.pg-treatment *{box-sizing:border-box}.pg-treatment{-webkit-text-size-adjust:100%}
+.pg-treatment{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pg-treatment img{max-width:100%}.pg-treatment a{color:inherit}.pg-treatment button{font:inherit;cursor:pointer}
+.pg-treatment :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pg-treatment .wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-treatment .wrap{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-treatment h1,.pg-treatment h2,.pg-treatment h3{margin:0;font-weight:400;text-wrap:balance}.pg-treatment em{font-family:var(--serif)}
+.pg-treatment .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+.pg-treatment .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:1px solid transparent;text-decoration:none;background:var(--accent);color:var(--on-accent)}
+.pg-treatment .btn.line{background:transparent;border-color:currentColor;color:inherit}
+.pg-treatment .proto{background:var(--fg);color:var(--bg);font-size:12px;text-align:center;padding:6px 16px}
+.pg-treatment .proto a{color:inherit}
+.pg-treatment .nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-treatment .nav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:none}
+.pg-treatment .logo{font-size:24px;font-weight:500;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}.pg-treatment .logo span{font-size:.46em;letter-spacing:.3em;text-transform:uppercase;vertical-align:.4em;margin-left:4px}
+.pg-treatment .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pg-treatment .nav ul a{text-decoration:none;white-space:nowrap}.pg-treatment .nav ul .on{border-bottom:1px solid currentColor;padding-bottom:3px}
+.pg-treatment .nav .btn{padding:10px 20px;font-size:11.5px;border-radius:999px}
+@media(max-width:1180px){.pg-treatment .nav ul{display:none}}
+.pg-treatment .crumbs{font-size:12.5px;color:var(--muted);padding-block:18px 0}.pg-treatment .crumbs a{text-decoration:none}
+.pg-treatment .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);min-height:clamp(380px,38vw,520px);background:var(--tan);color:#241A14;margin-top:18px}
+.pg-treatment .hero .tx{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(28px,5vw,72px)}
+.pg-treatment .hero h1{font-family:var(--serif);font-size:clamp(44px,5vw,72px);line-height:1}
+.pg-treatment .hero p{margin:0;font-size:clamp(16px,1.4vw,19px);max-width:36ch}
+.pg-treatment .hero .eyebrow{color:#5a4636}
+.pg-treatment .hero .btns{display:flex;gap:12px;flex-wrap:wrap}.pg-treatment .hero .btn{background:#241A14;color:#F7F3EE}.pg-treatment .hero .btn.line{background:transparent;color:#241A14;border-color:#241A14}
+.pg-treatment .hero .ph{position:relative;overflow:hidden;min-height:280px}
+.pg-treatment .hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--tan) 0%,rgba(217,180,143,0) 25%)}
+@media(max-width:860px){.pg-treatment .hero{grid-template-columns:1fr}.pg-treatment .hero .ph{order:-1;aspect-ratio:4/3;min-height:0}.pg-treatment .hero .ph::before{background:linear-gradient(0deg,var(--tan),rgba(217,180,143,0) 25%)}}
+.pg-treatment section{padding-block:clamp(56px,7vw,96px)}
+.pg-treatment .alt{background:var(--surface)}
+.pg-treatment .head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,44px);max-width:660px}
+.pg-treatment .head h2{font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);line-height:1.05}
+.pg-treatment .head p{margin:0;color:var(--muted)}
+.pg-treatment .needs{display:grid;gap:clamp(36px,5vw,64px)}
+.pg-treatment .need{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.pg-treatment .need:nth-child(even) .ph{order:2}
+.pg-treatment .need .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
+.pg-treatment .need .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .need .tx{display:grid;gap:14px;min-width:0}
+.pg-treatment .need h3{font-size:clamp(26px,2.4vw,34px);font-family:var(--serif)}
+.pg-treatment .need p{margin:0;color:var(--muted);max-width:50ch}
+.pg-treatment .tags{display:flex;flex-wrap:wrap;gap:8px}.pg-treatment .tags span{border:1px solid var(--line);padding:6px 12px;font-size:13px;background:var(--card)}
+.pg-treatment .need .row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.pg-treatment .price{font-variant-numeric:tabular-nums}.pg-treatment .price b{font-size:20px;font-weight:600}.pg-treatment .price s{color:var(--muted);margin-right:6px}
+.pg-treatment .more{font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:860px){.pg-treatment .need{grid-template-columns:1fr}.pg-treatment .need:nth-child(even) .ph{order:0}}
+.pg-treatment .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.pg-treatment .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:960px){.pg-treatment .grid3,.pg-treatment .grid4{grid-template-columns:1fr 1fr}}@media(max-width:600px){.pg-treatment .grid3,.pg-treatment .grid4{grid-template-columns:1fr}}
+.pg-treatment .card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-treatment .card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}.pg-treatment .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .card .bd{padding:22px;display:grid;gap:10px;align-content:start;flex:1}.pg-treatment .card h3{font-size:21px;font-weight:600}.pg-treatment .card p{margin:0;font-size:14.5px;color:var(--muted)}
+.pg-treatment .card .ft{padding:0 22px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pg-treatment .badge{display:inline-block;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;justify-self:start}
+.pg-treatment .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.pg-treatment .steps div{border-top:1px solid var(--fg);padding-top:16px;counter-increment:s;display:grid;gap:6px}
+.pg-treatment .steps div::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-treatment .steps b{font-size:17px;font-weight:600}.pg-treatment .steps span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-treatment .steps{grid-template-columns:1fr 1fr}}
+.pg-treatment .tbl{overflow-x:auto}.pg-treatment table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.pg-treatment th,.pg-treatment td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}.pg-treatment th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.pg-treatment td.hi{color:var(--rust);font-weight:600}
+.pg-treatment .note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.pg-treatment details{border-bottom:1px solid var(--line);padding-block:18px}.pg-treatment details:first-of-type{border-top:1px solid var(--line)}
+.pg-treatment summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px;font-weight:500}.pg-treatment summary::-webkit-details-marker{display:none}
+.pg-treatment summary::after{content:"+";font-size:22px;line-height:1;color:var(--muted)}.pg-treatment details[open] summary::after{content:"–"}.pg-treatment details p{margin:12px 0 0;color:var(--muted);max-width:62ch}
+.pg-treatment .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}@media(max-width:860px){.pg-treatment .split{grid-template-columns:1fr}}
+.pg-treatment .ph-empty{aspect-ratio:3/4;background:repeating-linear-gradient(135deg,var(--surface) 0 12px,var(--card) 12px 24px);border:1px dashed var(--line);display:grid;place-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pg-treatment .cta{background:var(--accent);color:var(--on-accent);text-align:center}.pg-treatment .cta .wrap{display:grid;gap:16px;justify-items:center}
+.pg-treatment .cta h2{font-family:var(--serif);font-size:clamp(34px,4vw,52px)}.pg-treatment .cta p{margin:0;opacity:.8;max-width:48ch}.pg-treatment .cta .btn{background:var(--on-accent);color:var(--accent)}
+.pg-treatment footer{padding-block:28px;font-size:12.5px;color:var(--muted);text-align:center}
+.pg-treatment .mini{display:grid;gap:4px;font-size:14px}.pg-treatment .mini div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-block:6px}
+
+.pg-treatment .cat{padding-block:clamp(40px,5vw,72px);border-top:1px solid var(--line)}
+.pg-treatment .cat:first-of-type{border-top:0}
+.pg-treatment .cat .ch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;margin-bottom:24px}
+.pg-treatment .cat h2{font-family:var(--serif);font-size:clamp(30px,3vw,42px);line-height:1.05}
+.pg-treatment .cat .ch p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.pg-treatment .subnav{position:sticky;top:68px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.pg-treatment .subnav .wrap{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding-block:14px}
+.pg-treatment .subnav a{text-decoration:none;white-space:nowrap}.pg-treatment .subnav a:hover{text-decoration:underline;text-underline-offset:5px}
+.pg-treatment .prods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:1100px){.pg-treatment .prods{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:820px){.pg-treatment .prods{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pg-treatment .prods{grid-template-columns:1fr}}
+.pg-treatment .prod{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.pg-treatment .prod .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--surface)}.pg-treatment .prod .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.pg-treatment .prod:hover .ph img{transform:scale(1.04)}
+.pg-treatment .prod .sale{position:absolute;top:10px;left:10px;background:var(--rust);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px}
+.pg-treatment .prod .bd{padding:16px 16px 6px;display:grid;gap:6px;flex:1;align-content:start}
+.pg-treatment .prod h3{font-size:17px;font-weight:600;letter-spacing:.01em}
+.pg-treatment .prod p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.pg-treatment .prod .meta{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.pg-treatment .prod .ft{padding:12px 16px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pg-treatment .prod .price{font-size:14px}.pg-treatment .prod .price b{font-size:17px}
+.pg-treatment .prod .acts{display:flex;gap:12px;align-items:center}
+.pg-treatment .prod .bk{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--on-accent);padding:7px 12px}
+
+
+/* AURA Institute · shared Level 3 treatment page template (l3.css)
+   Section order: hero (.thtop/.thero2 + .bookbox + .chips) → How it works (.hhead + .bcards + .fda)
+   → Is it right for you? (.fit5 + .pairnote) → The technology / Our approach / Your visit (.techband + .tsteps)
+   → At a glance (.g4) → FAQ (.faqgrid) → closing band (.closing).
+   Every Level 3 page links this file and l3.js. Change the design here once; it applies to every page. */
+.pg-treatment .tsec{padding-block:clamp(56px,8vw,88px)}
+.pg-treatment .tsec.alt{background:var(--surface)}
+.pg-treatment .thero{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:760px){.pg-treatment .thero{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-treatment .thero .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
+.pg-treatment .thero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-treatment .thero .tx{display:grid;gap:16px;min-width:0}
+.pg-treatment .thero h1{font-family:var(--serif);font-size:clamp(42px,5vw,68px);line-height:1}
+.pg-treatment .thero p.lede{margin:0;color:var(--muted);font-size:17px;max-width:46ch}
+.pg-treatment .thero .tlink{font-size:14px;text-decoration:underline;text-underline-offset:4px;width:fit-content}
+@media(max-width:860px){.pg-treatment .thero{grid-template-columns:1fr}.pg-treatment .thero .ph{order:-1}}
+/* booking box */
+.pg-treatment .bookbox{margin-top:8px;display:grid;gap:12px}
+.pg-treatment .bbrow{border:1px solid var(--line);background:var(--surface)}
+.pg-treatment .bbrow summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:14.5px;font-weight:500}
+.pg-treatment .bbrow summary::-webkit-details-marker{display:none}
+.pg-treatment .bbrow summary::after{content:none}
+.pg-treatment .bbrow summary .chev{transition:transform .3s ease;color:var(--muted)}
+.pg-treatment .bbrow[open] summary .chev{transform:rotate(180deg)}
+.pg-treatment .bbopts{padding:0 18px 18px;display:grid;gap:10px;border-top:1px solid var(--line);margin-top:0}
+.pg-treatment .bbopt{display:flex;align-items:center;gap:10px;font-size:14.5px;padding-top:14px}
+.pg-treatment .bbopt:first-child{padding-top:16px}
+.pg-treatment .bbaddr{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.pg-treatment .bookbox>.btn{width:100%}
+/* benefits 2x2 */
+.pg-treatment .benefits{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pg-treatment .benefits div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;display:grid;gap:6px}
+.pg-treatment .benefits h3{font-size:17px;font-weight:600}
+.pg-treatment .benefits p{margin:0;color:var(--muted);font-size:14.5px}
+@media(max-width:640px){.pg-treatment .benefits{grid-template-columns:1fr}}
+.pg-treatment .notebar{border-left:3px solid var(--rust);padding:14px 18px;margin-top:24px;font-size:14px;color:var(--fg);background:var(--card)}
+/* is it right for you */
+.pg-treatment .fit3{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.pg-treatment .fit3 .ph{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.pg-treatment .fit3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-treatment .fitcard{background:var(--card);border:1px solid var(--line);padding:26px;display:grid;gap:14px;align-content:start}
+.pg-treatment .fitcard h4{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-treatment .fitcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.pg-treatment .fitcard li{display:flex;gap:10px}
+.pg-treatment .fitcard li::before{content:"✓";color:var(--rust);flex:none}
+.pg-treatment .fitcard.no li::before{content:"–"}
+.pg-treatment .fitcard .pair{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.pg-treatment .fit3{grid-template-columns:1fr 1fr}.pg-treatment .fit3>.ph{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:620px){.pg-treatment .fit3{grid-template-columns:1fr}}
+/* technology: text left, image right, numbered list via .steps-v */
+.pg-treatment .techwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.pg-treatment .techwrap .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.pg-treatment .techwrap .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-treatment .steps-v{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:20px}
+.pg-treatment .steps-v li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.pg-treatment .steps-v li::before{content:counter(st,decimal-leading-zero);font-family:var(--serif);font-size:28px;color:var(--rust)}
+.pg-treatment .steps-v b{display:block;font-size:16.5px;font-weight:600;margin-bottom:4px}
+.pg-treatment .steps-v span{color:var(--muted);font-size:14.5px}
+@media(max-width:860px){.pg-treatment .techwrap{grid-template-columns:1fr}.pg-treatment .techwrap .ph{order:-1}}
+/* at a glance */
+.pg-treatment .glance{background:var(--card);border:1px solid var(--line)}
+.pg-treatment .glance .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-treatment .glance .col{padding:28px 24px;border-right:1px solid var(--line)}
+.pg-treatment .glance .col:last-child{border-right:0}
+.pg-treatment .glance h5{margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.pg-treatment .glance p{margin:0 0 8px;font-size:14px;color:var(--fg);line-height:1.6}
+.pg-treatment .glance p:last-child{margin-bottom:0}
+.pg-treatment .glance .ft{border-top:1px solid var(--line);padding:16px 24px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.pg-treatment .glance .cols{grid-template-columns:1fr 1fr}.pg-treatment .glance .col{border-bottom:1px solid var(--line)}.pg-treatment .glance .col:nth-child(2n){border-right:0}}
+@media(max-width:560px){.pg-treatment .glance .cols{grid-template-columns:1fr}}
+/* faq narrow */
+.pg-treatment .faqnarrow{max-width:720px;margin:0 auto}
+/* closing banner */
+.pg-treatment .closing{position:relative;background:#2A1D16;color:#FBF4EF;text-align:center}
+.pg-treatment .closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.pg-treatment .closing::before{content:"";position:absolute;inset:0;background:rgba(40,30,25,.6);z-index:1}
+.pg-treatment .closing .wrap{position:relative;z-index:2;display:grid;gap:18px;justify-items:center}
+.pg-treatment .closing h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);color:#fff}
+.pg-treatment .closing p{margin:0;max-width:48ch;opacity:.9}
+.pg-treatment .closing .btn{background:#FBF4EF;color:#3F3029}
+
+/* ---- homepage look: shell / cocoa / clay palette, Cormorant headings + Hanken body, light only ---- */
+.pg-treatment,.pg-treatment[data-theme]{--ease:cubic-bezier(.16,1,.3,1);--bg:#F8F0EB;--surface:#F1E3DB;--line:#E3CFC4;--fg:#2F221D;--muted:#9D857B;--ink:#5B4840;--accent:#2F221D;--on-accent:#FBF4EF;--card:#FBF4EF;--rust:#B07E6B;--clay:#B07E6B;--clay-lt:#E3B7A3;--cocoa:#2F221D;--cream:#FBF4EF;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond","Cormorant","Times New Roman",serif;color-scheme:light}
+.pg-treatment{color:var(--ink);font-weight:300;line-height:1.7}
+.pg-treatment h1,.pg-treatment h2,.pg-treatment h3{color:var(--fg)}
+.pg-treatment h1 em,.pg-treatment h2 em{font-family:var(--serif);font-style:italic;color:var(--clay)}
+.pg-treatment .proto{background:#F1E3DB;color:#5B4840}
+.pg-treatment .crumbs{font-size:12px;letter-spacing:.04em}
+.pg-treatment .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--fg)}
+.pg-treatment .tsec{padding-block:clamp(80px,9vw,128px)}
+.pg-treatment .head{gap:14px}
+.pg-treatment .head h2{font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1}
+.pg-treatment .btn{border-radius:0;padding:16px 34px;font-size:11px;font-weight:600;letter-spacing:.2em;background:var(--cocoa);color:var(--cream);transition:background .5s}
+.pg-treatment .btn:hover{background:var(--clay)}
+/* how it works */
+.pg-treatment .benefits div{padding:28px 28px}
+.pg-treatment .benefits h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.15}
+.pg-treatment .benefits p{color:var(--ink)}
+.pg-treatment .notebar{border-left-color:var(--clay);background:var(--card);color:var(--ink)}
+/* fit cards + glance + steps */
+.pg-treatment .fitcard h4,.pg-treatment .glance h5{color:var(--clay);font-size:11px;font-weight:600;letter-spacing:.2em}
+.pg-treatment .fitcard li::before{color:var(--clay)}
+.pg-treatment .steps-v li::before{color:var(--clay);font-size:32px}
+.pg-treatment .steps-v b{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--fg)}
+.pg-treatment .steps-v span{color:var(--ink)}
+.pg-treatment .glance p{color:var(--ink)}
+/* faq */
+.pg-treatment summary{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--fg)}
+.pg-treatment details p{color:var(--ink)}
+/* closing band + footer in cocoa, like the homepage */
+.pg-treatment .closing{background:var(--cocoa)}
+.pg-treatment .closing::before{background:rgba(47,34,29,.62)}
+.pg-treatment .closing h2{font-weight:400;font-size:clamp(40px,4.6vw,64px)}
+.pg-treatment .closing h2 em{color:var(--clay-lt)}
+.pg-treatment .closing .btn{background:var(--cream);color:var(--cocoa)}
+.pg-treatment .closing .btn:hover{background:var(--clay-lt)}
+
+/* hero v2: photo left with an offset clay frame, copy right */
+.pg-treatment .thtop{padding-block:clamp(28px,3vw,44px) clamp(72px,8vw,112px)}
+.pg-treatment{scroll-behavior:smooth}
+.pg-treatment section[id]{scroll-margin-top:72px}
+.pg-treatment .thero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.pg-treatment .tframe{position:relative;padding:0 0 clamp(18px,2vw,28px) clamp(18px,2vw,28px)}
+.pg-treatment .tframe::before{content:"";position:absolute;left:0;bottom:0;width:72%;height:78%;background:var(--surface);border:1px solid var(--line)}
+.pg-treatment .tframe .ph{position:relative;height:clamp(340px,calc(100svh - 230px),540px);overflow:hidden;background:var(--surface)}
+.pg-treatment .tframe .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .thero2 .tx{display:grid;gap:20px;min-width:0}
+.pg-treatment .kicker{color:var(--clay);font-weight:700;letter-spacing:.22em;margin-bottom:-6px}
+.pg-treatment .big{font-family:var(--serif);font-weight:400;white-space:nowrap;font-size:clamp(40px,5.2vw,82px);line-height:.92;letter-spacing:-.01em;color:var(--fg);margin:0}
+.pg-treatment .big .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.pg-treatment .big .ln i{display:block;font-style:normal;transform:translateY(108%);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.pg-treatment .big.in .ln i{transform:none}
+.pg-treatment .big em{font-style:italic;color:var(--clay)}
+.pg-treatment .thero2 .lede{margin:0;max-width:44ch;font-size:17px;line-height:1.75;color:var(--ink)}
+.pg-treatment .ctas{display:flex;align-items:center;gap:20px 30px;flex-wrap:wrap;margin-top:6px}
+.pg-treatment .ctas .tlink{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;color:var(--fg)}
+.pg-treatment .ctas .tlink:hover{color:var(--clay)}
+@media(max-width:860px){.pg-treatment .thero2{grid-template-columns:1fr}}
+/* benefit icons: fine line art on a soft tile */
+.pg-treatment .benefits .bimg{display:grid;place-items:center;aspect-ratio:4/3;background:var(--card);border:1px solid var(--line)}
+.pg-treatment .benefits .bimg svg{width:auto;height:66%;fill:none;stroke:var(--fg);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s var(--ease)}
+.pg-treatment .benefits .bimg .ac{stroke:var(--clay);stroke-width:1.6}
+.pg-treatment .benefits .bimg circle.ac{fill:var(--clay)}
+.pg-treatment .benefits div:hover .bimg svg{transform:translateY(-4px)}
+/* scroll reveal, as on the homepage */
+.pg-treatment .rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0s) * .5)}
+.pg-treatment .rv.in{opacity:1;transform:none}
+.pg-treatment .rv-img img{clip-path:inset(0 0 100% 0);transform:scale(1.08);transition:clip-path .7s var(--ease),transform 1s var(--ease)!important;transition-delay:calc(var(--d,0s) * .5)!important}
+.pg-treatment .rv-img.in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion: reduce){.pg-treatment .rv,.pg-treatment .rv-img img,.pg-treatment .big .ln i{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+/* jump menu: a small dropdown beside the booking button */
+.pg-treatment .jump{position:relative}
+.pg-treatment .jump summary{list-style:none;display:inline-flex;align-items:center;gap:12px;padding:15px 20px;border:1px solid var(--line);background:var(--card);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);cursor:pointer;transition:border-color .4s}
+.pg-treatment .jump summary::-webkit-details-marker{display:none}
+.pg-treatment .jump summary::after{content:"";width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .4s var(--ease)}
+.pg-treatment .jump[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.pg-treatment .jump summary:hover,.pg-treatment .jump[open] summary{border-color:var(--fg)}
+.pg-treatment .jump nav{position:absolute;z-index:20;top:calc(100% + 6px);left:0;min-width:240px;background:var(--card);border:1px solid var(--line);box-shadow:0 22px 40px -24px rgba(47,34,29,.35);display:grid;padding:6px 0;animation:jumpIn .4s var(--ease)}
+.pg-treatment .jump nav a{padding:11px 20px;font-size:14px;color:var(--ink);text-decoration:none;transition:background .3s,color .3s}
+.pg-treatment .jump nav a:hover{background:var(--surface);color:var(--fg)}
+@keyframes jumpIn{from{opacity:0;transform:translateY(-6px)}}
+/* how it works: icons in open columns divided by hairlines */
+.pg-treatment .benefits{gap:0}
+.pg-treatment .benefits div{padding:0 clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.pg-treatment .benefits div:first-child{border-left:0}
+.pg-treatment .benefits .bimg{aspect-ratio:auto;height:clamp(120px,12vw,160px);background:none;border:0;margin-bottom:6px}
+@media(max-width:900px){.pg-treatment .benefits div:nth-child(3){border-left:0}}
+/* is it right for you: tall photo, two ruled lists */
+.pg-treatment .fitgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,100px);align-items:center}
+.pg-treatment .fitimg{aspect-ratio:4/5;overflow:hidden;position:relative}
+.pg-treatment .fitimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .fitcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
+.pg-treatment .fitcols h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-treatment .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-treatment .rows li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--fg)}
+.pg-treatment .rows.yes li::before{content:"✓";color:var(--clay)}
+.pg-treatment .rows.no li{color:var(--ink)}
+.pg-treatment .rows.no li::before{content:"—";color:var(--muted)}
+.pg-treatment .fitcopy .pair{margin:26px 0 0;font-size:14px;color:var(--muted)}
+.pg-treatment .fitcopy .pair a{color:var(--fg)}
+@media(max-width:860px){.pg-treatment .fitgrid{grid-template-columns:1fr}.pg-treatment .fitcols{grid-template-columns:1fr}}
+/* technology: cocoa band like the homepage About, photo bleeding to the left edge */
+.pg-treatment .techband{background:var(--cocoa);color:#D9C3B8}
+.pg-treatment .tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(480px,44vw,640px)}
+.pg-treatment .tgrid .ph{position:relative;overflow:hidden;min-height:380px}
+.pg-treatment .tgrid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pg-treatment .tcopy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(56px,6vw,96px) max(clamp(24px,6vw,110px),env(safe-area-inset-right,0px)) clamp(56px,6vw,96px) clamp(28px,6vw,100px)}
+.pg-treatment .tcopy .eyebrow{color:var(--clay-lt)}
+.pg-treatment .tcopy h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:#fff}
+.pg-treatment .tcopy h2 em{color:var(--clay-lt)}
+.pg-treatment .tsteps{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid rgba(231,207,195,.18)}
+.pg-treatment .tsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid rgba(231,207,195,.18)}
+.pg-treatment .tsteps .n{font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay-lt)}
+.pg-treatment .tsteps b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px}
+.pg-treatment .tsteps span{font-size:14.5px;line-height:1.65;color:#fff}
+@media(max-width:860px){.pg-treatment .tgrid{grid-template-columns:1fr}.pg-treatment .tgrid .ph{aspect-ratio:4/3;min-height:0}}
+/* at a glance: four numbered columns on a cocoa rule, like the homepage experience */
+.pg-treatment .g4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg-treatment .g4 li{border-top:1px solid var(--fg);padding:26px clamp(18px,2.4vw,40px) 0 0}
+.pg-treatment .g4 .k{display:block;margin-bottom:14px;font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+.pg-treatment .g4 h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15;margin-bottom:12px}
+.pg-treatment .g4 p{margin:0 0 8px;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-treatment .gnote{margin:clamp(36px,4vw,52px) 0 0;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-treatment .g4{grid-template-columns:1fr 1fr;row-gap:40px}}
+@media(max-width:520px){.pg-treatment .g4{grid-template-columns:1fr}}
+/* layout after the treatment wireframe */
+.pg-treatment .head.ctr{margin-inline:auto;text-align:center;justify-items:center}
+/* how it works: four image cards */
+.pg-treatment #how .intro{margin:-12px auto clamp(36px,4vw,56px);max-width:64ch;text-align:center;color:var(--ink)}
+.pg-treatment .benefits{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px);border:0}
+.pg-treatment .benefits div{border:0;padding:0;justify-items:center;align-content:start;text-align:center;gap:8px}
+.pg-treatment .benefits .bimg{display:block;width:100%;aspect-ratio:1;overflow:hidden;background:var(--surface);margin-bottom:12px}
+.pg-treatment .benefits .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease,ease)}
+.pg-treatment .benefits div:hover .bimg img{transform:scale(1.05)}
+@media(max-width:900px){.pg-treatment .benefits{grid-template-columns:1fr 1fr;row-gap:36px}}
+.pg-treatment .notebar{margin:clamp(36px,4vw,52px) auto 0;max-width:70ch;text-align:center;border:0;border-top:1px solid var(--line);background:none;padding:18px 0 0;font-size:13px;color:var(--muted)}
+/* ideal for: both cards the same height as the photo */
+.pg-treatment .fit3{align-items:stretch}
+.pg-treatment .fit3 .ph{aspect-ratio:auto;min-height:360px}
+.pg-treatment .fitcard{height:100%}
+/* technology: steps on fine rules */
+.pg-treatment .steps-v{gap:0}
+.pg-treatment .steps-v li{border-top:1px solid var(--line);padding-block:22px}
+.pg-treatment .steps-v li:last-child{border-bottom:1px solid var(--line)}
+/* at a glance: four quiet columns on a cocoa rule */
+.pg-treatment .glance{background:none;border:0}
+.pg-treatment .glance .col{border:0;border-top:1px solid var(--fg);padding:22px 28px 0 0}
+.pg-treatment .glance .cols{gap:0 24px}
+.pg-treatment .glance .ft{border:0;padding:28px 0 0;text-align:center}
+@media(max-width:900px){.pg-treatment .glance .col{border-bottom:0}}
+/* faq: title left, questions right */
+.pg-treatment .faqgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.pg-treatment .faqgrid .head{margin:0;position:sticky;top:96px}
+@media(max-width:860px){.pg-treatment .faqgrid{grid-template-columns:1fr}.pg-treatment .faqgrid .head{position:static}}
+/* footer: same as the homepage */
+.pg-treatment .foot{background:var(--cocoa);color:#CDB6AB;padding-block:clamp(56px,6vw,88px) calc(env(safe-area-inset-bottom,0px) + 22px);text-align:left}
+.pg-treatment .foot .in{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.pg-treatment .foot .in{padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px))}}
+.pg-treatment .foot .top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+@media(max-width:900px){.pg-treatment .foot .top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pg-treatment .foot .top{grid-template-columns:1fr}}
+.pg-treatment .foot .logo{font-family:"Tenor Sans","Optima","Candara",sans-serif;font-size:22px;letter-spacing:.16em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.pg-treatment .foot .tagl{margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--clay-lt)}
+.pg-treatment .foot h4{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+.pg-treatment .foot p{margin:0;font-size:14px;line-height:1.9}
+.pg-treatment .foot a{text-decoration:none}
+.pg-treatment .foot a:hover{color:var(--cream)}
+.pg-treatment .foot .legal{margin-top:clamp(44px,5vw,72px);padding-top:16px;border-top:1px solid rgba(231,207,195,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:12px}
+.pg-treatment .foot .legal nav{display:flex;flex-wrap:wrap;gap:22px}
+
+/* ===== v5: refinements after the reference layout ===== */
+.pg-treatment .tframe::before{background:none}
+.pg-treatment .kicker{margin-bottom:-14px}
+.pg-treatment .big .ln{padding-bottom:.2em;margin-bottom:-.12em}
+.pg-treatment .thero2 .tx{transform:translateY(-14px)}
+/* how it works: heading left, intro right, four portrait cards */
+.pg-treatment .hhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.pg-treatment .hhead .head{margin:0}
+.pg-treatment .hintro p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink);max-width:49ch;text-align:justify;text-justify:inter-word;text-wrap:wrap}
+.pg-treatment .hintro .tagline{text-align:left}
+.pg-treatment .hintro .tagline{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,27px);line-height:1.25;color:var(--fg)}
+.pg-treatment .bcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.pg-treatment .bcards>div{display:grid;gap:8px;align-content:start}
+.pg-treatment .bcards .bimg{display:block;aspect-ratio:4/5;overflow:hidden;background:#E8DBD0;margin-bottom:12px}
+.pg-treatment .bcards .bimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.pg-treatment .bcards>div:hover .bimg img{transform:scale(1.04)}
+.pg-treatment .bcards h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);line-height:1.15}
+.pg-treatment .bcards p{margin:0;font-size:14px;line-height:1.65;color:var(--ink)}
+.pg-treatment .fda{margin:clamp(36px,4vw,52px) 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:900px){.pg-treatment .hhead{grid-template-columns:1fr}.pg-treatment .bcards{grid-template-columns:1fr 1fr;row-gap:36px}}
+/* ideal for: small photo beside the two ruled lists */
+.pg-treatment .fit5{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.pg-treatment .fit5 .fitimg{aspect-ratio:3/4;position:relative;overflow:hidden}
+.pg-treatment .fit5 h4{margin:0 0 6px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-treatment .fit5 .pair{margin:22px 0 0;font-size:14px;color:var(--muted)}
+.pg-treatment .fit5 .pair a{color:var(--fg)}
+@media(max-width:900px){.pg-treatment .fit5{grid-template-columns:1fr 1fr}.pg-treatment .fit5 .fitimg{grid-column:1/-1;aspect-ratio:16/9}}
+@media(max-width:560px){.pg-treatment .fit5{grid-template-columns:1fr}}
+/* faq: title stays put; bold questions */
+.pg-treatment .faqgrid .head{position:static}
+.pg-treatment summary{font-weight:600}
+/* closing band shorter, so it shares one screen with the footer */
+.pg-treatment .closing.tsec{padding-block:clamp(56px,6vw,88px)}
+.pg-treatment .closing .wrap{gap:16px}
+
+/* ===== v6 ===== */
+.pg-treatment p,.pg-treatment h3,.pg-treatment .rows li{text-wrap:pretty}
+/* hero: more air on the right */
+.pg-treatment .thero2 .tx{gap:30px;transform:none;align-content:center}
+.pg-treatment .thero2 .kicker{margin-bottom:-12px}
+.pg-treatment .thero2 .lede{max-width:40ch;font-size:17.5px;line-height:1.8}
+.pg-treatment .thero2 .ctas{margin-top:6px}
+/* how it works: heading block and intro share one top line; illustrations float free, no tile */
+.pg-treatment .hhead{align-items:start}
+.pg-treatment .hintro{padding-top:30px}
+.pg-treatment .bcards .bimg{background:none;aspect-ratio:1/1.05;margin-bottom:6px}
+.pg-treatment .bcards .bimg img{object-fit:contain;padding:4% 8%}
+.pg-treatment .bcards>div:hover .bimg img{transform:translateY(-6px)}
+/* ideal for: two ruled lists, small landscape photo on the right, highlighted pairing note below */
+.pg-treatment .fit5{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.78fr);align-items:start}
+.pg-treatment .fit5 .fitimg{aspect-ratio:4/3;margin-top:22px}
+.pg-treatment .pairnote{margin:clamp(32px,4vw,48px) 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:#F1E3DB;border-left:3px solid var(--clay);font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.4;color:var(--fg)}
+.pg-treatment .pairnote .pl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.pg-treatment .pairnote a{color:var(--clay);font-weight:500;text-decoration:none;padding-bottom:2px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.pg-treatment .pairnote a:hover,.pg-treatment .pairnote a:focus-visible{background-size:100% 1px;font-weight:600}  /* same colour; turns bolder and an underline draws in */
+@media(max-width:900px){.pg-treatment .fit5{grid-template-columns:1fr 1fr}.pg-treatment .fit5 .fitimg{grid-column:1/-1;order:-1;aspect-ratio:16/9;margin-top:0}}
+@media(max-width:560px){.pg-treatment .fit5{grid-template-columns:1fr}}
+/* technology: title sits higher */
+.pg-treatment .tcopy{justify-content:flex-start;padding-top:clamp(48px,5vw,80px);gap:12px}
+.pg-treatment .tcopy .eyebrow{margin-bottom:2px}
+/* at a glance: type as the homepage AURA Experience */
+.pg-treatment .g4 li{padding-right:clamp(20px,3vw,48px)}
+.pg-treatment .g4 h3{font-weight:400;font-size:clamp(25px,2.1vw,31px);line-height:1.15;margin-bottom:14px}
+.pg-treatment .g4 p{font-size:15px;line-height:1.65;max-width:32ch}
+
+/* ===== v7 ===== */
+/* at a glance: 2x2 grid */
+.pg-treatment .g4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(36px,6vw,96px);row-gap:clamp(40px,4vw,56px);max-width:1040px;margin:0 auto}
+.pg-treatment .g4 p{max-width:46ch}
+@media(max-width:620px){.pg-treatment .g4{grid-template-columns:1fr}}
+/* faq: smaller, lighter, like the earlier layout */
+.pg-treatment .faqgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pg-treatment .faqgrid .head h2{font-size:clamp(36px,3.6vw,52px);line-height:1.05}
+.pg-treatment .faqgrid .head h2 em{display:block}
+.pg-treatment summary{font-size:20px;font-weight:500}
+.pg-treatment details{padding-block:16px}
+.pg-treatment details p{font-size:14px;line-height:1.7}
+
+
+/* ===== v8: at a glance, bulleted and a size down so each point fits on one line ===== */
+.pg-treatment .g4{max-width:1040px;column-gap:clamp(32px,4vw,64px)}  /* narrower, so the four blocks read as one group, wide enough that every point stays on one line */
+.pg-treatment .g4 li{padding-right:24px}
+.pg-treatment .faqgrid{max-width:1020px;margin-inline:auto}
+.pg-treatment .g4 li{border-top:.5px solid rgba(47,34,29,.42)}  /* solid hairline: half a pixel on high-resolution screens; the softer tone keeps it fine on 1x screens too */
+.pg-treatment .g4 p{position:relative;max-width:none;padding-left:18px;font-size:14.5px;line-height:1.6;margin-bottom:9px}
+.pg-treatment #glance .head{max-width:none}
+.pg-treatment .faqgrid .head h2{font-size:clamp(40px,4.4vw,64px);line-height:1}  /* same size as the At a glance heading */
+.pg-treatment .g4 p::before{content:"";position:absolute;left:2px;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--clay)}
+/* booking box inside the hero, plus placeholder marks */
+.pg-treatment .thero2 .bookbox{margin-top:0}
+.pg-treatment .bbrow{padding:0;border-bottom:1px solid var(--line)}
+.pg-treatment .bbrow summary{font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--fg);line-height:1.5}
+.pg-treatment .bbrow summary::after{content:none}
+.pg-treatment .bbopt{color:var(--ink)}
+.pg-treatment .placeholder{color:var(--muted);font-style:italic}
+.pg-treatment span[data-confirm]{border-bottom:1px dashed var(--clay)}
+
+/* ---- template additions ---- */
+.pg-treatment .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.pg-treatment .chips>span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.04em;color:var(--ink);background:transparent}
+.pg-treatment .chips>span span{border:0;padding:0;border-radius:0}  /* a value inside a chip that still needs confirming: text only, no chip of its own */
+.pg-treatment .big.wrap2{white-space:normal}
+.pg-treatment .g6{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(32px,4vw,64px);row-gap:clamp(36px,4vw,52px);max-width:1040px;margin-inline:auto}
+.pg-treatment .g6 li{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px}
+.pg-treatment .g6 .k{display:block;margin-bottom:12px;font-family:var(--serif);font-size:28px;line-height:1;color:var(--clay)}
+.pg-treatment .g6 h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2vw,28px);line-height:1.15;margin:0 0 8px}
+.pg-treatment .g6 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+@media(max-width:900px){.pg-treatment .g6{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pg-treatment .g6{grid-template-columns:1fr}}
+.pg-treatment .g6foot{margin:clamp(32px,4vw,48px) auto 0;max-width:1040px;text-align:center;font-size:14.5px;color:var(--muted)}
+.pg-treatment .g6foot a{color:var(--fg)}
+/* text-only benefit cards (.bcards.txt): same grid and type as the illustrated cards, a serif numeral instead of a drawing */
+.pg-treatment .bcards.txt>div{border-top:.5px solid rgba(47,34,29,.42);padding-top:24px;gap:10px}
+.pg-treatment .bcards.txt .k{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--clay);margin-bottom:6px}
+/* "About the product" (.prodcard): material facts for injectables, label + text rows */
+.pg-treatment .prodcard{margin-top:clamp(48px,5vw,72px);display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.pg-treatment .prodcard h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,42px);line-height:1.05;margin:0}
+.pg-treatment .prodcard h3 em{color:var(--clay)}
+.pg-treatment .prodcard dl{margin:0;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-treatment .prodcard dl>div{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pg-treatment .prodcard dt{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);padding-top:4px}
+.pg-treatment .prodcard dd{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+@media(max-width:860px){.pg-treatment .prodcard{grid-template-columns:1fr}.pg-treatment .prodcard dl>div{grid-template-columns:1fr}}
+.pg-treatment .prodcard .psteps{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.pg-treatment .prodcard .psteps b{font-weight:600;color:var(--fg)}
+
+/* ===== v9: a softer hero copy column, used by every Level 3 page ===== */
+.pg-treatment .thero2 .tx{gap:26px}
+.pg-treatment .thero2 .kicker{display:inline-flex;align-items:center;gap:14px;margin-bottom:-8px}
+.pg-treatment .thero2 .kicker::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.pg-treatment .thero2 .lede{font-size:17px;line-height:1.8;max-width:42ch}
+/* key facts: a quiet ruled strip instead of pills */
+.pg-treatment .thero2 .chips{flex-wrap:nowrap;white-space:nowrap;overflow:hidden;gap:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:46ch}
+.pg-treatment .thero2 .chips>span{flex:none;border:0;border-radius:0;padding:0 18px;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fg);position:relative}
+.pg-treatment .thero2 .chips>span:first-child{padding-left:0}
+.pg-treatment .thero2 .chips>span+span::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.pg-treatment .thero2 .chips>span span{font-size:inherit;letter-spacing:inherit}
+/* booking: an underlined picker beside the button; options open as a dropdown */
+.pg-treatment .thero2 .bookbox{grid-template-columns:minmax(0,1fr) auto;gap:14px 22px;align-items:end;max-width:46ch}
+.pg-treatment .thero2 .bbrow{position:relative;border:0;border-bottom:1px solid var(--fg);background:none}
+.pg-treatment .thero2 .bbrow summary{padding:12px 0;font-family:var(--serif);font-size:20px;font-weight:400;color:var(--fg)}
+.pg-treatment .thero2 .bbrow summary .chev{font-size:13px;color:var(--fg)}
+.pg-treatment .thero2 .bbopts{position:absolute;z-index:6;top:calc(100% + 8px);left:0;width:max(100%,320px);padding:4px 20px 18px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -26px rgba(47,34,29,.38);animation:jumpIn .4s var(--ease)}
+.pg-treatment .thero2 .bookbox>.btn{width:auto;white-space:nowrap;padding:16px 28px}
+/* "Learn all about …": small and quiet */
+.pg-treatment .thero2 .ctas{margin-top:-4px}
+.pg-treatment .thero2 .ctas .tlink{font-size:10px;letter-spacing:.22em;color:var(--muted);border-bottom-color:var(--line);padding-bottom:4px;transition:color .4s,border-color .4s}
+.pg-treatment .thero2 .ctas .tlink::after{content:" ↓";letter-spacing:0}
+.pg-treatment .thero2 .ctas .tlink:hover{color:var(--fg);border-bottom-color:var(--fg)}
+@media(max-width:520px){.pg-treatment .thero2 .bookbox{grid-template-columns:1fr}.pg-treatment .thero2 .bookbox>.btn{width:100%}.pg-treatment .thero2 .chips>span{padding:0 12px}}
+
+/* how it works with photographs (.bcards.photo): staggered portrait photos, a numbered caption on a hairline */
+.pg-treatment .bcards.photo{counter-reset:bc;align-items:start}
+.pg-treatment .bcards.photo>div{counter-increment:bc;gap:10px}
+.pg-treatment .bcards.photo>div:nth-child(even){margin-top:clamp(32px,4.4vw,72px)}
+.pg-treatment .bcards.photo .bimg{aspect-ratio:4/5;background:var(--surface);margin-bottom:14px}
+.pg-treatment .bcards.photo .bimg img{object-fit:cover;padding:0;transition:transform 1.6s var(--ease)}
+.pg-treatment .bcards.photo>div:hover .bimg img{transform:scale(1.04)}
+.pg-treatment .bcards.photo h3{padding-top:16px;border-top:.5px solid rgba(47,34,29,.42)}
+.pg-treatment .bcards.photo h3::before{content:counter(bc,decimal-leading-zero);display:block;margin-bottom:10px;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;color:var(--clay)}
+@media(max-width:900px){.pg-treatment .bcards.photo>div:nth-child(even){margin-top:0}}
+.pg-treatment .thero2 .bookbox,.pg-treatment .thero2 .chips{max-width:540px}
+.pg-treatment .thero2 .bbrow summary{white-space:nowrap;font-size:19px}
+
+/* "About the treatment / technology" as the cocoa band: photo on the left, numbered rows on the right */
+.pg-treatment .tsteps .tdd{font-size:14.5px;line-height:1.65;color:#fff}
+.pg-treatment .tsteps .tdd a{color:var(--clay-lt)}
+.pg-treatment .tsteps .psteps{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.pg-treatment .tsteps .psteps li{display:block;padding:0;border:0}
+.pg-treatment .tsteps .psteps b{display:inline;margin:0;font-family:var(--sans);font-size:inherit;font-weight:600;color:#fff}
+
+/* ===== v10 ===== */
+/* breadcrumb sits just above the photo, lined up with its left edge */
+.pg-treatment .crumbs{padding-top:clamp(22px,2.4vw,34px);text-indent:clamp(18px,2vw,28px)}
+.pg-treatment .thtop{padding-top:12px}
+/* hero: no rule before the category; the appointment picker is a rounded pill */
+.pg-treatment .thero2 .kicker{display:block}
+.pg-treatment .thero2 .kicker::before{content:none}
+.pg-treatment .thero2 .bbrow{border:1px solid rgba(47,34,29,.38);border-radius:999px;padding:0 22px;transition:border-color .4s}
+.pg-treatment .thero2 .bbrow:hover,.pg-treatment .thero2 .bbrow[open]{border-color:var(--fg)}
+.pg-treatment .thero2 .bbrow summary{padding:12px 0;font-size:18px}
+.pg-treatment .thero2 .bbrow summary .chev{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:-8px;border-radius:50%;background:var(--surface);font-size:12px}
+.pg-treatment .thero2 .bbopts{border-radius:18px;top:calc(100% + 10px)}
+.pg-treatment .thero2 .bookbox{align-items:center}
+/* how it works photos: a size smaller */
+.pg-treatment .bcards.photo{max-width:1040px;margin-inline:auto;column-gap:clamp(20px,3vw,44px)}
+.pg-treatment .bcards.photo .bimg{aspect-ratio:1}
+.pg-treatment .bcards.photo>div:nth-child(even){margin-top:clamp(24px,3.4vw,52px)}
+
+/* ===== v11 ===== */
+/* appointment picker: a quiet dropdown list; picking an option closes it and shows the choice in the pill */
+.pg-treatment .thero2 .bbrow summary .bbl{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.pg-treatment .thero2 .bbrow summary .chev,.pg-treatment .thero2 .bbrow[open] summary .chev{transform:none;font-size:0;flex:none}
+.pg-treatment .thero2 .bbrow summary .chev::before{content:"";width:6px;height:6px;border-right:1.2px solid var(--fg);border-bottom:1.2px solid var(--fg);transform:translateY(-1.5px) rotate(45deg)}
+.pg-treatment .thero2 .bbopts{border-top:1px solid var(--line);margin:0;padding:8px;gap:2px;width:max(100%,340px)}
+.pg-treatment .thero2 .bbopt{position:relative;display:block;padding:12px 40px 12px 14px;border-radius:12px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.pg-treatment .thero2 .bbopt:first-child{padding-top:12px}
+.pg-treatment .thero2 .bbopt:hover{background:var(--surface);color:var(--fg)}
+.pg-treatment .thero2 .bbopt input{position:absolute;opacity:0;pointer-events:none}
+.pg-treatment .thero2 .bbopt.sel{color:var(--fg);font-weight:500}
+.pg-treatment .thero2 .bbopt.sel::after{content:"";position:absolute;right:18px;top:50%;width:5px;height:10px;margin-top:-7px;border-right:1.4px solid var(--clay);border-bottom:1.4px solid var(--clay);transform:rotate(45deg)}
+.pg-treatment .thero2 .bbaddr{margin:6px 14px 6px;font-size:12px;line-height:1.6}
+/* hero: copy starts level with the top of the photo; the booking row sits level with its bottom */
+@media(min-width:861px){
+  .pg-treatment .thero2{align-items:stretch}
+  .pg-treatment .thero2 .tx{display:flex;flex-direction:column;gap:24px;padding-bottom:clamp(18px,2vw,28px)}
+  .pg-treatment .thero2 .kicker{margin:0 0 -8px}
+  .pg-treatment .thero2 .ctas{order:1;margin-top:-6px}
+  .pg-treatment .thero2 .bookbox{order:2;margin-top:auto}
+}
+/* how it works photos: softer, less clinical */
+.pg-treatment .bcards.photo .bimg img{transform:none}
+.pg-treatment .bcards.photo>div:hover .bimg img{transform:scale(1.06)}
+.pg-treatment .thero2 .bbrow summary::after,.pg-treatment .thero2 .bbrow[open] summary::after{content:none!important;display:none}
+.pg-treatment .thero2 .bbopts{border-top:1px solid var(--line)}
+.pg-treatment .thero2 .bbrow[open] .bbopts{border-top-color:var(--line)}
+.pg-treatment .thero2 .bbrow summary:focus{outline:none}
+.pg-treatment .thero2 .bbrow:has(summary:focus-visible){border-color:var(--fg);box-shadow:0 0 0 3px rgba(176,126,107,.25)}
+
+/* ===== v12: hero right column as two groups — about the treatment on top, a booking block at the bottom ===== */
+@media(min-width:861px){
+  .pg-treatment .tframe .ph{height:clamp(360px,calc(100svh - 300px),500px)}
+  .pg-treatment .thero2 .tx{gap:22px}
+  .pg-treatment .thero2 .ctas{order:2;margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:20px;border-top:.5px solid rgba(47,34,29,.42)}
+  .pg-treatment .thero2 .ctas::before{content:"Book your visit";font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+  .pg-treatment .thero2 .bookbox{order:3;margin-top:-4px}
+  .pg-treatment .thero2 .chips{border-bottom:0;padding-bottom:0}
+}
+.pg-treatment .thero2 .ctas,.pg-treatment .thero2 .bookbox{max-width:540px}
+
+/* ===== v13: duration row ruled above and below again; no "Book your visit / Learn all" row in the hero ===== */
+.pg-treatment .thero2 .chips{border-bottom:1px solid var(--line);padding-bottom:13px}
+.pg-treatment .thero2 .ctas{display:none!important}
+@media(min-width:861px){.pg-treatment .thero2 .bookbox{margin-top:auto}}
+/* picker opens upward when there isn't room below */
+.pg-treatment .thero2 .bbrow.up .bbopts{top:auto;bottom:calc(100% + 10px)}
+
+/* ===== v14: hero copy as one compact block, centred beside the photo ===== */
+@media(min-width:861px){.pg-treatment .thero2 .tx{justify-content:center;gap:22px;padding-bottom:0}.pg-treatment .thero2 .bookbox{margin-top:4px}}
+
+/* ===== compact-sections (Nov 9): "About the treatment" (two groups) and FAQs (five, all closed) each fit one screen ===== */
+.pg-treatment .techband{padding-block:clamp(96px,14vh,170px)}  /* more air above and below (Nov 10) */
+.pg-treatment .tgrid{min-height:min(clamp(420px,34vw,520px),62vh)}
+.pg-treatment .tcopy{padding-top:clamp(28px,5vh,64px);padding-bottom:clamp(28px,5vh,64px)}
+.pg-treatment #faq.tsec{padding-block:clamp(120px,17vh,200px)}
+@media(max-width:860px){
+  .pg-treatment .techband{padding-block:0}
+  .pg-treatment .tgrid .ph{aspect-ratio:21/9}
+  .pg-treatment .tcopy{padding-top:32px;padding-bottom:36px}
+  .pg-treatment .tsteps li{grid-template-columns:40px 1fr;padding:14px 0}
+  .pg-treatment .faqgrid{grid-template-columns:1fr}
+  .pg-treatment #faq summary{font-size:18px}
+  .pg-treatment #faq details{padding-block:12px}
+}
+
+/* "How it works" photo cards can name the treatment area next to the number, e.g. 01 · Eyes */
+.pg-treatment .bcards.photo h3[data-zone]::before{content:counter(bc,decimal-leading-zero) "  \00B7  " attr(data-zone);white-space:pre;text-transform:uppercase}
+
