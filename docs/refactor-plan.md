@@ -1,6 +1,6 @@
 # AURA Institute 官网重构方案（Nuxt SSR + Vectra CMS）
 
-状态：Phase 0 核查完成，待开发　|　日期：2026-11-19
+状态：已上线正式域名 aurainstitute.com（见第 10 节）　|　日期：2026-11-19
 
 > 本仓库是公开仓库。本文不记录服务器地址、内网地址、凭据；这些以 `<占位>` 表示，实际值只在服务器与 Vectra 前端仓库的规范文档里。
 
@@ -177,3 +177,31 @@ Vectra「AURA」菜单 ─► Vectra 后端（新表 aura_*，公开接口 /aura
 1. 超级管理员在「CMS管理权限」里给相关同事授权"AURA Institute"，否则看不到 AURA 菜单。
 2. 联系电话、邮箱、客户评价在原型里是占位或示意，种子里已隐藏；确认后在 CMS 里填写并打开。
 3. 正式上线前：补齐 `tech-neck` 文案，核对全部治疗页文案与时长；换正式域名按第 7 节执行。
+
+
+## 10. 正式域名上线记录（2026-11-19）
+
+`aurainstitute.com` 已上线，`www.` 与 `http` 都 301 到 `https://aurainstitute.com`；测试地址 `overseasstudent.com/aura-institute/` 已撤除，原域名配置已还原。
+
+| 步骤 | 结果 |
+|---|---|
+| DNS | 裸域与 `www` 的 A 记录都指向目标机器的公网地址 |
+| 证书 | certbot webroot 签发，裸域与 `www` 同一张证书，有效期到 2027-02-17；续期沿用机器上已有的每日计划任务与全局重载钩子 |
+| Nginx | 新建 `sites.d/aurainstitute.com.conf`（80：验证与跳转；443：`www` 跳裸域、`/api/` 同源反代到 Vectra 公开接口、其余转发到应用容器）。`ssl_session_cache` 的共享区名必须独一无二，否则会和同机其他站点的 `SSL` 区冲突导致 `nginx -t` 失败 |
+| 应用 | 环境文件改为 `NUXT_APP_BASE_URL=/`、`NUXT_PUBLIC_SITE_URL=https://aurainstitute.com`、`NUXT_PUBLIC_DEPLOY_ENV=production`、`NUXT_PUBLIC_API_BASE=/api`；构建前缀同步改为 `/`；拉取脚本的健康检查路径取自环境文件 |
+| 收录 | 正式环境允许收录，`robots.txt` 放行并给出站点地图；`tech-neck`（文案未完成）仍然 `noindex`；canonical 指向 `https://aurainstitute.com/...` |
+| Vectra | `AuraSiteConfig.local.php` 的 `revalidate_targets`、`preview_bases` 改为 `production`；系统凭据 `internal.aura_revalidate_production` 已写入；后端默认预览地址改为正式域名 |
+| 撤除测试地址 | 原站点文件里 `AURA-BEGIN…AURA-END` 删除后与接入前备份逐字节一致；片段文件与目录已删除；与接入前基线对比无任何差异；`/aura-institute/` 回到 WordPress 的 404 |
+
+**与第 7 节计划的差异**：按要求直接撤除测试地址，没有保留 30 天的 301 过渡。
+
+**验证**：全部页面 200、不存在的页面 404；`/api/nav`、`/api/treatments` 同源可读；预约表单从正式域名提交成功（201，标记 staging 的测试线索）；签名刷新通知被正式站接受（200）；站内没有残留的子目录链接。
+
+**踩到的坑**：发布流程最后一步"等服务器切换"原来在服务器还跑旧版本时遇到非 JSON 响应会直接报错退出，已改为按"还没有状态"继续等。
+
+**仍需人工处理**
+
+1. 超级管理员在「CMS管理权限」里给同事授权"AURA Institute"。
+2. 联系电话、邮箱、客户评价、Journal 署名等仍是原型里的占位文字（按"忠实还原"保留），现在正式站可被搜索引擎收录，替换成真实内容后即可。
+3. CMS 里有两条标记为 staging 的测试线索（编号 1、2），可以在"预约咨询"里关闭。
+4. 验收无误后，删除仓库里的 `legacy/` 与 `site/` 跳转小文件（GitHub Pages 上的旧原型地址随之失效）。
