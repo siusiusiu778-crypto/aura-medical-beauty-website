@@ -26,6 +26,8 @@ permissions:
 
 env:
   RELEASE_TAG: staging
+  # 子目录阶段的构建前缀；换正式域名（根路径）后改为 /
+  NUXT_APP_BASE_URL: /aura-institute/
   STATUS_URL: https://overseasstudent.com/aura-institute/_deploy/status.json
 
 jobs:
